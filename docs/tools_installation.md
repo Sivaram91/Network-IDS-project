@@ -446,7 +446,7 @@ sudo usermod -aG wireshark $USER
 
 **Continue to:**
 
-- [Getting Started](getting-started.md) - Environment setup
+- [Getting Started](getting_started.md) - Environment setup
 - [Architecture Documentation](architecture/README.md) - System design
 - Start coding! Check `/src` folder
 

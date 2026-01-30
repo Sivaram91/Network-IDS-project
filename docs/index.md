@@ -27,8 +27,8 @@ A dual-layer security system combining Machine Learning and TinyML for real-time
 
 ## 🚀 Quick Links
 
-- **[Getting Started](getting-started.md)** - Setup your environment
-- **[Tools Installation](tools-installation.md)** - Required software
+- **[Getting Started](getting_started.md)** - Setup your environment
+- **[Tools Installation](tools_installation.md)** - Required software
 - **[GitHub Repository](https://github.com/Sivaram91/Network-IDS-project)** - Source code
 - **Project Board** - Task tracking (link when ready)
 

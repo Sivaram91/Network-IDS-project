@@ -52,7 +52,7 @@ cd network-ids-project
 
 **Raspberry Pi:**
 
-1. Flash Raspberry Pi OS to SD card (see [tools installation](tools-installation.md))
+1. Flash Raspberry Pi OS to SD card (see [tools installation](tools_installation.md))
 1. Insert SD card and boot Pi
 1. Connect via SSH or monitor
 1. Follow Raspberry Pi setup below
@@ -65,7 +65,7 @@ cd network-ids-project
 
 ### Step 3: Software Installation
 
-See detailed instructions: **[Tools Installation Guide](tools-installation.md)**
+See detailed instructions: **[Tools Installation Guide](tools_installation.md)**
 
 -----
 
@@ -249,7 +249,7 @@ pip3 install --upgrade scapy pandas numpy scikit-learn
 
 After completing setup:
 
-1. **[Tools Installation](tools-installation.md)** - Verify all tools are working
+1. **[Tools Installation](tools_installation.md)** - Verify all tools are working
 1. **Run Hello World** - Test packet capture
 1. **Explore Examples** - Check `/examples` folder
 1. **Start Development** - Begin with data collection module
@@ -264,5 +264,5 @@ After completing setup:
 
 -----
 
-**Ready to start?** Head to [Tools Installation](tools-installation.md) next!
+**Ready to start?** Head to [Tools Installation](tools_installation.md) next!
 
