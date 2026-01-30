@@ -14,13 +14,9 @@ features:
 
 nav:
 - Home: index.md
-- Getting Started: getting-started.md
-- Tools Installation: tools-installation.md
-- Architecture:
-- System Overview: architecture/system-overview.md
-- Component Design: architecture/component-design.md
-- References:
-- Manuals: manuals/README.md
+- Getting Started: getting_started.md
+- Tools Installation: tools_installation.md
+- Manuals: README.md
 
 plugins:
 - search
