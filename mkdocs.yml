@@ -3,26 +3,25 @@ site_description: ML-based Network Intrusion Detection System
 site_author: Sivaramasubramanian Sundararaj
 
 theme:
-name: material
-palette:
-primary: indigo
-accent: indigo
-features:
-- navigation.tabs
-- navigation.sections
-- navigation.expand
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
 
 nav:
-- Home: index.md
-- Getting Started: getting_started.md
-- Tools Installation: tools_installation.md
-- Manuals: README.md
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Tools Installation: tools_installation.md
 
 plugins:
-- search
+  - search
 
 markdown_extensions:
-- admonition
-- codehilite
-- toc:
-permalink: true
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
