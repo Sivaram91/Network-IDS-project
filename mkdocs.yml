@@ -25,6 +25,11 @@ nav:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      type: custom
+      custom_format: "%d-%b-%Y"
+      timezone: Europe/Berlin
+      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition

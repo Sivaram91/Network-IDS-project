@@ -1,8 +1,9 @@
 # Network Intrusion Detection System with TinyML
 
 **Status:** 🟢 Phase 1 - In Progress 
-**Version:** 0.1.0-dev 
-**Last Updated:** January 31, 2025
+**Version:** 0.1.0-dev
+
+_Last updated: {{ git_revision_date_localized }}_
 
 -----
 

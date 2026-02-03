@@ -26,6 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install mkdocs mkdocs-material
+        run: pip install mkdocs-git-revision-date-localized-plugin
 
       - name: Deploy docs
         run: mkdocs gh-deploy --force

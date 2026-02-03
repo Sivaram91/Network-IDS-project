@@ -2,7 +2,10 @@
 
 Complete guide for installing all software tools needed for this project.
 
+_Last updated: {{ git_revision_date_localized }}_
+
 -----
+
 [TOC]
 
 ## Table of Contents
