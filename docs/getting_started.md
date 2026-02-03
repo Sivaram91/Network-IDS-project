@@ -1,6 +1,6 @@
 # Getting Started
 
-[[toc]]
+[TOC]
 
 This guide helps you set up your development environment to work on or replicate this project.
 

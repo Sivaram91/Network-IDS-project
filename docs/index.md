@@ -6,7 +6,7 @@
 
 -----
 
-[[toc]]
+[TOC]
 
 ## 🎯 Project Overview
 
