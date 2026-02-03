@@ -15,7 +15,7 @@ A dual-layer security system combining Machine Learning and TinyML for real-time
 ```
 ┌─────────────────┐         ┌──────────────────────┐
 │ STM32F756       │◄───────►│ Raspberry Pi 4       │
-│ Gateway +       │ Ethernet│ Full ML IDS +        │ 
+│ Gateway +       │ Ethernet│ Full ML IDS +        │
 │ TinyML          │         │ Attack Simulator     │
 └─────────────────┘         └──────────────────────┘
 ```

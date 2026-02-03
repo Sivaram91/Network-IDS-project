@@ -8,9 +8,9 @@ theme:
     primary: indigo
     accent: indigo
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - toc.integrate
 
 nav:
   - Home: index.md
