@@ -14,15 +14,23 @@ A dual-layer security system combining Machine Learning and TinyML for real-time
 
 ### Architecture
 
-```
-┌─────────────────┐         ┌──────────────────────┐
-│ STM32F756       │◄───────►│ Raspberry Pi 4       │
-│ Gateway +       │ Ethernet│ Full ML IDS +        │
-│ TinyML          │         │ Attack Simulator     │
-└─────────────────┘         └──────────────────────┘
+```mermaid
+graph LR
+    subgraph Edge ["Edge Layer (STM32F756)"]
+        A[TinyML Fuzzing Detection]
+        B[Attack Simulator]
+    end
+
+    subgraph Core ["Processing Hub (Raspberry Pi 4)"]
+        C[Full ML IDS]
+        D[Attack Simulator]
+    end
+
+    A <== Ethernet ==> D
+    B <== Ethernet ==> C
 ```
 
-**Left Side (Edge):** Fuzzing detection using TinyML (<100KB model) 
+**Left Side (Edge):** Fuzzing detection using TinyML (<100KB model)  
 **Right Side (Cloud):** Full network traffic analysis using ML
 
 -----
@@ -32,7 +40,7 @@ A dual-layer security system combining Machine Learning and TinyML for real-time
 - **[Getting Started](getting_started.md)** - Setup your environment
 - **[Tools Installation](tools_installation.md)** - Required software
 - **[GitHub Repository](https://github.com/Sivaram91/Network-IDS-project)** - Source code
-- **Project Board** - Task tracking (link when ready)
+- **[Project Board](https://github.com/users/Sivaram91/projects/2/views/2)** - Task tracking
 
 -----
 

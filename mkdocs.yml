@@ -10,12 +10,13 @@ theme:
   features:
     - navigation.sections
     - navigation.expand
+
+extra:
   toc:
     visible: false
-  
-  custom_dir: docs
-  extra_css:
-    - css/custom.css
+
+extra_css:
+  - css/custom.css
 
 nav:
   - Home: index.md
@@ -27,6 +28,15 @@ plugins:
 
 markdown_extensions:
   - admonition
-  - codehilite
+  - codehilite:
+      guess_lang: false
   - toc:
       permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
