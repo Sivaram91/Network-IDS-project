@@ -3,6 +3,7 @@
 Complete guide for installing all software tools needed for this project.
 
 -----
+[[toc]]
 
 ## Table of Contents
 
