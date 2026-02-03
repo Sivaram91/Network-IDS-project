@@ -10,6 +10,8 @@ theme:
   features:
     - navigation.sections
     - navigation.expand
+  toc:
+    visible: false
 
 nav:
   - Home: index.md
