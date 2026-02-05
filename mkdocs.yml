@@ -1,6 +1,7 @@
 site_name: Network IDS Project
 site_description: ML-based Network Intrusion Detection System
 site_author: Sivaramasubramanian Sundararaj
+site_url: https://YOUR_USERNAME.github.io/Network-IDS-project/
 
 theme:
   name: material
@@ -43,7 +44,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - extra
 
 docs_dir: docs
 
