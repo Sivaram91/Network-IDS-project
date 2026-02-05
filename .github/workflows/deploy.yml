@@ -35,4 +35,6 @@ jobs:
           python generate_requirements_page.py
 
       - name: Deploy docs
-        run: mkdocs gh-deploy --force
+        run: |
+	  cd ../..
+	  mkdocs gh-deploy --force
