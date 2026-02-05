@@ -1,0 +1,28 @@
+# Generated System Requirements page (built by CI/CD)
+docs/Requirements/SystemRequirements.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+site/
+dist/
+build/

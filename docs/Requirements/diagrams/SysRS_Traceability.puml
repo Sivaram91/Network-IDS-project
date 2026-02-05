@@ -1,0 +1,84 @@
+@startuml requirements-traceability
+
+title Requirements Traceability Matrix
+
+package "Features" {
+component [FEAT-001:\nNetwork Traffic\nCapture] as FEAT001
+component [FEAT-002:\nML-based IDS] as FEAT002
+component [FEAT-003:\nTinyML Fuzzing] as FEAT003
+component [FEAT-004:\nAttack Simulation] as FEAT004
+component [FEAT-005:\nSystem Integration] as FEAT005
+}
+
+package "System Requirements" {
+component [SYS-REQ-001:\nCapture 100 pps] as SYS001
+component [SYS-REQ-005:\nDetect Port Scan\n>90% accuracy] as SYS005
+component [SYS-REQ-011:\nDetect Fuzzing\n>85% accuracy] as SYS011
+component [SYS-REQ-015:\nSimulate Port Scan] as SYS015
+component [SYS-REQ-020:\nEthernet Communication] as SYS020
+}
+
+package "Architecture Components" {
+component [ARCH-001:\nPi Capture Module] as ARCH001
+component [ARCH-002:\nML Detection Engine] as ARCH002
+component [ARCH-003:\nSTM32 TinyML Module] as ARCH003
+component [ARCH-004:\nAttack Simulator] as ARCH004
+component [ARCH-005:\nIntegration Layer] as ARCH005
+}
+
+package "Software Requirements" {
+component [SW-REQ-001:\nScapy Capture API] as SW001
+component [SW-REQ-010:\nRandom Forest\nClassifier] as SW010
+component [SW-REQ-020:\nTFLite Micro\nInference] as SW020
+component [SW-REQ-030:\nPort Scan\nGenerator] as SW030
+component [SW-REQ-040:\nTCP Socket\nCommunication] as SW040
+}
+
+package "Test Cases" {
+component [TC-SYS-001:\nThroughput Test] as TC001
+component [TC-SYS-010:\nPort Scan\nDetection Test] as TC010
+component [TC-SYS-020:\nFuzzing\nDetection Test] as TC020
+component [TC-SYS-030:\nAttack Generation\nTest] as TC030
+component [TC-SYS-040:\nCommunication\nTest] as TC040
+}
+
+' Feature to Requirements
+FEAT001 --> SYS001
+FEAT002 --> SYS005
+FEAT003 --> SYS011
+FEAT004 --> SYS015
+FEAT005 --> SYS020
+
+' Requirements to Architecture
+SYS001 --> ARCH001
+SYS005 --> ARCH002
+SYS011 --> ARCH003
+SYS015 --> ARCH004
+SYS020 --> ARCH005
+
+' Requirements to Software Requirements
+SYS001 --> SW001
+SYS005 --> SW010
+SYS011 --> SW020
+SYS015 --> SW030
+SYS020 --> SW040
+
+' Requirements to Test Cases
+SYS001 --> TC001
+SYS005 --> TC010
+SYS011 --> TC020
+SYS015 --> TC030
+SYS020 --> TC040
+
+note bottom of TC001
+Traceability ensures:
+- All features have requirements
+- All requirements have architecture
+- All requirements have SW implementation
+- All requirements are tested
+
+Bi-directional traceability enables
+impact analysis for changes.
+end note
+
+@enduml

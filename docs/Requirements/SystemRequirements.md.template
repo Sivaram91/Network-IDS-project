@@ -1,0 +1,591 @@
+# System Requirements
+
+This page contains all system requirements for the project. Use the filters and search box to find specific requirements.
+
+<div class="requirements-container">
+  <!-- Filter Controls -->
+  <div class="filter-section">
+    <div class="filter-group">
+      <label for="search-box">Search:</label>
+      <input type="text" id="search-box" placeholder="Search requirements...">
+    </div>
+    
+    <div class="filter-group">
+      <label for="filter-type">Type:</label>
+      <select id="filter-type">
+        <option value="">All Types</option>
+      </select>
+    </div>
+    
+    <div class="filter-group">
+      <label for="filter-priority">Priority:</label>
+      <select id="filter-priority">
+        <option value="">All Priorities</option>
+      </select>
+    </div>
+    
+    <div class="filter-group">
+      <label for="filter-status">Status:</label>
+      <select id="filter-status">
+        <option value="">All Statuses</option>
+      </select>
+    </div>
+    
+    <div class="filter-group">
+      <label for="filter-phase">Phase:</label>
+      <select id="filter-phase">
+        <option value="">All Phases</option>
+      </select>
+    </div>
+    
+    <div class="filter-group">
+      <label for="filter-feature">Feature:</label>
+      <select id="filter-feature">
+        <option value="">All Features</option>
+      </select>
+    </div>
+    
+    <button id="clear-filters" class="clear-btn">Clear All Filters</button>
+  </div>
+
+  <div id="results-count" class="results-count"></div>
+
+  <!-- Requirements Table -->
+  <div class="table-wrapper">
+    <table id="requirements-table">
+      <thead>
+        <tr>
+          <th>REQ ID</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Feature</th>
+          <th>Phase</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody id="requirements-tbody">
+        <!-- Requirements will be populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for requirement details -->
+<div id="detail-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<style>
+.requirements-container {
+  margin: 2rem 0;
+}
+
+.filter-section {
+  background: var(--md-code-bg-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.25rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  padding: 0.5rem 1rem;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  height: fit-content;
+}
+
+.clear-btn:hover {
+  opacity: 0.9;
+}
+
+.results-count {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#requirements-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--md-default-bg-color);
+}
+
+#requirements-table thead {
+  background: var(--md-code-bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#requirements-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+  white-space: nowrap;
+}
+
+#requirements-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+#requirements-table tbody tr:hover {
+  background: var(--md-code-bg-color);
+}
+
+.req-id {
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.description {
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-critical { background: #ef4444; color: white; }
+.badge-high { background: #f97316; color: white; }
+.badge-medium { background: #eab308; color: black; }
+.badge-low { background: #22c55e; color: white; }
+
+.badge-functional { background: #3b82f6; color: white; }
+.badge-performance { background: #8b5cf6; color: white; }
+.badge-non-functional { background: #6366f1; color: white; }
+.badge-interface { background: #06b6d4; color: white; }
+.badge-security { background: #dc2626; color: white; }
+
+.badge-created { background: #64748b; color: white; }
+.badge-in-progress { background: #0ea5e9; color: white; }
+.badge-completed { background: #10b981; color: white; }
+
+.details-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.details-btn:hover {
+  opacity: 0.9;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--md-default-bg-color);
+  margin: 5% auto;
+  padding: 2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  color: var(--md-default-fg-color--light);
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--md-default-fg-color);
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+.detail-section p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.detail-item {
+  background: var(--md-code-bg-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.detail-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
+</style>
+
+<script>
+// Requirements data will be loaded here
+let allRequirements = [];
+
+// Load requirements from embedded CSV data
+const requirementsData = `CSV_DATA_PLACEHOLDER`;
+
+// Parse CSV
+function parseCSV(csv) {
+  const lines = csv.trim().split('\n');
+  const headers = lines[0].split(',');
+  const data = [];
+  
+  for (let i = 1; i < lines.length; i++) {
+    const obj = {};
+    let currentField = '';
+    let inQuotes = false;
+    let fieldIndex = 0;
+    
+    for (let j = 0; j < lines[i].length; j++) {
+      const char = lines[i][j];
+      
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        obj[headers[fieldIndex]] = currentField.trim();
+        currentField = '';
+        fieldIndex++;
+      } else {
+        currentField += char;
+      }
+    }
+    obj[headers[fieldIndex]] = currentField.trim();
+    data.push(obj);
+  }
+  
+  return data;
+}
+
+allRequirements = parseCSV(requirementsData);
+
+// Get unique values for filters
+function getUniqueValues(field) {
+  return [...new Set(allRequirements.map(req => req[field]))].filter(Boolean).sort();
+}
+
+// Populate filter dropdowns
+function populateFilters() {
+  const typeFilter = document.getElementById('filter-type');
+  const priorityFilter = document.getElementById('filter-priority');
+  const statusFilter = document.getElementById('filter-status');
+  const phaseFilter = document.getElementById('filter-phase');
+  const featureFilter = document.getElementById('filter-feature');
+  
+  getUniqueValues('Type').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    typeFilter.appendChild(option);
+  });
+  
+  ['Critical', 'High', 'Medium', 'Low'].forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    priorityFilter.appendChild(option);
+  });
+  
+  getUniqueValues('Status').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    statusFilter.appendChild(option);
+  });
+  
+  getUniqueValues('Phase').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    phaseFilter.appendChild(option);
+  });
+  
+  getUniqueValues('Feature').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value.replace(/_/g, ' ');
+    featureFilter.appendChild(option);
+  });
+}
+
+// Get badge class based on value
+function getBadgeClass(type, value) {
+  const normalized = value.toLowerCase().replace(/[^a-z]/g, '');
+  
+  if (type === 'priority') {
+    return `badge badge-${normalized}`;
+  } else if (type === 'type') {
+    return `badge badge-${normalized}`;
+  } else if (type === 'status') {
+    return `badge badge-${normalized}`;
+  }
+  
+  return 'badge';
+}
+
+// Render requirements table
+function renderRequirements(requirements) {
+  const tbody = document.getElementById('requirements-tbody');
+  tbody.innerHTML = '';
+  
+  requirements.forEach(req => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td class="req-id">${req.REQ_ID}</td>
+      <td class="description">${req.Description}</td>
+      <td><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
+      <td><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
+      <td><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
+      <td>${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
+      <td>${req.Phase}</td>
+      <td><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
+    `;
+    tbody.appendChild(row);
+  });
+  
+  document.getElementById('results-count').textContent = 
+    `Showing ${requirements.length} of ${allRequirements.length} requirements`;
+}
+
+// Show requirement details in modal
+function showDetails(reqId) {
+  const req = allRequirements.find(r => r.REQ_ID === reqId);
+  if (!req) return;
+  
+  const modal = document.getElementById('detail-modal');
+  const modalBody = document.getElementById('modal-body');
+  
+  modalBody.innerHTML = `
+    <h2>${req.REQ_ID}</h2>
+    
+    <div class="detail-section">
+      <h3>Description</h3>
+      <p>${req.Description}</p>
+    </div>
+    
+    <div class="detail-grid">
+      <div class="detail-item">
+        <strong>Type</strong>
+        <span class="${getBadgeClass('type', req.Type)}">${req.Type}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Priority</strong>
+        <span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Status</strong>
+        <span class="${getBadgeClass('status', req.Status)}">${req.Status}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Phase</strong>
+        ${req.Phase}
+      </div>
+    </div>
+    
+    <div class="detail-section">
+      <h3>Classification</h3>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <strong>Domain</strong>
+          ${req.Domain}
+        </div>
+        <div class="detail-item">
+          <strong>Feature</strong>
+          ${req.Feature.replace(/_/g, ' ')}
+        </div>
+      </div>
+    </div>
+    
+    <div class="detail-section">
+      <h3>Verification</h3>
+      <p><strong>Method:</strong> ${req.Verification_Method}</p>
+      <p><strong>Criteria:</strong> ${req.Verification_Criteria}</p>
+      <p><strong>Status:</strong> ${req.Verification_Status}</p>
+    </div>
+    
+    <div class="detail-section">
+      <h3>Traceability</h3>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <strong>Architecture</strong>
+          ${req.Traces_To_Arch}
+        </div>
+        <div class="detail-item">
+          <strong>Software</strong>
+          ${req.Traces_To_SW}
+        </div>
+        <div class="detail-item">
+          <strong>Test</strong>
+          ${req.Traces_To_Test}
+        </div>
+      </div>
+    </div>
+    
+    <div class="detail-section">
+      <h3>Rationale</h3>
+      <p>${req.Rationale}</p>
+    </div>
+  `;
+  
+  modal.style.display = 'block';
+}
+
+// Filter requirements
+function filterRequirements() {
+  const searchTerm = document.getElementById('search-box').value.toLowerCase();
+  const typeFilter = document.getElementById('filter-type').value;
+  const priorityFilter = document.getElementById('filter-priority').value;
+  const statusFilter = document.getElementById('filter-status').value;
+  const phaseFilter = document.getElementById('filter-phase').value;
+  const featureFilter = document.getElementById('filter-feature').value;
+  
+  const filtered = allRequirements.filter(req => {
+    const matchesSearch = !searchTerm || 
+      req.REQ_ID.toLowerCase().includes(searchTerm) ||
+      req.Description.toLowerCase().includes(searchTerm) ||
+      req.Rationale.toLowerCase().includes(searchTerm);
+    
+    const matchesType = !typeFilter || req.Type === typeFilter;
+    const matchesPriority = !priorityFilter || req.Priority === priorityFilter;
+    const matchesStatus = !statusFilter || req.Status === statusFilter;
+    const matchesPhase = !phaseFilter || req.Phase === phaseFilter;
+    const matchesFeature = !featureFilter || req.Feature === featureFilter;
+    
+    return matchesSearch && matchesType && matchesPriority && 
+           matchesStatus && matchesPhase && matchesFeature;
+  });
+  
+  renderRequirements(filtered);
+}
+
+// Clear all filters
+function clearFilters() {
+  document.getElementById('search-box').value = '';
+  document.getElementById('filter-type').value = '';
+  document.getElementById('filter-priority').value = '';
+  document.getElementById('filter-status').value = '';
+  document.getElementById('filter-phase').value = '';
+  document.getElementById('filter-feature').value = '';
+  filterRequirements();
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  populateFilters();
+  renderRequirements(allRequirements);
+  
+  // Add event listeners
+  document.getElementById('search-box').addEventListener('input', filterRequirements);
+  document.getElementById('filter-type').addEventListener('change', filterRequirements);
+  document.getElementById('filter-priority').addEventListener('change', filterRequirements);
+  document.getElementById('filter-status').addEventListener('change', filterRequirements);
+  document.getElementById('filter-phase').addEventListener('change', filterRequirements);
+  document.getElementById('filter-feature').addEventListener('change', filterRequirements);
+  document.getElementById('clear-filters').addEventListener('click', clearFilters);
+  
+  // Modal close handlers
+  document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('detail-modal').style.display = 'none';
+  });
+  
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('detail-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+// Make showDetails available globally
+window.showDetails = showDetails;
+</script>

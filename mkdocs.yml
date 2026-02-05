@@ -22,6 +22,7 @@ nav:
   - Home: index.md
   - Getting Started: getting_started.md
   - Tools Installation: tools_installation.md
+  - System Requirements: Requirements/SystemRequirements.md
 
 plugins:
   - search
@@ -42,6 +43,12 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - extra
+
+docs_dir: docs
+
+# Enable raw HTML/JavaScript in markdown
+use_directory_urls: true
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
