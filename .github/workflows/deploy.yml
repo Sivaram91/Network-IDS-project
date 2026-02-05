@@ -26,10 +26,28 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y default-jre graphviz
+
       - name: Install dependencies
         run: |
           pip install mkdocs mkdocs-material
           pip install mkdocs-git-revision-date-localized-plugin
+          pip install pymdown-extensions
+          pip install mkdocs-build-plantuml-plugin
+
+      - name: Enable PlantUML for production  # NEW STEP
+        run: |
+          sed -i 's/# - build_plantuml:/- build_plantuml:/g' mkdocs.yml
+          sed -i 's/#     render:/    render:/g' mkdocs.yml
+          sed -i 's/#     server:/    server:/g' mkdocs.yml
+          sed -i 's/#     output_format:/    output_format:/g' mkdocs.yml
+          sed -i 's/#     diagram_root:/    diagram_root:/g' mkdocs.yml
+          sed -i 's/#     output_folder:/    output_folder:/g' mkdocs.yml
+          sed -i 's/#     input_folder:/    input_folder:/g' mkdocs.yml
+          sed -i 's/#     input_extensions:/    input_extensions:/g' mkdocs.yml
 
       - name: Generate System Requirements
         run: |

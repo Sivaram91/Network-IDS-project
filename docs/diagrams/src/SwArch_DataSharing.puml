@@ -1,0 +1,20 @@
+@startuml
+participant "Task A" as A
+participant "Mutex" as M
+participant "Shared Resource" as R
+participant "Task B" as B
+
+A -> M : mutex_lock()
+activate M
+M --> A : acquired
+A -> R : write_data()
+A -> M : mutex_unlock()
+deactivate M
+
+B -> M : mutex_lock()
+activate M
+M --> B : acquired
+B -> R : read_data()
+B -> M : mutex_unlock()
+deactivate M
+@enduml

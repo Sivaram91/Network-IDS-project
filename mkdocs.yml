@@ -1,7 +1,7 @@
 site_name: Network IDS Project
 site_description: ML-based Network Intrusion Detection System
 site_author: Sivaramasubramanian Sundararaj
-site_url: https://YOUR_USERNAME.github.io/Network-IDS-project/
+site_url: https://sivaram91.github.io/Network-IDS-project/
 
 theme:
   name: material
@@ -10,7 +10,7 @@ theme:
     accent: indigo
   features:
     - navigation.sections
-    - navigation.expand
+    - navigation.indexes
 
 extra:
   toc:
@@ -19,11 +19,25 @@ extra:
 extra_css:
   - css/custom.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+  - js/toc_collapse.js
+
 nav:
   - Home: index.md
   - Getting Started: getting_started.md
   - Tools Installation: tools_installation.md
-  - System Requirements: Requirements/SystemRequirements.md
+  - System Engineering: 
+    - System Requirements: Requirements/SystemRequirements.md
+    - System Architecture: Architecture/SystemArchitecture.md
+  - Software Engineering: 
+    - Feature Tree: Architecture/FeatureTree.md
+    - Software Architecture: Architecture/SwArchitecture.md
+    - Software Requirements: Requirements/SwRequirements.md
+    - Raspberry Pi: RaspPi_Comp_Design.md
+    - STM32 Microcontroller: STM_Comp_Design.md
+  - How-To: HowTos.md
+  - Lessons Learnt: LessonsLearnt.md
 
 plugins:
   - search
@@ -32,6 +46,19 @@ plugins:
       custom_format: "%d-%b-%Y"
       timezone: Europe/Berlin
       fallback_to_build_date: true
+  # - build_plantuml:
+  #    render: "local"  # Uses local rendering, no server needed
+  #    bin_path: ""  # Leave empty, will auto-detect
+  #    output_format: "svg"
+  #    diagram_root: "docs/diagrams"
+  #    output_folder: "out"
+  #    input_folder: "src"
+  #    input_extensions: "puml"
+
+# Add this to ignore only .svg file warnings
+validation:
+  links:
+    not_found: ignore
 
 markdown_extensions:
   - admonition

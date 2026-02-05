@@ -166,7 +166,3 @@ graph LR
 
 Educational and portfolio project. 
 Copyright © 2025 Sivaramasubramanian Sundararaj
-
------
-
-**Last Updated:** January 31, 2025

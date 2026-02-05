@@ -1,0 +1,28 @@
+@startuml
+package "Application" {
+    component [Control Logic] as ctrl
+    component [Sensor Handler] as sensor
+    component [Actuator Controller] as actuator
+}
+
+package "Middleware" {
+    component [CAN Manager] as can_mgr
+    component [Task Scheduler] as sched
+    component [Diagnostics] as diag
+}
+
+package "Drivers" {
+    component [CAN Driver] as can_drv
+    component [ADC Driver] as adc_drv
+    component [PWM Driver] as pwm_drv
+}
+
+ctrl --> can_mgr
+ctrl --> sensor
+ctrl --> actuator
+sensor --> adc_drv
+actuator --> pwm_drv
+can_mgr --> can_drv
+ctrl --> sched
+diag --> sched
+@enduml
