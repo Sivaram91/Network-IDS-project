@@ -25,13 +25,16 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
-        run: pip install mkdocs-git-revision-date-localized-plugin
+        run: |
+          pip install mkdocs mkdocs-material
+          pip install mkdocs-git-revision-date-localized-plugin
 
       - name: Generate System Requirements
-        run: cd docs/Requirements
-        run: python generate_requirements_page.py
+        run: |
+          cd docs/Requirements
+          python generate_requirements_page.py
 
       - name: Deploy docs
-        run: cd ../..
-        run: mkdocs gh-deploy --force
+        run: |
+          cd ../..
+          mkdocs gh-deploy --force
