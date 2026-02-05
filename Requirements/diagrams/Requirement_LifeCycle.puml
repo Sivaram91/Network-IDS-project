@@ -1,0 +1,41 @@
+@startuml requirement-lifecycle
+
+title Requirement Lifecycle State Diagram
+
+[*] --> Created : New requirement defined
+
+Created --> Ready : Requirement reviewed\nand baselined
+
+Ready --> InReview : Technical review\ninitiated
+
+InReview --> Accepted : Review approved
+InReview --> Ready : Minor changes\nrequired
+InReview --> Rejected : Major issues\nidentified
+
+Accepted --> Obsolete : Requirement no\nlonger needed
+
+Rejected --> Created : Rework and\nresubmit
+Rejected --> Obsolete : Permanently\nrejected
+
+Obsolete --> [*]
+
+note right of Created
+Initial state when
+requirement is first
+documented
+end note
+
+note right of Accepted
+Requirement is approved
+and ready for implementation.
+Cannot be changed without
+change control process.
+end note
+
+note right of Obsolete
+Requirement is no longer
+valid or has been superseded
+by another requirement.
+end note
+
+@enduml

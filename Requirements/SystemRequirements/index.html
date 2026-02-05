@@ -1,0 +1,1066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+      
+        <link rel="prev" href="../../tools_installation/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>System Requirements - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="system-requirements">System Requirements<a class="headerlink" href="#system-requirements" title="Permanent link">&para;</a></h1>
+<p>This page contains all system requirements for the project. Use the filters and search box to find specific requirements.</p>
+<div class="requirements-container">
+  <!-- Filter Controls -->
+  <div class="filter-section">
+    <div class="filter-group">
+      <label for="search-box">Search:</label>
+      <input type="text" id="search-box" placeholder="Search requirements...">
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-type">Type:</label>
+      <select id="filter-type">
+        <option value="">All Types</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-priority">Priority:</label>
+      <select id="filter-priority">
+        <option value="">All Priorities</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-status">Status:</label>
+      <select id="filter-status">
+        <option value="">All Statuses</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-phase">Phase:</label>
+      <select id="filter-phase">
+        <option value="">All Phases</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-feature">Feature:</label>
+      <select id="filter-feature">
+        <option value="">All Features</option>
+      </select>
+    </div>
+
+    <button id="clear-filters" class="clear-btn">Clear All Filters</button>
+  </div>
+
+  <div id="results-count" class="results-count"></div>
+
+  <!-- Requirements Table -->
+  <div class="table-wrapper">
+    <table id="requirements-table">
+      <thead>
+        <tr>
+          <th>REQ ID</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Feature</th>
+          <th>Phase</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody id="requirements-tbody">
+        <!-- Requirements will be populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for requirement details -->
+<div id="detail-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<style>
+.requirements-container {
+  margin: 2rem 0;
+}
+
+.filter-section {
+  background: var(--md-code-bg-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.25rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  padding: 0.5rem 1rem;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  height: fit-content;
+}
+
+.clear-btn:hover {
+  opacity: 0.9;
+}
+
+.results-count {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#requirements-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--md-default-bg-color);
+}
+
+#requirements-table thead {
+  background: var(--md-code-bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#requirements-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+  white-space: nowrap;
+}
+
+#requirements-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+#requirements-table tbody tr:hover {
+  background: var(--md-code-bg-color);
+}
+
+.req-id {
+  font-family: var(--md-code-font-family);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.description {
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-critical { background: #ef4444; color: white; }
+.badge-high { background: #f97316; color: white; }
+.badge-medium { background: #eab308; color: black; }
+.badge-low { background: #22c55e; color: white; }
+
+.badge-functional { background: #3b82f6; color: white; }
+.badge-performance { background: #8b5cf6; color: white; }
+.badge-non-functional { background: #6366f1; color: white; }
+.badge-interface { background: #06b6d4; color: white; }
+.badge-security { background: #dc2626; color: white; }
+
+.badge-created { background: #64748b; color: white; }
+.badge-in-progress { background: #0ea5e9; color: white; }
+.badge-completed { background: #10b981; color: white; }
+
+.details-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--md-primary-fg-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.details-btn:hover {
+  opacity: 0.9;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--md-default-bg-color);
+  margin: 5% auto;
+  padding: 2rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close {
+  color: var(--md-default-fg-color--light);
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--md-default-fg-color);
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+.detail-section p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.detail-item {
+  background: var(--md-code-bg-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.detail-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
+}
+</style>
+
+<script>
+// Requirements data will be loaded here
+let allRequirements = [];
+
+// Load requirements from embedded CSV data
+const requirementsData = `REQ_ID,Description,Type,Priority,Status,Domain,Feature,Verification_Method,Verification_Criteria,Verification_Status,Traces_To_Arch,Traces_To_SW,Traces_To_Test,Phase,Rationale
+SYS-REQ-001,The system shall capture Ethernet packets on the Raspberry Pi interface at a minimum rate of 100 packets per second,Functional,Critical,Created,System,01_Network_Traffic_Capture,Test,System successfully captures 100+ packets/second in test environment for 60 seconds continuous operation,Not Tested,ARCH-001,"SW-REQ-001, SW-REQ-002",TC-SYS-001,Phase 1,Minimum throughput needed for real-time detection of typical network attacks
+SYS-REQ-002,"The system shall parse captured packets and extract source IP, destination IP, source port, destination port, protocol, packet length, and TCP flags",Functional,Critical,Created,System,01_Network_Traffic_Capture,Test,All specified fields extracted correctly for 100 test packets with 100% accuracy,Not Tested,ARCH-001,"SW-REQ-003, SW-REQ-004",TC-SYS-002,Phase 1,Required packet metadata for ML feature engineering
+SYS-REQ-003,The system shall store captured packet data in PCAP format for offline analysis,Functional,High,Created,System,01_Network_Traffic_Capture,Test,Generated PCAP files can be opened in Wireshark and contain all captured packets,Not Tested,ARCH-001,SW-REQ-005,TC-SYS-003,Phase 1,Enable post-analysis and debugging of detection results
+SYS-REQ-004,The system shall continue capturing packets even when storage is >80% full by implementing circular buffer mechanism,Non-Functional,Medium,Created,System,01_Network_Traffic_Capture,Test,System operates continuously for 24 hours with limited storage without crashes,Not Tested,ARCH-001,SW-REQ-006,TC-SYS-004,Phase 1,Prevent system failure due to storage limitations
+SYS-REQ-005,The system shall detect port scanning attacks with minimum 90% accuracy and maximum 5% false positive rate,Performance,Critical,Created,System,02_ML_IDS,Test,Detection accuracy ≥90% and false positive rate ≤5% on validation dataset of 1000 samples,Not Tested,ARCH-002,"SW-REQ-010, SW-REQ-011",TC-SYS-010,Phase 1,Industry standard for IDS performance
+SYS-REQ-006,The system shall detect DoS (Denial of Service) attacks with minimum 90% accuracy and maximum 5% false positive rate,Performance,Critical,Created,System,02_ML_IDS,Test,Detection accuracy ≥90% and false positive rate ≤5% on validation dataset of 1000 samples,Not Tested,ARCH-002,SW-REQ-012,TC-SYS-011,Phase 1,Critical attack type for network security
+SYS-REQ-007,The system shall detect data exfiltration attempts with minimum 85% accuracy,Performance,High,Created,System,02_ML_IDS,Test,Detection accuracy ≥85% on validation dataset of 500 samples,Not Tested,ARCH-002,SW-REQ-013,TC-SYS-012,Phase 1,"Data exfiltration patterns are more subtle, 85% accuracy is acceptable"
+SYS-REQ-008,"The system shall extract network flow features including packet count, byte count, average packet size, inter-arrival time statistics, and protocol distribution within configurable time windows",Functional,Critical,Created,System,02_ML_IDS,Test,All specified features extracted correctly and values match manual calculation for 10 sample flows,Not Tested,ARCH-002,"SW-REQ-014, SW-REQ-015",TC-SYS-013,Phase 1,Essential features for ML-based attack detection
+SYS-REQ-009,The system shall process network traffic and generate attack alerts with maximum latency of 100ms from packet arrival to alert generation,Performance,High,Created,System,02_ML_IDS,Test,95% of alerts generated within 100ms measured over 1000 detections,Not Tested,ARCH-002,SW-REQ-016,TC-SYS-014,Phase 1,Real-time detection requirement for effective threat response
+SYS-REQ-010,The system shall support training and updating ML models without system restart,Functional,Medium,Created,System,02_ML_IDS,Demonstration,Successfully load new model and detect attacks without service interruption,Not Tested,ARCH-002,SW-REQ-017,TC-SYS-015,Phase 2,Enable model improvements without downtime
+SYS-REQ-011,"The STM32 gateway shall detect malformed Ethernet packets (invalid length, corrupted headers, invalid checksums) with minimum 85% accuracy",Performance,Critical,Created,Hardware,03_TinyML_Fuzzing_Detection,Test,Detection accuracy ≥85% on test set of 500 malformed packets,Not Tested,ARCH-003,"SW-REQ-020, SW-REQ-021",TC-SYS-020,Phase 1,Fuzzing detection at edge provides first line of defense
+SYS-REQ-012,The TinyML model on STM32 shall have maximum size of 100KB including weights and architecture,Non-Functional,Critical,Created,Hardware,03_TinyML_Fuzzing_Detection,Inspection,Compiled model binary size ≤100KB verified by checking file size,Not Tested,ARCH-003,SW-REQ-022,TC-SYS-021,Phase 1,STM32H755 flash memory constraint
+SYS-REQ-013,The STM32 shall perform fuzzing detection inference with maximum latency of 10ms per packet,Performance,High,Created,Hardware,03_TinyML_Fuzzing_Detection,Test,95% of inferences complete within 10ms measured over 1000 packets,Not Tested,ARCH-003,SW-REQ-023,TC-SYS-022,Phase 1,Real-time processing requirement for gateway operation
+SYS-REQ-014,The STM32 TinyML model shall use maximum 50KB RAM during inference,Non-Functional,High,Created,Hardware,03_TinyML_Fuzzing_Detection,Test,Peak RAM usage ≤50KB measured during inference execution,Not Tested,ARCH-003,SW-REQ-024,TC-SYS-023,Phase 1,"STM32H755 has 1MB RAM, leave headroom for other functions"
+SYS-REQ-015,The system shall simulate port scanning attacks targeting configurable port ranges at configurable rates (1-1000 ports/second),Functional,High,Created,System,04_Attack_Simulation,Test,Generated traffic matches expected port scan pattern verified by packet analysis,Not Tested,ARCH-004,SW-REQ-030,TC-SYS-030,Phase 1,Required for testing detection capabilities
+SYS-REQ-016,The system shall simulate DoS attacks by generating high-rate traffic (up to 1000 packets/second) to target IP addresses,Functional,High,Created,System,04_Attack_Simulation,Test,Traffic rate measured at receiver matches configured rate ±5%,Not Tested,ARCH-004,SW-REQ-031,TC-SYS-031,Phase 1,Test system resilience to high traffic loads
+SYS-REQ-017,"The system shall simulate fuzzing attacks by generating packets with randomized fields (invalid lengths, corrupted headers, random payloads)",Functional,High,Created,System,04_Attack_Simulation,Test,Generated packets contain expected malformations verified by manual inspection of 10 sample packets,Not Tested,ARCH-004,SW-REQ-032,TC-SYS-032,Phase 1,Test fuzzing detection capability of STM32
+SYS-REQ-018,The system shall simulate data exfiltration by generating sustained high-volume upload traffic to external IP addresses,Functional,Medium,Created,System,04_Attack_Simulation,Test,Traffic pattern matches expected exfiltration signature verified by IDS detection,Not Tested,ARCH-004,SW-REQ-033,TC-SYS-033,Phase 1,Test data exfiltration detection
+SYS-REQ-019,"The attack simulator shall log all generated attack parameters (type, target, duration, rate) for test traceability",Functional,Medium,Created,System,04_Attack_Simulation,Inspection,Log file contains all required parameters for 10 simulated attacks,Not Tested,ARCH-004,SW-REQ-034,TC-SYS-034,Phase 1,Enable reproducible testing and debugging
+SYS-REQ-020,The Raspberry Pi and STM32 shall communicate via Ethernet using TCP/IP protocol with reliable delivery,Interface,Critical,Created,System,05_System_Integration,Test,100 consecutive messages exchanged without packet loss,Not Tested,ARCH-005,"SW-REQ-040, SW-REQ-041",TC-SYS-040,Phase 1,Reliable communication essential for system operation
+SYS-REQ-021,The STM32 shall report fuzzing detection alerts to Raspberry Pi within 50ms of detection,Performance,High,Created,System,05_System_Integration,Test,95% of alerts delivered within 50ms measured over 100 detections,Not Tested,ARCH-005,SW-REQ-042,TC-SYS-041,Phase 1,Timely alert delivery for coordinated threat response
+SYS-REQ-022,"The system shall implement automatic reconnection if Ethernet connection is lost, with maximum 5 retry attempts",Non-Functional,Medium,Created,System,05_System_Integration,Test,System successfully reconnects after simulated cable disconnect within 10 seconds,Not Tested,ARCH-005,SW-REQ-043,TC-SYS-042,Phase 2,System resilience to network interruptions
+SYS-REQ-023,The system shall use static IP addressing for Pi (192.168.10.1) and STM32 (192.168.10.2) for predictable network configuration,Interface,High,Created,System,05_System_Integration,Test,Both devices configured with specified IP addresses verified by ping test,Not Tested,ARCH-005,SW-REQ-044,TC-SYS-043,Phase 1,Simplify setup and avoid DHCP dependency
+SYS-REQ-024,The system shall include automated unit tests with minimum 80% code coverage for Python modules,Non-Functional,High,Created,Software,06_Testing_Infrastructure,Test,Coverage report shows ≥80% line coverage for all Python modules,Not Tested,ARCH-006,SW-REQ-050,TC-SYS-050,Phase 2,Industry best practice for code quality
+SYS-REQ-025,The CI/CD pipeline shall execute all tests and static analysis on every commit to main branch,Non-Functional,High,Created,Software,06_Testing_Infrastructure,Demonstration,GitHub Actions workflow executes and completes for test commit,Not Tested,ARCH-006,SW-REQ-051,TC-SYS-051,Phase 2,Ensure code quality and prevent regressions
+SYS-REQ-026,"The system shall run static code analysis (Pylint, Flake8) and fail builds with code quality score below 8.0/10",Non-Functional,Medium,Created,Software,06_Testing_Infrastructure,Test,Pipeline rejects code with quality score <8.0 demonstrated with intentionally poor code,Not Tested,ARCH-006,SW-REQ-052,TC-SYS-052,Phase 2,Maintain consistent code quality
+SYS-REQ-027,The Raspberry Pi shall connect to WiFi network and maintain stable connection with automatic reconnection on failure,Functional,High,Created,System,07_Cloud_Connectivity,Test,WiFi connection maintained for 24 hours with <1 minute total downtime,Not Tested,ARCH-007,SW-REQ-060,TC-SYS-060,Phase 3,Enable cloud data upload and remote monitoring
+SYS-REQ-028,The system shall upload attack detection alerts to cloud endpoint within 5 seconds of detection,Performance,Medium,Created,System,07_Cloud_Connectivity,Test,90% of alerts uploaded within 5 seconds measured over 100 detections,Not Tested,ARCH-007,SW-REQ-061,TC-SYS-061,Phase 3,Timely cloud notification for remote monitoring
+SYS-REQ-029,The system shall buffer alerts locally when cloud connection is unavailable and upload when connection is restored,Functional,Medium,Created,System,07_Cloud_Connectivity,Test,Alerts buffered during 5-minute disconnection successfully uploaded after reconnection,Not Tested,ARCH-007,SW-REQ-062,TC-SYS-062,Phase 3,Ensure no alert loss during network outages
+SYS-REQ-030,"The system shall provide real-time dashboard displaying current system status, alert count, and detection statistics",Functional,Medium,Created,System,08_Dashboard_Monitoring,Demonstration,Dashboard displays and updates within 5 seconds of system state change,Not Tested,ARCH-008,SW-REQ-070,TC-SYS-070,Phase 3,User visibility into system operation
+SYS-REQ-031,The system shall send email notifications for critical alerts (detected attacks) within 1 minute of detection,Functional,Low,Created,System,08_Dashboard_Monitoring,Test,Email received within 1 minute for 10 test alerts,Not Tested,ARCH-008,SW-REQ-071,TC-SYS-071,Phase 3,Remote notification capability
+SYS-REQ-032,"The STM32 firmware shall implement Classic AUTOSAR architecture with BSW, RTE, and ASW layers",Functional,Medium,Created,Software,09_AUTOSAR_Integration,Inspection,Code structure follows AUTOSAR layering verified by architecture review,Not Tested,ARCH-009,SW-REQ-080,TC-SYS-080,Phase 4,Demonstrate automotive software architecture expertise
+SYS-REQ-033,The Raspberry Pi shall implement Adaptive AUTOSAR service-oriented architecture with ara::com communication,Functional,Low,Created,Software,09_AUTOSAR_Integration,Test,Services communicate via ara::com demonstrated with test service calls,Not Tested,ARCH-009,SW-REQ-081,TC-SYS-081,Phase 4,Showcase next-generation automotive architecture
+SYS-REQ-034,The system shall support over-the-air firmware updates for both Raspberry Pi and STM32 with cryptographic signature verification,Security,Medium,Created,System,10_Secure_FOTA,Test,Successfully update firmware and reject unsigned/tampered updates,Not Tested,ARCH-010,"SW-REQ-090, SW-REQ-091",TC-SYS-090,Phase 4,Demonstrate secure update capability
+SYS-REQ-035,The system shall implement A/B partition scheme for Raspberry Pi allowing rollback to previous firmware on update failure,Functional,Medium,Created,System,10_Secure_FOTA,Test,System successfully rolls back after simulated update failure,Not Tested,ARCH-010,SW-REQ-092,TC-SYS-091,Phase 4,Prevent bricking from failed updates
+SYS-REQ-036,The Raspberry Pi shall update STM32 firmware via Ethernet using secure bootloader protocol,Functional,Medium,Created,System,10_Secure_FOTA,Test,STM32 firmware successfully updated from Pi with integrity verification,Not Tested,ARCH-010,SW-REQ-093,TC-SYS-092,Phase 4,Centralized update management from Pi
+SYS-REQ-037,The STM32 shall implement secure boot chain verifying bootloader and application signatures before execution,Security,High,Created,Hardware,11_Security_Hardening,Test,System refuses to boot with tampered/unsigned firmware,Not Tested,ARCH-011,SW-REQ-100,TC-SYS-100,Phase 4,Establish root of trust
+SYS-REQ-038,The system shall use hardware security module (TPM/ATECC608) for cryptographic key storage with keys never exposed in software,Security,High,Created,Hardware,11_Security_Hardening,Test,Private keys used for signing but not readable from software demonstrated by test,Not Tested,ARCH-011,SW-REQ-101,TC-SYS-101,Phase 4,Protect cryptographic material
+SYS-REQ-039,All Ethernet communication between Pi and STM32 shall be encrypted using TLS 1.3,Security,Medium,Created,System,11_Security_Hardening,Test,"Network traffic analysis shows encrypted payloads, decryption fails without proper keys",Not Tested,ARCH-011,SW-REQ-102,TC-SYS-102,Phase 4,Protect inter-device communication
+SYS-REQ-040,The system shall implement anti-tampering detection and wipe cryptographic keys if hardware tampering is detected,Security,Low,Created,Hardware,11_Security_Hardening,Test,"Keys erased after simulated tampering event (voltage glitch, debug probe)",Not Tested,ARCH-011,SW-REQ-103,TC-SYS-103,Phase 4,Protect against physical attacks
+`;
+
+// Parse CSV
+function parseCSV(csv) {
+  const lines = csv.trim().split('\n');
+  const headers = lines[0].split(',');
+  const data = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const obj = {};
+    let currentField = '';
+    let inQuotes = false;
+    let fieldIndex = 0;
+
+    for (let j = 0; j < lines[i].length; j++) {
+      const char = lines[i][j];
+
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        obj[headers[fieldIndex]] = currentField.trim();
+        currentField = '';
+        fieldIndex++;
+      } else {
+        currentField += char;
+      }
+    }
+    obj[headers[fieldIndex]] = currentField.trim();
+    data.push(obj);
+  }
+
+  return data;
+}
+
+allRequirements = parseCSV(requirementsData);
+
+// Get unique values for filters
+function getUniqueValues(field) {
+  return [...new Set(allRequirements.map(req => req[field]))].filter(Boolean).sort();
+}
+
+// Populate filter dropdowns
+function populateFilters() {
+  const typeFilter = document.getElementById('filter-type');
+  const priorityFilter = document.getElementById('filter-priority');
+  const statusFilter = document.getElementById('filter-status');
+  const phaseFilter = document.getElementById('filter-phase');
+  const featureFilter = document.getElementById('filter-feature');
+
+  getUniqueValues('Type').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    typeFilter.appendChild(option);
+  });
+
+  ['Critical', 'High', 'Medium', 'Low'].forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    priorityFilter.appendChild(option);
+  });
+
+  getUniqueValues('Status').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    statusFilter.appendChild(option);
+  });
+
+  getUniqueValues('Phase').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    phaseFilter.appendChild(option);
+  });
+
+  getUniqueValues('Feature').forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value.replace(/_/g, ' ');
+    featureFilter.appendChild(option);
+  });
+}
+
+// Get badge class based on value
+function getBadgeClass(type, value) {
+  const normalized = value.toLowerCase().replace(/[^a-z]/g, '');
+
+  if (type === 'priority') {
+    return `badge badge-${normalized}`;
+  } else if (type === 'type') {
+    return `badge badge-${normalized}`;
+  } else if (type === 'status') {
+    return `badge badge-${normalized}`;
+  }
+
+  return 'badge';
+}
+
+// Render requirements table
+function renderRequirements(requirements) {
+  const tbody = document.getElementById('requirements-tbody');
+  tbody.innerHTML = '';
+
+  requirements.forEach(req => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td class="req-id">${req.REQ_ID}</td>
+      <td class="description">${req.Description}</td>
+      <td><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
+      <td><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
+      <td><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
+      <td>${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
+      <td>${req.Phase}</td>
+      <td><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  document.getElementById('results-count').textContent = 
+    `Showing ${requirements.length} of ${allRequirements.length} requirements`;
+}
+
+// Show requirement details in modal
+function showDetails(reqId) {
+  const req = allRequirements.find(r => r.REQ_ID === reqId);
+  if (!req) return;
+
+  const modal = document.getElementById('detail-modal');
+  const modalBody = document.getElementById('modal-body');
+
+  modalBody.innerHTML = `
+    <h2>${req.REQ_ID}</h2>
+
+    <div class="detail-section">
+      <h3>Description</h3>
+      <p>${req.Description}</p>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-item">
+        <strong>Type</strong>
+        <span class="${getBadgeClass('type', req.Type)}">${req.Type}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Priority</strong>
+        <span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Status</strong>
+        <span class="${getBadgeClass('status', req.Status)}">${req.Status}</span>
+      </div>
+      <div class="detail-item">
+        <strong>Phase</strong>
+        ${req.Phase}
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Classification</h3>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <strong>Domain</strong>
+          ${req.Domain}
+        </div>
+        <div class="detail-item">
+          <strong>Feature</strong>
+          ${req.Feature.replace(/_/g, ' ')}
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Verification</h3>
+      <p><strong>Method:</strong> ${req.Verification_Method}</p>
+      <p><strong>Criteria:</strong> ${req.Verification_Criteria}</p>
+      <p><strong>Status:</strong> ${req.Verification_Status}</p>
+    </div>
+
+    <div class="detail-section">
+      <h3>Traceability</h3>
+      <div class="detail-grid">
+        <div class="detail-item">
+          <strong>Architecture</strong>
+          ${req.Traces_To_Arch}
+        </div>
+        <div class="detail-item">
+          <strong>Software</strong>
+          ${req.Traces_To_SW}
+        </div>
+        <div class="detail-item">
+          <strong>Test</strong>
+          ${req.Traces_To_Test}
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h3>Rationale</h3>
+      <p>${req.Rationale}</p>
+    </div>
+  `;
+
+  modal.style.display = 'block';
+}
+
+// Filter requirements
+function filterRequirements() {
+  const searchTerm = document.getElementById('search-box').value.toLowerCase();
+  const typeFilter = document.getElementById('filter-type').value;
+  const priorityFilter = document.getElementById('filter-priority').value;
+  const statusFilter = document.getElementById('filter-status').value;
+  const phaseFilter = document.getElementById('filter-phase').value;
+  const featureFilter = document.getElementById('filter-feature').value;
+
+  const filtered = allRequirements.filter(req => {
+    const matchesSearch = !searchTerm || 
+      req.REQ_ID.toLowerCase().includes(searchTerm) ||
+      req.Description.toLowerCase().includes(searchTerm) ||
+      req.Rationale.toLowerCase().includes(searchTerm);
+
+    const matchesType = !typeFilter || req.Type === typeFilter;
+    const matchesPriority = !priorityFilter || req.Priority === priorityFilter;
+    const matchesStatus = !statusFilter || req.Status === statusFilter;
+    const matchesPhase = !phaseFilter || req.Phase === phaseFilter;
+    const matchesFeature = !featureFilter || req.Feature === featureFilter;
+
+    return matchesSearch && matchesType && matchesPriority && 
+           matchesStatus && matchesPhase && matchesFeature;
+  });
+
+  renderRequirements(filtered);
+}
+
+// Clear all filters
+function clearFilters() {
+  document.getElementById('search-box').value = '';
+  document.getElementById('filter-type').value = '';
+  document.getElementById('filter-priority').value = '';
+  document.getElementById('filter-status').value = '';
+  document.getElementById('filter-phase').value = '';
+  document.getElementById('filter-feature').value = '';
+  filterRequirements();
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  populateFilters();
+  renderRequirements(allRequirements);
+
+  // Add event listeners
+  document.getElementById('search-box').addEventListener('input', filterRequirements);
+  document.getElementById('filter-type').addEventListener('change', filterRequirements);
+  document.getElementById('filter-priority').addEventListener('change', filterRequirements);
+  document.getElementById('filter-status').addEventListener('change', filterRequirements);
+  document.getElementById('filter-phase').addEventListener('change', filterRequirements);
+  document.getElementById('filter-feature').addEventListener('change', filterRequirements);
+  document.getElementById('clear-filters').addEventListener('click', clearFilters);
+
+  // Modal close handlers
+  document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('detail-modal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('detail-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+// Make showDetails available globally
+window.showDetails = showDetails;
+</script>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 01:21:20 CET">05-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

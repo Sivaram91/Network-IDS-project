@@ -1,0 +1,43 @@
+@startuml verification-status-flow
+
+title Requirement Verification Status Flow
+
+[*] --> NotTested : Requirement\naccepted
+
+NotTested --> TestcaseCreated : Test case\ndeveloped
+
+TestcaseCreated --> InProgress : Testing\nstarted
+
+InProgress --> Passed : All test cases\npassed
+InProgress --> Failed : One or more\ntest cases failed
+
+Failed --> TestcaseCreated : Test case\nupdated
+Failed --> InProgress : Retest after\nbug fix
+
+Passed --> [*]
+
+note right of NotTested
+Initial state for all
+accepted requirements.
+No test case exists yet.
+end note
+
+note right of TestcaseCreated
+Test case TC-SYS-XXX or
+TC-SW-XXX has been created
+and reviewed.
+end note
+
+note right of Passed
+Requirement is fully
+verified and meets all
+acceptance criteria.
+end note
+
+note right of Failed
+Requirement verification
+failed. Root cause analysis
+and corrective action needed.
+end note
+
+@enduml
