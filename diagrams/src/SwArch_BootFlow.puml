@@ -1,0 +1,76 @@
+@startuml
+start
+:Power-On Reset;
+
+:Hardware Init;
+note right
+  - Clock configuration
+  - Watchdog setup
+  - Vector table relocation
+end note
+
+:BSP Initialization;
+note right
+  - GPIO configuration
+  - Peripheral clocks enable
+  - Memory controller setup
+end note
+
+if (Bootloader present?) then (yes)
+  :Bootloader Execution;
+  if (Valid application?) then (yes)
+    :Jump to Application;
+  else (no)
+    :Enter DFU Mode;
+    stop
+  endif
+else (no)
+  :Continue to Application;
+endif
+
+:Copy .data to RAM;
+:Zero .bss section;
+
+:C Runtime Initialization;
+note right
+  - Initialize static constructors
+  - Setup C library
+end note
+
+:System Initialization;
+note right
+  - Load configuration
+  - Initialize peripherals
+  - Start watchdog
+end note
+
+:Driver Initialization;
+note right
+  - CAN driver
+  - ADC driver
+  - Timer drivers
+end note
+
+:Middleware Initialization;
+note right
+  - RTOS kernel init
+  - Communication stack
+  - Diagnostics
+end note
+
+:Application Initialization;
+note right
+  - State machine init
+  - Control logic init
+  - Create tasks
+end note
+
+:Start RTOS Scheduler;
+
+:Normal Operation;
+note right
+  Tasks are now running
+end note
+
+stop
+@enduml

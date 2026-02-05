@@ -1,0 +1,24 @@
+@startuml
+node "Main ECU" {
+    artifact "Application SW" as app
+    artifact "RTOS" as rtos
+    artifact "Device Drivers" as drivers
+    artifact "BSP" as bsp
+}
+
+node "Sensor Module" {
+    artifact "Sensor FW" as sensor_fw
+}
+
+database "Flash Memory" {
+    folder "Bootloader"
+    folder "Application"
+    folder "Configuration"
+}
+
+app -- rtos
+rtos -- drivers
+drivers -- bsp
+
+app ..> sensor_fw : CAN Communication
+@enduml

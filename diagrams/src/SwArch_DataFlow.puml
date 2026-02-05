@@ -1,0 +1,16 @@
+@startuml
+database "Sensor Data" as sensor_data
+database "CAN Buffer" as can_buf
+database "Config Data" as config
+database "Diagnostic Log" as diag_log
+
+actor "External System" as ext
+
+ext -> can_buf : CAN Messages
+sensor_data -> [Control Algorithm]
+config -> [Control Algorithm]
+[Control Algorithm] -> can_buf : Status/Commands
+[Control Algorithm] -> [Actuator Control]
+[Control Algorithm] -> diag_log : Events
+can_buf -> ext : Responses
+@enduml

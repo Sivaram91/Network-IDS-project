@@ -1,0 +1,1596 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/RaspPi_Comp_Design/">
+      
+      
+        <link rel="prev" href="../Architecture/SwArchitecture/">
+      
+      
+        <link rel="next" href="../STM_Comp_Design/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Raspberry Pi - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Raspberry Pi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/SystemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/SwArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#component-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Name
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Name">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-diagram-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Diagram (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-diagram-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Diagram (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Diagram (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Diagram (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-name-of-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: [Name of Alternative]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-name-of-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: [Name of Alternative]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#component-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Name
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Name">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Functional Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-diagram-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Diagram (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-diagram-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Diagram (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Diagram (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequence Diagram (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-mermaid-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine (Mermaid example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-plantuml-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine (PlantUML example)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-name-of-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: [Name of Alternative]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-name-of-alternative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: [Name of Alternative]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<p>This document consolidates the requirements and design of all components running in Raspberry Pi</p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span></em></p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#component-name">Component Name</a><ul>
+<li><a href="#component-overview">Component Overview</a></li>
+<li><a href="#component-requirements">Component Requirements</a><ul>
+<li><a href="#functional-requirements">Functional Requirements</a></li>
+<li><a href="#non-functional-requirements">Non-Functional Requirements</a></li>
+</ul>
+</li>
+<li><a href="#design">Design</a></li>
+<li><a href="#static-view">Static View</a><ul>
+<li><a href="#module-structure">Module Structure</a></li>
+<li><a href="#component-diagram-mermaid-example">Component Diagram (Mermaid example)</a></li>
+<li><a href="#component-diagram-plantuml-example">Component Diagram (PlantUML example)</a></li>
+<li><a href="#key-interfaces">Key Interfaces</a></li>
+</ul>
+</li>
+<li><a href="#runtime-view">Runtime View</a><ul>
+<li><a href="#sequence-diagram-mermaid-example">Sequence Diagram (Mermaid example)</a></li>
+<li><a href="#sequence-diagram-plantuml-example">Sequence Diagram (PlantUML example)</a></li>
+<li><a href="#state-machine-mermaid-example">State Machine (Mermaid example)</a></li>
+<li><a href="#state-machine-plantuml-example">State Machine (PlantUML example)</a></li>
+<li><a href="#timing-constraints">Timing Constraints</a></li>
+</ul>
+</li>
+<li><a href="#alternative-design-decisions">Alternative Design Decisions</a><ul>
+<li><a href="#alternative-1-name-of-alternative">Alternative 1: [Name of Alternative]</a></li>
+<li><a href="#alternative-2-name-of-alternative">Alternative 2: [Name of Alternative]</a></li>
+</ul>
+</li>
+<li><a href="#notes-and-references">Notes and References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="component-name">Component Name<a class="headerlink" href="#component-name" title="Permanent link">&para;</a></h2>
+<h3 id="component-overview">Component Overview<a class="headerlink" href="#component-overview" title="Permanent link">&para;</a></h3>
+<p>Brief description of the component's purpose and responsibility in the system.</p>
+<p><strong>Purpose:</strong> What problem does this component solve?</p>
+<p><strong>Scope:</strong> What is included and what is out of scope?</p>
+<p><strong>Key Responsibilities:</strong>
+- Responsibility 1
+- Responsibility 2
+- Responsibility 3</p>
+<hr />
+<h3 id="component-requirements">Component Requirements<a class="headerlink" href="#component-requirements" title="Permanent link">&para;</a></h3>
+<p>List the functional and non-functional requirements this component must satisfy.</p>
+<h4 id="functional-requirements">Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>FR1: Requirement description</li>
+<li>FR2: Requirement description</li>
+<li>FR3: Requirement description</li>
+</ul>
+<h4 id="non-functional-requirements">Non-Functional Requirements<a class="headerlink" href="#non-functional-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>NFR1: Performance requirement (e.g., response time, throughput)</li>
+<li>NFR2: Resource constraints (e.g., memory, CPU usage)</li>
+<li>NFR3: Reliability/Safety requirements</li>
+<li>NFR4: Other constraints (e.g., real-time requirements, power consumption)</li>
+</ul>
+<hr />
+<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h3>
+<p>High-level design approach and how this component fits into the overall system architecture.</p>
+<p><strong>Design Approach:</strong> Brief explanation of the chosen design strategy</p>
+<p><strong>System Context:</strong> How does this component interact with other components?</p>
+<pre class="mermaid"><code>graph LR
+    A[External System/Component] --&gt; B[This Component]
+    B --&gt; C[Another Component]
+    B --&gt; D[Hardware/Peripheral]</code></pre>
+<p><strong>Key Design Decisions:</strong>
+- Decision 1 and rationale
+- Decision 2 and rationale</p>
+<hr />
+<h3 id="static-view">Static View<a class="headerlink" href="#static-view" title="Permanent link">&para;</a></h3>
+<p>Structure of the component - modules, files, classes, functions, and their relationships.</p>
+<h4 id="module-structure">Module Structure<a class="headerlink" href="#module-structure" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>component_name/
+├── src/
+│   ├── main.c
+│   ├── module1.c
+│   └── module2.c
+├── inc/
+│   ├── module1.h
+│   └── module2.h
+└── config/
+    └── config.h
+</code></pre></div>
+<h4 id="component-diagram-mermaid-example">Component Diagram (Mermaid example)<a class="headerlink" href="#component-diagram-mermaid-example" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>classDiagram
+    class ComponentMain {
+        +initialize()
+        +process()
+        +shutdown()
+    }
+    class Module1 {
+        -privateData
+        +publicFunction()
+    }
+    class Module2 {
+        +helperFunction()
+    }
+    ComponentMain --&gt; Module1
+    ComponentMain --&gt; Module2</code></pre>
+<h4 id="component-diagram-plantuml-example">Component Diagram (PlantUML example)<a class="headerlink" href="#component-diagram-plantuml-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>@startuml
+package &quot;Component Name&quot; {
+    [Main Controller]
+    [Data Handler]
+    [Communication Interface]
+}
+
+[Main Controller] --&gt; [Data Handler]
+[Main Controller] --&gt; [Communication Interface]
+[Communication Interface] ..&gt; [Hardware Driver] : uses
+
+@enduml
+</code></pre></div>
+<h4 id="key-interfaces">Key Interfaces<a class="headerlink" href="#key-interfaces" title="Permanent link">&para;</a></h4>
+<p><strong>Public API:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1">// Function signatures and brief descriptions</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">component_init</span><span class="p">(</span><span class="n">config_t</span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
+<span class="n">status_t</span><span class="w"> </span><span class="nf">component_process</span><span class="p">(</span><span class="n">data_t</span><span class="o">*</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">data_t</span><span class="o">*</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">component_shutdown</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div></p>
+<hr />
+<h3 id="runtime-view">Runtime View<a class="headerlink" href="#runtime-view" title="Permanent link">&para;</a></h3>
+<p>Behavior and interactions during execution - sequences, timing, state transitions.</p>
+<h4 id="sequence-diagram-mermaid-example">Sequence Diagram (Mermaid example)<a class="headerlink" href="#sequence-diagram-mermaid-example" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant App
+    participant Component
+    participant Hardware
+
+    App-&gt;&gt;Component: initialize()
+    Component-&gt;&gt;Hardware: setup()
+    Hardware--&gt;&gt;Component: success
+    Component--&gt;&gt;App: ready
+
+    App-&gt;&gt;Component: process(data)
+    Component-&gt;&gt;Hardware: read()
+    Hardware--&gt;&gt;Component: raw_data
+    Component-&gt;&gt;Component: process_data()
+    Component--&gt;&gt;App: result</code></pre>
+<h4 id="sequence-diagram-plantuml-example">Sequence Diagram (PlantUML example)<a class="headerlink" href="#sequence-diagram-plantuml-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>@startuml
+actor User
+participant &quot;Main Controller&quot; as Main
+participant &quot;Data Processor&quot; as Processor
+database &quot;Data Store&quot; as Store
+
+User -&gt; Main: trigger_event()
+activate Main
+Main -&gt; Processor: process_request()
+activate Processor
+Processor -&gt; Store: read_data()
+Store --&gt; Processor: data
+Processor --&gt; Main: result
+deactivate Processor
+Main --&gt; User: response
+deactivate Main
+@enduml
+</code></pre></div>
+<h4 id="state-machine-mermaid-example">State Machine (Mermaid example)<a class="headerlink" href="#state-machine-mermaid-example" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Idle
+    Idle --&gt; Active: start()
+    Active --&gt; Processing: data_received
+    Processing --&gt; Active: processing_complete
+    Active --&gt; Error: error_detected
+    Error --&gt; Idle: reset()
+    Active --&gt; Idle: stop()
+    Idle --&gt; [*]</code></pre>
+<h4 id="state-machine-plantuml-example">State Machine (PlantUML example)<a class="headerlink" href="#state-machine-plantuml-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>@startuml
+[*] --&gt; Uninitialized
+Uninitialized --&gt; Idle : initialize()
+Idle --&gt; Running : start()
+Running --&gt; Suspended : suspend()
+Suspended --&gt; Running : resume()
+Running --&gt; Idle : stop()
+Idle --&gt; [*] : shutdown()
+
+Running : Entry / start_processing()
+Running : Do / monitor_status()
+Running : Exit / cleanup()
+@enduml
+</code></pre></div>
+<h4 id="timing-constraints">Timing Constraints<a class="headerlink" href="#timing-constraints" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Constraint 1: Description (e.g., must respond within 10ms)</li>
+<li>Constraint 2: Description (e.g., periodic execution every 100ms)</li>
+</ul>
+<hr />
+<h3 id="alternative-design-decisions">Alternative Design Decisions<a class="headerlink" href="#alternative-design-decisions" title="Permanent link">&para;</a></h3>
+<p>Document the design alternatives considered and explain why they were not chosen.</p>
+<h4 id="alternative-1-name-of-alternative">Alternative 1: [Name of Alternative]<a class="headerlink" href="#alternative-1-name-of-alternative" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> Brief description of the alternative approach</p>
+<p><strong>Pros:</strong>
+- Advantage 1
+- Advantage 2</p>
+<p><strong>Cons:</strong>
+- Disadvantage 1
+- Disadvantage 2</p>
+<p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
+<hr />
+<h4 id="alternative-2-name-of-alternative">Alternative 2: [Name of Alternative]<a class="headerlink" href="#alternative-2-name-of-alternative" title="Permanent link">&para;</a></h4>
+<p><strong>Description:</strong> Brief description of the alternative approach</p>
+<p><strong>Pros:</strong>
+- Advantage 1
+- Advantage 2</p>
+<p><strong>Cons:</strong>
+- Disadvantage 1
+- Disadvantage 2</p>
+<p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
+<hr />
+<h3 id="notes-and-references">Notes and References<a class="headerlink" href="#notes-and-references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Note 1: Additional information or constraints</li>
+<li>Note 2: Links to related documentation</li>
+<li>Reference 1: Standards, specifications, or external documentation</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

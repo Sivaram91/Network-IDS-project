@@ -1,0 +1,40 @@
+@startuml
+package "Application Layer" {
+    [Vehicle Control]
+    [User Interface]
+    [Data Processing]
+}
+
+package "Service/Middleware Layer" {
+    [RTOS Kernel]
+    [Memory Manager]
+    [Communication Manager]
+    [Diagnostic Services]
+}
+
+package "ECU Abstraction Layer" {
+    [CAN Interface]
+    [ADC Interface]
+    [PWM Interface]
+    [Timer Interface]
+}
+
+package "Microcontroller Abstraction Layer (MCAL)" {
+    [CAN Driver]
+    [ADC Driver]
+    [GPIO Driver]
+    [SPI Driver]
+}
+
+package "Complex Device Drivers" {
+    [Sensor Driver]
+    [Actuator Driver]
+}
+
+[Vehicle Control] --> [Communication Manager]
+[Vehicle Control] --> [Memory Manager]
+[Communication Manager] --> [CAN Interface]
+[CAN Interface] --> [CAN Driver]
+[Sensor Driver] --> [SPI Driver]
+[Data Processing] --> [ADC Interface]
+@enduml

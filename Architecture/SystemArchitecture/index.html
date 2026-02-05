@@ -1,0 +1,2534 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/Architecture/SystemArchitecture/">
+      
+      
+        <link rel="prev" href="../../Requirements/SystemRequirements/">
+      
+      
+        <link rel="next" href="../SwArchitecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>System Architecture - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsystem Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-1-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 1: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-2-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 2: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-3-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 3: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Block Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-buses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Buses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Buses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN Bus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-buses-i2c-spi-uart-lin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Buses (I2C, SPI, UART, LIN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-1-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface 1: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-2-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface 2: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-to-hardware-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software-to-Hardware Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-1-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 1: [Title]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-2-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 2: [Title]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-name-of-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: [Name of Alternative Approach]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-name-of-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: [Name of Alternative Approach]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety &amp; Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety &amp; Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hazard-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hazard Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-safety-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Safety Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#threat-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threat Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Measures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-standards-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Standards Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-photodiagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Photo/Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Photo/Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes and References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standards-and-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards and Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RaspPi_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsystem Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-1-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 1: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-2-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 2: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsystem-3-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subsystem 3: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Block Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-buses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Buses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Buses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CAN Bus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-buses-i2c-spi-uart-lin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Buses (I2C, SPI, UART, LIN)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-1-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface 1: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-2-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface 2: [Name]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-to-hardware-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software-to-Hardware Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-1-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 1: [Title]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-2-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 2: [Title]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-name-of-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: [Name of Alternative Approach]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-name-of-alternative-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: [Name of Alternative Approach]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety &amp; Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety &amp; Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safety-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hazard-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hazard Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safety-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-safety-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Safety Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#threat-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threat Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Measures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-standards-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Standards Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-photodiagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Photo/Diagram
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Photo/Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes and References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standards-and-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standards and Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">&para;</a></h1>
+<p>This document consolidates the system architecture of Network Intrusion detection project </p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span></em></p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#system-architecture">System Architecture</a><ul>
+<li><a href="#system-decomposition">System Decomposition</a><ul>
+<li><a href="#subsystem-overview">Subsystem Overview</a></li>
+<li><a href="#subsystem-descriptions">Subsystem Descriptions</a><ul>
+<li><a href="#subsystem-1-name">Subsystem 1: [Name]</a></li>
+<li><a href="#subsystem-2-name">Subsystem 2: [Name]</a></li>
+<li><a href="#subsystem-3-name">Subsystem 3: [Name]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#hardware-architecture">Hardware Architecture</a><ul>
+<li><a href="#hardware-block-diagram">Hardware Block Diagram</a></li>
+<li><a href="#hardware-components">Hardware Components</a></li>
+<li><a href="#communication-buses">Communication Buses</a><ul>
+<li><a href="#can-bus">CAN Bus</a></li>
+<li><a href="#other-buses-i2c-spi-uart-lin">Other Buses (I2C, SPI, UART, LIN)</a></li>
+</ul>
+</li>
+<li><a href="#power-architecture">Power Architecture</a></li>
+</ul>
+</li>
+<li><a href="#system-interfaces">System Interfaces</a><ul>
+<li><a href="#external-interfaces">External Interfaces</a></li>
+<li><a href="#internal-interfaces">Internal Interfaces</a></li>
+<li><a href="#interface-specifications">Interface Specifications</a><ul>
+<li><a href="#interface-1-name">Interface 1: [Name]</a></li>
+<li><a href="#interface-2-name">Interface 2: [Name]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#deployment-view">Deployment View</a><ul>
+<li><a href="#deployment-diagram">Deployment Diagram</a></li>
+<li><a href="#software-to-hardware-mapping">Software-to-Hardware Mapping</a></li>
+<li><a href="#resource-allocation">Resource Allocation</a></li>
+</ul>
+</li>
+<li><a href="#key-design-decisions">Key Design Decisions</a><ul>
+<li><a href="#decision-1-title">Decision 1: [Title]</a></li>
+<li><a href="#decision-2-title">Decision 2: [Title]</a></li>
+</ul>
+</li>
+<li><a href="#alternative-design-decisions">Alternative Design Decisions</a><ul>
+<li><a href="#alternative-1-name-of-alternative-approach">Alternative 1: [Name of Alternative Approach]</a></li>
+<li><a href="#alternative-2-name-of-alternative-approach">Alternative 2: [Name of Alternative Approach]</a></li>
+</ul>
+</li>
+<li><a href="#safety-security-considerations">Safety &amp; Security Considerations</a><ul>
+<li><a href="#safety-considerations">Safety Considerations</a><ul>
+<li><a href="#hazard-analysis">Hazard Analysis</a></li>
+<li><a href="#safety-mechanisms">Safety Mechanisms</a></li>
+<li><a href="#functional-safety-requirements">Functional Safety Requirements</a></li>
+</ul>
+</li>
+<li><a href="#security-considerations">Security Considerations</a><ul>
+<li><a href="#threat-analysis">Threat Analysis</a></li>
+<li><a href="#security-measures">Security Measures</a></li>
+<li><a href="#security-standards-compliance">Security Standards Compliance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#system-photodiagram">System Photo/Diagram</a><ul>
+<li><a href="#physical-system">Physical System</a></li>
+<li><a href="#system-integration">System Integration</a></li>
+</ul>
+</li>
+<li><a href="#notes-and-references">Notes and References</a><ul>
+<li><a href="#standards-and-specifications">Standards and Specifications</a></li>
+<li><a href="#related-documentation">Related Documentation</a></li>
+<li><a href="#revision-history">Revision History</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="system-decomposition">System Decomposition<a class="headerlink" href="#system-decomposition" title="Permanent link">&para;</a></h2>
+<p>High-level decomposition of the system into major subsystems and their responsibilities.</p>
+<h3 id="subsystem-overview">Subsystem Overview<a class="headerlink" href="#subsystem-overview" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TB
+    subgraph "System Name"
+        A[Subsystem 1]
+        B[Subsystem 2]
+        C[Subsystem 3]
+        D[Subsystem 4]
+    end
+
+    A --&gt; B
+    B --&gt; C
+    A --&gt; D
+    C --&gt; D</code></pre>
+<h3 id="subsystem-descriptions">Subsystem Descriptions<a class="headerlink" href="#subsystem-descriptions" title="Permanent link">&para;</a></h3>
+<h4 id="subsystem-1-name">Subsystem 1: [Name]<a class="headerlink" href="#subsystem-1-name" title="Permanent link">&para;</a></h4>
+<p><strong>Responsibility:</strong> Brief description of what this subsystem does</p>
+<p><strong>Key Functions:</strong>
+- Function 1
+- Function 2
+- Function 3</p>
+<p><strong>Interfaces:</strong> What it connects to</p>
+<hr />
+<h4 id="subsystem-2-name">Subsystem 2: [Name]<a class="headerlink" href="#subsystem-2-name" title="Permanent link">&para;</a></h4>
+<p><strong>Responsibility:</strong> Brief description of what this subsystem does</p>
+<p><strong>Key Functions:</strong>
+- Function 1
+- Function 2</p>
+<p><strong>Interfaces:</strong> What it connects to</p>
+<hr />
+<h4 id="subsystem-3-name">Subsystem 3: [Name]<a class="headerlink" href="#subsystem-3-name" title="Permanent link">&para;</a></h4>
+<p><strong>Responsibility:</strong> Brief description of what this subsystem does</p>
+<p><strong>Key Functions:</strong>
+- Function 1
+- Function 2</p>
+<p><strong>Interfaces:</strong> What it connects to</p>
+<hr />
+<h2 id="hardware-architecture">Hardware Architecture<a class="headerlink" href="#hardware-architecture" title="Permanent link">&para;</a></h2>
+<p>Physical hardware components, ECUs, sensors, actuators, and communication infrastructure.</p>
+<h3 id="hardware-block-diagram">Hardware Block Diagram<a class="headerlink" href="#hardware-block-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="Hardware Block Diagram" src="diagrams/out/SysArch_BlockDiagram.svg" /></p>
+<h3 id="hardware-components">Hardware Components<a class="headerlink" href="#hardware-components" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Type</th>
+<th>Specification</th>
+<th>Interface</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main MCU</td>
+<td>STM32F4xx / ESP32 / etc.</td>
+<td>Clock, Flash, RAM</td>
+<td>-</td>
+<td>Main controller</td>
+</tr>
+<tr>
+<td>Sensor 1</td>
+<td>Temperature/Pressure/etc.</td>
+<td>Range, Accuracy</td>
+<td>I2C/SPI/Analog</td>
+<td>Sensing function</td>
+</tr>
+<tr>
+<td>Actuator 1</td>
+<td>Motor/Relay/LED/etc.</td>
+<td>Voltage, Current</td>
+<td>PWM/GPIO</td>
+<td>Control function</td>
+</tr>
+<tr>
+<td>CAN Transceiver</td>
+<td>TJA1050 / MCP2551</td>
+<td>Speed</td>
+<td>CAN Bus</td>
+<td>Communication</td>
+</tr>
+<tr>
+<td>Power Supply</td>
+<td>LDO/Buck/etc.</td>
+<td>Input/Output voltage</td>
+<td>-</td>
+<td>Power management</td>
+</tr>
+</tbody>
+</table>
+<h3 id="communication-buses">Communication Buses<a class="headerlink" href="#communication-buses" title="Permanent link">&para;</a></h3>
+<h4 id="can-bus">CAN Bus<a class="headerlink" href="#can-bus" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Type:</strong> CAN 2.0B / CAN-FD</li>
+<li><strong>Baud Rate:</strong> 500 kbps / 1 Mbps</li>
+<li><strong>Topology:</strong> Linear bus with termination</li>
+<li><strong>Nodes:</strong> ECU1, ECU2, Sensor Module, etc.</li>
+</ul>
+<h4 id="other-buses-i2c-spi-uart-lin">Other Buses (I2C, SPI, UART, LIN)<a class="headerlink" href="#other-buses-i2c-spi-uart-lin" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>I2C:</strong> Clock speed, slave addresses</li>
+<li><strong>SPI:</strong> Clock speed, CS pins</li>
+<li><strong>UART:</strong> Baud rate, usage</li>
+<li><strong>LIN:</strong> Baud rate, master/slave</li>
+</ul>
+<h3 id="power-architecture">Power Architecture<a class="headerlink" href="#power-architecture" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    A[Battery 12V] --&gt; B[Protection Circuit]
+    B --&gt; C[Buck Converter 5V]
+    C --&gt; D[LDO 3.3V]
+    D --&gt; E[MCU]
+    C --&gt; F[Sensors]
+    C --&gt; G[Actuators]</code></pre>
+<p><strong>Power Budget:</strong>
+- Total power consumption: XX mA @ 12V
+- MCU: XX mA
+- Sensors: XX mA
+- Actuators: XX mA
+- Sleep mode: XX µA</p>
+<hr />
+<h2 id="system-interfaces">System Interfaces<a class="headerlink" href="#system-interfaces" title="Permanent link">&para;</a></h2>
+<p>External and internal interfaces between subsystems.</p>
+<h3 id="external-interfaces">External Interfaces<a class="headerlink" href="#external-interfaces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Type</th>
+<th>Protocol</th>
+<th>Data Rate</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAN Bus</td>
+<td>Communication</td>
+<td>CAN 2.0B</td>
+<td>500 kbps</td>
+<td>Vehicle network</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>Debug/Programming</td>
+<td>USB 2.0</td>
+<td>480 Mbps</td>
+<td>Diagnostics</td>
+</tr>
+<tr>
+<td>Analog Input</td>
+<td>Sensor</td>
+<td>0-5V</td>
+<td>-</td>
+<td>Sensor reading</td>
+</tr>
+<tr>
+<td>Digital I/O</td>
+<td>Control</td>
+<td>GPIO</td>
+<td>-</td>
+<td>Actuator control</td>
+</tr>
+</tbody>
+</table>
+<h3 id="internal-interfaces">Internal Interfaces<a class="headerlink" href="#internal-interfaces" title="Permanent link">&para;</a></h3>
+<p><img alt="Internal Interfaces" src="diagrams/out/SysArch_Interfaces.svg" /></p>
+<h3 id="interface-specifications">Interface Specifications<a class="headerlink" href="#interface-specifications" title="Permanent link">&para;</a></h3>
+<h4 id="interface-1-name">Interface 1: [Name]<a class="headerlink" href="#interface-1-name" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Type:</strong> CAN / SPI / I2C / GPIO / etc.</li>
+<li><strong>Direction:</strong> Subsystem A → Subsystem B</li>
+<li><strong>Protocol:</strong> Detailed protocol description</li>
+<li><strong>Data Format:</strong> Message structure, payload</li>
+<li><strong>Timing:</strong> Periodic (rate) / Event-driven / On-demand</li>
+<li><strong>Error Handling:</strong> CRC, timeout, retry mechanism</li>
+</ul>
+<h4 id="interface-2-name">Interface 2: [Name]<a class="headerlink" href="#interface-2-name" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Type:</strong> CAN / SPI / I2C / GPIO / etc.</li>
+<li><strong>Direction:</strong> Subsystem B → Subsystem C</li>
+<li><strong>Protocol:</strong> Detailed protocol description</li>
+<li><strong>Data Format:</strong> Message structure, payload</li>
+<li><strong>Timing:</strong> Periodic (rate) / Event-driven / On-demand</li>
+<li><strong>Error Handling:</strong> CRC, timeout, retry mechanism</li>
+</ul>
+<hr />
+<h2 id="deployment-view">Deployment View<a class="headerlink" href="#deployment-view" title="Permanent link">&para;</a></h2>
+<p>Mapping of software components to hardware nodes.</p>
+<h3 id="deployment-diagram">Deployment Diagram<a class="headerlink" href="#deployment-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="Deployment Diagram" src="diagrams/out/SysArch_DeploymentDiagram.svg" /></p>
+<h3 id="software-to-hardware-mapping">Software-to-Hardware Mapping<a class="headerlink" href="#software-to-hardware-mapping" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Software Component</th>
+<th>Hardware Node</th>
+<th>Memory Location</th>
+<th>Resources Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application Layer</td>
+<td>Main MCU</td>
+<td>Flash: 0x08000000</td>
+<td>CPU, Timer1, CAN</td>
+</tr>
+<tr>
+<td>RTOS Kernel</td>
+<td>Main MCU</td>
+<td>Flash: 0x08010000</td>
+<td>SysTick, Interrupts</td>
+</tr>
+<tr>
+<td>Device Drivers</td>
+<td>Main MCU</td>
+<td>Flash: 0x08020000</td>
+<td>Peripherals</td>
+</tr>
+<tr>
+<td>Sensor Firmware</td>
+<td>Sensor MCU</td>
+<td>Flash: 0x08000000</td>
+<td>ADC, I2C</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resource-allocation">Resource Allocation<a class="headerlink" href="#resource-allocation" title="Permanent link">&para;</a></h3>
+<p><strong>Main MCU Resources:</strong>
+- <strong>Timers:</strong> TIM1 (PWM), TIM2 (Encoder), TIM3 (System tick)
+- <strong>Communication:</strong> CAN1, UART1 (debug), SPI1, I2C1
+- <strong>ADC:</strong> ADC1 channels 0-3 (analog sensors)
+- <strong>GPIO:</strong> PA0-PA7 (digital I/O), PB0-PB3 (actuators)
+- <strong>Interrupts:</strong> Priority levels and assignments
+- <strong>DMA:</strong> Channel assignments for high-speed transfers</p>
+<hr />
+<h2 id="key-design-decisions">Key Design Decisions<a class="headerlink" href="#key-design-decisions" title="Permanent link">&para;</a></h2>
+<p>Major architectural choices and their rationale.</p>
+<h3 id="decision-1-title">Decision 1: [Title]<a class="headerlink" href="#decision-1-title" title="Permanent link">&para;</a></h3>
+<p><strong>Context:</strong> What problem or question did this decision address?</p>
+<p><strong>Decision:</strong> What was chosen?</p>
+<p><strong>Rationale:</strong>
+- Reason 1
+- Reason 2
+- Reason 3</p>
+<p><strong>Consequences:</strong>
+- Positive consequence 1
+- Trade-off or limitation 1</p>
+<p><strong>Alternatives Considered:</strong> Brief mention (detailed in next section)</p>
+<hr />
+<h3 id="decision-2-title">Decision 2: [Title]<a class="headerlink" href="#decision-2-title" title="Permanent link">&para;</a></h3>
+<p><strong>Context:</strong> What problem or question did this decision address?</p>
+<p><strong>Decision:</strong> What was chosen?</p>
+<p><strong>Rationale:</strong>
+- Reason 1
+- Reason 2</p>
+<p><strong>Consequences:</strong>
+- Positive consequence 1
+- Trade-off or limitation 1</p>
+<p><strong>Alternatives Considered:</strong> Brief mention (detailed in next section)</p>
+<hr />
+<h2 id="alternative-design-decisions">Alternative Design Decisions<a class="headerlink" href="#alternative-design-decisions" title="Permanent link">&para;</a></h2>
+<p>Design alternatives evaluated and reasons for rejection.</p>
+<h3 id="alternative-1-name-of-alternative-approach">Alternative 1: [Name of Alternative Approach]<a class="headerlink" href="#alternative-1-name-of-alternative-approach" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> What was this alternative?</p>
+<p><strong>Pros:</strong>
+- Advantage 1
+- Advantage 2
+- Advantage 3</p>
+<p><strong>Cons:</strong>
+- Disadvantage 1
+- Disadvantage 2
+- Disadvantage 3</p>
+<p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
+<p><strong>When to Reconsider:</strong> Conditions under which this might become viable</p>
+<hr />
+<h3 id="alternative-2-name-of-alternative-approach">Alternative 2: [Name of Alternative Approach]<a class="headerlink" href="#alternative-2-name-of-alternative-approach" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> What was this alternative?</p>
+<p><strong>Pros:</strong>
+- Advantage 1
+- Advantage 2</p>
+<p><strong>Cons:</strong>
+- Disadvantage 1
+- Disadvantage 2</p>
+<p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
+<p><strong>When to Reconsider:</strong> Conditions under which this might become viable</p>
+<hr />
+<h2 id="safety-security-considerations">Safety &amp; Security Considerations<a class="headerlink" href="#safety-security-considerations" title="Permanent link">&para;</a></h2>
+<p>Safety and security analysis for automotive embedded systems.</p>
+<h3 id="safety-considerations">Safety Considerations<a class="headerlink" href="#safety-considerations" title="Permanent link">&para;</a></h3>
+<h4 id="hazard-analysis">Hazard Analysis<a class="headerlink" href="#hazard-analysis" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Hazard ID</th>
+<th>Hazard Description</th>
+<th>Severity</th>
+<th>ASIL</th>
+<th>Mitigation Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H-001</td>
+<td>Loss of communication</td>
+<td>High</td>
+<td>ASIL-B</td>
+<td>Watchdog, redundancy</td>
+</tr>
+<tr>
+<td>H-002</td>
+<td>Sensor failure</td>
+<td>Medium</td>
+<td>ASIL-A</td>
+<td>Plausibility checks</td>
+</tr>
+<tr>
+<td>H-003</td>
+<td>Unintended actuation</td>
+<td>Critical</td>
+<td>ASIL-D</td>
+<td>Safety validation</td>
+</tr>
+</tbody>
+</table>
+<h4 id="safety-mechanisms">Safety Mechanisms<a class="headerlink" href="#safety-mechanisms" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Watchdog Timer:</strong> Independent hardware watchdog to detect SW failures</li>
+<li><strong>Redundancy:</strong> Dual-channel sensing for critical functions</li>
+<li><strong>Plausibility Checks:</strong> Cross-validation of sensor data</li>
+<li><strong>Safe State:</strong> Defined safe state on error detection</li>
+<li><strong>Diagnostic Coverage:</strong> Built-in self-test (BIST) routines</li>
+<li><strong>Memory Protection:</strong> MPU/MMU to prevent memory corruption</li>
+</ul>
+<h4 id="functional-safety-requirements">Functional Safety Requirements<a class="headerlink" href="#functional-safety-requirements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>FMEA (Failure Mode and Effects Analysis):</strong> Link to detailed FMEA</li>
+<li><strong>FTA (Fault Tree Analysis):</strong> Link to detailed FTA</li>
+<li><strong>Safety Goals:</strong> High-level safety objectives</li>
+<li><strong>Safety Integrity Level:</strong> ASIL classification per ISO 26262</li>
+</ul>
+<h3 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h3>
+<h4 id="threat-analysis">Threat Analysis<a class="headerlink" href="#threat-analysis" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Threat ID</th>
+<th>Threat Description</th>
+<th>Likelihood</th>
+<th>Impact</th>
+<th>Countermeasure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T-001</td>
+<td>CAN bus injection</td>
+<td>Medium</td>
+<td>High</td>
+<td>Message authentication</td>
+</tr>
+<tr>
+<td>T-002</td>
+<td>Firmware tampering</td>
+<td>Low</td>
+<td>Critical</td>
+<td>Secure boot, signatures</td>
+</tr>
+<tr>
+<td>T-003</td>
+<td>Debug port access</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Debug lockdown</td>
+</tr>
+</tbody>
+</table>
+<h4 id="security-measures">Security Measures<a class="headerlink" href="#security-measures" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Secure Boot:</strong> Verified boot sequence with cryptographic signatures</li>
+<li><strong>Code Signing:</strong> Firmware authentication before execution</li>
+<li><strong>Encrypted Communication:</strong> Secure communication channels (if applicable)</li>
+<li><strong>Access Control:</strong> Debug port protection, privilege levels</li>
+<li><strong>Tamper Detection:</strong> Physical or logical tamper detection</li>
+<li><strong>Key Management:</strong> Secure storage of cryptographic keys</li>
+</ul>
+<h4 id="security-standards-compliance">Security Standards Compliance<a class="headerlink" href="#security-standards-compliance" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>ISO/SAE 21434:</strong> Cybersecurity engineering for road vehicles</li>
+<li><strong>AUTOSAR SecOC:</strong> Secure onboard communication</li>
+<li><strong>Other Standards:</strong> Relevant security standards</li>
+</ul>
+<hr />
+<h2 id="system-photodiagram">System Photo/Diagram<a class="headerlink" href="#system-photodiagram" title="Permanent link">&para;</a></h2>
+<h3 id="physical-system">Physical System<a class="headerlink" href="#physical-system" title="Permanent link">&para;</a></h3>
+<p><img alt="System Photo" src="images/system_photo.jpg" />
+<em>Caption: Actual physical implementation of the system</em></p>
+<p><strong>Alternative: System sketch or 3D model</strong>
+<div class="highlight"><pre><span></span><code>[Placeholder for actual photo or CAD rendering]
+
+Include:
+- Overall system view
+- Component locations
+- Wiring/connections
+- Enclosure (if applicable)
+</code></pre></div></p>
+<h3 id="system-integration">System Integration<a class="headerlink" href="#system-integration" title="Permanent link">&para;</a></h3>
+<p><img alt="Integration Photo" src="images/integration_photo.jpg" />
+<em>Caption: System integrated in target environment</em></p>
+<hr />
+<h2 id="notes-and-references">Notes and References<a class="headerlink" href="#notes-and-references" title="Permanent link">&para;</a></h2>
+<h3 id="standards-and-specifications">Standards and Specifications<a class="headerlink" href="#standards-and-specifications" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ISO 26262: Road vehicles - Functional safety</li>
+<li>ISO/SAE 21434: Cybersecurity engineering</li>
+<li>AUTOSAR: Automotive Open System Architecture</li>
+<li>CAN Specification 2.0B</li>
+<li>Other relevant standards</li>
+</ul>
+<h3 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>System Requirements Document</li>
+<li>Hardware Design Specification</li>
+<li>Software Architecture Document</li>
+<li>Safety Analysis Reports</li>
+</ul>
+<h3 id="revision-history">Revision History<a class="headerlink" href="#revision-history" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>YYYY-MM-DD</td>
+<td>[Name]</td>
+<td>Initial draft</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

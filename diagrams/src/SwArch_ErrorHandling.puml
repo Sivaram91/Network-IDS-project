@@ -1,0 +1,32 @@
+@startuml
+start
+
+:Error Detected;
+
+:Classify Error Severity;
+
+if (Critical?) then (yes)
+  :Disable System;
+  :Enter Safe State;
+  :Set Fault Flag;
+  :Log DTC;
+  stop
+elseif (Error?) then (yes)
+  :Attempt Recovery;
+  if (Recovery Success?) then (yes)
+    :Resume Operation;
+    :Log Warning DTC;
+  else (no)
+    :Switch to Degraded Mode;
+    :Log Error DTC;
+    :Notify User;
+  endif
+else (warning/info)
+  :Log Event;
+  :Continue Operation;
+endif
+
+:Normal Operation;
+
+stop
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+component "Subsystem A" as A
+component "Subsystem B" as B
+component "Subsystem C" as C
+
+A -down-> B : CAN Messages\n(100ms periodic)
+B -down-> C : SPI\n(on-demand)
+A -right-> C : I2C\n(event-based)
+@enduml

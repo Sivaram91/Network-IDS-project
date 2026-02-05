@@ -1,0 +1,3876 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/Architecture/SwArchitecture/">
+      
+      
+        <link rel="prev" href="../SystemArchitecture/">
+      
+      
+        <link rel="next" href="../../RaspPi_Comp_Design/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Software Architecture - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SystemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-architecture-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Architecture Pattern
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Architecture Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Style
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-patterns-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Patterns Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layermodule-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer/Module Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer/Module Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicemiddleware-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service/Middleware Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecu-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECU Abstraction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcal-microcontroller-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCAL (Microcontroller Abstraction Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-device-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Device Drivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-interfaces-and-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Interfaces and APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Interfaces and APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-scheduling-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Scheduling Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter-component-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-Component Communication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inter-Component Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#communication-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-queue-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queue Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callback Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sharing-and-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Sharing and Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linker-section-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linker Section Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-management-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Sequence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Flow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-sequence-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Sequence Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initialization Sequence Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-hardware-initialization-reset-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: Hardware Initialization (Reset Handler)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-system-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: System Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3-bsp-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: BSP Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4-driver-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Driver Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-5-application-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5: Application Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watchdog-handling-during-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watchdog Handling During Boot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-detection-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Detection Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-recovery-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Recovery Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-trouble-codes-dtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic Trouble Codes (DTC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-state-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe State Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-1-rtos-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 1: RTOS Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-2-communication-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 2: Communication Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-3-memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 3: Memory Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-bare-metal-no-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: Bare-Metal (No RTOS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-event-driven-architecture-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: Event-Driven Architecture Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-3-dynamic-memory-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 3: Dynamic Memory Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes and References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RaspPi_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software-architecture-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Architecture Pattern
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Architecture Pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Style
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectural-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-patterns-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Patterns Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layermodule-decomposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer/Module Decomposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer/Module Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Descriptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Layer Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicemiddleware-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service/Middleware Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecu-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ECU Abstraction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcal-microcontroller-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCAL (Microcontroller Abstraction Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complex-device-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complex Device Drivers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-interfaces-and-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Interfaces and APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Interfaces and APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Driver APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime View
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-scheduling-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Scheduling Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-machine-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Machine Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupt-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupt Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timing-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timing Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inter-component-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inter-Component Communication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inter-Component Communication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#communication-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-queue-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Queue Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callback-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callback Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-sharing-and-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Sharing and Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linker-section-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linker Section Placement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-management-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Management Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Sequence
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boot Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Flow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-sequence-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Sequence Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initialization Sequence Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-hardware-initialization-reset-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: Hardware Initialization (Reset Handler)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-system-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: System Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3-bsp-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: BSP Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4-driver-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Driver Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-5-application-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5: Application Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialization-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initialization Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watchdog-handling-during-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watchdog Handling During Boot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-detection-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Detection Mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-recovery-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Recovery Strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-trouble-codes-dtc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic Trouble Codes (DTC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-state-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe State Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decision-1-rtos-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 1: RTOS Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-2-communication-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 2: Communication Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-3-memory-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision 3: Memory Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Design Decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternative Design Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-1-bare-metal-no-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 1: Bare-Metal (No RTOS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-2-event-driven-architecture-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 2: Event-Driven Architecture Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-3-dynamic-memory-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative 3: Dynamic Memory Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-and-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes and References
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes and References">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coding-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coding Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revision-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revision History
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="software-architecture">Software Architecture<a class="headerlink" href="#software-architecture" title="Permanent link">&para;</a></h1>
+<p>This document consolidates the software architecture of Network Intrusion detection project </p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span></em></p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#software-architecture">Software Architecture</a><ul>
+<li><a href="#software-architecture-pattern">Software Architecture Pattern</a><ul>
+<li><a href="#architecture-style">Architecture Style</a></li>
+<li><a href="#architectural-diagram">Architectural Diagram</a></li>
+<li><a href="#design-patterns-used">Design Patterns Used</a></li>
+</ul>
+</li>
+<li><a href="#layermodule-decomposition">Layer/Module Decomposition</a><ul>
+<li><a href="#layer-structure">Layer Structure</a></li>
+<li><a href="#layer-descriptions">Layer Descriptions</a><ul>
+<li><a href="#application-layer">Application Layer</a></li>
+<li><a href="#servicemiddleware-layer">Service/Middleware Layer</a></li>
+<li><a href="#ecu-abstraction-layer">ECU Abstraction Layer</a></li>
+<li><a href="#mcal-microcontroller-abstraction-layer">MCAL (Microcontroller Abstraction Layer)</a></li>
+<li><a href="#complex-device-drivers">Complex Device Drivers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#component-overview">Component Overview</a><ul>
+<li><a href="#component-dependencies">Component Dependencies</a></li>
+</ul>
+</li>
+<li><a href="#static-view">Static View</a><ul>
+<li><a href="#package-structure">Package Structure</a></li>
+<li><a href="#module-dependencies">Module Dependencies</a></li>
+<li><a href="#key-interfaces-and-apis">Key Interfaces and APIs</a><ul>
+<li><a href="#application-apis">Application APIs</a></li>
+<li><a href="#middleware-apis">Middleware APIs</a></li>
+<li><a href="#driver-apis">Driver APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#runtime-view">Runtime View</a><ul>
+<li><a href="#task-architecture">Task Architecture</a></li>
+<li><a href="#task-scheduling-diagram">Task Scheduling Diagram</a></li>
+<li><a href="#runtime-sequence">Runtime Sequence</a></li>
+<li><a href="#state-machine-execution">State Machine Execution</a></li>
+<li><a href="#interrupt-handling">Interrupt Handling</a></li>
+<li><a href="#timing-constraints">Timing Constraints</a></li>
+</ul>
+</li>
+<li><a href="#data-flow">Data Flow</a><ul>
+<li><a href="#data-flow-diagram">Data Flow Diagram</a></li>
+<li><a href="#data-processing-pipeline">Data Processing Pipeline</a></li>
+<li><a href="#data-stores">Data Stores</a></li>
+</ul>
+</li>
+<li><a href="#inter-component-communication">Inter-Component Communication</a><ul>
+<li><a href="#communication-mechanisms">Communication Mechanisms</a></li>
+<li><a href="#communication-patterns">Communication Patterns</a><ul>
+<li><a href="#message-queue-example">Message Queue Example</a></li>
+<li><a href="#callback-example">Callback Example</a></li>
+</ul>
+</li>
+<li><a href="#data-sharing-and-protection">Data Sharing and Protection</a></li>
+</ul>
+</li>
+<li><a href="#memory-architecture">Memory Architecture</a><ul>
+<li><a href="#memory-map">Memory Map</a></li>
+<li><a href="#linker-section-placement">Linker Section Placement</a></li>
+<li><a href="#memory-budget">Memory Budget</a></li>
+<li><a href="#memory-management-strategy">Memory Management Strategy</a></li>
+</ul>
+</li>
+<li><a href="#boot-sequence">Boot Sequence</a><ul>
+<li><a href="#boot-flow-diagram">Boot Flow Diagram</a></li>
+<li><a href="#initialization-sequence-details">Initialization Sequence Details</a><ul>
+<li><a href="#stage-1-hardware-initialization-reset-handler">Stage 1: Hardware Initialization (Reset Handler)</a></li>
+<li><a href="#stage-2-system-initialization">Stage 2: System Initialization</a></li>
+<li><a href="#stage-3-bsp-initialization">Stage 3: BSP Initialization</a></li>
+<li><a href="#stage-4-driver-initialization">Stage 4: Driver Initialization</a></li>
+<li><a href="#stage-5-application-initialization">Stage 5: Application Initialization</a></li>
+</ul>
+</li>
+<li><a href="#initialization-timing">Initialization Timing</a></li>
+<li><a href="#watchdog-handling-during-boot">Watchdog Handling During Boot</a></li>
+</ul>
+</li>
+<li><a href="#error-handling-strategy">Error Handling Strategy</a><ul>
+<li><a href="#error-classification">Error Classification</a></li>
+<li><a href="#error-detection-mechanisms">Error Detection Mechanisms</a></li>
+<li><a href="#error-handling-flow">Error Handling Flow</a></li>
+<li><a href="#error-recovery-strategies">Error Recovery Strategies</a></li>
+<li><a href="#diagnostic-trouble-codes-dtc">Diagnostic Trouble Codes (DTC)</a></li>
+<li><a href="#error-logging">Error Logging</a></li>
+<li><a href="#safe-state-definition">Safe State Definition</a></li>
+</ul>
+</li>
+<li><a href="#key-design-decisions">Key Design Decisions</a><ul>
+<li><a href="#decision-1-rtos-selection">Decision 1: RTOS Selection</a></li>
+<li><a href="#decision-2-communication-protocol">Decision 2: Communication Protocol</a></li>
+<li><a href="#decision-3-memory-management">Decision 3: Memory Management</a></li>
+</ul>
+</li>
+<li><a href="#alternative-design-decisions">Alternative Design Decisions</a><ul>
+<li><a href="#alternative-1-bare-metal-no-rtos">Alternative 1: Bare-Metal (No RTOS)</a></li>
+<li><a href="#alternative-2-event-driven-architecture-only">Alternative 2: Event-Driven Architecture Only</a></li>
+<li><a href="#alternative-3-dynamic-memory-allocation">Alternative 3: Dynamic Memory Allocation</a></li>
+</ul>
+</li>
+<li><a href="#notes-and-references">Notes and References</a><ul>
+<li><a href="#development-tools">Development Tools</a></li>
+<li><a href="#coding-standards">Coding Standards</a></li>
+<li><a href="#related-documentation">Related Documentation</a></li>
+<li><a href="#revision-history">Revision History</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="software-architecture-pattern">Software Architecture Pattern<a class="headerlink" href="#software-architecture-pattern" title="Permanent link">&para;</a></h2>
+<p>Overall architectural style and design patterns used in the software system.</p>
+<h3 id="architecture-style">Architecture Style<a class="headerlink" href="#architecture-style" title="Permanent link">&para;</a></h3>
+<p><strong>Pattern:</strong> Layered Architecture / Event-Driven / Microkernel / State Machine-based / Hybrid</p>
+<p><strong>Description:</strong> Brief explanation of the chosen architectural pattern and why it fits this system.</p>
+<p><strong>Key Characteristics:</strong>
+- Characteristic 1 (e.g., separation of concerns)
+- Characteristic 2 (e.g., real-time event processing)
+- Characteristic 3 (e.g., modularity and reusability)</p>
+<h3 id="architectural-diagram">Architectural Diagram<a class="headerlink" href="#architectural-diagram" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph TB
+    subgraph "Application Layer"
+        A1[Application Module 1]
+        A2[Application Module 2]
+        A3[Application Module 3]
+    end
+
+    subgraph "Middleware Layer"
+        M1[RTOS Services]
+        M2[Communication Stack]
+        M3[Diagnostics]
+    end
+
+    subgraph "Driver Layer"
+        D1[CAN Driver]
+        D2[SPI Driver]
+        D3[GPIO Driver]
+    end
+
+    subgraph "BSP Layer"
+        B1[Hardware Abstraction]
+        B2[Low-Level Drivers]
+    end
+
+    A1 --&gt; M1
+    A2 --&gt; M2
+    A3 --&gt; M1
+    M1 --&gt; D1
+    M2 --&gt; D1
+    M3 --&gt; D2
+    D1 --&gt; B1
+    D2 --&gt; B1
+    D3 --&gt; B2</code></pre>
+<h3 id="design-patterns-used">Design Patterns Used<a class="headerlink" href="#design-patterns-used" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pattern 1:</strong> Observer/Publish-Subscribe for event handling</li>
+<li><strong>Pattern 2:</strong> State Machine for control logic</li>
+<li><strong>Pattern 3:</strong> Singleton for resource managers</li>
+<li><strong>Pattern 4:</strong> Strategy for algorithm selection</li>
+<li><strong>Pattern 5:</strong> Factory for object creation</li>
+</ul>
+<hr />
+<h2 id="layermodule-decomposition">Layer/Module Decomposition<a class="headerlink" href="#layermodule-decomposition" title="Permanent link">&para;</a></h2>
+<p>Breakdown of software into layers and modules.</p>
+<h3 id="layer-structure">Layer Structure<a class="headerlink" href="#layer-structure" title="Permanent link">&para;</a></h3>
+<p><img alt="Layer Structure" src="diagrams/out/SwArch_BuildingBlocks.svg" /></p>
+<h3 id="layer-descriptions">Layer Descriptions<a class="headerlink" href="#layer-descriptions" title="Permanent link">&para;</a></h3>
+<h4 id="application-layer">Application Layer<a class="headerlink" href="#application-layer" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Business logic and application-specific functionality</p>
+<p><strong>Modules:</strong>
+- <strong>Module 1:</strong> Vehicle control algorithms
+- <strong>Module 2:</strong> User interface management
+- <strong>Module 3:</strong> Data processing and filtering</p>
+<p><strong>Dependencies:</strong> Service layer, ECU abstraction layer</p>
+<hr />
+<h4 id="servicemiddleware-layer">Service/Middleware Layer<a class="headerlink" href="#servicemiddleware-layer" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> RTOS and common services</p>
+<p><strong>Modules:</strong>
+- <strong>RTOS Kernel:</strong> Task scheduling, synchronization (FreeRTOS/Zephyr/etc.)
+- <strong>Memory Manager:</strong> Heap management, buffer pools
+- <strong>Communication Manager:</strong> Protocol handling, message routing
+- <strong>Diagnostic Services:</strong> Error logging, diagnostics protocol</p>
+<p><strong>Dependencies:</strong> ECU abstraction layer</p>
+<hr />
+<h4 id="ecu-abstraction-layer">ECU Abstraction Layer<a class="headerlink" href="#ecu-abstraction-layer" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Hardware-independent interface to peripherals</p>
+<p><strong>Modules:</strong>
+- <strong>CAN Interface:</strong> Abstract CAN communication
+- <strong>ADC Interface:</strong> Abstract analog input
+- <strong>PWM Interface:</strong> Abstract pulse-width modulation
+- <strong>Timer Interface:</strong> Abstract timing services</p>
+<p><strong>Dependencies:</strong> MCAL layer</p>
+<hr />
+<h4 id="mcal-microcontroller-abstraction-layer">MCAL (Microcontroller Abstraction Layer)<a class="headerlink" href="#mcal-microcontroller-abstraction-layer" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Hardware-specific drivers</p>
+<p><strong>Modules:</strong>
+- <strong>CAN Driver:</strong> Low-level CAN controller
+- <strong>ADC Driver:</strong> Low-level ADC control
+- <strong>GPIO Driver:</strong> Low-level digital I/O
+- <strong>SPI/I2C Driver:</strong> Low-level serial communication</p>
+<p><strong>Dependencies:</strong> Hardware registers</p>
+<hr />
+<h4 id="complex-device-drivers">Complex Device Drivers<a class="headerlink" href="#complex-device-drivers" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> External device drivers</p>
+<p><strong>Modules:</strong>
+- <strong>Sensor Driver:</strong> Sensor-specific protocol (e.g., I2C sensor)
+- <strong>Actuator Driver:</strong> Actuator control logic</p>
+<p><strong>Dependencies:</strong> MCAL layer</p>
+<hr />
+<h2 id="component-overview">Component Overview<a class="headerlink" href="#component-overview" title="Permanent link">&para;</a></h2>
+<p>List of major software components and their responsibilities.</p>
+<table>
+<thead>
+<tr>
+<th>Component Name</th>
+<th>Layer</th>
+<th>Responsibility</th>
+<th>Key Interfaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task Manager</td>
+<td>Service</td>
+<td>Task scheduling, context switching</td>
+<td>task_create(), task_delete()</td>
+</tr>
+<tr>
+<td>CAN Manager</td>
+<td>Service</td>
+<td>CAN message handling</td>
+<td>can_send(), can_receive()</td>
+</tr>
+<tr>
+<td>State Machine</td>
+<td>Application</td>
+<td>System state management</td>
+<td>sm_transition(), sm_get_state()</td>
+</tr>
+<tr>
+<td>Sensor Handler</td>
+<td>Application</td>
+<td>Sensor data acquisition</td>
+<td>sensor_read(), sensor_calibrate()</td>
+</tr>
+<tr>
+<td>Actuator Controller</td>
+<td>Application</td>
+<td>Actuator control</td>
+<td>actuator_set(), actuator_get_status()</td>
+</tr>
+<tr>
+<td>Diagnostics</td>
+<td>Service</td>
+<td>Error handling, logging</td>
+<td>diag_log_error(), diag_get_dtc()</td>
+</tr>
+<tr>
+<td>Flash Manager</td>
+<td>Service</td>
+<td>Non-volatile memory access</td>
+<td>flash_write(), flash_read()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="component-dependencies">Component Dependencies<a class="headerlink" href="#component-dependencies" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    A[State Machine] --&gt; B[CAN Manager]
+    A --&gt; C[Sensor Handler]
+    A --&gt; D[Actuator Controller]
+    C --&gt; E[ADC Driver]
+    D --&gt; F[PWM Driver]
+    B --&gt; G[CAN Driver]
+    A --&gt; H[Diagnostics]
+    H --&gt; I[Flash Manager]</code></pre>
+<hr />
+<h2 id="static-view">Static View<a class="headerlink" href="#static-view" title="Permanent link">&para;</a></h2>
+<p>Software package structure, modules, and dependencies.</p>
+<h3 id="package-structure">Package Structure<a class="headerlink" href="#package-structure" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>project_root/
+├── src/
+│   ├── app/
+│   │   ├── control/
+│   │   │   ├── state_machine.c
+│   │   │   └── control_logic.c
+│   │   ├── sensors/
+│   │   │   └── sensor_handler.c
+│   │   └── actuators/
+│   │       └── actuator_controller.c
+│   ├── middleware/
+│   │   ├── rtos/
+│   │   ├── comm/
+│   │   │   └── can_manager.c
+│   │   └── diag/
+│   │       └── diagnostics.c
+│   ├── drivers/
+│   │   ├── can/
+│   │   ├── adc/
+│   │   ├── gpio/
+│   │   └── spi/
+│   └── bsp/
+│       ├── board_init.c
+│       └── system_config.c
+├── inc/
+│   ├── app/
+│   ├── middleware/
+│   ├── drivers/
+│   └── bsp/
+├── config/
+│   └── system_config.h
+└── tests/
+    └── unit_tests/
+</code></pre></div>
+<h3 id="module-dependencies">Module Dependencies<a class="headerlink" href="#module-dependencies" title="Permanent link">&para;</a></h3>
+<p><img alt="Module Dependencies" src="diagrams/out/SwArch_ModuleDependencies.svg" /></p>
+<h3 id="key-interfaces-and-apis">Key Interfaces and APIs<a class="headerlink" href="#key-interfaces-and-apis" title="Permanent link">&para;</a></h3>
+<h4 id="application-apis">Application APIs<a class="headerlink" href="#application-apis" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// State machine</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">sm_init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="n">state_t</span><span class="w"> </span><span class="nf">sm_get_current_state</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">sm_transition</span><span class="p">(</span><span class="n">event_t</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+
+<span class="c1">// Sensor interface</span>
+<span class="n">status_t</span><span class="w"> </span><span class="nf">sensor_init</span><span class="p">(</span><span class="n">sensor_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="kt">float</span><span class="w"> </span><span class="nf">sensor_read</span><span class="p">(</span><span class="n">sensor_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="middleware-apis">Middleware APIs<a class="headerlink" href="#middleware-apis" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// RTOS</span>
+<span class="n">task_handle_t</span><span class="w"> </span><span class="nf">task_create</span><span class="p">(</span><span class="n">task_func_t</span><span class="w"> </span><span class="n">func</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">param</span><span class="p">,</span><span class="w"> </span><span class="n">priority_t</span><span class="w"> </span><span class="n">prio</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">task_delay</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ms</span><span class="p">);</span>
+
+<span class="c1">// CAN Manager</span>
+<span class="n">status_t</span><span class="w"> </span><span class="nf">can_send_message</span><span class="p">(</span><span class="n">can_msg_t</span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
+<span class="n">status_t</span><span class="w"> </span><span class="nf">can_register_callback</span><span class="p">(</span><span class="n">can_id_t</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">can_callback_t</span><span class="w"> </span><span class="n">cb</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="driver-apis">Driver APIs<a class="headerlink" href="#driver-apis" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Low-level driver interface</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">can_driver_init</span><span class="p">(</span><span class="n">can_config_t</span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">adc_driver_start_conversion</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">channel</span><span class="p">);</span>
+<span class="kt">uint16_t</span><span class="w"> </span><span class="nf">adc_driver_get_result</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="runtime-view">Runtime View<a class="headerlink" href="#runtime-view" title="Permanent link">&para;</a></h2>
+<p>Task/thread architecture, execution flow, and real-time scheduling.</p>
+<h3 id="task-architecture">Task Architecture<a class="headerlink" href="#task-architecture" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Task Name</th>
+<th>Priority</th>
+<th>Period/Trigger</th>
+<th>Stack Size</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control Task</td>
+<td>High (3)</td>
+<td>10 ms periodic</td>
+<td>2 KB</td>
+<td>Main control loop</td>
+</tr>
+<tr>
+<td>CAN RX Task</td>
+<td>High (2)</td>
+<td>Event (CAN msg)</td>
+<td>1 KB</td>
+<td>CAN message reception</td>
+</tr>
+<tr>
+<td>Sensor Task</td>
+<td>Medium (5)</td>
+<td>50 ms periodic</td>
+<td>1.5 KB</td>
+<td>Sensor data acquisition</td>
+</tr>
+<tr>
+<td>Diagnostic Task</td>
+<td>Low (8)</td>
+<td>100 ms periodic</td>
+<td>1 KB</td>
+<td>System monitoring</td>
+</tr>
+<tr>
+<td>Idle Task</td>
+<td>Lowest (15)</td>
+<td>Always ready</td>
+<td>512 B</td>
+<td>Power management</td>
+</tr>
+</tbody>
+</table>
+<h3 id="task-scheduling-diagram">Task Scheduling Diagram<a class="headerlink" href="#task-scheduling-diagram" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>gantt
+    title Task Execution Timeline (100ms window)
+    dateFormat X
+    axisFormat %L
+
+    section Control Task
+    Run :0, 2
+    Run :10, 12
+    Run :20, 22
+    Run :30, 32
+    Run :40, 42
+    Run :50, 52
+    Run :60, 62
+    Run :70, 72
+    Run :80, 82
+    Run :90, 92
+
+    section CAN RX Task
+    Process :5, 6
+    Process :25, 26
+    Process :65, 66
+
+    section Sensor Task
+    Read :0, 4
+    Read :50, 54
+
+    section Diagnostic
+    Check :0, 3</code></pre>
+<h3 id="runtime-sequence">Runtime Sequence<a class="headerlink" href="#runtime-sequence" title="Permanent link">&para;</a></h3>
+<p><img alt="Runtime Sequence" src="diagrams/out/SwArch_Runtime.svg" /></p>
+<h3 id="state-machine-execution">State Machine Execution<a class="headerlink" href="#state-machine-execution" title="Permanent link">&para;</a></h3>
+<p><img alt="State Machine Execution" src="diagrams/out/SwArch_StateMachines.svg" /></p>
+<h3 id="interrupt-handling">Interrupt Handling<a class="headerlink" href="#interrupt-handling" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Hardware
+    participant ISR
+    participant Task
+    participant Scheduler
+
+    Hardware-&gt;&gt;ISR: Interrupt (e.g., CAN RX)
+    activate ISR
+    ISR-&gt;&gt;ISR: Save context
+    ISR-&gt;&gt;ISR: Clear interrupt flag
+    ISR-&gt;&gt;Task: Signal semaphore
+    ISR-&gt;&gt;Scheduler: Yield if higher priority
+    ISR-&gt;&gt;ISR: Restore context
+    deactivate ISR
+
+    Scheduler-&gt;&gt;Task: Resume execution
+    activate Task
+    Task-&gt;&gt;Task: Process data
+    deactivate Task</code></pre>
+<h3 id="timing-constraints">Timing Constraints<a class="headerlink" href="#timing-constraints" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constraint</th>
+<th>Value</th>
+<th>Consequence if Violated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control loop execution time</td>
+<td>&lt; 8 ms</td>
+<td>Missed deadline alarm</td>
+</tr>
+<tr>
+<td>CAN message latency</td>
+<td>&lt; 5 ms</td>
+<td>Communication timeout</td>
+</tr>
+<tr>
+<td>Sensor read response time</td>
+<td>&lt; 2 ms</td>
+<td>Stale data warning</td>
+</tr>
+<tr>
+<td>Maximum interrupt latency</td>
+<td>&lt; 100 µs</td>
+<td>Real-time violation</td>
+</tr>
+<tr>
+<td>Context switch time</td>
+<td>&lt; 10 µs</td>
+<td>Scheduling overhead</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<p>How data moves through the software system.</p>
+<h3 id="data-flow-diagram">Data Flow Diagram<a class="headerlink" href="#data-flow-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="Data Flow Diagram" src="diagrams/out/SwArch_DataFlow.svg" /></p>
+<h3 id="data-processing-pipeline">Data Processing Pipeline<a class="headerlink" href="#data-processing-pipeline" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>graph LR
+    A[Raw Sensor Data] --&gt; B[Filtering]
+    B --&gt; C[Scaling/Calibration]
+    C --&gt; D[Validation]
+    D --&gt; E[Control Algorithm]
+    E --&gt; F[Output Limiting]
+    F --&gt; G[Actuator Commands]
+
+    D --&gt; H[Data Logging]
+    E --&gt; H</code></pre>
+<h3 id="data-stores">Data Stores<a class="headerlink" href="#data-stores" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Data Store</th>
+<th>Type</th>
+<th>Size</th>
+<th>Persistence</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor Buffer</td>
+<td>Ring buffer</td>
+<td>256 bytes</td>
+<td>RAM</td>
+<td>Recent sensor values</td>
+</tr>
+<tr>
+<td>CAN TX Queue</td>
+<td>FIFO queue</td>
+<td>512 bytes</td>
+<td>RAM</td>
+<td>Outgoing CAN messages</td>
+</tr>
+<tr>
+<td>CAN RX Queue</td>
+<td>FIFO queue</td>
+<td>512 bytes</td>
+<td>RAM</td>
+<td>Incoming CAN messages</td>
+</tr>
+<tr>
+<td>Configuration</td>
+<td>Struct</td>
+<td>128 bytes</td>
+<td>Flash</td>
+<td>System parameters</td>
+</tr>
+<tr>
+<td>Calibration Data</td>
+<td>Array</td>
+<td>1 KB</td>
+<td>Flash</td>
+<td>Sensor calibration</td>
+</tr>
+<tr>
+<td>Diagnostic Log</td>
+<td>Ring buffer</td>
+<td>2 KB</td>
+<td>Flash</td>
+<td>Error history</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="inter-component-communication">Inter-Component Communication<a class="headerlink" href="#inter-component-communication" title="Permanent link">&para;</a></h2>
+<p>Communication mechanisms between software components.</p>
+<h3 id="communication-mechanisms">Communication Mechanisms<a class="headerlink" href="#communication-mechanisms" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>Use Case</th>
+<th>Components Involved</th>
+<th>Synchronization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct Function Call</td>
+<td>Same layer interaction</td>
+<td>Control → Sensor Handler</td>
+<td>Synchronous</td>
+</tr>
+<tr>
+<td>Message Queue</td>
+<td>Task-to-task async</td>
+<td>CAN RX Task → Control Task</td>
+<td>Asynchronous</td>
+</tr>
+<tr>
+<td>Semaphore</td>
+<td>Resource protection</td>
+<td>Multiple → Flash Manager</td>
+<td>Blocking</td>
+</tr>
+<tr>
+<td>Event Flags</td>
+<td>Notification</td>
+<td>ISR → Task</td>
+<td>Asynchronous</td>
+</tr>
+<tr>
+<td>Shared Memory</td>
+<td>High-speed data</td>
+<td>Sensor Task → Control Task</td>
+<td>Mutex-protected</td>
+</tr>
+<tr>
+<td>Callback Functions</td>
+<td>Event notification</td>
+<td>Driver → Application</td>
+<td>Asynchronous</td>
+</tr>
+</tbody>
+</table>
+<h3 id="communication-patterns">Communication Patterns<a class="headerlink" href="#communication-patterns" title="Permanent link">&para;</a></h3>
+<h4 id="message-queue-example">Message Queue Example<a class="headerlink" href="#message-queue-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Producer (CAN RX Task)</span>
+<span class="n">can_msg_t</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">can_receive</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">queue_send</span><span class="p">(</span><span class="n">rx_queue</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">TIMEOUT_MS</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Consumer (Control Task)</span>
+<span class="n">can_msg_t</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">queue_receive</span><span class="p">(</span><span class="n">rx_queue</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">TIMEOUT_MS</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">process_can_message</span><span class="p">(</span><span class="o">&amp;</span><span class="n">msg</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="callback-example">Callback Example<a class="headerlink" href="#callback-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">// Registration</span>
+<span class="n">can_register_callback</span><span class="p">(</span><span class="n">CAN_ID_CMD</span><span class="p">,</span><span class="w"> </span><span class="n">on_command_received</span><span class="p">);</span>
+
+<span class="c1">// Callback implementation</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">on_command_received</span><span class="p">(</span><span class="n">can_msg_t</span><span class="o">*</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Process command</span>
+<span class="w">    </span><span class="n">event_flags_set</span><span class="p">(</span><span class="n">CMD_EVENT_FLAG</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="data-sharing-and-protection">Data Sharing and Protection<a class="headerlink" href="#data-sharing-and-protection" title="Permanent link">&para;</a></h3>
+<p><img alt="Data Sharing and Protection" src="diagrams/out/SwArch_DataSharing.svg" /></p>
+<hr />
+<h2 id="memory-architecture">Memory Architecture<a class="headerlink" href="#memory-architecture" title="Permanent link">&para;</a></h2>
+<p>Flash and RAM layout, code placement, and memory management.</p>
+<h3 id="memory-map">Memory Map<a class="headerlink" href="#memory-map" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Flash Memory (1 MB)
+┌─────────────────────────────────┐ 0x0800 0000
+│ Bootloader (64 KB)              │
+├─────────────────────────────────┤ 0x0801 0000
+│ Application Code (768 KB)       │
+│  - Vector Table                 │
+│  - Application Layer            │
+│  - Middleware Layer             │
+│  - Driver Layer                 │
+├─────────────────────────────────┤ 0x080D 0000
+│ Calibration Data (128 KB)       │
+├─────────────────────────────────┤ 0x080F 0000
+│ Configuration (32 KB)           │
+├─────────────────────────────────┤ 0x080F 8000
+│ Diagnostic Log (32 KB)          │
+└─────────────────────────────────┘ 0x0810 0000
+
+RAM Memory (128 KB)
+┌─────────────────────────────────┐ 0x2000 0000
+│ Stack (16 KB)                   │
+├─────────────────────────────────┤ 0x2000 4000
+│ Heap (32 KB)                    │
+├─────────────────────────────────┤ 0x2000 C000
+│ .bss (Uninitialized) (16 KB)   │
+├─────────────────────────────────┤ 0x2001 0000
+│ .data (Initialized) (8 KB)      │
+├─────────────────────────────────┤ 0x2001 2000
+│ Task Stacks (24 KB)             │
+│  - Control Task: 2 KB           │
+│  - CAN RX Task: 1 KB            │
+│  - Sensor Task: 1.5 KB          │
+│  - Others...                    │
+├─────────────────────────────────┤ 0x2001 8000
+│ Buffers &amp; Queues (16 KB)        │
+│  - CAN TX/RX buffers            │
+│  - Sensor data buffers          │
+├─────────────────────────────────┤ 0x2001 C000
+│ RTOS Kernel Data (16 KB)        │
+└─────────────────────────────────┘ 0x2002 0000
+</code></pre></div>
+<h3 id="linker-section-placement">Linker Section Placement<a class="headerlink" href="#linker-section-placement" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Memory Region</th>
+<th>Size</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.isr_vector</code></td>
+<td>Flash 0x08000000</td>
+<td>1 KB</td>
+<td>Interrupt vectors</td>
+</tr>
+<tr>
+<td><code>.text</code></td>
+<td>Flash</td>
+<td>~500 KB</td>
+<td>Application code</td>
+</tr>
+<tr>
+<td><code>.rodata</code></td>
+<td>Flash</td>
+<td>~50 KB</td>
+<td>Constant data</td>
+</tr>
+<tr>
+<td><code>.data</code></td>
+<td>RAM (load from Flash)</td>
+<td>8 KB</td>
+<td>Initialized variables</td>
+</tr>
+<tr>
+<td><code>.bss</code></td>
+<td>RAM</td>
+<td>16 KB</td>
+<td>Uninitialized variables</td>
+</tr>
+<tr>
+<td><code>.heap</code></td>
+<td>RAM</td>
+<td>32 KB</td>
+<td>Dynamic allocation</td>
+</tr>
+<tr>
+<td><code>.stack</code></td>
+<td>RAM</td>
+<td>16 KB</td>
+<td>Main stack</td>
+</tr>
+<tr>
+<td><code>.calibration</code></td>
+<td>Flash 0x080D0000</td>
+<td>128 KB</td>
+<td>Calibration data</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memory-budget">Memory Budget<a class="headerlink" href="#memory-budget" title="Permanent link">&para;</a></h3>
+<p><strong>Flash Usage:</strong>
+- Total available: 1024 KB
+- Bootloader: 64 KB (6%)
+- Application code: 768 KB (75%)
+- Calibration: 128 KB (12.5%)
+- Configuration: 32 KB (3%)
+- Diagnostic log: 32 KB (3%)
+- <strong>Reserved/Free: 0 KB (0%)</strong></p>
+<p><strong>RAM Usage:</strong>
+- Total available: 128 KB
+- Stack: 16 KB (12.5%)
+- Heap: 32 KB (25%)
+- Static data (.bss + .data): 24 KB (18.75%)
+- Task stacks: 24 KB (18.75%)
+- Buffers: 16 KB (12.5%)
+- RTOS: 16 KB (12.5%)
+- <strong>Free: ~0 KB</strong></p>
+<h3 id="memory-management-strategy">Memory Management Strategy<a class="headerlink" href="#memory-management-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>Static Allocation:</strong>
+- All task stacks: compile-time sized
+- Critical buffers: statically allocated
+- No fragmentation risk</p>
+<p><strong>Dynamic Allocation:</strong>
+- Heap used sparingly for non-critical objects
+- Memory pools for fixed-size objects
+- Diagnostics: heap usage monitoring</p>
+<p><strong>Memory Protection (if MPU available):</strong>
+- Region 1: Flash (read-only, executable)
+- Region 2: RAM (read-write, non-executable)
+- Region 3: Peripherals (read-write, non-executable)
+- Region 4: Stack guard (no access)</p>
+<hr />
+<h2 id="boot-sequence">Boot Sequence<a class="headerlink" href="#boot-sequence" title="Permanent link">&para;</a></h2>
+<p>System initialization and startup flow.</p>
+<h3 id="boot-flow-diagram">Boot Flow Diagram<a class="headerlink" href="#boot-flow-diagram" title="Permanent link">&para;</a></h3>
+<p><img alt="Boot Flow Diagram" src="diagrams/out/SwArch_BootFlow.svg" /></p>
+<h3 id="initialization-sequence-details">Initialization Sequence Details<a class="headerlink" href="#initialization-sequence-details" title="Permanent link">&para;</a></h3>
+<h4 id="stage-1-hardware-initialization-reset-handler">Stage 1: Hardware Initialization (Reset Handler)<a class="headerlink" href="#stage-1-hardware-initialization-reset-handler" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Reset_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Copy .data section from Flash to RAM</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_sdata</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_sidata</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_edata</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_sdata</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 2. Zero .bss section</span>
+<span class="w">    </span><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">_sbss</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_ebss</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">&amp;</span><span class="n">_sbss</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 3. Call system init</span>
+<span class="w">    </span><span class="n">SystemInit</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// 4. Jump to main</span>
+<span class="w">    </span><span class="n">main</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="stage-2-system-initialization">Stage 2: System Initialization<a class="headerlink" href="#stage-2-system-initialization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">SystemInit</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Clock configuration (PLL, AHB, APB)</span>
+<span class="w">    </span><span class="n">clock_config</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Enable FPU (if applicable)</span>
+<span class="w">    </span><span class="n">fpu_enable</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Configure vector table offset</span>
+<span class="w">    </span><span class="n">SCB</span><span class="o">-&gt;</span><span class="n">VTOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FLASH_BASE</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Enable fault handlers</span>
+<span class="w">    </span><span class="n">fault_handlers_enable</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="stage-3-bsp-initialization">Stage 3: BSP Initialization<a class="headerlink" href="#stage-3-bsp-initialization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">bsp_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// GPIO initialization</span>
+<span class="w">    </span><span class="n">gpio_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Enable peripheral clocks</span>
+<span class="w">    </span><span class="n">peripheral_clocks_enable</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// External memory controller (if used)</span>
+<span class="w">    </span><span class="n">memory_controller_init</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="stage-4-driver-initialization">Stage 4: Driver Initialization<a class="headerlink" href="#stage-4-driver-initialization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">drivers_init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">can_driver_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">can_config</span><span class="p">);</span>
+<span class="w">    </span><span class="n">adc_driver_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">adc_config</span><span class="p">);</span>
+<span class="w">    </span><span class="n">timer_driver_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">timer_config</span><span class="p">);</span>
+<span class="w">    </span><span class="n">spi_driver_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spi_config</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// ... other drivers</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="stage-5-application-initialization">Stage 5: Application Initialization<a class="headerlink" href="#stage-5-application-initialization" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Load configuration from Flash</span>
+<span class="w">    </span><span class="n">config_load</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize middleware</span>
+<span class="w">    </span><span class="n">rtos_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">can_manager_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">diagnostics_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Initialize application components</span>
+<span class="w">    </span><span class="n">state_machine_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">sensor_handler_init</span><span class="p">();</span>
+<span class="w">    </span><span class="n">actuator_controller_init</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Create RTOS tasks</span>
+<span class="w">    </span><span class="n">task_create</span><span class="p">(</span><span class="n">control_task</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH_PRIORITY</span><span class="p">);</span>
+<span class="w">    </span><span class="n">task_create</span><span class="p">(</span><span class="n">sensor_task</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">MEDIUM_PRIORITY</span><span class="p">);</span>
+<span class="w">    </span><span class="n">task_create</span><span class="p">(</span><span class="n">diagnostic_task</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">LOW_PRIORITY</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Start scheduler (never returns)</span>
+<span class="w">    </span><span class="n">rtos_start_scheduler</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Should never reach here</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="initialization-timing">Initialization Timing<a class="headerlink" href="#initialization-timing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Duration</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reset to SystemInit</td>
+<td>~100 µs</td>
+<td>Hardware-dependent</td>
+</tr>
+<tr>
+<td>Clock configuration</td>
+<td>~5 ms</td>
+<td>PLL stabilization</td>
+</tr>
+<tr>
+<td>BSP initialization</td>
+<td>~10 ms</td>
+<td>GPIO, peripherals</td>
+</tr>
+<tr>
+<td>Driver initialization</td>
+<td>~20 ms</td>
+<td>CAN, ADC, timers</td>
+</tr>
+<tr>
+<td>Application init</td>
+<td>~50 ms</td>
+<td>Config load, RTOS setup</td>
+</tr>
+<tr>
+<td><strong>Total boot time</strong></td>
+<td><strong>~85 ms</strong></td>
+<td>To scheduler start</td>
+</tr>
+</tbody>
+</table>
+<h3 id="watchdog-handling-during-boot">Watchdog Handling During Boot<a class="headerlink" href="#watchdog-handling-during-boot" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Watchdog started early in boot</li>
+<li>Periodic kicks during long initialization</li>
+<li>Fully handed over to application after boot</li>
+</ul>
+<hr />
+<h2 id="error-handling-strategy">Error Handling Strategy<a class="headerlink" href="#error-handling-strategy" title="Permanent link">&para;</a></h2>
+<p>System-wide approach to error detection, reporting, and recovery.</p>
+<h3 id="error-classification">Error Classification<a class="headerlink" href="#error-classification" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Error Level</th>
+<th>Severity</th>
+<th>Example</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>ASIL-D</td>
+<td>Sensor total failure</td>
+<td>Enter safe state, disable system</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>ASIL-B</td>
+<td>CAN communication timeout</td>
+<td>Switch to backup, log DTC</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>ASIL-A</td>
+<td>Sensor value out of range</td>
+<td>Use default, log warning</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>QM</td>
+<td>Configuration updated</td>
+<td>Log event</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-detection-mechanisms">Error Detection Mechanisms<a class="headerlink" href="#error-detection-mechanisms" title="Permanent link">&para;</a></h3>
+<p><strong>Hardware-Level:</strong>
+- Watchdog timer (independent)
+- Memory parity/ECC (if available)
+- Clock monitoring (LSI/HSE failure detection)
+- Stack overflow detection
+- Peripheral error flags</p>
+<p><strong>Software-Level:</strong>
+- Return code checking
+- Plausibility checks on sensor data
+- Timeout monitoring on communication
+- Sequence number validation
+- CRC/checksum verification
+- Range checking on inputs</p>
+<h3 id="error-handling-flow">Error Handling Flow<a class="headerlink" href="#error-handling-flow" title="Permanent link">&para;</a></h3>
+<p><img alt="Error Handling Flow" src="diagrams/out/SwArch_ErrorHandling.svg" /></p>
+<h3 id="error-recovery-strategies">Error Recovery Strategies<a class="headerlink" href="#error-recovery-strategies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Error Type</th>
+<th>Recovery Strategy</th>
+<th>Fallback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAN timeout</td>
+<td>Retry 3 times, then use last valid</td>
+<td>Enter limp mode</td>
+</tr>
+<tr>
+<td>Sensor failure</td>
+<td>Use redundant sensor or default</td>
+<td>Safe state</td>
+</tr>
+<tr>
+<td>Memory corruption</td>
+<td>Reset affected subsystem</td>
+<td>Full system reset</td>
+</tr>
+<tr>
+<td>Task watchdog violation</td>
+<td>Reset task, log event</td>
+<td>System reset if repeated</td>
+</tr>
+<tr>
+<td>Configuration error</td>
+<td>Load defaults</td>
+<td>Halt if critical</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnostic-trouble-codes-dtc">Diagnostic Trouble Codes (DTC)<a class="headerlink" href="#diagnostic-trouble-codes-dtc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">DTC_NO_ERROR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// Communication errors (0x1xxx)</span>
+<span class="w">    </span><span class="n">DTC_CAN_BUS_OFF</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1001</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DTC_CAN_TIMEOUT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x1002</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// Sensor errors (0x2xxx)</span>
+<span class="w">    </span><span class="n">DTC_SENSOR_1_FAULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2001</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DTC_SENSOR_OUT_OF_RANGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x2002</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// Actuator errors (0x3xxx)</span>
+<span class="w">    </span><span class="n">DTC_ACTUATOR_FAULT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x3001</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// System errors (0x4xxx)</span>
+<span class="w">    </span><span class="n">DTC_WATCHDOG_RESET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4001</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DTC_STACK_OVERFLOW</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4002</span><span class="p">,</span>
+<span class="w">    </span><span class="n">DTC_MEMORY_CORRUPTION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x4003</span><span class="p">,</span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">dtc_code_t</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="error-logging">Error Logging<a class="headerlink" href="#error-logging" title="Permanent link">&para;</a></h3>
+<p><strong>Log Entry Format:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timestamp</span><span class="p">;</span><span class="w">      </span><span class="c1">// System time</span>
+<span class="w">    </span><span class="n">dtc_code_t</span><span class="w"> </span><span class="n">dtc</span><span class="p">;</span><span class="w">          </span><span class="c1">// Error code</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">severity</span><span class="p">;</span><span class="w">        </span><span class="c1">// Critical/Error/Warning/Info</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">context</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w">     </span><span class="c1">// Context-specific data</span>
+<span class="p">}</span><span class="w"> </span><span class="n">error_log_entry_t</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Log Storage:</strong>
+- Ring buffer in Flash (2 KB, ~50 entries)
+- Persistent across resets
+- Accessible via diagnostics interface</p>
+<h3 id="safe-state-definition">Safe State Definition<a class="headerlink" href="#safe-state-definition" title="Permanent link">&para;</a></h3>
+<p><strong>Safe State Actions:</strong>
+1. Disable all actuators (set to known safe position)
+2. Set safe state flag in persistent memory
+3. Enable error LED/indicator
+4. Log critical error with context
+5. Wait for manual reset or external intervention</p>
+<p><strong>Recovery from Safe State:</strong>
+- Requires explicit user action or diagnostic command
+- Verify error condition cleared
+- Perform self-test before resuming</p>
+<hr />
+<h2 id="key-design-decisions">Key Design Decisions<a class="headerlink" href="#key-design-decisions" title="Permanent link">&para;</a></h2>
+<p>Major software architectural choices and rationale.</p>
+<h3 id="decision-1-rtos-selection">Decision 1: RTOS Selection<a class="headerlink" href="#decision-1-rtos-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Context:</strong> Need for multitasking and real-time scheduling</p>
+<p><strong>Decision:</strong> Use FreeRTOS / Zephyr / Custom RTOS</p>
+<p><strong>Rationale:</strong>
+- Proven in automotive applications
+- Small footprint suitable for resource-constrained MCU
+- Active community and support
+- Permissive license
+- Pre-certified for safety (if applicable)</p>
+<p><strong>Consequences:</strong>
+- Task-based architecture required
+- Additional RAM overhead for task stacks
+- Deterministic scheduling achieved</p>
+<p><strong>Trade-offs:</strong>
+- Learning curve for team
+- Slightly increased complexity vs. bare-metal</p>
+<hr />
+<h3 id="decision-2-communication-protocol">Decision 2: Communication Protocol<a class="headerlink" href="#decision-2-communication-protocol" title="Permanent link">&para;</a></h3>
+<p><strong>Context:</strong> Inter-ECU communication requirement</p>
+<p><strong>Decision:</strong> Use CAN bus with custom protocol / CANopen / J1939</p>
+<p><strong>Rationale:</strong>
+- Industry standard for automotive
+- Robust error detection
+- Broadcast and multicast support
+- Wide hardware support</p>
+<p><strong>Consequences:</strong>
+- Need CAN transceiver hardware
+- Protocol stack implementation required
+- Bandwidth limitations (500 kbps / 1 Mbps)</p>
+<p><strong>Trade-offs:</strong>
+- Higher latency vs. point-to-point
+- Limited payload (8 bytes per message)</p>
+<hr />
+<h3 id="decision-3-memory-management">Decision 3: Memory Management<a class="headerlink" href="#decision-3-memory-management" title="Permanent link">&para;</a></h3>
+<p><strong>Context:</strong> Embedded system with limited RAM</p>
+<p><strong>Decision:</strong> Primarily static allocation with limited heap</p>
+<p><strong>Rationale:</strong>
+- Deterministic behavior
+- No fragmentation risk
+- Predictable memory footprint
+- Easier certification for safety</p>
+<p><strong>Consequences:</strong>
+- Less flexibility at runtime
+- Careful planning of buffer sizes required
+- Some dynamic allocation for non-critical features</p>
+<p><strong>Trade-offs:</strong>
+- May waste some memory vs. dynamic
+- Configuration changes require recompilation</p>
+<hr />
+<h2 id="alternative-design-decisions">Alternative Design Decisions<a class="headerlink" href="#alternative-design-decisions" title="Permanent link">&para;</a></h2>
+<p>Software architecture alternatives evaluated and rejected.</p>
+<h3 id="alternative-1-bare-metal-no-rtos">Alternative 1: Bare-Metal (No RTOS)<a class="headerlink" href="#alternative-1-bare-metal-no-rtos" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Implement super-loop with interrupt-driven I/O instead of RTOS</p>
+<p><strong>Pros:</strong>
+- Simpler, more predictable
+- Lower memory overhead
+- Easier debugging
+- No licensing concerns</p>
+<p><strong>Cons:</strong>
+- Harder to manage complex timing requirements
+- Difficult to add new features
+- Manual scheduling and prioritization
+- Scalability issues as complexity grows</p>
+<p><strong>Reason for Rejection:</strong> 
+System has multiple concurrent activities with different priorities and timing constraints. RTOS provides better separation of concerns and maintainability.</p>
+<p><strong>When to Reconsider:</strong> 
+If system becomes very simple with only 1-2 periodic tasks and minimal event handling.</p>
+<hr />
+<h3 id="alternative-2-event-driven-architecture-only">Alternative 2: Event-Driven Architecture Only<a class="headerlink" href="#alternative-2-event-driven-architecture-only" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Pure event-driven system with event queue and handlers</p>
+<p><strong>Pros:</strong>
+- Very responsive to events
+- Lower context-switching overhead
+- Simpler state management
+- Good for highly asynchronous systems</p>
+<p><strong>Cons:</strong>
+- Harder to guarantee timing for periodic tasks
+- Complex priority management
+- Potential for event queue overflow
+- Debugging event chains is difficult</p>
+<p><strong>Reason for Rejection:</strong> 
+System has both periodic control loops and asynchronous events. Hybrid approach (RTOS with event flags) provides better balance.</p>
+<p><strong>When to Reconsider:</strong> 
+If system becomes predominantly event-driven with few periodic requirements.</p>
+<hr />
+<h3 id="alternative-3-dynamic-memory-allocation">Alternative 3: Dynamic Memory Allocation<a class="headerlink" href="#alternative-3-dynamic-memory-allocation" title="Permanent link">&para;</a></h3>
+<p><strong>Description:</strong> Use heap extensively for buffers, objects, and data structures</p>
+<p><strong>Pros:</strong>
+- Flexible resource allocation
+- Can adapt to varying workload
+- Less upfront memory planning
+- Easier to implement variable-size structures</p>
+<p><strong>Cons:</strong>
+- Fragmentation risk in long-running system
+- Non-deterministic allocation time
+- Harder to prove safety properties
+- Potential for memory leaks</p>
+<p><strong>Reason for Rejection:</strong> 
+Safety-critical automotive application requires deterministic behavior and predictable memory usage. Static allocation eliminates fragmentation and allocation failures.</p>
+<p><strong>When to Reconsider:</strong> 
+If system moves to more powerful processor with MMU and is no longer safety-critical.</p>
+<hr />
+<h2 id="notes-and-references">Notes and References<a class="headerlink" href="#notes-and-references" title="Permanent link">&para;</a></h2>
+<h3 id="development-tools">Development Tools<a class="headerlink" href="#development-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Compiler:</strong> GCC ARM / Keil MDK / IAR EWARM</li>
+<li><strong>IDE:</strong> STM32CubeIDE / VSCode / Eclipse</li>
+<li><strong>Debugger:</strong> ST-Link / J-Link / OpenOCD</li>
+<li><strong>Static Analysis:</strong> PC-Lint / Coverity / SonarQube</li>
+<li><strong>Version Control:</strong> Git</li>
+</ul>
+<h3 id="coding-standards">Coding Standards<a class="headerlink" href="#coding-standards" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MISRA C:2012 compliance</li>
+<li>AUTOSAR Coding Guidelines (if applicable)</li>
+<li>Project-specific naming conventions</li>
+<li>Doxygen documentation format</li>
+</ul>
+<h3 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>System Architecture Document</li>
+<li>Component Detailed Design Documents</li>
+<li>Software Requirements Specification</li>
+<li>Interface Control Documents</li>
+<li>Test Specification</li>
+</ul>
+<h3 id="revision-history">Revision History<a class="headerlink" href="#revision-history" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>YYYY-MM-DD</td>
+<td>[Name]</td>
+<td>Initial draft</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

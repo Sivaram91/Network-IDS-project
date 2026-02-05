@@ -1,0 +1,18 @@
+@startuml
+[*] --> Init
+Init --> Idle : initialization_complete
+Idle --> Active : start_command
+Active --> Running : conditions_met
+Running --> Active : cycle_complete
+Running --> Error : fault_detected
+Error --> Idle : fault_cleared
+Active --> Idle : stop_command
+Idle --> [*]
+
+state Running {
+    [*] --> Sensing
+    Sensing --> Processing : data_ready
+    Processing --> Actuating : computation_done
+    Actuating --> [*] : actuation_complete
+}
+@enduml
