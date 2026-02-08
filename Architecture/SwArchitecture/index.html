@@ -2598,7 +2598,7 @@
 
 <h1 id="software-architecture">Software Architecture<a class="headerlink" href="#software-architecture" title="Permanent link">&para;</a></h1>
 <p>This document consolidates the software architecture of Network Intrusion detection project </p>
-<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span></em></p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:33:24 CET">08-Feb-2026</span></em></p>
 <hr />
 <div class="toc">
 <ul>
@@ -2770,7 +2770,7 @@
 <h2 id="layermodule-decomposition">Layer/Module Decomposition<a class="headerlink" href="#layermodule-decomposition" title="Permanent link">&para;</a></h2>
 <p>Breakdown of software into layers and modules.</p>
 <h3 id="layer-structure">Layer Structure<a class="headerlink" href="#layer-structure" title="Permanent link">&para;</a></h3>
-<p><img alt="Layer Structure" src="diagrams/out/SwArch_BuildingBlocks.svg" /></p>
+<p><img alt="Layer Structure" src="../../diagrams/out/SwArch_BuildingBlocks.svg" /></p>
 <h3 id="layer-descriptions">Layer Descriptions<a class="headerlink" href="#layer-descriptions" title="Permanent link">&para;</a></h3>
 <h4 id="application-layer">Application Layer<a class="headerlink" href="#application-layer" title="Permanent link">&para;</a></h4>
 <p><strong>Purpose:</strong> Business logic and application-specific functionality</p>
@@ -2919,7 +2919,7 @@
     └── unit_tests/
 </code></pre></div>
 <h3 id="module-dependencies">Module Dependencies<a class="headerlink" href="#module-dependencies" title="Permanent link">&para;</a></h3>
-<p><img alt="Module Dependencies" src="diagrams/out/SwArch_ModuleDependencies.svg" /></p>
+<p><img alt="Module Dependencies" src="../../diagrams/out/SwArch_ModuleDependencies.svg" /></p>
 <h3 id="key-interfaces-and-apis">Key Interfaces and APIs<a class="headerlink" href="#key-interfaces-and-apis" title="Permanent link">&para;</a></h3>
 <h4 id="application-apis">Application APIs<a class="headerlink" href="#application-apis" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1">// State machine</span>
@@ -3028,9 +3028,9 @@
     section Diagnostic
     Check :0, 3</code></pre>
 <h3 id="runtime-sequence">Runtime Sequence<a class="headerlink" href="#runtime-sequence" title="Permanent link">&para;</a></h3>
-<p><img alt="Runtime Sequence" src="diagrams/out/SwArch_Runtime.svg" /></p>
+<p><img alt="Runtime Sequence" src="../../diagrams/out/SwArch_Runtime.svg" /></p>
 <h3 id="state-machine-execution">State Machine Execution<a class="headerlink" href="#state-machine-execution" title="Permanent link">&para;</a></h3>
-<p><img alt="State Machine Execution" src="diagrams/out/SwArch_StateMachines.svg" /></p>
+<p><img alt="State Machine Execution" src="../../diagrams/out/SwArch_StateMachines.svg" /></p>
 <h3 id="interrupt-handling">Interrupt Handling<a class="headerlink" href="#interrupt-handling" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>sequenceDiagram
     participant Hardware
@@ -3092,7 +3092,7 @@
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
 <p>How data moves through the software system.</p>
 <h3 id="data-flow-diagram">Data Flow Diagram<a class="headerlink" href="#data-flow-diagram" title="Permanent link">&para;</a></h3>
-<p><img alt="Data Flow Diagram" src="diagrams/out/SwArch_DataFlow.svg" /></p>
+<p><img alt="Data Flow Diagram" src="../../diagrams/out/SwArch_DataFlow.svg" /></p>
 <h3 id="data-processing-pipeline">Data Processing Pipeline<a class="headerlink" href="#data-processing-pipeline" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>graph LR
     A[Raw Sensor Data] --&gt; B[Filtering]
@@ -3237,7 +3237,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="data-sharing-and-protection">Data Sharing and Protection<a class="headerlink" href="#data-sharing-and-protection" title="Permanent link">&para;</a></h3>
-<p><img alt="Data Sharing and Protection" src="diagrams/out/SwArch_DataSharing.svg" /></p>
+<p><img alt="Data Sharing and Protection" src="../../diagrams/out/SwArch_DataSharing.svg" /></p>
 <hr />
 <h2 id="memory-architecture">Memory Architecture<a class="headerlink" href="#memory-architecture" title="Permanent link">&para;</a></h2>
 <p>Flash and RAM layout, code placement, and memory management.</p>
@@ -3379,7 +3379,7 @@ RAM Memory (128 KB)
 <h2 id="boot-sequence">Boot Sequence<a class="headerlink" href="#boot-sequence" title="Permanent link">&para;</a></h2>
 <p>System initialization and startup flow.</p>
 <h3 id="boot-flow-diagram">Boot Flow Diagram<a class="headerlink" href="#boot-flow-diagram" title="Permanent link">&para;</a></h3>
-<p><img alt="Boot Flow Diagram" src="diagrams/out/SwArch_BootFlow.svg" /></p>
+<p><img alt="Boot Flow Diagram" src="../../diagrams/out/SwArch_BootFlow.svg" /></p>
 <h3 id="initialization-sequence-details">Initialization Sequence Details<a class="headerlink" href="#initialization-sequence-details" title="Permanent link">&para;</a></h3>
 <h4 id="stage-1-hardware-initialization-reset-handler">Stage 1: Hardware Initialization (Reset Handler)<a class="headerlink" href="#stage-1-hardware-initialization-reset-handler" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">Reset_Handler</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3562,7 +3562,7 @@ RAM Memory (128 KB)
 - CRC/checksum verification
 - Range checking on inputs</p>
 <h3 id="error-handling-flow">Error Handling Flow<a class="headerlink" href="#error-handling-flow" title="Permanent link">&para;</a></h3>
-<p><img alt="Error Handling Flow" src="diagrams/out/SwArch_ErrorHandling.svg" /></p>
+<p><img alt="Error Handling Flow" src="../../diagrams/out/SwArch_ErrorHandling.svg" /></p>
 <h3 id="error-recovery-strategies">Error Recovery Strategies<a class="headerlink" href="#error-recovery-strategies" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3814,7 +3814,7 @@ If system moves to more powerful processor with MMU and is no longer safety-crit
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 5, 2026 15:41:06 CET">05-Feb-2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:33:24 CET">08-Feb-2026</span>
   </span>
 
     
@@ -3870,6 +3870,8 @@ If system moves to more powerful processor with MMU and is no longer safety-crit
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../js/toc_collapse.js"></script>
       
     
   </body>
