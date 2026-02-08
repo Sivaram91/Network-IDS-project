@@ -71,7 +71,7 @@ Physical hardware components, ECUs, sensors, actuators, and communication infras
 
 ### Hardware Block Diagram
 
-![Hardware Block Diagram](diagrams/out/SysArch_BlockDiagram.svg)
+![Hardware Block Diagram](../diagrams/out/SysArch_BlockDiagram.svg)
 
 ### Hardware Components
 
@@ -133,7 +133,7 @@ External and internal interfaces between subsystems.
 
 ### Internal Interfaces
 
-![Internal Interfaces](diagrams/out/SysArch_Interfaces.svg)
+![Internal Interfaces](../diagrams/out/SysArch_Interfaces.svg)
 
 ### Interface Specifications
 
@@ -161,7 +161,7 @@ Mapping of software components to hardware nodes.
 
 ### Deployment Diagram
 
-![Deployment Diagram](diagrams/out/SysArch_DeploymentDiagram.svg)
+![Deployment Diagram](../diagrams/out/SysArch_DeploymentDiagram.svg)
 
 ### Software-to-Hardware Mapping
 

@@ -46,14 +46,14 @@ plugins:
       custom_format: "%d-%b-%Y"
       timezone: Europe/Berlin
       fallback_to_build_date: true
-  # - build_plantuml:
-  #    render: 'server'  # Use server rendering to avoid local dependencies
-  #    server: 'http://www.plantuml.com/plantuml'
-  #    output_format: "svg"
-  #    diagram_root: "docs/diagrams"
-  #    output_folder: "out"
-  #    input_folder: "src"
-  #    input_extensions: "puml"
+  - build_plantuml:
+      render: 'server'  # Use server rendering to avoid local dependencies
+      server: 'http://www.plantuml.com/plantuml'
+      output_format: "svg"
+      diagram_root: "docs/diagrams"
+      output_folder: "out"
+      input_folder: "src"
+      input_extensions: "puml"
 
 markdown_extensions:
   - admonition

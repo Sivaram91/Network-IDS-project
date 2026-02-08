@@ -75,7 +75,7 @@ Breakdown of software into layers and modules.
 
 ### Layer Structure
 
-![Layer Structure](diagrams/out/SwArch_BuildingBlocks.svg)
+![Layer Structure](../diagrams/out/SwArch_BuildingBlocks.svg)
 
 ### Layer Descriptions
 
@@ -214,7 +214,7 @@ project_root/
 
 ### Module Dependencies
 
-![Module Dependencies](diagrams/out/SwArch_ModuleDependencies.svg)
+![Module Dependencies](../diagrams/out/SwArch_ModuleDependencies.svg)
 
 ### Key Interfaces and APIs
 
@@ -300,11 +300,11 @@ gantt
 
 ### Runtime Sequence
 
-![Runtime Sequence](diagrams/out/SwArch_Runtime.svg)
+![Runtime Sequence](../diagrams/out/SwArch_Runtime.svg)
 
 ### State Machine Execution
 
-![State Machine Execution](diagrams/out/SwArch_StateMachines.svg)
+![State Machine Execution](../diagrams/out/SwArch_StateMachines.svg)
 
 ### Interrupt Handling
 
@@ -348,7 +348,7 @@ How data moves through the software system.
 
 ### Data Flow Diagram
 
-![Data Flow Diagram](diagrams/out/SwArch_DataFlow.svg)
+![Data Flow Diagram](../diagrams/out/SwArch_DataFlow.svg)
 
 ### Data Processing Pipeline
 
@@ -424,7 +424,7 @@ void on_command_received(can_msg_t* msg) {
 
 ### Data Sharing and Protection
 
-![Data Sharing and Protection](diagrams/out/SwArch_DataSharing.svg)
+![Data Sharing and Protection](../diagrams/out/SwArch_DataSharing.svg)
 
 ---
 
@@ -536,7 +536,7 @@ System initialization and startup flow.
 
 ### Boot Flow Diagram
 
-![Boot Flow Diagram](diagrams/out/SwArch_BootFlow.svg)
+![Boot Flow Diagram](../diagrams/out/SwArch_BootFlow.svg)
 
 ### Initialization Sequence Details
 
@@ -678,7 +678,7 @@ System-wide approach to error detection, reporting, and recovery.
 
 ### Error Handling Flow
 
-![Error Handling Flow](diagrams/out/SwArch_ErrorHandling.svg)
+![Error Handling Flow](../diagrams/out/SwArch_ErrorHandling.svg)
 
 ### Error Recovery Strategies
 

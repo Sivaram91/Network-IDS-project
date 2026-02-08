@@ -39,17 +39,6 @@ jobs:
           pip install pymdown-extensions
           pip install mkdocs-build-plantuml-plugin
 
-      - name: Enable PlantUML for production  # NEW STEP
-        run: |
-          sed -i 's/^  # - build_plantuml:/  - build_plantuml:/' mkdocs.yml
-          sed -i 's/^  #    render:/    render:/' mkdocs.yml
-          sed -i 's/^  #    server:/    server:/' mkdocs.yml
-          sed -i 's/^  #    output_format:/    output_format:/' mkdocs.yml
-          sed -i 's/^  #    diagram_root:/    diagram_root:/' mkdocs.yml
-          sed -i 's/^  #    output_folder:/    output_folder:/' mkdocs.yml
-          sed -i 's/^  #    input_folder:/    input_folder:/' mkdocs.yml
-          sed -i 's/^  #    input_extensions:/    input_extensions:/' mkdocs.yml
-
       - name: Generate System Requirements
         run: |
           cd docs/Requirements
