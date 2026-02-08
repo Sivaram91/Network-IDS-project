@@ -1,5 +1,26 @@
+/* Better TOC styling */
 .md-sidebar--secondary {
-    display: none !important;
+  width: 16rem;  /* Adjust width if needed */
+}
+
+.md-nav--secondary .md-nav__list {
+  padding-left: 0;
+}
+
+.md-nav--secondary .md-nav__link {
+  font-size: 0.75rem;  /* Slightly smaller text */
+  padding: 0.3rem 0;
+}
+
+/* Indent sub-items nicely */
+.md-nav--secondary .md-nav__item .md-nav__item {
+  padding-left: 2rem;
+}
+
+/* Active item highlight */
+.md-nav--secondary .md-nav__link--active {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
 }
 
 .md-source-date {
