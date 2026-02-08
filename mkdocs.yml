@@ -11,10 +11,8 @@ theme:
   features:
     - navigation.sections
     - navigation.indexes
-
-extra:
-  toc:
-    visible: false
+    - navigation.top
+    - toc.follow
 
 extra_css:
   - css/custom.css
@@ -61,6 +59,7 @@ markdown_extensions:
       guess_lang: false
   - toc:
       permalink: true
+      toc_depth: 3
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

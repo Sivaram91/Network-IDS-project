@@ -7,8 +7,6 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-[TOC]
-
 ## 🎯 Project Overview
 
 A dual-layer security system combining Machine Learning and TinyML for real-time network intrusion detection, with applications in automotive and IoT security.

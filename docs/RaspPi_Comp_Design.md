@@ -6,8 +6,6 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-[TOC]
-
 ## Component Name
 
 ### Component Overview

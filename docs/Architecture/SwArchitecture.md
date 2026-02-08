@@ -6,8 +6,6 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-[TOC]
-
 ## Software Architecture Pattern
 
 Overall architectural style and design patterns used in the software system.

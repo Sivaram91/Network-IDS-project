@@ -4,8 +4,6 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-[TOC]
-
 This guide helps you set up your development environment to work on or replicate this project.
 
 -----

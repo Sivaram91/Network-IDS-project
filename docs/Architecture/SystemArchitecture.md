@@ -6,8 +6,6 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-[TOC]
-
 ## System Decomposition
 
 High-level decomposition of the system into major subsystems and their responsibilities.
