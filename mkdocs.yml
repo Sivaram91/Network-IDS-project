@@ -47,8 +47,8 @@ plugins:
       timezone: Europe/Berlin
       fallback_to_build_date: true
   # - build_plantuml:
-  #    render: "local"  # Uses local rendering, no server needed
-  #    bin_path: ""  # Leave empty, will auto-detect
+  #    render: 'server'  # Use server rendering to avoid local dependencies
+  #    server: 'http://www.plantuml.com/plantuml'
   #    output_format: "svg"
   #    diagram_root: "docs/diagrams"
   #    output_folder: "out"
