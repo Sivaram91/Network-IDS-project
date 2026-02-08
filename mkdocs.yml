@@ -55,11 +55,6 @@ plugins:
   #    input_folder: "src"
   #    input_extensions: "puml"
 
-# Add this to ignore only .svg file warnings
-validation:
-  links:
-    not_found: ignore
-
 markdown_extensions:
   - admonition
   - codehilite:
@@ -76,6 +71,3 @@ docs_dir: docs
 
 # Enable raw HTML/JavaScript in markdown
 use_directory_urls: true
-
-extra_javascript:
-  - https://unpkg.com/mermaid/dist/mermaid.min.js
