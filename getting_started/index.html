@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,7 +47,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -63,7 +60,17 @@
 
     
     
-  </head>
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +106,12 @@
     <a href=".." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -132,7 +139,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -141,15 +148,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -185,7 +192,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -197,7 +204,7 @@
     <a href=".." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     Network IDS Project
@@ -664,7 +671,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -791,7 +798,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1032,7 +1039,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1372,20 +1379,20 @@
 
 
 
-<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">¶</a></h1>
 <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span></em></p>
-<hr />
+<hr>
 <p>This guide helps you set up your development environment to work on or replicate this project.</p>
-<hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<h3 id="knowledge-requirements">Knowledge Requirements<a class="headerlink" href="#knowledge-requirements" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<h3 id="knowledge-requirements">Knowledge Requirements<a class="headerlink" href="#knowledge-requirements" title="Permanent link">¶</a></h3>
 <ul>
 <li>Basic Python programming</li>
 <li>Understanding of networking concepts (TCP/IP, packets)</li>
 <li>Familiarity with Linux command line</li>
 <li>(Optional) Embedded C for STM32 development</li>
 </ul>
-<h3 id="hardware-requirements">Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h3>
+<h3 id="hardware-requirements">Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">¶</a></h3>
 <p><strong>Minimum Setup (Raspberry Pi only):</strong></p>
 <ul>
 <li>Raspberry Pi 4 (4GB RAM minimum, 8GB recommended)</li>
@@ -1401,19 +1408,19 @@
 <li>USB cable (Type-A to Mini-B for STM32)</li>
 </ul>
 <p><strong>Budget:</strong> ~€125 total</p>
-<h3 id="software-requirements">Software Requirements<a class="headerlink" href="#software-requirements" title="Permanent link">&para;</a></h3>
+<h3 id="software-requirements">Software Requirements<a class="headerlink" href="#software-requirements" title="Permanent link">¶</a></h3>
 <ul>
 <li>Computer with Windows/Mac/Linux</li>
 <li>Internet connection (for downloads and cloud features)</li>
 <li>Git installed on your computer</li>
 </ul>
-<hr />
-<h2 id="quick-start-20-minutes">Quick Start (20 Minutes)<a class="headerlink" href="#quick-start-20-minutes" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-clone-repository">Step 1: Clone Repository<a class="headerlink" href="#step-1-clone-repository" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="quick-start-20-minutes">Quick Start (20 Minutes)<a class="headerlink" href="#quick-start-20-minutes" title="Permanent link">¶</a></h2>
+<h3 id="step-1-clone-repository">Step 1: Clone Repository<a class="headerlink" href="#step-1-clone-repository" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Sivaram91/Network-IDS-project.git
 <span class="nb">cd</span><span class="w"> </span>network-ids-project
 </code></pre></div>
-<h3 id="step-2-hardware-setup">Step 2: Hardware Setup<a class="headerlink" href="#step-2-hardware-setup" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-hardware-setup">Step 2: Hardware Setup<a class="headerlink" href="#step-2-hardware-setup" title="Permanent link">¶</a></h3>
 <p><strong>Raspberry Pi:</strong></p>
 <ol>
 <li>Flash Raspberry Pi OS to SD card (see <a href="../tools_installation/">tools installation</a>)</li>
@@ -1427,11 +1434,11 @@
 <li>Install STM32CubeIDE</li>
 <li>Follow STM32 setup guide (coming soon)</li>
 </ol>
-<h3 id="step-3-software-installation">Step 3: Software Installation<a class="headerlink" href="#step-3-software-installation" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-software-installation">Step 3: Software Installation<a class="headerlink" href="#step-3-software-installation" title="Permanent link">¶</a></h3>
 <p>See detailed instructions: <strong><a href="../tools_installation/">Tools Installation Guide</a></strong></p>
-<hr />
-<h2 id="raspberry-pi-setup-detailed">Raspberry Pi Setup (Detailed)<a class="headerlink" href="#raspberry-pi-setup-detailed" title="Permanent link">&para;</a></h2>
-<h3 id="1-prepare-sd-card">1. Prepare SD Card<a class="headerlink" href="#1-prepare-sd-card" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="raspberry-pi-setup-detailed">Raspberry Pi Setup (Detailed)<a class="headerlink" href="#raspberry-pi-setup-detailed" title="Permanent link">¶</a></h2>
+<h3 id="1-prepare-sd-card">1. Prepare SD Card<a class="headerlink" href="#1-prepare-sd-card" title="Permanent link">¶</a></h3>
 <p><strong>Download Raspberry Pi Imager:</strong></p>
 <ul>
 <li><a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a></li>
@@ -1450,7 +1457,7 @@
 <li>Click “Write”</li>
 <li>Wait for completion (~5 minutes)</li>
 </ol>
-<h3 id="2-first-boot">2. First Boot<a class="headerlink" href="#2-first-boot" title="Permanent link">&para;</a></h3>
+<h3 id="2-first-boot">2. First Boot<a class="headerlink" href="#2-first-boot" title="Permanent link">¶</a></h3>
 <p><strong>Option A: With Monitor &amp; Keyboard</strong></p>
 <ol>
 <li>Insert SD card into Pi</li>
@@ -1471,7 +1478,7 @@
 <span class="c1"># or</span>
 ssh<span class="w"> </span>pi@&lt;IP_ADDRESS&gt;
 </code></pre></div>
-<h3 id="3-initial-configuration">3. Initial Configuration<a class="headerlink" href="#3-initial-configuration" title="Permanent link">&para;</a></h3>
+<h3 id="3-initial-configuration">3. Initial Configuration<a class="headerlink" href="#3-initial-configuration" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Update system</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
@@ -1486,7 +1493,7 @@ python3<span class="w"> </span>--version<span class="w"> </span><span class="c1"
 sudo<span class="w"> </span>raspi-config
 <span class="c1"># Navigate to: Localisation Options → Timezone → Europe → Berlin</span>
 </code></pre></div>
-<h3 id="4-install-project-dependencies">4. Install Project Dependencies<a class="headerlink" href="#4-install-project-dependencies" title="Permanent link">&para;</a></h3>
+<h3 id="4-install-project-dependencies">4. Install Project Dependencies<a class="headerlink" href="#4-install-project-dependencies" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Install Python packages</span>
 pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 pip3<span class="w"> </span>install<span class="w"> </span>scapy<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>scikit-learn<span class="w"> </span>matplotlib<span class="w"> </span>seaborn
@@ -1495,22 +1502,22 @@ pip3<span class="w"> </span>install<span class="w"> </span>scapy<span class="w">
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>tcpdump<span class="w"> </span>wireshark
 
 <span class="c1"># Verify installation</span>
-python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import scapy; print(&#39;Scapy version:&#39;, scapy.__version__)&quot;</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import scapy; print('Scapy version:', scapy.__version__)"</span>
 </code></pre></div>
-<h3 id="5-clone-project-repository">5. Clone Project Repository<a class="headerlink" href="#5-clone-project-repository" title="Permanent link">&para;</a></h3>
+<h3 id="5-clone-project-repository">5. Clone Project Repository<a class="headerlink" href="#5-clone-project-repository" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Sivaram91/Network-IDS-project.git
 <span class="nb">cd</span><span class="w"> </span>network-ids-project
 </code></pre></div>
-<h3 id="6-test-setup">6. Test Setup<a class="headerlink" href="#6-test-setup" title="Permanent link">&para;</a></h3>
+<h3 id="6-test-setup">6. Test Setup<a class="headerlink" href="#6-test-setup" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Run setup verification script (when available)</span>
 python3<span class="w"> </span>scripts/verify_setup.py
 
 <span class="c1"># Or manual test</span>
-python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import scapy, sklearn, pandas; print(&#39;All imports successful!&#39;)&quot;</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import scapy, sklearn, pandas; print('All imports successful!')"</span>
 </code></pre></div>
-<hr />
-<h2 id="stm32-setup-coming-soon">STM32 Setup (Coming Soon)<a class="headerlink" href="#stm32-setup-coming-soon" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="stm32-setup-coming-soon">STM32 Setup (Coming Soon)<a class="headerlink" href="#stm32-setup-coming-soon" title="Permanent link">¶</a></h2>
 <p>Detailed STM32 development environment setup will be added in Phase 1.</p>
 <p><strong>What you’ll need:</strong></p>
 <ul>
@@ -1519,9 +1526,9 @@ python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;
 <li>TensorFlow Lite Micro</li>
 <li>ST-Link drivers</li>
 </ul>
-<hr />
-<h2 id="network-configuration">Network Configuration<a class="headerlink" href="#network-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="connect-pi-and-stm32">Connect Pi and STM32<a class="headerlink" href="#connect-pi-and-stm32" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="network-configuration">Network Configuration<a class="headerlink" href="#network-configuration" title="Permanent link">¶</a></h2>
+<h3 id="connect-pi-and-stm32">Connect Pi and STM32<a class="headerlink" href="#connect-pi-and-stm32" title="Permanent link">¶</a></h3>
 <p><strong>Direct Connection (Simplest):</strong></p>
 <div class="highlight"><pre><span></span><code>[Raspberry Pi] ←──Ethernet Cable──→ [STM32]
 </code></pre></div>
@@ -1537,34 +1544,34 @@ static<span class="w"> </span><span class="nv">ip_address</span><span class="o">
 <div class="highlight"><pre><span></span><code><span class="n">IP_ADDRESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">192.168.10.2</span>
 <span class="n">NETMASK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">255.255.255.0</span>
 </code></pre></div>
-<hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="raspberry-pi-wont-boot">Raspberry Pi Won’t Boot<a class="headerlink" href="#raspberry-pi-wont-boot" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
+<h3 id="raspberry-pi-wont-boot">Raspberry Pi Won’t Boot<a class="headerlink" href="#raspberry-pi-wont-boot" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Check:</strong> Power supply (needs 5V/3A minimum)</li>
 <li><strong>Check:</strong> SD card properly inserted</li>
 <li><strong>Check:</strong> Green LED blinks? OS might be corrupted, reflash SD card</li>
 </ul>
-<h3 id="cannot-ssh-to-pi">Cannot SSH to Pi<a class="headerlink" href="#cannot-ssh-to-pi" title="Permanent link">&para;</a></h3>
+<h3 id="cannot-ssh-to-pi">Cannot SSH to Pi<a class="headerlink" href="#cannot-ssh-to-pi" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Check:</strong> Pi and computer on same network</li>
 <li><strong>Try:</strong> <code>ping raspberrypi.local</code></li>
 <li><strong>Try:</strong> Use IP address instead of hostname</li>
 <li><strong>Check:</strong> SSH enabled during imaging</li>
 </ul>
-<h3 id="permission-denied-for-packet-capture">Permission Denied for Packet Capture<a class="headerlink" href="#permission-denied-for-packet-capture" title="Permanent link">&para;</a></h3>
+<h3 id="permission-denied-for-packet-capture">Permission Denied for Packet Capture<a class="headerlink" href="#permission-denied-for-packet-capture" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Add user to wireshark group</span>
 sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>wireshark<span class="w"> </span><span class="nv">$USER</span>
 
 <span class="c1"># Or run with sudo</span>
 sudo<span class="w"> </span>python3<span class="w"> </span>your_script.py
 </code></pre></div>
-<h3 id="import-errors">Import Errors<a class="headerlink" href="#import-errors" title="Permanent link">&para;</a></h3>
+<h3 id="import-errors">Import Errors<a class="headerlink" href="#import-errors" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Reinstall dependencies</span>
 pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>scapy<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>scikit-learn
 </code></pre></div>
-<hr />
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¶</a></h2>
 <p>After completing setup:</p>
 <ol>
 <li><strong><a href="../tools_installation/">Tools Installation</a></strong> - Verify all tools are working</li>
@@ -1572,14 +1579,14 @@ pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class=
 <li><strong>Explore Examples</strong> - Check <code>/examples</code> folder</li>
 <li><strong>Start Development</strong> - Begin with data collection module</li>
 </ol>
-<hr />
-<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Issues:</strong> <a href="https://github.com/Sivaram91/Network-IDS-project/issues">GitHub Issues</a></li>
 <li><strong>Email:</strong> sivaram.07@gmail.com</li>
 <li><strong>Documentation:</strong> Browse other docs pages</li>
 </ul>
-<hr />
+<hr>
 <p><strong>Ready to start?</strong> Head to <a href="../tools_installation/">Tools Installation</a> next!</p>
 
 
@@ -1599,7 +1606,7 @@ pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class=
       
   <span class="md-source-file__fact">
     <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
     <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span>
   </span>
@@ -1624,7 +1631,7 @@ pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class=
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1666,6 +1673,10 @@ pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class=
       
         <script src="../js/toc_collapse.js"></script>
       
+        <script src="../js/custom_glightbox_zoom.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

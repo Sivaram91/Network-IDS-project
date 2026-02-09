@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,7 +47,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -63,7 +60,17 @@
 
     
     
-  </head>
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +106,12 @@
     <a href=".." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -132,7 +139,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -141,15 +148,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -185,7 +192,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -197,7 +204,7 @@
     <a href=".." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     Network IDS Project
@@ -312,7 +319,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -823,7 +830,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -952,12 +959,16 @@
 
 
 
-<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h1>
 <p>This document consolidates the requirements and design of all components running in Raspberry Pi</p>
-<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span></em></p>
-<hr />
-<h2 id="component-name">Component Name<a class="headerlink" href="#component-name" title="Permanent link">&para;</a></h2>
-<h3 id="component-overview">Component Overview<a class="headerlink" href="#component-overview" title="Permanent link">&para;</a></h3>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 10, 2026 00:36:35 CET">10-Feb-2026</span></em></p>
+<hr>
+<div class="admonition danger">
+<p class="admonition-title">⚠️ TEMPLATE - DO NOT USE AS-IS</p>
+<p><strong>This is a template file.</strong> Copy and customize for your own use. The content below is placeholder text only and should not be considered as actual documentation</p>
+</div>
+<h2 id="component-name">Component Name<a class="headerlink" href="#component-name" title="Permanent link">¶</a></h2>
+<h3 id="component-overview">Component Overview<a class="headerlink" href="#component-overview" title="Permanent link">¶</a></h3>
 <p>Brief description of the component's purpose and responsibility in the system.</p>
 <p><strong>Purpose:</strong> What problem does this component solve?</p>
 <p><strong>Scope:</strong> What is included and what is out of scope?</p>
@@ -965,24 +976,24 @@
 - Responsibility 1
 - Responsibility 2
 - Responsibility 3</p>
-<hr />
-<h3 id="component-requirements">Component Requirements<a class="headerlink" href="#component-requirements" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="component-requirements">Component Requirements<a class="headerlink" href="#component-requirements" title="Permanent link">¶</a></h3>
 <p>List the functional and non-functional requirements this component must satisfy.</p>
-<h4 id="functional-requirements">Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">&para;</a></h4>
+<h4 id="functional-requirements">Functional Requirements<a class="headerlink" href="#functional-requirements" title="Permanent link">¶</a></h4>
 <ul>
 <li>FR1: Requirement description</li>
 <li>FR2: Requirement description</li>
 <li>FR3: Requirement description</li>
 </ul>
-<h4 id="non-functional-requirements">Non-Functional Requirements<a class="headerlink" href="#non-functional-requirements" title="Permanent link">&para;</a></h4>
+<h4 id="non-functional-requirements">Non-Functional Requirements<a class="headerlink" href="#non-functional-requirements" title="Permanent link">¶</a></h4>
 <ul>
 <li>NFR1: Performance requirement (e.g., response time, throughput)</li>
 <li>NFR2: Resource constraints (e.g., memory, CPU usage)</li>
 <li>NFR3: Reliability/Safety requirements</li>
 <li>NFR4: Other constraints (e.g., real-time requirements, power consumption)</li>
 </ul>
-<hr />
-<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="design">Design<a class="headerlink" href="#design" title="Permanent link">¶</a></h3>
 <p>High-level design approach and how this component fits into the overall system architecture.</p>
 <p><strong>Design Approach:</strong> Brief explanation of the chosen design strategy</p>
 <p><strong>System Context:</strong> How does this component interact with other components?</p>
@@ -993,10 +1004,10 @@
 <p><strong>Key Design Decisions:</strong>
 - Decision 1 and rationale
 - Decision 2 and rationale</p>
-<hr />
-<h3 id="static-view">Static View<a class="headerlink" href="#static-view" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="static-view">Static View<a class="headerlink" href="#static-view" title="Permanent link">¶</a></h3>
 <p>Structure of the component - modules, files, classes, functions, and their relationships.</p>
-<h4 id="module-structure">Module Structure<a class="headerlink" href="#module-structure" title="Permanent link">&para;</a></h4>
+<h4 id="module-structure">Module Structure<a class="headerlink" href="#module-structure" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code>component_name/
 ├── src/
 │   ├── main.c
@@ -1008,7 +1019,7 @@
 └── config/
     └── config.h
 </code></pre></div>
-<h4 id="component-diagram-mermaid-example">Component Diagram (Mermaid example)<a class="headerlink" href="#component-diagram-mermaid-example" title="Permanent link">&para;</a></h4>
+<h4 id="component-diagram-mermaid-example">Component Diagram (Mermaid example)<a class="headerlink" href="#component-diagram-mermaid-example" title="Permanent link">¶</a></h4>
 <pre class="mermaid"><code>classDiagram
     class ComponentMain {
         +initialize()
@@ -1024,9 +1035,9 @@
     }
     ComponentMain --&gt; Module1
     ComponentMain --&gt; Module2</code></pre>
-<h4 id="component-diagram-plantuml-example">Component Diagram (PlantUML example)<a class="headerlink" href="#component-diagram-plantuml-example" title="Permanent link">&para;</a></h4>
+<h4 id="component-diagram-plantuml-example">Component Diagram (PlantUML example)<a class="headerlink" href="#component-diagram-plantuml-example" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code>@startuml
-package &quot;Component Name&quot; {
+package "Component Name" {
     [Main Controller]
     [Data Handler]
     [Communication Interface]
@@ -1038,17 +1049,17 @@ package &quot;Component Name&quot; {
 
 @enduml
 </code></pre></div>
-<h4 id="key-interfaces">Key Interfaces<a class="headerlink" href="#key-interfaces" title="Permanent link">&para;</a></h4>
+<h4 id="key-interfaces">Key Interfaces<a class="headerlink" href="#key-interfaces" title="Permanent link">¶</a></h4>
 <p><strong>Public API:</strong>
-<div class="highlight"><pre><span></span><code><span class="c1">// Function signatures and brief descriptions</span>
+</p><div class="highlight"><pre><span></span><code><span class="c1">// Function signatures and brief descriptions</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">component_init</span><span class="p">(</span><span class="n">config_t</span><span class="o">*</span><span class="w"> </span><span class="n">config</span><span class="p">);</span>
 <span class="n">status_t</span><span class="w"> </span><span class="nf">component_process</span><span class="p">(</span><span class="n">data_t</span><span class="o">*</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">data_t</span><span class="o">*</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">component_shutdown</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-</code></pre></div></p>
-<hr />
-<h3 id="runtime-view">Runtime View<a class="headerlink" href="#runtime-view" title="Permanent link">&para;</a></h3>
+</code></pre></div><p></p>
+<hr>
+<h3 id="runtime-view">Runtime View<a class="headerlink" href="#runtime-view" title="Permanent link">¶</a></h3>
 <p>Behavior and interactions during execution - sequences, timing, state transitions.</p>
-<h4 id="sequence-diagram-mermaid-example">Sequence Diagram (Mermaid example)<a class="headerlink" href="#sequence-diagram-mermaid-example" title="Permanent link">&para;</a></h4>
+<h4 id="sequence-diagram-mermaid-example">Sequence Diagram (Mermaid example)<a class="headerlink" href="#sequence-diagram-mermaid-example" title="Permanent link">¶</a></h4>
 <pre class="mermaid"><code>sequenceDiagram
     participant App
     participant Component
@@ -1064,12 +1075,12 @@ package &quot;Component Name&quot; {
     Hardware--&gt;&gt;Component: raw_data
     Component-&gt;&gt;Component: process_data()
     Component--&gt;&gt;App: result</code></pre>
-<h4 id="sequence-diagram-plantuml-example">Sequence Diagram (PlantUML example)<a class="headerlink" href="#sequence-diagram-plantuml-example" title="Permanent link">&para;</a></h4>
+<h4 id="sequence-diagram-plantuml-example">Sequence Diagram (PlantUML example)<a class="headerlink" href="#sequence-diagram-plantuml-example" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code>@startuml
 actor User
-participant &quot;Main Controller&quot; as Main
-participant &quot;Data Processor&quot; as Processor
-database &quot;Data Store&quot; as Store
+participant "Main Controller" as Main
+participant "Data Processor" as Processor
+database "Data Store" as Store
 
 User -&gt; Main: trigger_event()
 activate Main
@@ -1083,7 +1094,7 @@ Main --&gt; User: response
 deactivate Main
 @enduml
 </code></pre></div>
-<h4 id="state-machine-mermaid-example">State Machine (Mermaid example)<a class="headerlink" href="#state-machine-mermaid-example" title="Permanent link">&para;</a></h4>
+<h4 id="state-machine-mermaid-example">State Machine (Mermaid example)<a class="headerlink" href="#state-machine-mermaid-example" title="Permanent link">¶</a></h4>
 <pre class="mermaid"><code>stateDiagram-v2
     [*] --&gt; Idle
     Idle --&gt; Active: start()
@@ -1093,7 +1104,7 @@ deactivate Main
     Error --&gt; Idle: reset()
     Active --&gt; Idle: stop()
     Idle --&gt; [*]</code></pre>
-<h4 id="state-machine-plantuml-example">State Machine (PlantUML example)<a class="headerlink" href="#state-machine-plantuml-example" title="Permanent link">&para;</a></h4>
+<h4 id="state-machine-plantuml-example">State Machine (PlantUML example)<a class="headerlink" href="#state-machine-plantuml-example" title="Permanent link">¶</a></h4>
 <div class="highlight"><pre><span></span><code>@startuml
 [*] --&gt; Uninitialized
 Uninitialized --&gt; Idle : initialize()
@@ -1108,15 +1119,15 @@ Running : Do / monitor_status()
 Running : Exit / cleanup()
 @enduml
 </code></pre></div>
-<h4 id="timing-constraints">Timing Constraints<a class="headerlink" href="#timing-constraints" title="Permanent link">&para;</a></h4>
+<h4 id="timing-constraints">Timing Constraints<a class="headerlink" href="#timing-constraints" title="Permanent link">¶</a></h4>
 <ul>
 <li>Constraint 1: Description (e.g., must respond within 10ms)</li>
 <li>Constraint 2: Description (e.g., periodic execution every 100ms)</li>
 </ul>
-<hr />
-<h3 id="alternative-design-decisions">Alternative Design Decisions<a class="headerlink" href="#alternative-design-decisions" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="alternative-design-decisions">Alternative Design Decisions<a class="headerlink" href="#alternative-design-decisions" title="Permanent link">¶</a></h3>
 <p>Document the design alternatives considered and explain why they were not chosen.</p>
-<h4 id="alternative-1-name-of-alternative">Alternative 1: [Name of Alternative]<a class="headerlink" href="#alternative-1-name-of-alternative" title="Permanent link">&para;</a></h4>
+<h4 id="alternative-1-name-of-alternative">Alternative 1: [Name of Alternative]<a class="headerlink" href="#alternative-1-name-of-alternative" title="Permanent link">¶</a></h4>
 <p><strong>Description:</strong> Brief description of the alternative approach</p>
 <p><strong>Pros:</strong>
 - Advantage 1
@@ -1125,8 +1136,8 @@ Running : Exit / cleanup()
 - Disadvantage 1
 - Disadvantage 2</p>
 <p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
-<hr />
-<h4 id="alternative-2-name-of-alternative">Alternative 2: [Name of Alternative]<a class="headerlink" href="#alternative-2-name-of-alternative" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="alternative-2-name-of-alternative">Alternative 2: [Name of Alternative]<a class="headerlink" href="#alternative-2-name-of-alternative" title="Permanent link">¶</a></h4>
 <p><strong>Description:</strong> Brief description of the alternative approach</p>
 <p><strong>Pros:</strong>
 - Advantage 1
@@ -1135,8 +1146,8 @@ Running : Exit / cleanup()
 - Disadvantage 1
 - Disadvantage 2</p>
 <p><strong>Reason for Rejection:</strong> Why this alternative was not selected</p>
-<hr />
-<h3 id="notes-and-references">Notes and References<a class="headerlink" href="#notes-and-references" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="notes-and-references">Notes and References<a class="headerlink" href="#notes-and-references" title="Permanent link">¶</a></h3>
 <ul>
 <li>Note 1: Additional information or constraints</li>
 <li>Note 2: Links to related documentation</li>
@@ -1160,9 +1171,9 @@ Running : Exit / cleanup()
       
   <span class="md-source-file__fact">
     <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 10, 2026 00:36:35 CET">10-Feb-2026</span>
   </span>
 
     
@@ -1185,7 +1196,7 @@ Running : Exit / cleanup()
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1227,6 +1238,10 @@ Running : Exit / cleanup()
       
         <script src="../js/toc_collapse.js"></script>
       
+        <script src="../js/custom_glightbox_zoom.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

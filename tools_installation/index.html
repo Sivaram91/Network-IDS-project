@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,7 +47,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -63,7 +60,17 @@
 
     
     
-  </head>
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +106,12 @@
     <a href=".." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -132,7 +139,7 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -141,15 +148,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -185,7 +192,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -197,7 +204,7 @@
     <a href=".." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 
     </a>
     Network IDS Project
@@ -675,7 +682,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -802,7 +809,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1043,7 +1050,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1394,20 +1401,20 @@
 
 
 
-<h1 id="tools-installation-guide">Tools Installation Guide<a class="headerlink" href="#tools-installation-guide" title="Permanent link">&para;</a></h1>
+<h1 id="tools-installation-guide">Tools Installation Guide<a class="headerlink" href="#tools-installation-guide" title="Permanent link">¶</a></h1>
 <p>Complete guide for installing all software tools needed for this project.</p>
 <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span></em></p>
-<hr />
-<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="#raspberry-pi-tools">Raspberry Pi Tools</a></li>
 <li><a href="#stm32-tools">STM32 Tools</a></li>
 <li><a href="#development-tools">Development Tools</a></li>
 <li><a href="#verification">Verification</a></li>
 </ul>
-<hr />
-<h2 id="raspberry-pi-tools">Raspberry Pi Tools<a class="headerlink" href="#raspberry-pi-tools" title="Permanent link">&para;</a></h2>
-<h3 id="1-operating-system">1. Operating System<a class="headerlink" href="#1-operating-system" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="raspberry-pi-tools">Raspberry Pi Tools<a class="headerlink" href="#raspberry-pi-tools" title="Permanent link">¶</a></h2>
+<h3 id="1-operating-system">1. Operating System<a class="headerlink" href="#1-operating-system" title="Permanent link">¶</a></h3>
 <p><strong>Raspberry Pi OS (Recommended)</strong></p>
 <p><strong>Download &amp; Install:</strong></p>
 <ol>
@@ -1419,8 +1426,8 @@
 <li>Write image</li>
 </ol>
 <p><strong>Link:</strong> https://www.raspberrypi.com/software/</p>
-<hr />
-<h3 id="2-python-environment">2. Python Environment<a class="headerlink" href="#2-python-environment" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="2-python-environment">2. Python Environment<a class="headerlink" href="#2-python-environment" title="Permanent link">¶</a></h3>
 <p><strong>Python 3.9+ (Pre-installed on Raspberry Pi OS)</strong></p>
 <p><strong>Verify:</strong></p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>--version
@@ -1429,8 +1436,8 @@
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python3<span class="w"> </span>python3-pip
 </code></pre></div>
-<hr />
-<h3 id="3-python-packages">3. Python Packages<a class="headerlink" href="#3-python-packages" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="3-python-packages">3. Python Packages<a class="headerlink" href="#3-python-packages" title="Permanent link">¶</a></h3>
 <p><strong>Core ML/Data Science:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># NumPy - numerical computing</span>
 pip3<span class="w"> </span>install<span class="w"> </span>numpy
@@ -1464,8 +1471,8 @@ pip3<span class="w"> </span>install<span class="w"> </span>requests
 <p><strong>All at once:</strong></p>
 <div class="highlight"><pre><span></span><code>pip3<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>scikit-learn<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>scapy<span class="w"> </span>joblib<span class="w"> </span>requests
 </code></pre></div>
-<hr />
-<h3 id="4-system-tools">4. System Tools<a class="headerlink" href="#4-system-tools" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="4-system-tools">4. System Tools<a class="headerlink" href="#4-system-tools" title="Permanent link">¶</a></h3>
 <p><strong>Network Tools:</strong></p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>tcpdump<span class="w"> </span>wireshark
 </code></pre></div>
@@ -1481,9 +1488,9 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
 <span class="c1"># Grafana (for dashboard - Phase 3+)</span>
 <span class="c1"># Instructions: https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/</span>
 </code></pre></div>
-<hr />
-<h2 id="stm32-tools">STM32 Tools<a class="headerlink" href="#stm32-tools" title="Permanent link">&para;</a></h2>
-<h3 id="1-stm32cubeide">1. STM32CubeIDE<a class="headerlink" href="#1-stm32cubeide" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="stm32-tools">STM32 Tools<a class="headerlink" href="#stm32-tools" title="Permanent link">¶</a></h2>
+<h3 id="1-stm32cubeide">1. STM32CubeIDE<a class="headerlink" href="#1-stm32cubeide" title="Permanent link">¶</a></h3>
 <p><strong>Integrated Development Environment for STM32</strong></p>
 <p><strong>Download:</strong></p>
 <ul>
@@ -1505,15 +1512,15 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
 <li>Select workspace location</li>
 <li>Install any prompted updates</li>
 </ol>
-<hr />
-<h3 id="2-stm32cubemx">2. STM32CubeMX<a class="headerlink" href="#2-stm32cubemx" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="2-stm32cubemx">2. STM32CubeMX<a class="headerlink" href="#2-stm32cubemx" title="Permanent link">¶</a></h3>
 <p><strong>Code Generation Tool (included in CubeIDE)</strong></p>
 <p>If using standalone:</p>
 <ul>
 <li>Link: https://www.st.com/en/development-tools/stm32cubemx.html</li>
 </ul>
-<hr />
-<h3 id="3-st-link-drivers">3. ST-Link Drivers<a class="headerlink" href="#3-st-link-drivers" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="3-st-link-drivers">3. ST-Link Drivers<a class="headerlink" href="#3-st-link-drivers" title="Permanent link">¶</a></h3>
 <p><strong>USB Drivers for Programming/Debugging</strong></p>
 <p><strong>Windows:</strong></p>
 <ul>
@@ -1530,8 +1537,8 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
 <div class="highlight"><pre><span></span><code><span class="c1"># Connect STM32 via USB</span>
 st-info<span class="w"> </span>--probe
 </code></pre></div>
-<hr />
-<h3 id="4-tensorflow-lite-micro">4. TensorFlow Lite Micro<a class="headerlink" href="#4-tensorflow-lite-micro" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="4-tensorflow-lite-micro">4. TensorFlow Lite Micro<a class="headerlink" href="#4-tensorflow-lite-micro" title="Permanent link">¶</a></h3>
 <p><strong>For TinyML on STM32</strong></p>
 <p><strong>Download:</strong></p>
 <ul>
@@ -1542,9 +1549,9 @@ st-info<span class="w"> </span>--probe
 <ul>
 <li>Available through STM32Cube.AI (X-CUBE-AI package)</li>
 </ul>
-<hr />
-<h2 id="development-tools-your-computer">Development Tools (Your Computer)<a class="headerlink" href="#development-tools-your-computer" title="Permanent link">&para;</a></h2>
-<h3 id="1-git">1. Git<a class="headerlink" href="#1-git" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="development-tools-your-computer">Development Tools (Your Computer)<a class="headerlink" href="#development-tools-your-computer" title="Permanent link">¶</a></h2>
+<h3 id="1-git">1. Git<a class="headerlink" href="#1-git" title="Permanent link">¶</a></h3>
 <p><strong>Version Control</strong></p>
 <p><strong>Windows:</strong></p>
 <ul>
@@ -1558,11 +1565,11 @@ st-info<span class="w"> </span>--probe
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
 </code></pre></div>
 <p><strong>Configure:</strong></p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span>
-git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;your.email@example.com&quot;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Your Name"</span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"your.email@example.com"</span>
 </code></pre></div>
-<hr />
-<h3 id="2-vs-code-optional-but-recommended">2. VS Code (Optional but Recommended)<a class="headerlink" href="#2-vs-code-optional-but-recommended" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="2-vs-code-optional-but-recommended">2. VS Code (Optional but Recommended)<a class="headerlink" href="#2-vs-code-optional-but-recommended" title="Permanent link">¶</a></h3>
 <p><strong>Code Editor</strong></p>
 <p><strong>Download:</strong> https://code.visualstudio.com/</p>
 <p><strong>Recommended Extensions:</strong></p>
@@ -1573,8 +1580,8 @@ git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"
 <li>PlantUML</li>
 <li>GitLens</li>
 </ul>
-<hr />
-<h3 id="3-serial-terminal">3. Serial Terminal<a class="headerlink" href="#3-serial-terminal" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="3-serial-terminal">3. Serial Terminal<a class="headerlink" href="#3-serial-terminal" title="Permanent link">¶</a></h3>
 <p><strong>For STM32 Debugging</strong></p>
 <p><strong>Options:</strong></p>
 <ul>
@@ -1589,8 +1596,8 @@ screen<span class="w"> </span>/dev/ttyACM0<span class="w"> </span><span class="m
 <span class="c1"># Or</span>
 minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0
 </code></pre></div>
-<hr />
-<h3 id="4-wireshark-desktop">4. Wireshark (Desktop)<a class="headerlink" href="#4-wireshark-desktop" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="4-wireshark-desktop">4. Wireshark (Desktop)<a class="headerlink" href="#4-wireshark-desktop" title="Permanent link">¶</a></h3>
 <p><strong>Network Protocol Analyzer</strong></p>
 <p><strong>Download:</strong> https://www.wireshark.org/download.html</p>
 <p><strong>Use for:</strong></p>
@@ -1599,75 +1606,75 @@ minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0
 <li>Debugging network issues</li>
 <li>Viewing packet details</li>
 </ul>
-<hr />
-<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
-<h3 id="raspberry-pi-verification-script">Raspberry Pi Verification Script<a class="headerlink" href="#raspberry-pi-verification-script" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">¶</a></h2>
+<h3 id="raspberry-pi-verification-script">Raspberry Pi Verification Script<a class="headerlink" href="#raspberry-pi-verification-script" title="Permanent link">¶</a></h3>
 <p><strong>Create file:</strong> <code>scripts/verify_setup.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">Setup Verification Script</span>
 <span class="sd">Checks if all required packages are installed</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">check_import</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">package_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;Try to import a module&quot;&quot;&quot;</span>
+<span class="sd">"""Try to import a module"""</span>
 <span class="k">if</span> <span class="n">package_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="n">package_name</span> <span class="o">=</span> <span class="n">module_name</span>
 
 <span class="k">try</span><span class="p">:</span>
 <span class="nb">__import__</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2"> - OK&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✅ </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2"> - OK"</span><span class="p">)</span>
 <span class="k">return</span> <span class="kc">True</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2"> - MISSING&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; Install: pip3 install </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"❌ </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2"> - MISSING"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">" Install: pip3 install </span><span class="si">{</span><span class="n">package_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">return</span> <span class="kc">False</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Network IDS - Setup Verification&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Network IDS - Setup Verification"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking Python version...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Checking Python version..."</span><span class="p">)</span>
 <span class="n">version</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
 <span class="k">if</span> <span class="n">version</span><span class="o">.</span><span class="n">major</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">version</span><span class="o">.</span><span class="n">minor</span> <span class="o">&gt;=</span> <span class="mi">9</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Python </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">micro</span><span class="si">}</span><span class="s2"> - OK</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"✅ Python </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">minor</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">micro</span><span class="si">}</span><span class="s2"> - OK</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Python </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">minor</span><span class="si">}</span><span class="s2"> - Need 3.9+</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"❌ Python </span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">major</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">version</span><span class="o">.</span><span class="n">minor</span><span class="si">}</span><span class="s2"> - Need 3.9+</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">return</span> <span class="kc">False</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking required packages...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Checking required packages..."</span><span class="p">)</span>
 
 <span class="n">all_ok</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;numpy&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;pandas&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;sklearn&quot;</span><span class="p">,</span> <span class="s2">&quot;scikit-learn&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;seaborn&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;scapy&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;joblib&quot;</span><span class="p">)</span>
-<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">&quot;requests&quot;</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"numpy"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"pandas"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"sklearn"</span><span class="p">,</span> <span class="s2">"scikit-learn"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"matplotlib"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"seaborn"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"scapy"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"joblib"</span><span class="p">)</span>
+<span class="n">all_ok</span> <span class="o">&amp;=</span> <span class="n">check_import</span><span class="p">(</span><span class="s2">"requests"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">all_ok</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎉 All checks passed! You&#39;re ready to start.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"🎉 All checks passed! You're ready to start."</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Some packages are missing. Install them and rerun.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"⚠️ Some packages are missing. Install them and rerun."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="k">return</span> <span class="n">all_ok</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 <span class="n">success</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span> <span class="k">if</span> <span class="n">success</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>Run verification:</strong></p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>scripts/verify_setup.py
 </code></pre></div>
-<hr />
-<h3 id="stm32-verification">STM32 Verification<a class="headerlink" href="#stm32-verification" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="stm32-verification">STM32 Verification<a class="headerlink" href="#stm32-verification" title="Permanent link">¶</a></h3>
 <p><strong>Test Program:</strong></p>
 <ol>
 <li>Open STM32CubeIDE</li>
@@ -1679,8 +1686,8 @@ minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0
 <li>Check blinking LED</li>
 </ol>
 <p><strong>If successful:</strong> ✅ Environment ready</p>
-<hr />
-<h2 id="tool-reference-quick-links">Tool Reference Quick Links<a class="headerlink" href="#tool-reference-quick-links" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="tool-reference-quick-links">Tool Reference Quick Links<a class="headerlink" href="#tool-reference-quick-links" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -1737,12 +1744,12 @@ minicom<span class="w"> </span>-D<span class="w"> </span>/dev/ttyACM0
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="pip-command-not-found">“pip: command not found”<a class="headerlink" href="#pip-command-not-found" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
+<h3 id="pip-command-not-found">“pip: command not found”<a class="headerlink" href="#pip-command-not-found" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
 </code></pre></div>
-<h3 id="permission-denied-when-installing-packages">“Permission denied” when installing packages<a class="headerlink" href="#permission-denied-when-installing-packages" title="Permanent link">&para;</a></h3>
+<h3 id="permission-denied-when-installing-packages">“Permission denied” when installing packages<a class="headerlink" href="#permission-denied-when-installing-packages" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Use --user flag</span>
 pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>package_name
 
@@ -1751,27 +1758,27 @@ python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </
 <span class="nb">source</span><span class="w"> </span>venv/bin/activate
 pip<span class="w"> </span>install<span class="w"> </span>package_name
 </code></pre></div>
-<h3 id="stm32-not-detected">STM32 not detected<a class="headerlink" href="#stm32-not-detected" title="Permanent link">&para;</a></h3>
+<h3 id="stm32-not-detected">STM32 not detected<a class="headerlink" href="#stm32-not-detected" title="Permanent link">¶</a></h3>
 <ul>
 <li>Check USB cable (data cable, not charging-only)</li>
 <li>Install/update ST-Link drivers</li>
 <li>Try different USB port</li>
 </ul>
-<h3 id="scapy-requires-root-permissions">Scapy requires root permissions<a class="headerlink" href="#scapy-requires-root-permissions" title="Permanent link">&para;</a></h3>
+<h3 id="scapy-requires-root-permissions">Scapy requires root permissions<a class="headerlink" href="#scapy-requires-root-permissions" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Add user to necessary groups</span>
 sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>wireshark<span class="w"> </span><span class="nv">$USER</span>
 
 <span class="c1"># Log out and back in, or reboot</span>
 </code></pre></div>
-<hr />
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¶</a></h2>
 <p>✅ All tools installed?</p>
 <p><strong>Continue to:</strong></p>
 <ul>
 <li><a href="../getting_started/">Getting Started</a> - Environment setup</li>
 <li>Start coding! Check <code>/src</code> folder</li>
 </ul>
-<hr />
+<hr>
 <p><strong>Questions?</strong> Open an <a href="https://github.com/Sivaram91/Network-IDS-project">issue on GitHub</a></p>
 
 
@@ -1791,7 +1798,7 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
       
   <span class="md-source-file__fact">
     <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
     <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 8, 2026 23:55:10 CET">08-Feb-2026</span>
   </span>
@@ -1816,7 +1823,7 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1858,6 +1865,10 @@ sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> <
       
         <script src="../js/toc_collapse.js"></script>
       
+        <script src="../js/custom_glightbox_zoom.js"></script>
+      
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
