@@ -20,6 +20,7 @@ extra_css:
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
   - js/toc_collapse.js
+  - js/custom_glightbox_zoom.js
 
 nav:
   - Home: index.md
@@ -52,6 +53,17 @@ plugins:
       output_folder: "out"
       input_folder: "src"
       input_extensions: "puml"
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
 
 markdown_extensions:
   - admonition

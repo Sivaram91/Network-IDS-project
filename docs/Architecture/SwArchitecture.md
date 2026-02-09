@@ -6,6 +6,9 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
+!!! danger "⚠️ TEMPLATE - DO NOT USE AS-IS"
+    **This is a template file.** Copy and customize for your own use. The content below is placeholder text only and should not be considered as actual documentation
+
 ## Software Architecture Pattern
 
 Overall architectural style and design patterns used in the software system.

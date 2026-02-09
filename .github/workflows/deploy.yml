@@ -38,6 +38,7 @@ jobs:
           pip install mkdocs-git-revision-date-localized-plugin
           pip install pymdown-extensions
           pip install mkdocs-build-plantuml-plugin
+          pip install mkdocs-glightbox
 
       - name: Generate System Requirements
         run: |

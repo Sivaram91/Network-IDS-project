@@ -5,27 +5,27 @@ participant "Sensor Task" as sensor
 participant "Actuator" as act
 participant "Hardware" as hw
 
-activate ctrl
-ctrl -> sensor : request_sensor_data()
-activate sensor
+ctrl -> sensor ++ : request_sensor_data()
 sensor -> hw : read_adc()
 hw --> sensor : raw_value
-sensor --> ctrl : processed_data
-deactivate sensor
+sensor --> ctrl -- : processed_data
 
 ctrl -> ctrl : run_control_algorithm()
-ctrl -> act : set_actuator(value)
-activate act
-act -> hw : set_pwm(duty_cycle)
-deactivate act
 
-ctrl -> can : send_status_message()
-activate can
+ctrl -> act ++ : set_actuator(value)
+act -> hw : set_pwm(duty_cycle)
+act --> ctrl --
+
+ctrl -> can ++ : send_status_message()
 can -> hw : can_transmit()
-deactivate can
-deactivate ctrl
+can --> ctrl --
 
 == 10ms later ==
-activate ctrl
-note over ctrl : Next control cycle
+
+ctrl -> sensor ++ : request_sensor_data()
+sensor -> hw : read_adc()
+hw --> sensor : raw_value
+sensor --> ctrl -- : processed_data
+
+note over ctrl : Cycle repeats every 10ms
 @enduml

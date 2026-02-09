@@ -6,6 +6,9 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
+!!! danger "⚠️ TEMPLATE - DO NOT USE AS-IS"
+    **This is a template file.** Copy and customize for your own use. The content below is placeholder text only and should not be considered as actual documentation
+    
 ## System Decomposition
 
 High-level decomposition of the system into major subsystems and their responsibilities.
