@@ -7,14 +7,39 @@
   padding-left: 0;
 }
 
+/* Automatic TOC numbering */
+.md-nav--secondary .md-nav__list {
+  counter-reset: h2-counter;
+}
+
+.md-nav--secondary .md-nav__item {
+  counter-increment: h2-counter;
+}
+
 .md-nav--secondary .md-nav__link {
   font-size: 0.75rem;  /* Slightly smaller text */
   padding: 0.3rem 0;
 }
 
+.md-nav--secondary .md-nav__item .md-nav__list {
+  counter-reset: h3-counter;
+}
+
+.md-nav--secondary .md-nav__item .md-nav__item {
+  counter-increment: h3-counter;
+}
+
 /* Indent sub-items nicely */
 .md-nav--secondary .md-nav__item .md-nav__item {
   padding-left: 2rem;
+}
+
+.md-nav--secondary .md-nav__item .md-nav__item .md-nav__list {
+  counter-reset: h4-counter;
+}
+
+.md-nav--secondary .md-nav__item .md-nav__item .md-nav__item {
+  counter-increment: h4-counter;
 }
 
 /* Active item highlight */
@@ -26,4 +51,20 @@
 .md-source-date {
   font-size: 0.5rem;   /* smaller text */
   color: #6b7280;       /* subtle gray */
+}
+
+/* Display the numbers */
+.md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link::before {
+  content: counter(h2-counter) ". ";
+  font-weight: 600;
+}
+
+.md-nav--secondary .md-nav__item .md-nav__item > .md-nav__link::before {
+  content: counter(h2-counter) "." counter(h3-counter) " ";
+  font-weight: 600;
+}
+
+.md-nav--secondary .md-nav__item .md-nav__item .md-nav__item > .md-nav__link::before {
+  content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) " ";
+  font-weight: 600;
 }
