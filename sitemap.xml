@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/HowTos/</loc>
-         <lastmod>2026-02-09</lastmod>
-    </url>
-    <url>
-         <loc>https://sivaram91.github.io/Network-IDS-project/LessonsLearnt/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/RaspPi_Comp_Design/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/STM_Comp_Design/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/getting_started/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/tools_installation/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/Architecture/SwArchitecture/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/Architecture/SystemArchitecture/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://sivaram91.github.io/Network-IDS-project/LessonsLearnt/00_LessonsLearnt/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://sivaram91.github.io/Network-IDS-project/LessonsLearnt/01_PlantUML_Visualization/</loc>
+         <lastmod>2026-02-10</lastmod>
     </url>
     <url>
          <loc>https://sivaram91.github.io/Network-IDS-project/Requirements/SystemRequirements/</loc>
-         <lastmod>2026-02-09</lastmod>
+         <lastmod>2026-02-10</lastmod>
     </url>
 </urlset>
