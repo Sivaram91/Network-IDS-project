@@ -36,7 +36,7 @@ nav:
     - Raspberry Pi: RaspPi_Comp_Design.md
     - STM32 Microcontroller: STM_Comp_Design.md
   - How-To: HowTos.md
-  - Lessons Learnt: LessonsLearnt.md
+  - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
 
 plugins:
   - search
