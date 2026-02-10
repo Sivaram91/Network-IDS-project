@@ -139,12 +139,13 @@ This page contains all system requirements for the project. Use the filters and 
 }
 
 .table-wrapper {
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #requirements-table {
+  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   background: var(--md-default-bg-color);
@@ -162,12 +163,17 @@ This page contains all system requirements for the project. Use the filters and 
   text-align: left;
   font-weight: 600;
   border-bottom: 2px solid var(--md-default-fg-color--lightest);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 #requirements-table td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 #requirements-table tbody tr:hover {
@@ -177,7 +183,7 @@ This page contains all system requirements for the project. Use the filters and 
 .req-id {
   font-family: var(--md-code-font-family);
   font-weight: 600;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .description {
@@ -189,9 +195,10 @@ This page contains all system requirements for the project. Use the filters and 
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
+  font-weight: normal;
+  white-space: normal;
+  max-width: 100%;
+  text-align: center;
 }
 
 .badge-critical { background: #ef4444; color: white; }
@@ -217,7 +224,7 @@ This page contains all system requirements for the project. Use the filters and 
   border-radius: 0.25rem;
   cursor: pointer;
   font-size: 0.85rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .details-btn:hover {

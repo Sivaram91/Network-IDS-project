@@ -1,8 +1,3 @@
-/* Better TOC styling */
-.md-sidebar--secondary {
-  width: 16rem;  /* Adjust width if needed */
-}
-
 .md-nav--secondary .md-nav__list {
   padding-left: 0;
 }
@@ -31,7 +26,7 @@
 
 /* Indent sub-items nicely */
 .md-nav--secondary .md-nav__item .md-nav__item {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .md-nav--secondary .md-nav__item .md-nav__item .md-nav__list {

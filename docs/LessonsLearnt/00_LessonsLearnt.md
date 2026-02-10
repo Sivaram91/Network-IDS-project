@@ -120,12 +120,13 @@ _Last updated: {{ git_revision_date_localized }}_
 }
 
 .table-wrapper {
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #lessons-table {
+  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   background: var(--md-default-bg-color);
@@ -143,23 +144,22 @@ _Last updated: {{ git_revision_date_localized }}_
   text-align: left;
   font-weight: 600;
   border-bottom: 2px solid var(--md-default-fg-color--lightest);
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 #lessons-table td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
   vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 #lessons-table tbody tr:hover {
   background: var(--md-code-bg-color);
-}
-
-.date-cell {
-  white-space: nowrap;
-  font-family: var(--md-code-font-family);
-  font-size: 0.9rem;
 }
 
 .issue-cell,
@@ -172,9 +172,10 @@ _Last updated: {{ git_revision_date_localized }}_
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  white-space: nowrap;
+  font-weight: normal;
+  white-space: normal;
+  max-width: 100%;
+  text-align: center;
 }
 
 /* Category badges */
@@ -303,15 +304,15 @@ function renderLessons(lessons) {
   lessons.forEach(lesson => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td class="date-cell">${lesson.Date}</td>
-      <td><span class="${getBadgeClass('category', lesson.Category)}">${lesson.Category}</span></td>
-      <td class="lesson-cell">
+      <td data-label="Date">${lesson.Date}</td>
+      <td data-label="Category"><span class="${getBadgeClass('category', lesson.Category)}">${lesson.Category}</span></td>
+      <td data-label="Issue" class="lesson-cell">
         <a class="lesson-link" href="../${lesson.LessonId}/index.html">
           ${lesson.Issue}
         </a>
       </td>
-      <td><span class="${getBadgeClass('impact', lesson.Impact)}">${lesson.Impact}</span></td>
-      <td>${lesson.Component}</td>
+      <td data-label="Impact"><span class="${getBadgeClass('impact', lesson.Impact)}">${lesson.Impact}</span></td>
+      <td data-label="Component">${lesson.Component}</td>
     `;
     tbody.appendChild(row);
   });

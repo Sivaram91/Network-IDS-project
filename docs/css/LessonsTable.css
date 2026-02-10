@@ -1,0 +1,33 @@
+@media (max-width: 900px) {
+  #lessons-table thead {
+    display: none;
+  }
+
+  #lessons-table,
+  #lessons-table tbody,
+  #lessons-table tr,
+  #lessons-table td {
+    display: block;
+    width: 100%;
+  }
+
+  #lessons-table tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  #lessons-table td {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.4rem 0;
+  }
+
+  #lessons-table td::before {
+    font-weight: 600;
+    width: 90px;
+    flex-shrink: 0;
+    content: attr(data-label);
+  }
+}
