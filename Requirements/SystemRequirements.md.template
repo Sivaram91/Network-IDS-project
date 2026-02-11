@@ -192,12 +192,12 @@ This page contains all system requirements for the project. Use the filters and 
 #requirements-table td:nth-child(6),
 #requirements-table th:nth-child(7), /* Phase */
 #requirements-table td:nth-child(7) {
-  width: 12%;
+  width: 10%;
 }
 
 #requirements-table th:nth-child(8), /* Details */
 #requirements-table td:nth-child(8) {
-  width: 8%;
+  width: 10%;
 }
 
 #requirements-table td {
@@ -447,13 +447,25 @@ let allRequirements = [];
 // Load requirements from embedded CSV data
 const requirementsData = `CSV_DATA_PLACEHOLDER`;
 
-// Parse CSV
+// Parse CSV with proper error handling
 function parseCSV(csv) {
+  if (!csv || typeof csv !== 'string') {
+    console.error('Invalid CSV data provided to parseCSV');
+    return [];
+  }
+  
   const lines = csv.trim().split('\n');
-  const headers = lines[0].split(',');
+  if (lines.length < 2) {
+    console.warn('CSV file has no data rows');
+    return [];
+  }
+  
+  const headers = lines[0].split(',').map(h => h.trim());
   const data = [];
   
   for (let i = 1; i < lines.length; i++) {
+    if (!lines[i].trim()) continue; // Skip empty lines
+    
     const obj = {};
     let currentField = '';
     let inQuotes = false;
@@ -465,15 +477,31 @@ function parseCSV(csv) {
       if (char === '"') {
         inQuotes = !inQuotes;
       } else if (char === ',' && !inQuotes) {
-        obj[headers[fieldIndex]] = currentField.trim();
+        const headerName = headers[fieldIndex];
+        if (headerName) {
+          obj[headerName] = currentField.trim();
+        }
         currentField = '';
         fieldIndex++;
       } else {
         currentField += char;
       }
     }
-    obj[headers[fieldIndex]] = currentField.trim();
-    data.push(obj);
+    
+    // Handle last field
+    const headerName = headers[fieldIndex];
+    if (headerName) {
+      obj[headerName] = currentField.trim();
+    }
+    
+    // Only add if has at least REQ_ID
+    if (obj.REQ_ID) {
+      data.push(obj);
+    }
+  }
+  
+  if (data.length === 0) {
+    console.warn('No valid requirement records found in CSV');
   }
   
   return data;
@@ -532,17 +560,28 @@ function populateFilters() {
 
 // Get badge class based on value
 function getBadgeClass(type, value) {
-  const normalized = value.toLowerCase().replace(/[^a-z]/g, '');
+  // Map badge names to CSS class names (handle spaces and special chars)
+  const badgeMap = {
+    'critical': 'badge-critical',
+    'high': 'badge-high',
+    'medium': 'badge-medium',
+    'low': 'badge-low',
+    'functional': 'badge-functional',
+    'performance': 'badge-performance',
+    'nonfunctional': 'badge-non-functional',
+    'non-functional': 'badge-non-functional',
+    'interface': 'badge-interface',
+    'security': 'badge-security',
+    'created': 'badge-created',
+    'inprogress': 'badge-in-progress',
+    'in-progress': 'badge-in-progress',
+    'completed': 'badge-completed'
+  };
   
-  if (type === 'priority') {
-    return `badge badge-${normalized}`;
-  } else if (type === 'type') {
-    return `badge badge-${normalized}`;
-  } else if (type === 'status') {
-    return `badge badge-${normalized}`;
-  }
+  const normalized = value.toLowerCase().replace(/[^a-z-]/g, '');
+  const badgeClass = badgeMap[normalized] || `badge-${normalized}`;
   
-  return 'badge';
+  return `badge ${badgeClass}`;
 }
 
 // Render requirements table
@@ -551,17 +590,49 @@ function renderRequirements(requirements) {
   tbody.innerHTML = '';
   
   requirements.forEach(req => {
+    // Validate required fields
+    if (!req.REQ_ID || !req.Description || !req.Type || !req.Priority || !req.Status || !req.Feature || !req.Phase) {
+      console.warn('Skipping requirement with missing fields:', req);
+      return;
+    }
+    
     const row = document.createElement('tr');
-    row.innerHTML = `
-      <td data-label="REQ ID:" class="req-id">${req.REQ_ID}</td>
-      <td data-label="Description:" class="description">${req.Description}</td>
-      <td data-label="Type:"><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
-      <td data-label="Priority:"><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
-      <td data-label="Status:"><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
-      <td data-label="Feature:">${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
-      <td data-label="Phase:">${req.Phase}</td>
-      <td data-label="Details:"><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
-    `;
+    
+    // Create cells safely without innerHTML
+    const cells = [
+      { label: 'REQ ID:', class: 'req-id', content: req.REQ_ID },
+      { label: 'Description:', class: 'description', content: req.Description },
+      { label: 'Type:', class: '', isBadge: true, badgeType: 'type', content: req.Type },
+      { label: 'Priority:', class: '', isBadge: true, badgeType: 'priority', content: req.Priority },
+      { label: 'Status:', class: '', isBadge: true, badgeType: 'status', content: req.Status },
+      { label: 'Feature:', class: '', content: req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '') },
+      { label: 'Phase:', class: '', content: req.Phase },
+      { label: 'Details:', class: '', isButton: true, reqId: req.REQ_ID }
+    ];
+    
+    cells.forEach(cell => {
+      const td = document.createElement('td');
+      td.setAttribute('data-label', cell.label);
+      if (cell.class) td.className = cell.class;
+      
+      if (cell.isBadge) {
+        const span = document.createElement('span');
+        span.className = getBadgeClass(cell.badgeType, cell.content);
+        span.textContent = cell.content;
+        td.appendChild(span);
+      } else if (cell.isButton) {
+        const button = document.createElement('button');
+        button.className = 'details-btn';
+        button.textContent = 'Details';
+        button.addEventListener('click', () => showDetails(cell.reqId));
+        td.appendChild(button);
+      } else {
+        td.textContent = cell.content;
+      }
+      
+      row.appendChild(td);
+    });
+    
     tbody.appendChild(row);
   });
   
@@ -577,77 +648,128 @@ function showDetails(reqId) {
   const modal = document.getElementById('detail-modal');
   const modalBody = document.getElementById('modal-body');
   
-  modalBody.innerHTML = `
-    <h2>${req.REQ_ID}</h2>
+  // Clear previous content
+  modalBody.innerHTML = '';
+  
+  // Helper function to safely create text elements
+  const createEl = (tag, content, className = '') => {
+    const el = document.createElement(tag);
+    el.textContent = content;
+    if (className) el.className = className;
+    return el;
+  };
+  
+  // Title
+  modalBody.appendChild(createEl('h2', req.REQ_ID || 'Unknown'));
+  
+  // Description section
+  const descSection = document.createElement('div');
+  descSection.className = 'detail-section';
+  descSection.appendChild(createEl('h3', 'Description'));
+  descSection.appendChild(createEl('p', req.Description || 'N/A'));
+  modalBody.appendChild(descSection);
+  
+  // Metadata grid
+  const metaGrid = document.createElement('div');
+  metaGrid.className = 'detail-grid';
+  
+  const metaItems = [
+    { label: 'Type', value: req.Type, type: 'type' },
+    { label: 'Priority', value: req.Priority, type: 'priority' },
+    { label: 'Status', value: req.Status, type: 'status' },
+    { label: 'Phase', value: req.Phase }
+  ];
+  
+  metaItems.forEach(item => {
+    const metaItem = document.createElement('div');
+    metaItem.className = 'detail-item';
+    metaItem.appendChild(createEl('strong', item.label));
     
-    <div class="detail-section">
-      <h3>Description</h3>
-      <p>${req.Description}</p>
-    </div>
+    if (item.type) {
+      const span = document.createElement('span');
+      span.className = getBadgeClass(item.type, item.value);
+      span.textContent = item.value || 'N/A';
+      metaItem.appendChild(span);
+    } else {
+      metaItem.appendChild(document.createTextNode(item.value || 'N/A'));
+    }
     
-    <div class="detail-grid">
-      <div class="detail-item">
-        <strong>Type</strong>
-        <span class="${getBadgeClass('type', req.Type)}">${req.Type}</span>
-      </div>
-      <div class="detail-item">
-        <strong>Priority</strong>
-        <span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span>
-      </div>
-      <div class="detail-item">
-        <strong>Status</strong>
-        <span class="${getBadgeClass('status', req.Status)}">${req.Status}</span>
-      </div>
-      <div class="detail-item">
-        <strong>Phase</strong>
-        ${req.Phase}
-      </div>
-    </div>
-    
-    <div class="detail-section">
-      <h3>Classification</h3>
-      <div class="detail-grid">
-        <div class="detail-item">
-          <strong>Domain</strong>
-          ${req.Domain}
-        </div>
-        <div class="detail-item">
-          <strong>Feature</strong>
-          ${req.Feature.replace(/_/g, ' ')}
-        </div>
-      </div>
-    </div>
-    
-    <div class="detail-section">
-      <h3>Verification</h3>
-      <p><strong>Method:</strong> ${req.Verification_Method}</p>
-      <p><strong>Criteria:</strong> ${req.Verification_Criteria}</p>
-      <p><strong>Status:</strong> ${req.Verification_Status}</p>
-    </div>
-    
-    <div class="detail-section">
-      <h3>Traceability</h3>
-      <div class="detail-grid">
-        <div class="detail-item">
-          <strong>Architecture</strong>
-          ${req.Traces_To_Arch}
-        </div>
-        <div class="detail-item">
-          <strong>Software</strong>
-          ${req.Traces_To_SW}
-        </div>
-        <div class="detail-item">
-          <strong>Test</strong>
-          ${req.Traces_To_Test}
-        </div>
-      </div>
-    </div>
-    
-    <div class="detail-section">
-      <h3>Rationale</h3>
-      <p>${req.Rationale}</p>
-    </div>
-  `;
+    metaGrid.appendChild(metaItem);
+  });
+  modalBody.appendChild(metaGrid);
+  
+  // Classification section
+  const classSection = document.createElement('div');
+  classSection.className = 'detail-section';
+  classSection.appendChild(createEl('h3', 'Classification'));
+  const classGrid = document.createElement('div');
+  classGrid.className = 'detail-grid';
+  
+  const classItems = [
+    { label: 'Domain', value: req.Domain },
+    { label: 'Feature', value: (req.Feature || '').replace(/_/g, ' ') }
+  ];
+  
+  classItems.forEach(item => {
+    const classItem = document.createElement('div');
+    classItem.className = 'detail-item';
+    classItem.appendChild(createEl('strong', item.label));
+    classItem.appendChild(document.createTextNode(item.value || 'N/A'));
+    classGrid.appendChild(classItem);
+  });
+  
+  classSection.appendChild(classGrid);
+  modalBody.appendChild(classSection);
+  
+  // Verification section
+  const verifySection = document.createElement('div');
+  verifySection.className = 'detail-section';
+  verifySection.appendChild(createEl('h3', 'Verification'));
+  const verifyItems = [
+    { label: 'Method:', value: req.Verification_Method },
+    { label: 'Criteria:', value: req.Verification_Criteria },
+    { label: 'Status:', value: req.Verification_Status }
+  ];
+  
+  verifyItems.forEach(item => {
+    const p = document.createElement('p');
+    const strong = createEl('strong', item.label);
+    p.appendChild(strong);
+    p.appendChild(document.createTextNode(' ' + (item.value || 'N/A')));
+    verifySection.appendChild(p);
+  });
+  modalBody.appendChild(verifySection);
+  
+  // Traceability section
+  const traceSection = document.createElement('div');
+  traceSection.className = 'detail-section';
+  traceSection.appendChild(createEl('h3', 'Traceability'));
+  const traceGrid = document.createElement('div');
+  traceGrid.className = 'detail-grid';
+  
+  const traceItems = [
+    { label: 'Architecture', value: req.Traces_To_Arch },
+    { label: 'Software', value: req.Traces_To_SW },
+    { label: 'Test', value: req.Traces_To_Test }
+  ];
+  
+  traceItems.forEach(item => {
+    const traceItem = document.createElement('div');
+    traceItem.className = 'detail-item';
+    traceItem.appendChild(createEl('strong', item.label));
+    traceItem.appendChild(document.createTextNode(item.value || 'N/A'));
+    traceGrid.appendChild(traceItem);
+  });
+  
+  traceSection.appendChild(traceGrid);
+  modalBody.appendChild(traceSection);
+  
+  // Rationale section
+  const ratSection = document.createElement('div');
+  ratSection.className = 'detail-section';
+  ratSection.appendChild(createEl('h3', 'Rationale'));
+  ratSection.appendChild(createEl('p', req.Rationale || 'N/A'));
+  modalBody.appendChild(ratSection);
   
   modal.style.display = 'block';
 }
@@ -706,13 +828,22 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('clear-filters').addEventListener('click', clearFilters);
   
   // Modal close handlers
-  document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('detail-modal').style.display = 'none';
+  const closeBtn = document.querySelector('.close');
+  const modal = document.getElementById('detail-modal');
+  
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
   });
   
   window.addEventListener('click', function(event) {
-    const modal = document.getElementById('detail-modal');
     if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+  
+  // Close modal on Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
       modal.style.display = 'none';
     }
   });
