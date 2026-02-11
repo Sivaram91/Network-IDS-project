@@ -139,14 +139,15 @@ This page contains all system requirements for the project. Use the filters and 
 }
 
 .table-wrapper {
-  overflow-x: hidden;
+  overflow-x: auto;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #requirements-table {
-  table-layout: fixed;
+  table-layout: auto;
   width: 100%;
+  min-width: 100%;
   border-collapse: collapse;
   background: var(--md-default-bg-color);
 }
@@ -166,6 +167,43 @@ This page contains all system requirements for the project. Use the filters and 
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+
+/* Column width specifications for optimal desktop layout */
+#requirements-table th:nth-child(1), /* REQ ID */
+#requirements-table td:nth-child(1) {
+  width: 10%;
+  min-width: 100px;
+}
+
+#requirements-table th:nth-child(2), /* Description */
+#requirements-table td:nth-child(2) {
+  width: 30%;
+  min-width: 200px;
+}
+
+#requirements-table th:nth-child(3), /* Type */
+#requirements-table td:nth-child(3),
+#requirements-table th:nth-child(4), /* Priority */
+#requirements-table td:nth-child(4),
+#requirements-table th:nth-child(5), /* Status */
+#requirements-table td:nth-child(5) {
+  width: 10%;
+  min-width: 100px;
+}
+
+#requirements-table th:nth-child(6), /* Feature */
+#requirements-table td:nth-child(6),
+#requirements-table th:nth-child(7), /* Phase */
+#requirements-table td:nth-child(7) {
+  width: 12%;
+  min-width: 120px;
+}
+
+#requirements-table th:nth-child(8), /* Details */
+#requirements-table td:nth-child(8) {
+  width: 8%;
+  min-width: 90px;
 }
 
 #requirements-table td {
@@ -312,6 +350,70 @@ This page contains all system requirements for the project. Use the filters and 
     width: 95%;
     margin: 10% auto;
   }
+  
+  /* Responsive table - card layout for mobile */
+  .table-wrapper {
+    overflow-x: visible;
+    box-shadow: none;
+  }
+  
+  #requirements-table {
+    border: 0;
+  }
+  
+  #requirements-table thead {
+    position: static;
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  #requirements-table tbody tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--md-default-bg-color);
+  }
+  
+  #requirements-table tbody tr:hover {
+    background: var(--md-default-bg-color);
+  }
+  
+  #requirements-table td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    padding: 0.75rem 1rem;
+  }
+  
+  #requirements-table td:last-child {
+    border-bottom: 0;
+  }
+  
+  #requirements-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+  }
+  
+  .description {
+    max-width: 100%;
+    text-align: left;
+  }
+  
+  .details-btn {
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+  }
 }
 </style>
 
@@ -428,14 +530,14 @@ function renderRequirements(requirements) {
   requirements.forEach(req => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td class="req-id">${req.REQ_ID}</td>
-      <td class="description">${req.Description}</td>
-      <td><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
-      <td><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
-      <td><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
-      <td>${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
-      <td>${req.Phase}</td>
-      <td><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
+      <td data-label="REQ ID:" class="req-id">${req.REQ_ID}</td>
+      <td data-label="Description:" class="description">${req.Description}</td>
+      <td data-label="Type:"><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
+      <td data-label="Priority:"><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
+      <td data-label="Status:"><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
+      <td data-label="Feature:">${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
+      <td data-label="Phase:">${req.Phase}</td>
+      <td data-label="Details:"><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
     `;
     tbody.appendChild(row);
   });

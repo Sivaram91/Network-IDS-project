@@ -867,14 +867,15 @@
 }
 
 .table-wrapper {
-  overflow-x: hidden;
+  overflow-x: auto;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #requirements-table {
-  table-layout: fixed;
+  table-layout: auto;
   width: 100%;
+  min-width: 100%;
   border-collapse: collapse;
   background: var(--md-default-bg-color);
 }
@@ -894,6 +895,43 @@
   white-space: normal;
   word-break: break-word;
   overflow-wrap: anywhere;
+}
+
+/* Column width specifications for optimal desktop layout */
+#requirements-table th:nth-child(1), /* REQ ID */
+#requirements-table td:nth-child(1) {
+  width: 10%;
+  min-width: 100px;
+}
+
+#requirements-table th:nth-child(2), /* Description */
+#requirements-table td:nth-child(2) {
+  width: 30%;
+  min-width: 200px;
+}
+
+#requirements-table th:nth-child(3), /* Type */
+#requirements-table td:nth-child(3),
+#requirements-table th:nth-child(4), /* Priority */
+#requirements-table td:nth-child(4),
+#requirements-table th:nth-child(5), /* Status */
+#requirements-table td:nth-child(5) {
+  width: 10%;
+  min-width: 100px;
+}
+
+#requirements-table th:nth-child(6), /* Feature */
+#requirements-table td:nth-child(6),
+#requirements-table th:nth-child(7), /* Phase */
+#requirements-table td:nth-child(7) {
+  width: 12%;
+  min-width: 120px;
+}
+
+#requirements-table th:nth-child(8), /* Details */
+#requirements-table td:nth-child(8) {
+  width: 8%;
+  min-width: 90px;
 }
 
 #requirements-table td {
@@ -1039,6 +1077,70 @@
   .modal-content {
     width: 95%;
     margin: 10% auto;
+  }
+
+  /* Responsive table - card layout for mobile */
+  .table-wrapper {
+    overflow-x: visible;
+    box-shadow: none;
+  }
+
+  #requirements-table {
+    border: 0;
+  }
+
+  #requirements-table thead {
+    position: static;
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  #requirements-table tbody tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--md-default-bg-color);
+  }
+
+  #requirements-table tbody tr:hover {
+    background: var(--md-default-bg-color);
+  }
+
+  #requirements-table td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+    padding: 0.75rem 1rem;
+  }
+
+  #requirements-table td:last-child {
+    border-bottom: 0;
+  }
+
+  #requirements-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: var(--md-primary-fg-color);
+  }
+
+  .description {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .details-btn {
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
   }
 }
 </style>
@@ -1197,14 +1299,14 @@ function renderRequirements(requirements) {
   requirements.forEach(req => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td class="req-id">${req.REQ_ID}</td>
-      <td class="description">${req.Description}</td>
-      <td><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
-      <td><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
-      <td><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
-      <td>${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
-      <td>${req.Phase}</td>
-      <td><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
+      <td data-label="REQ ID:" class="req-id">${req.REQ_ID}</td>
+      <td data-label="Description:" class="description">${req.Description}</td>
+      <td data-label="Type:"><span class="${getBadgeClass('type', req.Type)}">${req.Type}</span></td>
+      <td data-label="Priority:"><span class="${getBadgeClass('priority', req.Priority)}">${req.Priority}</span></td>
+      <td data-label="Status:"><span class="${getBadgeClass('status', req.Status)}">${req.Status}</span></td>
+      <td data-label="Feature:">${req.Feature.replace(/_/g, ' ').replace(/^\d+_/, '')}</td>
+      <td data-label="Phase:">${req.Phase}</td>
+      <td data-label="Details:"><button class="details-btn" onclick="showDetails('${req.REQ_ID}')">Details</button></td>
     `;
     tbody.appendChild(row);
   });
@@ -1385,7 +1487,7 @@ window.showDetails = showDetails;
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 11, 2026 23:28:54 CET">11-Feb-2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 11, 2026 23:40:35 CET">11-Feb-2026</span>
   </span>
 
     
