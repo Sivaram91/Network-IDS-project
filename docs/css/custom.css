@@ -1,3 +1,7 @@
+.md-main__inner {
+  max-width: none;  /* removes width restriction entirely */
+}
+
 .md-nav--secondary .md-nav__list {
   padding-left: 0;
 }
