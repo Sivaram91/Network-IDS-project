@@ -139,15 +139,14 @@ This page contains all system requirements for the project. Use the filters and 
 }
 
 .table-wrapper {
-  overflow-x: auto;
+  width: 100%;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #requirements-table {
-  table-layout: auto;
+  table-layout: fixed;
   width: 100%;
-  min-width: 100%;
   border-collapse: collapse;
   background: var(--md-default-bg-color);
 }
@@ -173,13 +172,11 @@ This page contains all system requirements for the project. Use the filters and 
 #requirements-table th:nth-child(1), /* REQ ID */
 #requirements-table td:nth-child(1) {
   width: 10%;
-  min-width: 100px;
 }
 
 #requirements-table th:nth-child(2), /* Description */
 #requirements-table td:nth-child(2) {
   width: 30%;
-  min-width: 200px;
 }
 
 #requirements-table th:nth-child(3), /* Type */
@@ -189,7 +186,6 @@ This page contains all system requirements for the project. Use the filters and 
 #requirements-table th:nth-child(5), /* Status */
 #requirements-table td:nth-child(5) {
   width: 10%;
-  min-width: 100px;
 }
 
 #requirements-table th:nth-child(6), /* Feature */
@@ -197,13 +193,11 @@ This page contains all system requirements for the project. Use the filters and 
 #requirements-table th:nth-child(7), /* Phase */
 #requirements-table td:nth-child(7) {
   width: 12%;
-  min-width: 120px;
 }
 
 #requirements-table th:nth-child(8), /* Details */
 #requirements-table td:nth-child(8) {
   width: 8%;
-  min-width: 90px;
 }
 
 #requirements-table td {
@@ -225,7 +219,6 @@ This page contains all system requirements for the project. Use the filters and 
 }
 
 .description {
-  max-width: 400px;
   line-height: 1.5;
 }
 
@@ -341,7 +334,7 @@ This page contains all system requirements for the project. Use the filters and 
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .filter-section {
     grid-template-columns: 1fr;
   }
@@ -353,12 +346,19 @@ This page contains all system requirements for the project. Use the filters and 
   
   /* Responsive table - card layout for mobile */
   .table-wrapper {
-    overflow-x: visible;
     box-shadow: none;
+    border-radius: 0;
+  }
+  
+  /* Reset column widths for mobile */
+  #requirements-table th,
+  #requirements-table td {
+    width: auto !important;
   }
   
   #requirements-table {
     border: 0;
+    width: 100%;
   }
   
   #requirements-table thead {
@@ -373,8 +373,14 @@ This page contains all system requirements for the project. Use the filters and 
     width: 1px;
   }
   
+  #requirements-table tbody {
+    display: block;
+    width: 100%;
+  }
+  
   #requirements-table tbody tr {
     display: block;
+    width: 100%;
     margin-bottom: 1.5rem;
     border: 1px solid var(--md-default-fg-color--lightest);
     border-radius: 0.5rem;
@@ -387,10 +393,14 @@ This page contains all system requirements for the project. Use the filters and 
   }
   
   #requirements-table td {
-    display: block;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    text-align: left;
     border-bottom: 1px solid var(--md-default-fg-color--lightest);
     padding: 0.75rem 1rem;
+    box-sizing: border-box;
   }
   
   #requirements-table td:last-child {
@@ -399,20 +409,33 @@ This page contains all system requirements for the project. Use the filters and 
   
   #requirements-table td::before {
     content: attr(data-label);
-    float: left;
     font-weight: 600;
     color: var(--md-primary-fg-color);
+    margin-right: 1rem;
+    flex-shrink: 0;
+    min-width: 100px;
   }
   
   .description {
     max-width: 100%;
-    text-align: left;
+  }
+  
+  #requirements-table td.description {
+    display: block;
+  }
+  
+  #requirements-table td.description::before {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .badge {
+    flex-shrink: 0;
   }
   
   .details-btn {
     width: 100%;
     display: block;
-    margin-top: 0.5rem;
   }
 }
 </style>
