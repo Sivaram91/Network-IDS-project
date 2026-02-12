@@ -1,0 +1,2403 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/TestDocs/SwQualificationTestSpec/">
+      
+      
+        <link rel="prev" href="../SwIntegrationTestSpec/">
+      
+      
+        <link rel="next" href="../../KnowledgeBase/HomePage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>SWE6 - Software Validation Tests - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../helpers/css/custom.css">
+    
+      <link rel="stylesheet" href="../../helpers/css/LessonsTable.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qualification-test-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SWE6 - Software Validation Tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SystemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/ASPICE_V_Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE1 - Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SwArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE2 - Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE3 - Software Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SWE3 - Software Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/RaspPi_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwUnitVerificationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE4 - Unit Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SwIntegrationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE5 - Software Integration Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE6 - Software Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE6 - Software Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-test-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Test Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Test Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-category-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Category Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Test Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Test Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-test-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Test Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-test-execution-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Test Execution Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-passfail-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Pass/Fail Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-traceability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Test Traceability Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-test-coverage-by-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Test Coverage by Category
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Test Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Test Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-defects-and-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Defects and Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Defects and Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-test-environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Test Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-risks-and-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Risks and Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-deviations-and-waivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Deviations and Waivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-test-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Test Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-notes-and-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Notes and Observations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../KnowledgeBase/HomePage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/Release_Planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LessonsLearnt/00_LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/ProjectProgress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/RequirementsTraceability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Traceability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/TestCoverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/CodeQuality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-test-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Test Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Test Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Test Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-category-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Category Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#status-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priority-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Test Procedures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Test Procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-test-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Test Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-test-execution-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Test Execution Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-passfail-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Pass/Fail Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-traceability-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Test Traceability Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-test-coverage-by-category" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Test Coverage by Category
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-test-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Test Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Test Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-defects-and-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Defects and Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Defects and Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Severity Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-test-environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Test Environment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-risks-and-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Risks and Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-deviations-and-waivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Deviations and Waivers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-test-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Test Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-notes-and-observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Notes and Observations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="qualification-test-specification">Qualification Test Specification<a class="headerlink" href="#qualification-test-specification" title="Permanent link">¶</a></h1>
+<p><strong>Project:</strong> Network Intrusion Detection System  </p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:25:08 CET">12-Feb-2026</span></em></p>
+<hr>
+<div class="admonition danger">
+<p class="admonition-title">⚠️ TEMPLATE - DO NOT USE AS-IS</p>
+<p><strong>This is a template file.</strong> Copy and customize for your own use. The content below is placeholder text only and should not be considered as actual documentation</p>
+</div>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">¶</a></h2>
+<h3 id="11-purpose">1.1 Purpose<a class="headerlink" href="#11-purpose" title="Permanent link">¶</a></h3>
+<p>This document specifies the qualification tests for [Project/System Name]. Qualification testing verifies that the complete software system meets its specified requirements and is ready for deployment.</p>
+<h3 id="12-scope">1.2 Scope<a class="headerlink" href="#12-scope" title="Permanent link">¶</a></h3>
+<p>This specification covers qualification testing for:
+- [Feature/Capability 1]
+- [Feature/Capability 2]
+- [Feature/Capability 3]</p>
+<h3 id="13-test-environment">1.3 Test Environment<a class="headerlink" href="#13-test-environment" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Platform:</strong> [e.g., Production-like environment]</li>
+<li><strong>Operating System:</strong> [e.g., Linux RHEL 8.5, Windows Server 2022]</li>
+<li><strong>Hardware:</strong> [Specify hardware configuration]</li>
+<li><strong>Software Configuration:</strong> [List all software components and versions]</li>
+<li><strong>Network Setup:</strong> [Describe network configuration if applicable]</li>
+<li><strong>Test Tools:</strong> [e.g., Automated test framework, monitoring tools]</li>
+</ul>
+<h2 id="2-test-objectives">2. Test Objectives<a class="headerlink" href="#2-test-objectives" title="Permanent link">¶</a></h2>
+<p>The qualification tests shall verify:
+- [ ] Functional requirements are met
+- [ ] Performance requirements are met
+- [ ] Security requirements are met
+- [ ] Reliability requirements are met
+- [ ] Usability requirements are met
+- [ ] System operates in specified environment</p>
+<h2 id="3-test-cases">3. Test Cases<a class="headerlink" href="#3-test-cases" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Test Case Description</th>
+<th>Feature/Subsystem</th>
+<th>Test Category</th>
+<th>Preconditions</th>
+<th>Test Procedure Reference</th>
+<th>Expected Result</th>
+<th>Actual Result</th>
+<th>Pass/Fail</th>
+<th>Status</th>
+<th>Priority</th>
+<th>Linked Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QT-001</td>
+<td>[Description of system-level test]</td>
+<td>[Feature name]</td>
+<td>Functional</td>
+<td>[Setup required]</td>
+<td>[TP-001]</td>
+<td>[Expected behavior]</td>
+<td>[Actual behavior]</td>
+<td>[ ]</td>
+<td>Not Started</td>
+<td>Critical</td>
+<td>[REQ-SYS-001]</td>
+</tr>
+<tr>
+<td>QT-002</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>[ ]</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>QT-003</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>[ ]</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="test-category-types">Test Category Types<a class="headerlink" href="#test-category-types" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Functional</strong>: Core functionality verification</li>
+<li><strong>Performance</strong>: Speed, throughput, resource usage</li>
+<li><strong>Security</strong>: Authentication, authorization, data protection</li>
+<li><strong>Reliability</strong>: Stability, error recovery, fault tolerance</li>
+<li><strong>Usability</strong>: User interface, user experience</li>
+<li><strong>Compatibility</strong>: Platform, browser, device compatibility</li>
+<li><strong>Regression</strong>: Verification of previously working features</li>
+</ul>
+<h3 id="status-values">Status Values<a class="headerlink" href="#status-values" title="Permanent link">¶</a></h3>
+<ul>
+<li>Not Started</li>
+<li>In Progress</li>
+<li>Completed</li>
+<li>Blocked</li>
+<li>Deferred</li>
+</ul>
+<h3 id="priority-levels">Priority Levels<a class="headerlink" href="#priority-levels" title="Permanent link">¶</a></h3>
+<ul>
+<li>Critical</li>
+<li>High</li>
+<li>Medium</li>
+<li>Low</li>
+</ul>
+<h2 id="4-test-procedures">4. Test Procedures<a class="headerlink" href="#4-test-procedures" title="Permanent link">¶</a></h2>
+<h3 id="41-test-preparation">4.1 Test Preparation<a class="headerlink" href="#41-test-preparation" title="Permanent link">¶</a></h3>
+<ol>
+<li>Deploy complete system to qualification environment</li>
+<li>Configure system per deployment specification</li>
+<li>Load test data sets</li>
+<li>Verify all dependencies and integrations</li>
+<li>Perform smoke test to ensure basic functionality</li>
+</ol>
+<h3 id="42-test-execution-steps">4.2 Test Execution Steps<a class="headerlink" href="#42-test-execution-steps" title="Permanent link">¶</a></h3>
+<ol>
+<li>Review test case and procedure</li>
+<li>Verify preconditions are met</li>
+<li>Execute test steps as documented in test procedure</li>
+<li>Record observations and measurements</li>
+<li>Compare actual results with expected results</li>
+<li>Document pass/fail status</li>
+<li>Capture evidence (logs, screenshots, metrics)</li>
+<li>Report defects if failures occur</li>
+</ol>
+<h3 id="43-passfail-criteria">4.3 Pass/Fail Criteria<a class="headerlink" href="#43-passfail-criteria" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Pass</strong>: </li>
+<li>All test steps executed successfully</li>
+<li>Actual results match expected results</li>
+<li>System meets requirement acceptance criteria</li>
+<li>No critical or high-severity defects</li>
+<li><strong>Fail</strong>: </li>
+<li>Test steps cannot be completed</li>
+<li>Results do not match expectations</li>
+<li>Requirement acceptance criteria not met</li>
+<li>Critical or high-severity defects found</li>
+</ul>
+<h2 id="5-test-traceability-matrix">5. Test Traceability Matrix<a class="headerlink" href="#5-test-traceability-matrix" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requirement ID</th>
+<th>Requirement Description</th>
+<th>Test Case(s)</th>
+<th>Verification Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[REQ-SYS-001]</td>
+<td>[Requirement text]</td>
+<td>QT-001, QT-005</td>
+<td>[ ] Pass / [ ] Fail</td>
+</tr>
+<tr>
+<td>[REQ-SYS-002]</td>
+<td></td>
+<td></td>
+<td>[ ] Pass / [ ] Fail</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-test-coverage-by-category">6. Test Coverage by Category<a class="headerlink" href="#6-test-coverage-by-category" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Test Category</th>
+<th>Total Test Cases</th>
+<th>Passed</th>
+<th>Failed</th>
+<th>Not Executed</th>
+<th>Coverage %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Functional</td>
+<td>[Number]</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[%]</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>[Number]</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[%]</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>[Number]</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[%]</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>[Number]</td>
+<td></td>
+<td></td>
+<td></td>
+<td>[%]</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-test-summary">7. Test Summary<a class="headerlink" href="#7-test-summary" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Total Test Cases:</strong> [Number]</li>
+<li><strong>Passed:</strong> [Number]</li>
+<li><strong>Failed:</strong> [Number]</li>
+<li><strong>Blocked:</strong> [Number]</li>
+<li><strong>Not Executed:</strong> [Number]</li>
+<li><strong>Deferred:</strong> [Number]</li>
+<li><strong>Overall Pass Rate:</strong> [%]</li>
+</ul>
+<h3 id="requirements-coverage">Requirements Coverage<a class="headerlink" href="#requirements-coverage" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Total Requirements:</strong> [Number]</li>
+<li><strong>Requirements Verified:</strong> [Number]</li>
+<li><strong>Requirements Coverage:</strong> [%]</li>
+</ul>
+<h2 id="8-defects-and-issues">8. Defects and Issues<a class="headerlink" href="#8-defects-and-issues" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Defect ID</th>
+<th>Related Test ID</th>
+<th>Severity</th>
+<th>Description</th>
+<th>Status</th>
+<th>Resolution</th>
+<th>Verified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="severity-levels">Severity Levels<a class="headerlink" href="#severity-levels" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Critical</strong>: System crash, data loss, security breach</li>
+<li><strong>High</strong>: Major function not working, workaround difficult</li>
+<li><strong>Medium</strong>: Function impaired, workaround available</li>
+<li><strong>Low</strong>: Minor issue, cosmetic problem</li>
+</ul>
+<h2 id="9-performance-metrics">9. Performance Metrics<a class="headerlink" href="#9-performance-metrics" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Requirement</th>
+<th>Measured Value</th>
+<th>Pass/Fail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[e.g., Response Time]</td>
+<td>[&lt; 2 seconds]</td>
+<td>[Actual value]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>[e.g., Throughput]</td>
+<td>[&gt; 1000 TPS]</td>
+<td>[Actual value]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>[e.g., Memory Usage]</td>
+<td>[&lt; 4 GB]</td>
+<td>[Actual value]</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-test-environment-configuration">10. Test Environment Configuration<a class="headerlink" href="#10-test-environment-configuration" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version/Configuration</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Application Server]</td>
+<td>[Version]</td>
+<td>[ ] Verified</td>
+</tr>
+<tr>
+<td>[Database]</td>
+<td>[Version]</td>
+<td>[ ] Verified</td>
+</tr>
+<tr>
+<td>[Operating System]</td>
+<td>[Version]</td>
+<td>[ ] Verified</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-risks-and-mitigation">11. Risks and Mitigation<a class="headerlink" href="#11-risks-and-mitigation" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Mitigation Strategy</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Risk description]</td>
+<td>[Low/Med/High]</td>
+<td>[Low/Med/High]</td>
+<td>[Mitigation plan]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-deviations-and-waivers">12. Deviations and Waivers<a class="headerlink" href="#12-deviations-and-waivers" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+<th>Justification</th>
+<th>Approved By</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-test-deliverables">13. Test Deliverables<a class="headerlink" href="#13-test-deliverables" title="Permanent link">¶</a></h2>
+<ul>
+<li>[ ] Qualification Test Specification (this document)</li>
+<li>[ ] Test Procedures (detailed step-by-step instructions)</li>
+<li>[ ] Test Results Report</li>
+<li>[ ] Defect Reports</li>
+<li>[ ] Test Evidence (logs, screenshots, recordings)</li>
+<li>[ ] Requirements Traceability Matrix</li>
+<li>[ ] Test Summary Report</li>
+</ul>
+<h2 id="14-notes-and-observations">14. Notes and Observations<a class="headerlink" href="#14-notes-and-observations" title="Permanent link">¶</a></h2>
+<p>[Add any relevant notes about the qualification testing process, lessons learned, or recommendations]</p>
+<hr>
+<p><strong>Approval</strong></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Signature</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QA Lead</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Software Engineering Lead</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Project Manager</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Quality Manager</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Test Completion Criteria</strong></p>
+<p>The qualification testing is complete when:
+- [ ] All critical and high priority test cases executed
+- [ ] No open critical or high-severity defects
+- [ ] Requirements coverage &gt;= [target %]
+- [ ] Overall pass rate &gt;= [target %]
+- [ ] All test deliverables completed and reviewed
+- [ ] Stakeholder approval obtained</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:25:08 CET">12-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../helpers/js/toc_collapse.js"></script>
+      
+        <script src="../../helpers/js/custom_glightbox_zoom.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

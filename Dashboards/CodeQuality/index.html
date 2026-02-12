@@ -1,0 +1,3663 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/Dashboards/CodeQuality/">
+      
+      
+        <link rel="prev" href="../TestCoverage/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Code Quality - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../helpers/css/custom.css">
+    
+      <link rel="stylesheet" href="../../helpers/css/LessonsTable.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#code-quality-dashboard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Code Quality
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SystemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/ASPICE_V_Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE1 - Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SwArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE2 - Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE3 - Software Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SWE3 - Software Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/RaspPi_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwUnitVerificationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE4 - Unit Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwIntegrationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE5 - Software Integration Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwQualificationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE6 - Software Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../KnowledgeBase/HomePage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/Release_Planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LessonsLearnt/00_LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../General/FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ProjectProgress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RequirementsTraceability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Traceability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TestCoverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-code-quality-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Code Quality Rating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overall Code Quality Rating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-quality-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Quality Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-complexity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Complexity Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Complexity Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-complexity-functions-requiring-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Complexity Functions Requiring Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-issues-technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Issues &amp; Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Issues &amp; Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-duplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Duplication Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Duplication Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplication-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplication Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-with-highest-duplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files with Highest Duplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style-standards-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style &amp; Standards Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Style &amp; Standards Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#style-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-maintainability-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Maintainability Index
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Maintainability Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainability-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainability Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Review Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Quality Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Coverage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-churn-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Churn &amp; Stability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Churn &amp; Stability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-changed-files-hotspots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Changed Files (Hotspots)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance &amp; Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance &amp; Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-integration-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Integration Quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-quality-trends-last-30-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Quality Trends (Last 30 Days)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-code-quality-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Code Quality Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compliance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-this-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate (This Sprint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-term-next-month" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-Term (Next Month)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-next-quarter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term (Next Quarter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-code-quality-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Code Quality Rating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overall Code Quality Rating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-quality-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Quality Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-complexity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Complexity Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Complexity Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-complexity-functions-requiring-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High Complexity Functions Requiring Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-issues-technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Issues &amp; Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Issues &amp; Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Debt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-duplication-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Duplication Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Duplication Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplication-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duplication Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-with-highest-duplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files with Highest Duplication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-style-standards-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style &amp; Standards Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Style &amp; Standards Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#style-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Findings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-maintainability-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Maintainability Index
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Maintainability Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainability-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainability Breakdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-review-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Review Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Quality Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Coverage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependency-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Health
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-churn-stability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Churn &amp; Stability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Churn &amp; Stability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-changed-files-hotspots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Changed Files (Hotspots)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance &amp; Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance &amp; Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-integration-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Integration Quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-quality-trends-last-30-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Quality Trends (Last 30 Days)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-code-quality-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Code Quality Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compliance-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compliance Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-this-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate (This Sprint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-term-next-month" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short-Term (Next Month)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-next-quarter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term (Next Quarter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="code-quality-dashboard">Code Quality Dashboard<a class="headerlink" href="#code-quality-dashboard" title="Permanent link">¶</a></h1>
+<p><strong>Project:</strong> Network Intrusion Detection System  </p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:25:08 CET">12-Feb-2026</span></em></p>
+<hr>
+<div class="admonition danger">
+<p class="admonition-title">⚠️ TEMPLATE - DO NOT USE AS-IS</p>
+<p><strong>This is a template file.</strong> Copy and customize for your own use. The content below is placeholder text only and should not be considered as actual documentation</p>
+</div>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overall Code Quality Score</td>
+<td>8.2/10</td>
+<td>&gt; 7.0</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Technical Debt Ratio</td>
+<td>3.8%</td>
+<td>&lt; 5%</td>
+<td>🟢 Low</td>
+</tr>
+<tr>
+<td>Code Maintainability</td>
+<td>A</td>
+<td>A-B</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Security Vulnerabilities</td>
+<td>4 (Low)</td>
+<td>&lt; 10</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Code Duplication</td>
+<td>2.1%</td>
+<td>&lt; 5%</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Code Coverage</td>
+<td>87.2%</td>
+<td>&gt; 80%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Critical Issues</td>
+<td>2</td>
+<td>0</td>
+<td>🔴 Action Needed</td>
+</tr>
+<tr>
+<td>Code Review Coverage</td>
+<td>98.3%</td>
+<td>&gt; 95%</td>
+<td>🟢 Excellent</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="overall-code-quality-rating">Overall Code Quality Rating<a class="headerlink" href="#overall-code-quality-rating" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Quality Score Distribution
+    "Excellent (A: 9-10)" : 42
+    "Good (B: 7-8)" : 38
+    "Acceptable (C: 5-6)" : 15
+    "Needs Improvement (D: 3-4)" : 4
+    "Poor (F: 0-2)" : 1</code></pre>
+<h3 id="module-quality-breakdown">Module Quality Breakdown<a class="headerlink" href="#module-quality-breakdown" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Lines of Code</th>
+<th>Quality Score</th>
+<th>Rating</th>
+<th>Maintainability</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core Engine</td>
+<td>4,520</td>
+<td>9.1</td>
+<td>A</td>
+<td>High</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>API Layer</td>
+<td>3,180</td>
+<td>8.5</td>
+<td>A</td>
+<td>High</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Security Module</td>
+<td>1,450</td>
+<td>9.3</td>
+<td>A</td>
+<td>High</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Database Layer</td>
+<td>2,840</td>
+<td>8.2</td>
+<td>B</td>
+<td>Medium-High</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>UI Components</td>
+<td>3,950</td>
+<td>7.8</td>
+<td>B</td>
+<td>Medium</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Integration Layer</td>
+<td>2,120</td>
+<td>6.8</td>
+<td>C</td>
+<td>Medium</td>
+<td>🟡 Acceptable</td>
+</tr>
+<tr>
+<td>Legacy Module</td>
+<td>1,890</td>
+<td>5.2</td>
+<td>C</td>
+<td>Low</td>
+<td>🔴 Needs Refactoring</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>19,950</strong></td>
+<td><strong>8.2</strong></td>
+<td><strong>B+</strong></td>
+<td><strong>Medium-High</strong></td>
+<td><strong>🟢 Good</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="code-complexity-analysis">Code Complexity Analysis<a class="headerlink" href="#code-complexity-analysis" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Cyclomatic Complexity Distribution
+    "Simple (1-10)" : 2456
+    "Moderate (11-20)" : 342
+    "Complex (21-50)" : 78
+    "Very Complex (&gt;50)" : 12</code></pre>
+<h3 id="complexity-metrics">Complexity Metrics<a class="headerlink" href="#complexity-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Complexity Level</th>
+<th>Function Count</th>
+<th>% of Total</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple (1-10)</td>
+<td>2,456</td>
+<td>85.0%</td>
+<td>&gt; 70%</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Moderate (11-20)</td>
+<td>342</td>
+<td>11.8%</td>
+<td>&lt; 20%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Complex (21-50)</td>
+<td>78</td>
+<td>2.7%</td>
+<td>&lt; 8%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Very Complex (&gt;50)</td>
+<td>12</td>
+<td>0.4%</td>
+<td>&lt; 2%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td><strong>Total Functions</strong></td>
+<td><strong>2,888</strong></td>
+<td><strong>100%</strong></td>
+<td>-</td>
+<td><strong>🟢 Well Managed</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="high-complexity-functions-requiring-attention">High Complexity Functions Requiring Attention<a class="headerlink" href="#high-complexity-functions-requiring-attention" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Module</th>
+<th>Complexity</th>
+<th>Lines</th>
+<th>Priority</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>processDataBatch()</td>
+<td>DataProcessor</td>
+<td>68</td>
+<td>245</td>
+<td>High</td>
+<td>🔴 Refactor</td>
+</tr>
+<tr>
+<td>validateUserInput()</td>
+<td>InputHandler</td>
+<td>58</td>
+<td>189</td>
+<td>High</td>
+<td>🔴 Refactor</td>
+</tr>
+<tr>
+<td>generateReport()</td>
+<td>ReportEngine</td>
+<td>52</td>
+<td>312</td>
+<td>Medium</td>
+<td>🟡 Review</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="code-issues-technical-debt">Code Issues &amp; Technical Debt<a class="headerlink" href="#code-issues-technical-debt" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Issues by Severity
+    "Critical" : 2
+    "High" : 18
+    "Medium" : 124
+    "Low" : 286
+    "Info" : 412</code></pre>
+<h3 id="issue-breakdown">Issue Breakdown<a class="headerlink" href="#issue-breakdown" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Count</th>
+<th>% of Total</th>
+<th>SLA</th>
+<th>Age (Avg)</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 Critical</td>
+<td>2</td>
+<td>0.2%</td>
+<td>24h</td>
+<td>8 days</td>
+<td>🔴 Overdue</td>
+</tr>
+<tr>
+<td>🟠 High</td>
+<td>18</td>
+<td>2.1%</td>
+<td>7 days</td>
+<td>12 days</td>
+<td>🟡 Monitor</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td>124</td>
+<td>14.7%</td>
+<td>30 days</td>
+<td>18 days</td>
+<td>🟢 On Track</td>
+</tr>
+<tr>
+<td>🔵 Low</td>
+<td>286</td>
+<td>33.9%</td>
+<td>90 days</td>
+<td>35 days</td>
+<td>🟢 Normal</td>
+</tr>
+<tr>
+<td>ℹ️ Info</td>
+<td>412</td>
+<td>48.9%</td>
+<td>-</td>
+<td>42 days</td>
+<td>🟢 Normal</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>842</strong></td>
+<td><strong>100%</strong></td>
+<td>-</td>
+<td><strong>28 days</strong></td>
+<td><strong>🟡 Acceptable</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="technical-debt">Technical Debt<a class="headerlink" href="#technical-debt" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Technical Debt Distribution
+    "Code Smells" : 156
+    "Design Issues" : 42
+    "Architecture Debt" : 18
+    "Documentation Debt" : 89</code></pre>
+<h3 id="technical-debt-metrics">Technical Debt Metrics<a class="headerlink" href="#technical-debt-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Effort (days)</th>
+<th>Priority</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code Smells</td>
+<td>156</td>
+<td>12.5</td>
+<td>Medium</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>Design Issues</td>
+<td>42</td>
+<td>8.2</td>
+<td>High</td>
+<td>→</td>
+</tr>
+<tr>
+<td>Architecture Debt</td>
+<td>18</td>
+<td>15.0</td>
+<td>Critical</td>
+<td>↑</td>
+</tr>
+<tr>
+<td>Documentation Debt</td>
+<td>89</td>
+<td>6.8</td>
+<td>Low</td>
+<td>↓</td>
+</tr>
+<tr>
+<td>Test Debt</td>
+<td>34</td>
+<td>4.2</td>
+<td>Medium</td>
+<td>↓</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>339</strong></td>
+<td><strong>46.7</strong></td>
+<td>-</td>
+<td><strong>→</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Technical Debt Ratio:</strong> 3.8% (Total Debt / Development Cost)<br>
+<strong>Target:</strong> &lt; 5.0%<br>
+<strong>Status:</strong> 🟢 Within acceptable limits</p>
+<hr>
+<h2 id="code-duplication-analysis">Code Duplication Analysis<a class="headerlink" href="#code-duplication-analysis" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Duplication
+    "Unique Code (97.9%)" : 97.9
+    "Duplicated Code (2.1%)" : 2.1</code></pre>
+<h3 id="duplication-metrics">Duplication Metrics<a class="headerlink" href="#duplication-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duplicated Lines</td>
+<td>418</td>
+<td>&lt; 1,000</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Duplicated Blocks</td>
+<td>34</td>
+<td>&lt; 50</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Duplication %</td>
+<td>2.1%</td>
+<td>&lt; 5%</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Files with Duplication</td>
+<td>12</td>
+<td>&lt; 20</td>
+<td>🟢 Good</td>
+</tr>
+</tbody>
+</table>
+<h3 id="files-with-highest-duplication">Files with Highest Duplication<a class="headerlink" href="#files-with-highest-duplication" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Duplicated Lines</th>
+<th>Duplication %</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UserController.java</td>
+<td>89</td>
+<td>18.2%</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>DataValidator.py</td>
+<td>67</td>
+<td>12.4%</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>ReportGenerator.js</td>
+<td>45</td>
+<td>8.9%</td>
+<td>🟡 Medium</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="code-style-standards-compliance">Code Style &amp; Standards Compliance<a class="headerlink" href="#code-style-standards-compliance" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Style Violations
+    "No Violations" : 2456
+    "Minor Violations" : 312
+    "Moderate Violations" : 45
+    "Major Violations" : 8</code></pre>
+<h3 id="style-compliance">Style Compliance<a class="headerlink" href="#style-compliance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Violation Type</th>
+<th>Count</th>
+<th>Severity</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naming Conventions</td>
+<td>156</td>
+<td>Low</td>
+<td>🟢 Acceptable</td>
+</tr>
+<tr>
+<td>Formatting Issues</td>
+<td>89</td>
+<td>Info</td>
+<td>🟢 Acceptable</td>
+</tr>
+<tr>
+<td>Documentation Missing</td>
+<td>67</td>
+<td>Medium</td>
+<td>🟡 Monitor</td>
+</tr>
+<tr>
+<td>Unused Imports</td>
+<td>124</td>
+<td>Low</td>
+<td>🟢 Minor</td>
+</tr>
+<tr>
+<td>Magic Numbers</td>
+<td>34</td>
+<td>Medium</td>
+<td>🟡 Review</td>
+</tr>
+<tr>
+<td>Long Methods</td>
+<td>12</td>
+<td>High</td>
+<td>🔴 Refactor</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>482</strong></td>
+<td>-</td>
+<td><strong>🟡 Acceptable</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Overall Compliance Rate:</strong> 94.8%<br>
+<strong>Target:</strong> &gt; 90%<br>
+<strong>Status:</strong> 🟢 Exceeds target</p>
+<hr>
+<h2 id="security-analysis">Security Analysis<a class="headerlink" href="#security-analysis" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Security Vulnerabilities by Severity
+    "Critical" : 0
+    "High" : 0
+    "Medium" : 2
+    "Low" : 4
+    "Info" : 12</code></pre>
+<h3 id="security-findings">Security Findings<a class="headerlink" href="#security-findings" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>Count</th>
+<th>Category</th>
+<th>Status</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical</td>
+<td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>High</td>
+<td>0</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>2</td>
+<td>Input Validation</td>
+<td>🟡 In Progress</td>
+<td>5 days</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>4</td>
+<td>Configuration</td>
+<td>🟢 Scheduled</td>
+<td>14 days</td>
+</tr>
+<tr>
+<td>Info</td>
+<td>12</td>
+<td>Best Practices</td>
+<td>🟢 Backlog</td>
+<td>28 days</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Security Score:</strong> 9.2/10<br>
+<strong>Target:</strong> &gt; 8.0<br>
+<strong>Status:</strong> 🟢 Excellent</p>
+<h3 id="security-recommendations">Security Recommendations<a class="headerlink" href="#security-recommendations" title="Permanent link">¶</a></h3>
+<ol>
+<li>Implement input sanitization in 2 endpoints (Medium priority)</li>
+<li>Update security headers configuration (Low priority)</li>
+<li>Review third-party dependency versions (Info)</li>
+</ol>
+<hr>
+<h2 id="code-maintainability-index">Code Maintainability Index<a class="headerlink" href="#code-maintainability-index" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Maintainability Rating
+    "A (85-100): Excellent" : 42
+    "B (70-84): Good" : 38
+    "C (50-69): Moderate" : 15
+    "D (25-49): Difficult" : 4
+    "E (0-24): Very Difficult" : 1</code></pre>
+<h3 id="maintainability-breakdown">Maintainability Breakdown<a class="headerlink" href="#maintainability-breakdown" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rating</th>
+<th>Module Count</th>
+<th>% of Total</th>
+<th>Avg. MI Score</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A (85-100)</td>
+<td>42</td>
+<td>42%</td>
+<td>91.2</td>
+<td>None 🟢</td>
+</tr>
+<tr>
+<td>B (70-84)</td>
+<td>38</td>
+<td>38%</td>
+<td>76.5</td>
+<td>Monitor 🟢</td>
+</tr>
+<tr>
+<td>C (50-69)</td>
+<td>15</td>
+<td>15%</td>
+<td>58.3</td>
+<td>Plan Refactoring 🟡</td>
+</tr>
+<tr>
+<td>D (25-49)</td>
+<td>4</td>
+<td>4%</td>
+<td>38.7</td>
+<td>Refactor Soon 🔴</td>
+</tr>
+<tr>
+<td>E (0-24)</td>
+<td>1</td>
+<td>1%</td>
+<td>18.2</td>
+<td>Critical Refactoring 🔴</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Average Maintainability Index:</strong> 78.6<br>
+<strong>Target:</strong> &gt; 70<br>
+<strong>Status:</strong> 🟢 Good</p>
+<hr>
+<h2 id="code-review-metrics">Code Review Metrics<a class="headerlink" href="#code-review-metrics" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Review Status
+    "Reviewed &amp; Approved" : 1842
+    "Reviewed with Comments" : 156
+    "Pending Review" : 32
+    "Not Reviewed" : 18</code></pre>
+<h3 id="review-statistics">Review Statistics<a class="headerlink" href="#review-statistics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Review Coverage</td>
+<td>98.3%</td>
+<td>&gt; 95%</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Avg. Review Time</td>
+<td>4.2 hours</td>
+<td>&lt; 8 hours</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Comments per Review</td>
+<td>6.5</td>
+<td>4-10</td>
+<td>🟢 Optimal</td>
+</tr>
+<tr>
+<td>Review Approval Rate</td>
+<td>92.2%</td>
+<td>&gt; 85%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Reviews per Week</td>
+<td>47</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="review-quality-metrics">Review Quality Metrics<a class="headerlink" href="#review-quality-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defects Found in Review</td>
+<td>124</td>
+<td>↑ Good</td>
+</tr>
+<tr>
+<td>Avg. Commits per PR</td>
+<td>3.2</td>
+<td>↓ Better</td>
+</tr>
+<tr>
+<td>Avg. Files Changed per PR</td>
+<td>4.8</td>
+<td>→ Stable</td>
+</tr>
+<tr>
+<td>Rework Rate</td>
+<td>8.3%</td>
+<td>↓ Improving</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="documentation-coverage">Documentation Coverage<a class="headerlink" href="#documentation-coverage" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Documentation Status
+    "Well Documented" : 65
+    "Partially Documented" : 25
+    "Minimal Documentation" : 8
+    "No Documentation" : 2</code></pre>
+<h3 id="documentation-metrics">Documentation Metrics<a class="headerlink" href="#documentation-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Coverage %</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public API Documentation</td>
+<td>92.5%</td>
+<td>&gt; 90%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Function/Method Comments</td>
+<td>78.3%</td>
+<td>&gt; 75%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Class Documentation</td>
+<td>85.2%</td>
+<td>&gt; 80%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Inline Comments</td>
+<td>42.1%</td>
+<td>&gt; 30%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>README Files</td>
+<td>95.0%</td>
+<td>100%</td>
+<td>🟡 Almost</td>
+</tr>
+<tr>
+<td>Architecture Documentation</td>
+<td>88.0%</td>
+<td>&gt; 85%</td>
+<td>🟢 Good</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="dependency-analysis">Dependency Analysis<a class="headerlink" href="#dependency-analysis" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Third-Party Dependencies Status
+    "Up-to-date" : 124
+    "Minor Update Available" : 28
+    "Major Update Available" : 12
+    "Deprecated" : 3
+    "Security Risk" : 1</code></pre>
+<h3 id="dependency-health">Dependency Health<a class="headerlink" href="#dependency-health" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Count</th>
+<th>Action Required</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up-to-date</td>
+<td>124</td>
+<td>None</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Minor Updates Available</td>
+<td>28</td>
+<td>Optional</td>
+<td>🟢 Low</td>
+</tr>
+<tr>
+<td>Major Updates Available</td>
+<td>12</td>
+<td>Plan Upgrade</td>
+<td>🟡 Medium</td>
+</tr>
+<tr>
+<td>Deprecated</td>
+<td>3</td>
+<td>Replace</td>
+<td>🔴 High</td>
+</tr>
+<tr>
+<td>Security Risk</td>
+<td>1</td>
+<td>Immediate Update</td>
+<td>🔴 Critical</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Dependencies:</strong> 168<br>
+<strong>Outdated Dependencies:</strong> 26.2%<br>
+<strong>Security Score:</strong> 8.8/10</p>
+<hr>
+<h2 id="code-churn-stability">Code Churn &amp; Stability<a class="headerlink" href="#code-churn-stability" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Trend</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files Changed (Last Week)</td>
+<td>156</td>
+<td>↓</td>
+<td>🟢 Stable</td>
+</tr>
+<tr>
+<td>Churn Rate</td>
+<td>12.3%</td>
+<td>↓</td>
+<td>🟢 Decreasing</td>
+</tr>
+<tr>
+<td>Hotspot Files (&gt;10 changes)</td>
+<td>8</td>
+<td>→</td>
+<td>🟡 Monitor</td>
+</tr>
+<tr>
+<td>Avg. Commits per Day</td>
+<td>23</td>
+<td>↑</td>
+<td>🟢 Active</td>
+</tr>
+<tr>
+<td>Refactoring Rate</td>
+<td>15.2%</td>
+<td>↑</td>
+<td>🟢 Improving</td>
+</tr>
+</tbody>
+</table>
+<h3 id="top-changed-files-hotspots">Top Changed Files (Hotspots)<a class="headerlink" href="#top-changed-files-hotspots" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Changes (30d)</th>
+<th>Complexity</th>
+<th>Authors</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UserService.java</td>
+<td>34</td>
+<td>High</td>
+<td>5</td>
+<td>🔴 High Churn</td>
+</tr>
+<tr>
+<td>PaymentController.java</td>
+<td>28</td>
+<td>Medium</td>
+<td>3</td>
+<td>🟡 Monitor</td>
+</tr>
+<tr>
+<td>DataProcessor.py</td>
+<td>24</td>
+<td>High</td>
+<td>4</td>
+<td>🔴 Refactor Needed</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="performance-optimization">Performance &amp; Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Code Performance Issues
+    "Optimal" : 2654
+    "Minor Issues" : 198
+    "Performance Issues" : 36
+    "Critical Issues" : 0</code></pre>
+<h3 id="performance-metrics">Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Avg. Impact</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inefficient Algorithms</td>
+<td>12</td>
+<td>Medium</td>
+<td>🟡 Optimize</td>
+</tr>
+<tr>
+<td>Memory Leaks</td>
+<td>0</td>
+<td>-</td>
+<td>🟢 None</td>
+</tr>
+<tr>
+<td>Unnecessary Computations</td>
+<td>18</td>
+<td>Low</td>
+<td>🟢 Minor</td>
+</tr>
+<tr>
+<td>Database Query Issues</td>
+<td>6</td>
+<td>High</td>
+<td>🔴 Fix</td>
+</tr>
+<tr>
+<td><strong>Total Performance Issues</strong></td>
+<td><strong>36</strong></td>
+<td><strong>Low</strong></td>
+<td><strong>🟡 Acceptable</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="build-integration-quality">Build &amp; Integration Quality<a class="headerlink" href="#build-integration-quality" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build Success Rate</td>
+<td>97.8%</td>
+<td>&gt; 95%</td>
+<td>🟢 Excellent</td>
+</tr>
+<tr>
+<td>Avg. Build Time</td>
+<td>8.5 min</td>
+<td>&lt; 10 min</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Build Failures (Last 30d)</td>
+<td>7</td>
+<td>&lt; 10</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>CI Pipeline Pass Rate</td>
+<td>94.2%</td>
+<td>&gt; 90%</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Deployment Frequency</td>
+<td>3.2/week</td>
+<td>&gt; 2/week</td>
+<td>🟢 Good</td>
+</tr>
+<tr>
+<td>Mean Time to Recovery</td>
+<td>1.2 hours</td>
+<td>&lt; 4 hours</td>
+<td>🟢 Excellent</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="code-quality-trends-last-30-days">Code Quality Trends (Last 30 Days)<a class="headerlink" href="#code-quality-trends-last-30-days" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Previous</th>
+<th>Current</th>
+<th>Change</th>
+<th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quality Score</td>
+<td>7.9</td>
+<td>8.2</td>
+<td>+0.3</td>
+<td>↑ 🟢</td>
+</tr>
+<tr>
+<td>Technical Debt Ratio</td>
+<td>4.2%</td>
+<td>3.8%</td>
+<td>-0.4%</td>
+<td>↓ 🟢</td>
+</tr>
+<tr>
+<td>Code Coverage</td>
+<td>84.1%</td>
+<td>87.2%</td>
+<td>+3.1%</td>
+<td>↑ 🟢</td>
+</tr>
+<tr>
+<td>Security Score</td>
+<td>8.9</td>
+<td>9.2</td>
+<td>+0.3</td>
+<td>↑ 🟢</td>
+</tr>
+<tr>
+<td>Duplication</td>
+<td>2.8%</td>
+<td>2.1%</td>
+<td>-0.7%</td>
+<td>↓ 🟢</td>
+</tr>
+<tr>
+<td>Critical Issues</td>
+<td>5</td>
+<td>2</td>
+<td>-3</td>
+<td>↓ 🟢</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="top-code-quality-issues">Top Code Quality Issues<a class="headerlink" href="#top-code-quality-issues" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Issue ID</th>
+<th>Description</th>
+<th>Severity</th>
+<th>Module</th>
+<th>Age (days)</th>
+<th>Owner</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CQ-001</td>
+<td>Null pointer risk in data processor</td>
+<td>Critical</td>
+<td>Core</td>
+<td>8</td>
+<td>Dev1</td>
+<td>🔴 In Progress</td>
+</tr>
+<tr>
+<td>CQ-002</td>
+<td>SQL injection vulnerability</td>
+<td>Critical</td>
+<td>API</td>
+<td>5</td>
+<td>Dev2</td>
+<td>🔴 In Progress</td>
+</tr>
+<tr>
+<td>CQ-003</td>
+<td>High cyclomatic complexity in validation</td>
+<td>High</td>
+<td>Security</td>
+<td>12</td>
+<td>Dev3</td>
+<td>🟡 Planned</td>
+</tr>
+<tr>
+<td>CQ-004</td>
+<td>Memory leak in cache manager</td>
+<td>High</td>
+<td>Utils</td>
+<td>15</td>
+<td>Dev4</td>
+<td>🟡 Investigating</td>
+</tr>
+<tr>
+<td>CQ-005</td>
+<td>Deprecated API usage</td>
+<td>High</td>
+<td>Integration</td>
+<td>20</td>
+<td>Dev5</td>
+<td>🟡 Backlog</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="best-practices-compliance">Best Practices Compliance<a class="headerlink" href="#best-practices-compliance" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>pie title Best Practices Adherence
+    "Fully Compliant" : 78
+    "Mostly Compliant" : 15
+    "Partially Compliant" : 5
+    "Non-Compliant" : 2</code></pre>
+<h3 id="compliance-checklist">Compliance Checklist<a class="headerlink" href="#compliance-checklist" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Practice</th>
+<th>Status</th>
+<th>Compliance %</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOLID Principles</td>
+<td>✅</td>
+<td>92%</td>
+<td>Maintain</td>
+</tr>
+<tr>
+<td>DRY (Don't Repeat Yourself)</td>
+<td>✅</td>
+<td>97.9%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Error Handling</td>
+<td>✅</td>
+<td>89%</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Logging Standards</td>
+<td>✅</td>
+<td>85%</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Security Best Practices</td>
+<td>✅</td>
+<td>94%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Testing Standards</td>
+<td>✅</td>
+<td>91%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Code Review Process</td>
+<td>✅</td>
+<td>98%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Documentation Standards</td>
+<td>⚠️</td>
+<td>78%</td>
+<td>Improve</td>
+</tr>
+<tr>
+<td>Performance Guidelines</td>
+<td>⚠️</td>
+<td>82%</td>
+<td>Monitor</td>
+</tr>
+<tr>
+<td>Accessibility Standards</td>
+<td>❌</td>
+<td>45%</td>
+<td>Priority Fix</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="recommended-actions">Recommended Actions<a class="headerlink" href="#recommended-actions" title="Permanent link">¶</a></h2>
+<h3 id="immediate-this-sprint">Immediate (This Sprint)<a class="headerlink" href="#immediate-this-sprint" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Fix 2 Critical Issues</strong> - CQ-001, CQ-002</li>
+<li>Owner: Development Team</li>
+<li>
+<p>Due: End of Sprint</p>
+</li>
+<li>
+<p><strong>Refactor High Complexity Functions</strong> - 3 functions with complexity &gt; 50</p>
+</li>
+<li>Owner: Tech Lead</li>
+<li>
+<p>Due: Next 2 weeks</p>
+</li>
+<li>
+<p><strong>Update Deprecated Dependency</strong> - Security risk identified</p>
+</li>
+<li>Owner: DevOps</li>
+<li>Due: This week</li>
+</ol>
+<h3 id="short-term-next-month">Short-Term (Next Month)<a class="headerlink" href="#short-term-next-month" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Reduce Code Duplication</strong> in UserController and DataValidator</li>
+<li><strong>Improve Documentation Coverage</strong> to &gt; 85%</li>
+<li><strong>Address Architecture Debt</strong> - 18 items identified</li>
+</ol>
+<h3 id="long-term-next-quarter">Long-Term (Next Quarter)<a class="headerlink" href="#long-term-next-quarter" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Refactor Legacy Module</strong> - Currently rated 5.2/10</li>
+<li><strong>Implement Accessibility Standards</strong> - Currently 45% compliant</li>
+<li><strong>Optimize Build Pipeline</strong> - Target &lt; 7 min build time</li>
+</ol>
+<hr>
+<p><strong>Legend:</strong>
+- 🟢 Green: Excellent or within targets
+- 🟡 Yellow: Good or needs monitoring
+- 🔴 Red: Requires immediate attention
+- ↑ Improving trend
+- ↓ Declining/Improving (context dependent)
+- → Stable trend</p>
+<hr>
+<p><strong>Report Generated:</strong> [Auto-generated timestamp]<br>
+<strong>Next Update:</strong> [Date]<br>
+<strong>Data Sources:</strong> SonarQube, ESLint, Security Scanner, Code Review Tool, Build System</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:25:08 CET">12-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../helpers/js/toc_collapse.js"></script>
+      
+        <script src="../../helpers/js/custom_glightbox_zoom.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

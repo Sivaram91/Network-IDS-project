@@ -1,0 +1,4398 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ML-based Network Intrusion Detection System">
+      
+      
+        <meta name="author" content="Sivaramasubramanian Sundararaj">
+      
+      
+        <link rel="canonical" href="https://sivaram91.github.io/Network-IDS-project/General/Release_Planning/">
+      
+      
+        <link rel="prev" href="../../KnowledgeBase/HomePage/">
+      
+      
+        <link rel="next" href="../HowTos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Project Planning - Network IDS Project</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../helpers/css/custom.css">
+    
+      <link rel="stylesheet" href="../../helpers/css/LessonsTable.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-intrusion-detection-system-with-tinyml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network IDS Project" class="md-header__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network IDS Project
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Project Planning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network IDS Project" class="md-nav__button md-logo" aria-label="Network IDS Project" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Network IDS Project
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools_installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SystemRequirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SystemArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Engineering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASPICE_V_Model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/FeatureTree.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Tree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Requirements/SwRequirements.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE1 - Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/SwArchitecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE2 - Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE3 - Software Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SWE3 - Software Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RaspPi_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Raspberry Pi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../STM_Comp_Design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STM32 Microcontroller
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwUnitVerificationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE4 - Unit Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwIntegrationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE5 - Software Integration Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TestDocs/SwQualificationTestSpec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SWE6 - Software Validation Tests
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../KnowledgeBase/HomePage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Planning
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#release-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELEASE PLAN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELEASE OVERVIEW
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RELEASE OVERVIEW">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Schedule:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-111-hardware-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.1: Hardware Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-112-python-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.2: Python Environment Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-113-packet-capture-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.3: Packet Capture Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-114-pcap-file-writer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.4: PCAP File Writer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-115-storage-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.5: Storage Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-116-unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.6: Unit Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-121-feature-engineering-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.1: Feature Engineering Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-122-feature-extraction-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.2: Feature Extraction Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-123-training-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.3: Training Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-124-ml-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.4: ML Model Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-125-real-time-detection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.5: Real-time Detection Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-126-model-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.6: Model Persistence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-131-stm32-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.1: STM32 Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-132-ethernet-driver-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.2: Ethernet Driver Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-133-tensorflow-lite-micro-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.3: TensorFlow Lite Micro Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-134-fuzzing-detection-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.4: Fuzzing Detection Model Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-135-on-device-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.5: On-Device Inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-136-testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.6: Testing and Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-14-attack-simulation-feat-004" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 1.4: ATTACK SIMULATION (FEAT-004)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-141-attack-simulator-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.1: Attack Simulator Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-142-port-scan-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.2: Port Scan Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-143-dos-attack-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.3: DoS Attack Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-144-fuzzing-attack-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.4: Fuzzing Attack Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-145-data-exfiltration-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.5: Data Exfiltration Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-15-system-integration-feat-005" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 1.5: SYSTEM INTEGRATION (FEAT-005)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-151-communication-protocol-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.1: Communication Protocol Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-152-raspberry-pi-communication-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.2: Raspberry Pi Communication Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-153-stm32-communication-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.3: STM32 Communication Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-154-alert-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.4: Alert Propagation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-155-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.5: Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-21-testing-infrastructure-feat-006" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 2.1: TESTING INFRASTRUCTURE (FEAT-006)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-211-unit-test-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.1: Unit Test Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-212-integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.2: Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-213-github-actions-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.3: GitHub Actions Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-214-static-code-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.4: Static Code Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-215-stm32-build-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.5: STM32 Build Automation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-216-documentation-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.6: Documentation Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-217-test-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.7: Test Reporting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-31-cloud-connectivity-feat-007" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 3.1: CLOUD CONNECTIVITY (FEAT-007)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-311-wifi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.1: WiFi Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-312-cloud-service-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.2: Cloud Service Selection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-313-alert-upload-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.3: Alert Upload Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-314-offline-buffering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.4: Offline Buffering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-315-network-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.5: Network Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-316-cloud-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.6: Cloud Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-32-dashboard-monitoring-feat-008" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 3.2: DASHBOARD &amp; MONITORING (FEAT-008)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-321-dashboard-platform-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.1: Dashboard Platform Selection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-322-system-status-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.2: System Status Panel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-323-alert-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.3: Alert Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-324-email-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.4: Email Notification System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-325-mobile-responsiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.5: Mobile Responsiveness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-326-dashboard-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.6: Dashboard Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-41-autosar-integration-feat-009" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.1: AUTOSAR INTEGRATION (FEAT-009)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-411-classic-autosar-architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.1: Classic AUTOSAR Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-412-bsw-layer-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.2: BSW Layer Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-413-rte-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.3: RTE Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-414-asw-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.4: ASW Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-415-adaptive-autosar-on-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.5: Adaptive AUTOSAR on Pi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-42-secure-fota-feat-010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.2: SECURE FOTA (FEAT-010)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-421-pi-ab-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.1: Pi A/B Partitioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-422-update-package-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.2: Update Package Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-423-signature-generation-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.3: Signature Generation &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-424-pi-update-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.4: Pi Update Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-425-stm32-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.5: STM32 Bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-426-remote-stm32-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.6: Remote STM32 Update
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-43-security-hardening-feat-011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.3: SECURITY HARDENING (FEAT-011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-431-secure-boot-on-stm32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.1: Secure Boot on STM32
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-432-hsm-integration-tpmatecc608" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.2: HSM Integration (TPM/ATECC608)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-433-tls-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.3: TLS Encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-434-anti-tampering-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.4: Anti-Tampering Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-51-rag-documentation-system-feat-012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 5.1: RAG DOCUMENTATION SYSTEM (FEAT-012)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-511-rag-architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.1: RAG Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-512-data-collection-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.2: Data Collection &amp; Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-513-document-chunking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.3: Document Chunking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-514-vector-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.4: Vector Database Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-515-rag-query-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.5: RAG Query Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-516-code-retrieval-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.6: Code Retrieval Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-517-traceability-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.7: Traceability Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-518-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.8: Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-519-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.9: Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5110-rag-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.10: RAG Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5111-integration-with-portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.11: Integration with Portfolio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5112-testing-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.12: Testing &amp; Refinement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HowTos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LessonsLearnt/00_LessonsLearnt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lessons Learnt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/ProjectProgress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/RequirementsTraceability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements Traceability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/TestCoverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/CodeQuality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#release-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELEASE PLAN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RELEASE OVERVIEW
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RELEASE OVERVIEW">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Schedule:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-111-hardware-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.1: Hardware Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-112-python-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.2: Python Environment Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-113-packet-capture-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.3: Packet Capture Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-114-pcap-file-writer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.4: PCAP File Writer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-115-storage-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.5: Storage Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-116-unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.1.6: Unit Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-121-feature-engineering-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.1: Feature Engineering Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-122-feature-extraction-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.2: Feature Extraction Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-123-training-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.3: Training Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-124-ml-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.4: ML Model Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-125-real-time-detection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.5: Real-time Detection Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-126-model-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.2.6: Model Persistence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-131-stm32-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.1: STM32 Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-132-ethernet-driver-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.2: Ethernet Driver Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-133-tensorflow-lite-micro-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.3: TensorFlow Lite Micro Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-134-fuzzing-detection-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.4: Fuzzing Detection Model Training
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-135-on-device-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.5: On-Device Inference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-136-testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.3.6: Testing and Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-14-attack-simulation-feat-004" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 1.4: ATTACK SIMULATION (FEAT-004)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-141-attack-simulator-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.1: Attack Simulator Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-142-port-scan-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.2: Port Scan Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-143-dos-attack-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.3: DoS Attack Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-144-fuzzing-attack-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.4: Fuzzing Attack Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-145-data-exfiltration-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.4.5: Data Exfiltration Simulator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-15-system-integration-feat-005" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 1.5: SYSTEM INTEGRATION (FEAT-005)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-151-communication-protocol-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.1: Communication Protocol Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-152-raspberry-pi-communication-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.2: Raspberry Pi Communication Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-153-stm32-communication-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.3: STM32 Communication Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-154-alert-propagation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.4: Alert Propagation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-155-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 1.5.5: Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-21-testing-infrastructure-feat-006" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 2.1: TESTING INFRASTRUCTURE (FEAT-006)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-211-unit-test-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.1: Unit Test Framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-212-integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.2: Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-213-github-actions-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.3: GitHub Actions Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-214-static-code-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.4: Static Code Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-215-stm32-build-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.5: STM32 Build Automation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-216-documentation-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.6: Documentation Generation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-217-test-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 2.1.7: Test Reporting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-31-cloud-connectivity-feat-007" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 3.1: CLOUD CONNECTIVITY (FEAT-007)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-311-wifi-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.1: WiFi Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-312-cloud-service-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.2: Cloud Service Selection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-313-alert-upload-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.3: Alert Upload Module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-314-offline-buffering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.4: Offline Buffering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-315-network-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.5: Network Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-316-cloud-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.1.6: Cloud Integration Testing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-32-dashboard-monitoring-feat-008" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 3.2: DASHBOARD &amp; MONITORING (FEAT-008)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-321-dashboard-platform-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.1: Dashboard Platform Selection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-322-system-status-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.2: System Status Panel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-323-alert-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.3: Alert Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-324-email-notification-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.4: Email Notification System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-325-mobile-responsiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.5: Mobile Responsiveness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-326-dashboard-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 3.2.6: Dashboard Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-41-autosar-integration-feat-009" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.1: AUTOSAR INTEGRATION (FEAT-009)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-411-classic-autosar-architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.1: Classic AUTOSAR Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-412-bsw-layer-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.2: BSW Layer Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-413-rte-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.3: RTE Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-414-asw-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.4: ASW Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-415-adaptive-autosar-on-pi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.1.5: Adaptive AUTOSAR on Pi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-42-secure-fota-feat-010" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.2: SECURE FOTA (FEAT-010)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-421-pi-ab-partitioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.1: Pi A/B Partitioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-422-update-package-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.2: Update Package Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-423-signature-generation-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.3: Signature Generation &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-424-pi-update-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.4: Pi Update Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-425-stm32-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.5: STM32 Bootloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-426-remote-stm32-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.2.6: Remote STM32 Update
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-43-security-hardening-feat-011" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 4.3: SECURITY HARDENING (FEAT-011)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-431-secure-boot-on-stm32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.1: Secure Boot on STM32
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-432-hsm-integration-tpmatecc608" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.2: HSM Integration (TPM/ATECC608)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-433-tls-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.3: TLS Encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-434-anti-tampering-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 4.3.4: Anti-Tampering Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epic-51-rag-documentation-system-feat-012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EPIC 5.1: RAG DOCUMENTATION SYSTEM (FEAT-012)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-511-rag-architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.1: RAG Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-512-data-collection-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.2: Data Collection &amp; Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-513-document-chunking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.3: Document Chunking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-514-vector-database-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.4: Vector Database Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-515-rag-query-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.5: RAG Query Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-516-code-retrieval-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.6: Code Retrieval Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-517-traceability-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.7: Traceability Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-518-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.8: Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-519-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.9: Deployment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5110-rag-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.10: RAG Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5111-integration-with-portfolio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.11: Integration with Portfolio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#story-5112-testing-refinement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORY 5.1.12: Testing &amp; Refinement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-intrusion-detection-system-with-tinyml">NETWORK INTRUSION DETECTION SYSTEM WITH TINYML<a class="headerlink" href="#network-intrusion-detection-system-with-tinyml" title="Permanent link">¶</a></h1>
+<h2 id="release-plan">RELEASE PLAN<a class="headerlink" href="#release-plan" title="Permanent link">¶</a></h2>
+<p>Project: Network IDS with TinyML
+Author: Sivaramasubramanian Sundararaj
+Document Version: 1.0</p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:50:14 CET">12-Feb-2026</span></em></p>
+<hr>
+<h2 id="release-overview">RELEASE OVERVIEW<a class="headerlink" href="#release-overview" title="Permanent link">¶</a></h2>
+<p>Total Releases: 5 (4 core phases + 1 RAG enhancement)
+Timeline: February 2025 - February 2026 (13 months)
+Total Features: 12
+Total Story Points Estimate: 450 hours</p>
+<h3 id="release-schedule">Release Schedule:<a class="headerlink" href="#release-schedule" title="Permanent link">¶</a></h3>
+<ul>
+<li>Release 1 (Phase 1): February - May 2025 (4 months)</li>
+<li>Release 2 (Phase 2): June 2025 (1 month)</li>
+<li>Release 3 (Phase 3): July - August 2025 (2 months)</li>
+<li>Release 4 (Phase 4): September - November 2025 (3 months)</li>
+<li>Release 5 (RAG): December 2025 - February 2026 (3 months)</li>
+</ul>
+<h4 id="release-1-core-functionality-phase-1">RELEASE 1: CORE FUNCTIONALITY (PHASE 1)<a class="headerlink" href="#release-1-core-functionality-phase-1" title="Permanent link">¶</a></h4>
+<p>Release Date: May 31, 2025
+Duration: 4 months (February - May 2025)
+Effort: 150 hours
+Goal: Portfolio-ready working intrusion detection system</p>
+<h5 id="features-included">Features Included:<a class="headerlink" href="#features-included" title="Permanent link">¶</a></h5>
+<ul>
+<li>FEAT-001: Network Traffic Capture</li>
+<li>FEAT-002: ML-based Intrusion Detection</li>
+<li>FEAT-003: TinyML Fuzzing Detection</li>
+<li>FEAT-004: Attack Simulation</li>
+<li>FEAT-005: System Integration</li>
+</ul>
+<h5 id="success-criteria">Success Criteria:<a class="headerlink" href="#success-criteria" title="Permanent link">¶</a></h5>
+<p>[x] Raspberry Pi captures and analyzes network traffic
+[x] ML model detects 3+ attack types with &gt;90% accuracy
+[x] STM32 detects fuzzing attacks using TinyML
+[x] System demonstrates end-to-end detection capability
+[x] Complete documentation available
+[x] Demo video created</p>
+<h5 id="epic-11-network-traffic-capture-feat-001">EPIC 1.1: NETWORK TRAFFIC CAPTURE (FEAT-001)<a class="headerlink" href="#epic-11-network-traffic-capture-feat-001" title="Permanent link">¶</a></h5>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Critical
+Effort Estimate: 30 hours
+Dependencies: Hardware setup complete</p>
+<p>User Story: As a security analyst, I want to capture network traffic in real-time
+so that I can analyze it for potential threats.</p>
+<p>Acceptance Criteria:
+- System captures minimum 100 packets per second
+- All packet metadata extracted correctly
+- PCAP files generated for offline analysis
+- System handles storage limitations gracefully</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-111-hardware-setup">STORY 1.1.1: Hardware Setup<a class="headerlink" href="#story-111-hardware-setup" title="Permanent link">¶</a></h2>
+<p>Description: Setup Raspberry Pi 4 with required OS and network configuration
+Effort: 4 hours
+Tasks:
+- Flash Raspberry Pi OS to SD card
+- Configure SSH access
+- Setup static IP addressing
+- Install system updates
+- Configure Ethernet interface
+Acceptance: Pi boots successfully and accessible via SSH</p>
+<h2 id="story-112-python-environment-setup">STORY 1.1.2: Python Environment Setup<a class="headerlink" href="#story-112-python-environment-setup" title="Permanent link">¶</a></h2>
+<p>Description: Install and configure Python packages for packet capture
+Effort: 3 hours
+Tasks:
+- Install Python 3.9+
+- Install Scapy library
+- Install pandas, numpy
+- Verify packet capture permissions
+- Test basic Scapy functionality
+Acceptance: All imports successful, test capture works</p>
+<h2 id="story-113-packet-capture-module">STORY 1.1.3: Packet Capture Module<a class="headerlink" href="#story-113-packet-capture-module" title="Permanent link">¶</a></h2>
+<p>Description: Implement real-time packet capture functionality
+Effort: 8 hours
+Tasks:
+- Create PacketCapture class
+- Implement sniff callback function
+- Add packet parsing logic
+- Extract IP, port, protocol, flags
+- Implement packet buffering
+- Add error handling
+Acceptance: Captures 100+ pps with all fields extracted</p>
+<h2 id="story-114-pcap-file-writer">STORY 1.1.4: PCAP File Writer<a class="headerlink" href="#story-114-pcap-file-writer" title="Permanent link">¶</a></h2>
+<p>Description: Save captured packets to PCAP format
+Effort: 4 hours
+Tasks:
+- Implement PCAP writer using Scapy
+- Add file rotation mechanism
+- Implement file naming convention (timestamp-based)
+- Add metadata headers
+Acceptance: Generated PCAP opens in Wireshark correctly</p>
+<h2 id="story-115-storage-management">STORY 1.1.5: Storage Management<a class="headerlink" href="#story-115-storage-management" title="Permanent link">¶</a></h2>
+<p>Description: Implement circular buffer for storage management
+Effort: 6 hours
+Tasks:
+- Monitor disk space usage
+- Implement circular buffer mechanism
+- Delete oldest files when &gt;80% full
+- Add logging for storage events
+- Test with limited storage
+Acceptance: System runs 24h without storage failure</p>
+<h2 id="story-116-unit-tests">STORY 1.1.6: Unit Tests<a class="headerlink" href="#story-116-unit-tests" title="Permanent link">¶</a></h2>
+<p>Description: Create unit tests for capture module
+Effort: 5 hours
+Tasks:
+- Test packet parsing accuracy
+- Test PCAP file generation
+- Test storage management
+- Test error handling
+- Achieve 80% code coverage
+Acceptance: All tests pass, coverage &gt;80%</p>
+<h5 id="epic-12-ml-based-intrusion-detection-feat-002">EPIC 1.2: ML-BASED INTRUSION DETECTION (FEAT-002)<a class="headerlink" href="#epic-12-ml-based-intrusion-detection-feat-002" title="Permanent link">¶</a></h5>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Critical
+Effort Estimate: 40 hours
+Dependencies: EPIC 1.1 complete</p>
+<p>User Story: As a network administrator, I want the system to automatically detect
+network attacks using machine learning so that I can respond to threats quickly.</p>
+<p>Acceptance Criteria:
+- Detects port scanning with &gt;90% accuracy
+- Detects DoS attacks with &gt;90% accuracy
+- Detects data exfiltration with &gt;85% accuracy
+- False positive rate &lt;5%
+- Real-time alerts generated within 100ms</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-121-feature-engineering-design">STORY 1.2.1: Feature Engineering Design<a class="headerlink" href="#story-121-feature-engineering-design" title="Permanent link">¶</a></h2>
+<p>Description: Design and document feature extraction strategy
+Effort: 5 hours
+Tasks:
+- Research network flow features
+- Define feature list (packet count, byte count, timing, etc.)
+- Design time window mechanism
+- Document feature rationale
+Acceptance: Feature specification document complete</p>
+<h2 id="story-122-feature-extraction-module">STORY 1.2.2: Feature Extraction Module<a class="headerlink" href="#story-122-feature-extraction-module" title="Permanent link">¶</a></h2>
+<p>Description: Implement feature extraction from packet data
+Effort: 10 hours
+Tasks:
+- Create FeatureExtractor class
+- Implement flow aggregation (5-tuple)
+- Calculate statistical features (mean, std, entropy)
+- Implement time windowing (configurable)
+- Extract protocol-specific features (TCP flags)
+- Validate feature correctness
+Acceptance: All features extracted correctly for test flows</p>
+<h2 id="story-123-training-data-collection">STORY 1.2.3: Training Data Collection<a class="headerlink" href="#story-123-training-data-collection" title="Permanent link">¶</a></h2>
+<p>Description: Collect and label training dataset
+Effort: 6 hours
+Tasks:
+- Capture normal traffic (home network)
+- Generate attack traffic (port scan, DoS, exfiltration)
+- Label dataset (normal vs attack type)
+- Split into train/validation/test sets
+- Save dataset to CSV
+Acceptance: Labeled dataset with 1000+ samples per class</p>
+<h2 id="story-124-ml-model-training">STORY 1.2.4: ML Model Training<a class="headerlink" href="#story-124-ml-model-training" title="Permanent link">¶</a></h2>
+<p>Description: Train machine learning models
+Effort: 8 hours
+Tasks:
+- Implement Random Forest classifier
+- Implement Isolation Forest (anomaly detection)
+- Feature scaling/normalization
+- Hyperparameter tuning
+- Cross-validation
+- Model evaluation (accuracy, precision, recall)
+Acceptance: Models achieve &gt;90% accuracy on validation set</p>
+<h2 id="story-125-real-time-detection-engine">STORY 1.2.5: Real-time Detection Engine<a class="headerlink" href="#story-125-real-time-detection-engine" title="Permanent link">¶</a></h2>
+<p>Description: Implement real-time detection using trained models
+Effort: 8 hours
+Tasks:
+- Create DetectionEngine class
+- Load trained models
+- Implement sliding window processing
+- Generate alerts on detection
+- Measure latency (target &lt;100ms)
+- Add logging
+Acceptance: Real-time detection working with &lt;100ms latency</p>
+<h2 id="story-126-model-persistence">STORY 1.2.6: Model Persistence<a class="headerlink" href="#story-126-model-persistence" title="Permanent link">¶</a></h2>
+<p>Description: Save and load trained models
+Effort: 3 hours
+Tasks:
+- Implement model serialization (joblib)
+- Version control for models
+- Load model at startup
+- Handle model loading errors
+Acceptance: Models persist across restarts</p>
+<h5 id="epic-13-tinyml-fuzzing-detection-feat-003">EPIC 1.3: TINYML FUZZING DETECTION (FEAT-003)<a class="headerlink" href="#epic-13-tinyml-fuzzing-detection-feat-003" title="Permanent link">¶</a></h5>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Critical
+Effort Estimate: 40 hours
+Dependencies: STM32 hardware available</p>
+<p>User Story: As an embedded systems engineer, I want to detect malformed packets
+on the STM32 gateway using TinyML so that I can provide edge-level security.</p>
+<p>Acceptance Criteria:
+- TinyML model &lt;100KB
+- Inference latency &lt;10ms per packet
+- RAM usage &lt;50KB
+- Detection accuracy &gt;85% for fuzzing attacks</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-131-stm32-development-environment">STORY 1.3.1: STM32 Development Environment<a class="headerlink" href="#story-131-stm32-development-environment" title="Permanent link">¶</a></h2>
+<p>Description: Setup STM32 development tools and test basic functionality
+Effort: 6 hours
+Tasks:
+- Install STM32CubeIDE
+- Install ST-Link drivers
+- Create new project for NUCLEO-H755ZI
+- Configure clock settings
+- Test GPIO (LED blink)
+- Test UART debug output
+Acceptance: LED blinks, debug messages visible</p>
+<h2 id="story-132-ethernet-driver-setup">STORY 1.3.2: Ethernet Driver Setup<a class="headerlink" href="#story-132-ethernet-driver-setup" title="Permanent link">¶</a></h2>
+<p>Description: Configure Ethernet peripheral on STM32
+Effort: 8 hours
+Tasks:
+- Configure Ethernet peripheral in CubeMX
+- Initialize Ethernet MAC and PHY
+- Implement basic packet reception
+- Setup static IP (192.168.10.2)
+- Test ping from Raspberry Pi
+- Debug Ethernet issues
+Acceptance: STM32 responds to ping from Pi</p>
+<h2 id="story-133-tensorflow-lite-micro-integration">STORY 1.3.3: TensorFlow Lite Micro Integration<a class="headerlink" href="#story-133-tensorflow-lite-micro-integration" title="Permanent link">¶</a></h2>
+<p>Description: Integrate TFLite Micro into STM32 project
+Effort: 8 hours
+Tasks:
+- Download TFLite Micro library
+- Add to STM32 project
+- Configure build settings
+- Test with example model
+- Verify compilation
+- Measure memory footprint
+Acceptance: Example TFLite model runs on STM32</p>
+<h2 id="story-134-fuzzing-detection-model-training">STORY 1.3.4: Fuzzing Detection Model Training<a class="headerlink" href="#story-134-fuzzing-detection-model-training" title="Permanent link">¶</a></h2>
+<p>Description: Train lightweight model for fuzzing detection
+Effort: 6 hours
+Tasks:
+- Generate fuzzing attack dataset (malformed packets)
+- Design lightweight model architecture
+- Train on laptop (Keras)
+- Quantize to int8
+- Convert to TFLite format
+- Verify model size &lt;100KB
+Acceptance: Quantized TFLite model &lt;100KB, accuracy &gt;85%</p>
+<h2 id="story-135-on-device-inference">STORY 1.3.5: On-Device Inference<a class="headerlink" href="#story-135-on-device-inference" title="Permanent link">¶</a></h2>
+<p>Description: Implement inference on STM32
+Effort: 8 hours
+Tasks:
+- Load TFLite model to STM32 flash
+- Extract features from incoming packets
+- Run inference using TFLite interpreter
+- Measure inference latency
+- Optimize for &lt;10ms latency
+- Measure RAM usage
+Acceptance: Inference &lt;10ms, RAM &lt;50KB</p>
+<h2 id="story-136-testing-and-validation">STORY 1.3.6: Testing and Validation<a class="headerlink" href="#story-136-testing-and-validation" title="Permanent link">¶</a></h2>
+<p>Description: Test TinyML detection on real traffic
+Effort: 4 hours
+Tasks:
+- Send normal packets from Pi
+- Send fuzzing attacks from Pi
+- Verify detection accuracy
+- Test edge cases
+- Performance benchmarking
+Acceptance: &gt;85% accuracy on test set</p>
+<hr>
+<h2 id="epic-14-attack-simulation-feat-004">EPIC 1.4: ATTACK SIMULATION (FEAT-004)<a class="headerlink" href="#epic-14-attack-simulation-feat-004" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: High
+Effort Estimate: 20 hours
+Dependencies: Network setup complete</p>
+<p>User Story: As a tester, I want to generate various network attacks so that I
+can validate the detection capabilities of the system.</p>
+<p>Acceptance Criteria:
+- Port scan simulation (configurable rate)
+- DoS attack simulation (high packet rate)
+- Fuzzing attack simulation (malformed packets)
+- Data exfiltration simulation
+- All attacks logged with parameters</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-141-attack-simulator-framework">STORY 1.4.1: Attack Simulator Framework<a class="headerlink" href="#story-141-attack-simulator-framework" title="Permanent link">¶</a></h2>
+<p>Description: Create framework for attack simulation
+Effort: 4 hours
+Tasks:
+- Create AttackSimulator class
+- Define attack interface
+- Implement logging mechanism
+- Add configuration parser
+Acceptance: Framework structure complete</p>
+<h2 id="story-142-port-scan-simulator">STORY 1.4.2: Port Scan Simulator<a class="headerlink" href="#story-142-port-scan-simulator" title="Permanent link">¶</a></h2>
+<p>Description: Implement port scanning attack generator
+Effort: 4 hours
+Tasks:
+- Implement SYN scan (TCP)
+- Make port range configurable
+- Make scan rate configurable (1-1000 ports/sec)
+- Log scan parameters
+- Verify with Wireshark
+Acceptance: Port scan detectable by IDS</p>
+<h2 id="story-143-dos-attack-simulator">STORY 1.4.3: DoS Attack Simulator<a class="headerlink" href="#story-143-dos-attack-simulator" title="Permanent link">¶</a></h2>
+<p>Description: Generate DoS attack traffic
+Effort: 4 hours
+Tasks:
+- Implement high-rate packet generation
+- Target configurable IP/port
+- Configurable packet rate (up to 1000 pps)
+- Multiple source IPs (spoofing)
+- Log attack parameters
+Acceptance: DoS attack detectable by IDS</p>
+<h2 id="story-144-fuzzing-attack-simulator">STORY 1.4.4: Fuzzing Attack Simulator<a class="headerlink" href="#story-144-fuzzing-attack-simulator" title="Permanent link">¶</a></h2>
+<p>Description: Generate malformed packets for fuzzing
+Effort: 4 hours
+Tasks:
+- Generate packets with invalid length
+- Corrupt packet headers
+- Invalid checksums
+- Random payload data
+- Log fuzzing parameters
+Acceptance: Fuzzing detectable by STM32 TinyML</p>
+<h2 id="story-145-data-exfiltration-simulator">STORY 1.4.5: Data Exfiltration Simulator<a class="headerlink" href="#story-145-data-exfiltration-simulator" title="Permanent link">¶</a></h2>
+<p>Description: Simulate data exfiltration pattern
+Effort: 4 hours
+Tasks:
+- Generate sustained upload traffic
+- Large packet sizes (near MTU)
+- Configurable target IP
+- Realistic timing patterns
+- Log exfiltration parameters
+Acceptance: Exfiltration detectable by ML model</p>
+<hr>
+<h2 id="epic-15-system-integration-feat-005">EPIC 1.5: SYSTEM INTEGRATION (FEAT-005)<a class="headerlink" href="#epic-15-system-integration-feat-005" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Critical
+Effort Estimate: 20 hours
+Dependencies: EPIC 1.2, 1.3 complete</p>
+<p>User Story: As a system integrator, I want Raspberry Pi and STM32 to communicate
+reliably so that alerts can be shared and correlated.</p>
+<p>Acceptance Criteria:
+- Reliable TCP/IP communication
+- Alert delivery &lt;50ms
+- Automatic reconnection on failure
+- Static IP configuration</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-151-communication-protocol-design">STORY 1.5.1: Communication Protocol Design<a class="headerlink" href="#story-151-communication-protocol-design" title="Permanent link">¶</a></h2>
+<p>Description: Design message format and protocol
+Effort: 3 hours
+Tasks:
+- Define message structure (JSON/binary)
+- Design alert format
+- Define acknowledgment mechanism
+- Document protocol specification
+Acceptance: Protocol documented and reviewed</p>
+<h2 id="story-152-raspberry-pi-communication-module">STORY 1.5.2: Raspberry Pi Communication Module<a class="headerlink" href="#story-152-raspberry-pi-communication-module" title="Permanent link">¶</a></h2>
+<p>Description: Implement Pi-side communication
+Effort: 5 hours
+Tasks:
+- Create TCP client (Pi connects to STM32)
+- Implement message serialization
+- Add retry logic
+- Handle disconnections
+- Test with mock server
+Acceptance: Pi sends/receives messages reliably</p>
+<h2 id="story-153-stm32-communication-module">STORY 1.5.3: STM32 Communication Module<a class="headerlink" href="#story-153-stm32-communication-module" title="Permanent link">¶</a></h2>
+<p>Description: Implement STM32-side communication
+Effort: 6 hours
+Tasks:
+- Create TCP server on STM32
+- Implement message parsing
+- Handle multiple connections (if needed)
+- Add error handling
+- Test with mock client
+Acceptance: STM32 receives/sends messages reliably</p>
+<h2 id="story-154-alert-propagation">STORY 1.5.4: Alert Propagation<a class="headerlink" href="#story-154-alert-propagation" title="Permanent link">¶</a></h2>
+<p>Description: Implement alert sharing between devices
+Effort: 4 hours
+Tasks:
+- STM32 sends fuzzing alerts to Pi
+- Pi receives and logs STM32 alerts
+- Measure alert latency
+- Correlate alerts (if both detect same attack)
+Acceptance: Alert delivery &lt;50ms, no packet loss</p>
+<h2 id="story-155-integration-testing">STORY 1.5.5: Integration Testing<a class="headerlink" href="#story-155-integration-testing" title="Permanent link">¶</a></h2>
+<p>Description: End-to-end system integration testing
+Effort: 2 hours
+Tasks:
+- Test full detection flow
+- Test with simulated attacks
+- Test reconnection after cable disconnect
+- Stress test (multiple attacks simultaneously)
+Acceptance: All integration tests pass</p>
+<p>================================================================================
+RELEASE 2: PROFESSIONAL INFRASTRUCTURE (PHASE 2)
+================================================================================</p>
+<p>Release Date: June 30, 2025
+Duration: 1 month (June 2025)
+Effort: 40 hours
+Goal: Production-grade code quality and automation</p>
+<p>Features Included:
+- FEAT-006: Testing Infrastructure</p>
+<p>Success Criteria:
+[x] CI/CD pipeline operational
+[x] Unit test coverage &gt;80%
+[x] Static analysis passing (score &gt;8.0)
+[x] Automated builds on every commit
+[x] Professional documentation</p>
+<hr>
+<h2 id="epic-21-testing-infrastructure-feat-006">EPIC 2.1: TESTING INFRASTRUCTURE (FEAT-006)<a class="headerlink" href="#epic-21-testing-infrastructure-feat-006" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: High
+Effort Estimate: 40 hours
+Dependencies: Phase 1 complete</p>
+<p>User Story: As a developer, I want automated testing and CI/CD so that code
+quality is maintained and regressions are prevented.</p>
+<p>Acceptance Criteria:
+- 80%+ code coverage
+- All tests pass on every commit
+- Code quality score &gt;8.0/10
+- Build artifacts generated automatically</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-211-unit-test-framework">STORY 2.1.1: Unit Test Framework<a class="headerlink" href="#story-211-unit-test-framework" title="Permanent link">¶</a></h2>
+<p>Description: Setup unit testing framework
+Effort: 6 hours
+Tasks:
+- Install pytest
+- Create test directory structure
+- Write tests for capture module
+- Write tests for feature extraction
+- Write tests for detection engine
+- Configure code coverage (pytest-cov)
+Acceptance: Test suite runs, coverage report generated</p>
+<h2 id="story-212-integration-tests">STORY 2.1.2: Integration Tests<a class="headerlink" href="#story-212-integration-tests" title="Permanent link">¶</a></h2>
+<p>Description: Create integration test suite
+Effort: 8 hours
+Tasks:
+- Test end-to-end packet flow
+- Test Pi-STM32 communication
+- Test attack detection scenarios
+- Mock external dependencies
+- Test error handling paths
+Acceptance: Integration tests pass</p>
+<h2 id="story-213-github-actions-workflow">STORY 2.1.3: GitHub Actions Workflow<a class="headerlink" href="#story-213-github-actions-workflow" title="Permanent link">¶</a></h2>
+<p>Description: Setup CI/CD pipeline
+Effort: 8 hours
+Tasks:
+- Create .github/workflows/ci.yml
+- Configure Python environment
+- Run linting (Pylint, Flake8)
+- Run unit tests
+- Generate coverage report
+- Fail build on quality issues
+Acceptance: Workflow runs on every push</p>
+<h2 id="story-214-static-code-analysis">STORY 2.1.4: Static Code Analysis<a class="headerlink" href="#story-214-static-code-analysis" title="Permanent link">¶</a></h2>
+<p>Description: Integrate code quality tools
+Effort: 4 hours
+Tasks:
+- Configure Pylint
+- Configure Flake8
+- Set quality thresholds
+- Fix existing issues
+- Document coding standards
+Acceptance: Code quality score &gt;8.0</p>
+<h2 id="story-215-stm32-build-automation">STORY 2.1.5: STM32 Build Automation<a class="headerlink" href="#story-215-stm32-build-automation" title="Permanent link">¶</a></h2>
+<p>Description: Automate STM32 firmware builds
+Effort: 6 hours
+Tasks:
+- Setup arm-gcc toolchain in CI
+- Create build script
+- Compile firmware in pipeline
+- Generate .bin/.hex artifacts
+- Archive build outputs
+Acceptance: Firmware builds automatically</p>
+<h2 id="story-216-documentation-generation">STORY 2.1.6: Documentation Generation<a class="headerlink" href="#story-216-documentation-generation" title="Permanent link">¶</a></h2>
+<p>Description: Auto-generate API documentation
+Effort: 4 hours
+Tasks:
+- Setup Sphinx (Python docs)
+- Add docstrings to all modules
+- Configure auto-build
+- Deploy to GitHub Pages
+Acceptance: API docs auto-published</p>
+<h2 id="story-217-test-reporting">STORY 2.1.7: Test Reporting<a class="headerlink" href="#story-217-test-reporting" title="Permanent link">¶</a></h2>
+<p>Description: Generate test reports
+Effort: 4 hours
+Tasks:
+- Create test report template
+- Document test results
+- Generate coverage badges
+- Add to README
+Acceptance: Test results visible in README</p>
+<p>================================================================================
+RELEASE 3: CLOUD INTEGRATION (PHASE 3)
+================================================================================</p>
+<p>Release Date: August 31, 2025
+Duration: 2 months (July - August 2025)
+Effort: 60 hours
+Goal: Cloud connectivity and remote monitoring</p>
+<p>Features Included:
+- FEAT-007: Cloud Connectivity
+- FEAT-008: Dashboard &amp; Monitoring</p>
+<p>Success Criteria:
+[x] WiFi connectivity stable
+[x] Alerts uploaded to cloud
+[x] Real-time dashboard operational
+[x] Email notifications working
+[x] 24/7 uptime capability</p>
+<hr>
+<h2 id="epic-31-cloud-connectivity-feat-007">EPIC 3.1: CLOUD CONNECTIVITY (FEAT-007)<a class="headerlink" href="#epic-31-cloud-connectivity-feat-007" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Medium
+Effort Estimate: 30 hours
+Dependencies: Phase 2 complete</p>
+<p>User Story: As a security analyst, I want alerts sent to the cloud so that I
+can monitor the system remotely from anywhere.</p>
+<p>Acceptance Criteria:
+- WiFi connection stable (24h uptime)
+- Alerts uploaded within 5 seconds
+- Local buffering when offline
+- Automatic upload on reconnection</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-311-wifi-configuration">STORY 3.1.1: WiFi Configuration<a class="headerlink" href="#story-311-wifi-configuration" title="Permanent link">¶</a></h2>
+<p>Description: Setup WiFi on Raspberry Pi
+Effort: 3 hours
+Tasks:
+- Configure WiFi credentials
+- Test WiFi connectivity
+- Implement automatic reconnection
+- Monitor connection quality
+Acceptance: WiFi stable for 24 hours</p>
+<h2 id="story-312-cloud-service-selection">STORY 3.1.2: Cloud Service Selection<a class="headerlink" href="#story-312-cloud-service-selection" title="Permanent link">¶</a></h2>
+<p>Description: Choose and setup cloud platform
+Effort: 4 hours
+Tasks:
+- Evaluate options (AWS IoT, Azure IoT, ThingSpeak)
+- Create free tier account
+- Setup IoT endpoint
+- Configure authentication
+- Test connection
+Acceptance: Cloud endpoint reachable from Pi</p>
+<h2 id="story-313-alert-upload-module">STORY 3.1.3: Alert Upload Module<a class="headerlink" href="#story-313-alert-upload-module" title="Permanent link">¶</a></h2>
+<p>Description: Implement cloud data upload
+Effort: 8 hours
+Tasks:
+- Create CloudUploader class
+- Implement HTTP POST to cloud endpoint
+- Format alert data (JSON)
+- Add authentication headers
+- Measure upload latency
+- Handle upload failures
+Acceptance: Alerts uploaded within 5 seconds</p>
+<h2 id="story-314-offline-buffering">STORY 3.1.4: Offline Buffering<a class="headerlink" href="#story-314-offline-buffering" title="Permanent link">¶</a></h2>
+<p>Description: Buffer alerts when cloud unavailable
+Effort: 6 hours
+Tasks:
+- Implement local SQLite database
+- Store alerts when offline
+- Detect connection restoration
+- Batch upload buffered alerts
+- Delete uploaded alerts
+Acceptance: No data loss during outages</p>
+<h2 id="story-315-network-monitoring">STORY 3.1.5: Network Monitoring<a class="headerlink" href="#story-315-network-monitoring" title="Permanent link">¶</a></h2>
+<p>Description: Monitor network health
+Effort: 5 hours
+Tasks:
+- Track WiFi signal strength
+- Monitor packet loss
+- Log connection events
+- Alert on connection issues
+Acceptance: Network health metrics logged</p>
+<h2 id="story-316-cloud-integration-testing">STORY 3.1.6: Cloud Integration Testing<a class="headerlink" href="#story-316-cloud-integration-testing" title="Permanent link">¶</a></h2>
+<p>Description: Test cloud connectivity end-to-end
+Effort: 4 hours
+Tasks:
+- Test with various attack types
+- Test offline buffering (simulate outage)
+- Stress test (many alerts)
+- Verify data integrity in cloud
+Acceptance: All cloud tests pass</p>
+<hr>
+<h2 id="epic-32-dashboard-monitoring-feat-008">EPIC 3.2: DASHBOARD &amp; MONITORING (FEAT-008)<a class="headerlink" href="#epic-32-dashboard-monitoring-feat-008" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Medium
+Effort Estimate: 30 hours
+Dependencies: EPIC 3.1 complete</p>
+<p>User Story: As a security analyst, I want a real-time dashboard so that I can
+visualize system status and attack trends.</p>
+<p>Acceptance Criteria:
+- Dashboard updates in real-time
+- Shows key metrics (alert count, system health)
+- Email notifications for critical alerts
+- Accessible from any device</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-321-dashboard-platform-selection">STORY 3.2.1: Dashboard Platform Selection<a class="headerlink" href="#story-321-dashboard-platform-selection" title="Permanent link">¶</a></h2>
+<p>Description: Choose and setup dashboard tool
+Effort: 3 hours
+Tasks:
+- Evaluate options (Grafana, custom web app)
+- Install Grafana or setup Flask app
+- Configure data source
+- Test basic visualization
+Acceptance: Dashboard platform ready</p>
+<h2 id="story-322-system-status-panel">STORY 3.2.2: System Status Panel<a class="headerlink" href="#story-322-system-status-panel" title="Permanent link">¶</a></h2>
+<p>Description: Display real-time system status
+Effort: 6 hours
+Tasks:
+- Create status panel
+- Show Pi CPU/memory usage
+- Show STM32 status
+- Show network connectivity
+- Auto-refresh every 5 seconds
+Acceptance: Status updates in real-time</p>
+<h2 id="story-323-alert-visualization">STORY 3.2.3: Alert Visualization<a class="headerlink" href="#story-323-alert-visualization" title="Permanent link">¶</a></h2>
+<p>Description: Display alerts and statistics
+Effort: 8 hours
+Tasks:
+- Create alert timeline chart
+- Show attack type distribution (pie chart)
+- Display alert count by severity
+- Show detection accuracy metrics
+- Add time range filter
+Acceptance: All charts render correctly</p>
+<h2 id="story-324-email-notification-system">STORY 3.2.4: Email Notification System<a class="headerlink" href="#story-324-email-notification-system" title="Permanent link">¶</a></h2>
+<p>Description: Send email alerts for critical events
+Effort: 6 hours
+Tasks:
+- Setup SMTP configuration
+- Create email templates
+- Implement alert logic (when to email)
+- Add rate limiting (avoid spam)
+- Test email delivery
+Acceptance: Emails received within 1 minute</p>
+<h2 id="story-325-mobile-responsiveness">STORY 3.2.5: Mobile Responsiveness<a class="headerlink" href="#story-325-mobile-responsiveness" title="Permanent link">¶</a></h2>
+<p>Description: Make dashboard mobile-friendly
+Effort: 4 hours
+Tasks:
+- Responsive CSS design
+- Test on mobile devices
+- Optimize for small screens
+Acceptance: Dashboard usable on phone</p>
+<h2 id="story-326-dashboard-deployment">STORY 3.2.6: Dashboard Deployment<a class="headerlink" href="#story-326-dashboard-deployment" title="Permanent link">¶</a></h2>
+<p>Description: Deploy dashboard for remote access
+Effort: 3 hours
+Tasks:
+- Configure firewall rules
+- Setup HTTPS (Let's Encrypt)
+- Test remote access
+- Document access instructions
+Acceptance: Dashboard accessible remotely</p>
+<p>================================================================================
+RELEASE 4: ADVANCED FEATURES (PHASE 4)
+================================================================================</p>
+<p>Release Date: November 30, 2025
+Duration: 3 months (September - November 2025)
+Effort: 100 hours
+Goal: Enterprise-grade automotive features</p>
+<p>Features Included:
+- FEAT-009: AUTOSAR Integration
+- FEAT-010: Secure FOTA
+- FEAT-011: Security Hardening</p>
+<p>Success Criteria:
+[x] AUTOSAR architecture implemented
+[x] Secure firmware updates working
+[x] Root of Trust established
+[x] All security features operational</p>
+<hr>
+<h2 id="epic-41-autosar-integration-feat-009">EPIC 4.1: AUTOSAR INTEGRATION (FEAT-009)<a class="headerlink" href="#epic-41-autosar-integration-feat-009" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Medium
+Effort Estimate: 40 hours
+Dependencies: Phase 3 complete</p>
+<p>User Story: As an automotive software architect, I want to demonstrate AUTOSAR
+implementation so that I can showcase automotive software expertise.</p>
+<p>Acceptance Criteria:
+- Classic AUTOSAR on STM32 (BSW, RTE, ASW layers)
+- Adaptive AUTOSAR concepts on Pi
+- Service-oriented architecture</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-411-classic-autosar-architecture-design">STORY 4.1.1: Classic AUTOSAR Architecture Design<a class="headerlink" href="#story-411-classic-autosar-architecture-design" title="Permanent link">¶</a></h2>
+<p>Description: Design Classic AUTOSAR layering for STM32
+Effort: 6 hours
+Tasks:
+- Define BSW modules (Ethernet driver, diagnostics)
+- Design RTE interfaces
+- Define ASW components
+- Document architecture
+Acceptance: Architecture diagram complete</p>
+<h2 id="story-412-bsw-layer-implementation">STORY 4.1.2: BSW Layer Implementation<a class="headerlink" href="#story-412-bsw-layer-implementation" title="Permanent link">¶</a></h2>
+<p>Description: Implement Basic Software layer
+Effort: 12 hours
+Tasks:
+- Refactor Ethernet driver as BSW module
+- Implement ECUM (ECU State Manager)
+- Implement COM module
+- Add diagnostic services (UDS basic)
+- Follow AUTOSAR naming conventions
+Acceptance: BSW modules functional</p>
+<h2 id="story-413-rte-configuration">STORY 4.1.3: RTE Configuration<a class="headerlink" href="#story-413-rte-configuration" title="Permanent link">¶</a></h2>
+<p>Description: Implement Runtime Environment
+Effort: 8 hours
+Tasks:
+- Define RTE interfaces
+- Generate RTE code (or manual implementation)
+- Connect BSW to ASW via RTE
+Acceptance: RTE connects BSW and ASW</p>
+<h2 id="story-414-asw-components">STORY 4.1.4: ASW Components<a class="headerlink" href="#story-414-asw-components" title="Permanent link">¶</a></h2>
+<p>Description: Implement Application Software
+Effort: 6 hours
+Tasks:
+- Create SWCs for TinyML inference
+- Create SWC for alert handling
+- Implement runnable entities
+- Follow AUTOSAR patterns
+Acceptance: ASW components functional</p>
+<h2 id="story-415-adaptive-autosar-on-pi">STORY 4.1.5: Adaptive AUTOSAR on Pi<a class="headerlink" href="#story-415-adaptive-autosar-on-pi" title="Permanent link">¶</a></h2>
+<p>Description: Implement Adaptive AUTOSAR concepts
+Effort: 8 hours
+Tasks:
+- Implement ara::com communication
+- Create service interfaces
+- Implement service discovery
+- SOME/IP protocol (basic)
+Acceptance: Services communicate via ara::com</p>
+<hr>
+<h2 id="epic-42-secure-fota-feat-010">EPIC 4.2: SECURE FOTA (FEAT-010)<a class="headerlink" href="#epic-42-secure-fota-feat-010" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Medium
+Effort Estimate: 30 hours
+Dependencies: Cloud connectivity working</p>
+<p>User Story: As a system maintainer, I want to update firmware remotely so that
+I can deploy fixes and improvements without physical access.</p>
+<p>Acceptance Criteria:
+- OTA updates for Pi and STM32
+- Cryptographic signature verification
+- A/B partition scheme for rollback
+- Update success rate &gt;95%</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-421-pi-ab-partitioning">STORY 4.2.1: Pi A/B Partitioning<a class="headerlink" href="#story-421-pi-ab-partitioning" title="Permanent link">¶</a></h2>
+<p>Description: Setup dual-partition boot on Pi
+Effort: 6 hours
+Tasks:
+- Create two root partitions
+- Configure bootloader for A/B
+- Implement partition switching
+- Test rollback mechanism
+Acceptance: Pi boots from A or B partition</p>
+<h2 id="story-422-update-package-format">STORY 4.2.2: Update Package Format<a class="headerlink" href="#story-422-update-package-format" title="Permanent link">¶</a></h2>
+<p>Description: Define update package structure
+Effort: 3 hours
+Tasks:
+- Design update manifest (version, hash, signature)
+- Package firmware binary
+- Add metadata
+- Document format
+Acceptance: Update package specification complete</p>
+<h2 id="story-423-signature-generation-verification">STORY 4.2.3: Signature Generation &amp; Verification<a class="headerlink" href="#story-423-signature-generation-verification" title="Permanent link">¶</a></h2>
+<p>Description: Implement cryptographic signing
+Effort: 8 hours
+Tasks:
+- Generate RSA key pair
+- Sign update packages
+- Implement signature verification on Pi
+- Reject unsigned/tampered packages
+- Test with invalid signatures
+Acceptance: Only valid signed updates accepted</p>
+<h2 id="story-424-pi-update-manager">STORY 4.2.4: Pi Update Manager<a class="headerlink" href="#story-424-pi-update-manager" title="Permanent link">¶</a></h2>
+<p>Description: Implement OTA update on Pi
+Effort: 6 hours
+Tasks:
+- Download update from cloud
+- Verify signature
+- Install to inactive partition
+- Switch boot partition
+- Reboot and verify
+Acceptance: Pi updates successfully</p>
+<h2 id="story-425-stm32-bootloader">STORY 4.2.5: STM32 Bootloader<a class="headerlink" href="#story-425-stm32-bootloader" title="Permanent link">¶</a></h2>
+<p>Description: Implement secure bootloader on STM32
+Effort: 10 hours
+Tasks:
+- Create bootloader in flash sector 0
+- Implement UART/Ethernet update protocol
+- Verify application signature before boot
+- Jump to application if valid
+Acceptance: STM32 only boots signed firmware</p>
+<h2 id="story-426-remote-stm32-update">STORY 4.2.6: Remote STM32 Update<a class="headerlink" href="#story-426-remote-stm32-update" title="Permanent link">¶</a></h2>
+<p>Description: Update STM32 from Raspberry Pi
+Effort: 7 hours
+Tasks:
+- Pi downloads STM32 firmware
+- Pi sends firmware to STM32 bootloader
+- STM32 verifies and flashes
+- STM32 reboots with new firmware
+Acceptance: STM32 updated remotely from Pi</p>
+<hr>
+<h2 id="epic-43-security-hardening-feat-011">EPIC 4.3: SECURITY HARDENING (FEAT-011)<a class="headerlink" href="#epic-43-security-hardening-feat-011" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: High
+Effort Estimate: 30 hours
+Dependencies: Hardware (TPM chip) available</p>
+<p>User Story: As a security engineer, I want robust security mechanisms so that
+the system is protected against attacks and tampering.</p>
+<p>Acceptance Criteria:
+- Secure boot chain verified
+- Cryptographic keys in HSM
+- Encrypted communication (TLS)
+- Anti-tampering detection</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-431-secure-boot-on-stm32">STORY 4.3.1: Secure Boot on STM32<a class="headerlink" href="#story-431-secure-boot-on-stm32" title="Permanent link">¶</a></h2>
+<p>Description: Implement secure boot chain
+Effort: 8 hours
+Tasks:
+- Configure secure boot in STM32
+- Generate root key
+- Sign bootloader
+- Sign application
+- Test boot verification
+- Test with invalid signature
+Acceptance: STM32 refuses tampered firmware</p>
+<h2 id="story-432-hsm-integration-tpmatecc608">STORY 4.3.2: HSM Integration (TPM/ATECC608)<a class="headerlink" href="#story-432-hsm-integration-tpmatecc608" title="Permanent link">¶</a></h2>
+<p>Description: Integrate hardware security module
+Effort: 10 hours
+Tasks:
+- Connect ATECC608 via I2C
+- Initialize TPM
+- Generate key pair in TPM
+- Store private key in TPM (never exposed)
+- Use TPM for signing operations
+- Test key security
+Acceptance: Private keys never readable from software</p>
+<h2 id="story-433-tls-encryption">STORY 4.3.3: TLS Encryption<a class="headerlink" href="#story-433-tls-encryption" title="Permanent link">¶</a></h2>
+<p>Description: Encrypt Pi-STM32 communication
+Effort: 8 hours
+Tasks:
+- Implement TLS 1.3 on Pi (using Python SSL)
+- Implement TLS on STM32 (mbedTLS)
+- Exchange certificates
+- Test encrypted traffic (Wireshark)
+- Verify decryption fails without keys
+Acceptance: All traffic encrypted</p>
+<h2 id="story-434-anti-tampering-detection">STORY 4.3.4: Anti-Tampering Detection<a class="headerlink" href="#story-434-anti-tampering-detection" title="Permanent link">¶</a></h2>
+<p>Description: Detect physical tampering attempts
+Effort: 4 hours
+Tasks:
+- Monitor voltage levels (detect glitching)
+- Detect debug probe attachment
+- Wipe keys on tamper detection
+- Test with simulated tampering
+Acceptance: Keys erased on tamper event</p>
+<p>================================================================================
+RELEASE 5: RAG DOCUMENTATION ASSISTANT (PHASE 5)
+================================================================================</p>
+<p>Release Date: February 28, 2026
+Duration: 3 months (December 2025 - February 2026)
+Effort: 80 hours
+Goal: AI-powered project documentation assistant</p>
+<p>Features Included:
+- FEAT-012: RAG Documentation System</p>
+<p>Success Criteria:
+[x] RAG system indexes all project artifacts
+[x] Natural language Q&amp;A working
+[x] Response accuracy &gt;90%
+[x] Public demo accessible
+[x] Integrated with project portfolio</p>
+<hr>
+<h2 id="epic-51-rag-documentation-system-feat-012">EPIC 5.1: RAG DOCUMENTATION SYSTEM (FEAT-012)<a class="headerlink" href="#epic-51-rag-documentation-system-feat-012" title="Permanent link">¶</a></h2>
+<p>Epic Owner: Sivaramasubramanian Sundararaj
+Priority: Low (Enhancement)
+Effort Estimate: 80 hours
+Dependencies: Project documentation complete</p>
+<p>User Story: As a project visitor, I want to ask questions about the project in
+natural language so that I can understand the implementation details easily.</p>
+<p>Acceptance Criteria:
+- Answers questions about code, architecture, requirements
+- Retrieves relevant code snippets
+- References datasheets when needed
+- Deployed as public demo</p>
+<p>Stories (Tasks):</p>
+<h2 id="story-511-rag-architecture-design">STORY 5.1.1: RAG Architecture Design<a class="headerlink" href="#story-511-rag-architecture-design" title="Permanent link">¶</a></h2>
+<p>Description: Design RAG system architecture
+Effort: 4 hours
+Tasks:
+- Research RAG frameworks (LangChain, LlamaIndex)
+- Choose vector database (ChromaDB, Pinecone)
+- Define data sources
+- Design query flow
+- Document architecture
+Acceptance: Architecture design complete</p>
+<h2 id="story-512-data-collection-preparation">STORY 5.1.2: Data Collection &amp; Preparation<a class="headerlink" href="#story-512-data-collection-preparation" title="Permanent link">¶</a></h2>
+<p>Description: Collect and prepare all project artifacts
+Effort: 8 hours
+Tasks:
+- Collect all markdown documentation
+- Extract code comments
+- Download hardware datasheets (PDFs)
+- Extract requirements from CSV
+- Clean and structure data
+- Create metadata (source, category, date)
+Acceptance: All data sources collected and organized</p>
+<h2 id="story-513-document-chunking">STORY 5.1.3: Document Chunking<a class="headerlink" href="#story-513-document-chunking" title="Permanent link">¶</a></h2>
+<p>Description: Split documents into chunks for embedding
+Effort: 6 hours
+Tasks:
+- Implement text chunking (500-1000 tokens)
+- Preserve code block integrity
+- Handle PDF extraction (PyPDF2)
+- Maintain document context
+- Generate chunk metadata
+Acceptance: All documents chunked appropriately</p>
+<h2 id="story-514-vector-database-setup">STORY 5.1.4: Vector Database Setup<a class="headerlink" href="#story-514-vector-database-setup" title="Permanent link">¶</a></h2>
+<p>Description: Setup and configure vector database
+Effort: 6 hours
+Tasks:
+- Install ChromaDB (or chosen DB)
+- Generate embeddings (OpenAI or sentence-transformers)
+- Index all document chunks
+- Test similarity search
+- Optimize retrieval performance
+Acceptance: All documents indexed and searchable</p>
+<h2 id="story-515-rag-query-engine">STORY 5.1.5: RAG Query Engine<a class="headerlink" href="#story-515-rag-query-engine" title="Permanent link">¶</a></h2>
+<p>Description: Implement query processing and retrieval
+Effort: 10 hours
+Tasks:
+- Implement LangChain RAG chain
+- Configure Claude API integration
+- Implement semantic search
+- Retrieve top-k relevant chunks
+- Format context for LLM
+- Generate responses
+Acceptance: RAG answers questions correctly</p>
+<h2 id="story-516-code-retrieval-enhancement">STORY 5.1.6: Code Retrieval Enhancement<a class="headerlink" href="#story-516-code-retrieval-enhancement" title="Permanent link">¶</a></h2>
+<p>Description: Add code-specific retrieval
+Effort: 8 hours
+Tasks:
+- Index code by function/class
+- Add syntax highlighting in responses
+- Link to GitHub source
+- Show line numbers
+- Handle code-specific queries
+Acceptance: Code snippets retrieved with context</p>
+<h2 id="story-517-traceability-queries">STORY 5.1.7: Traceability Queries<a class="headerlink" href="#story-517-traceability-queries" title="Permanent link">¶</a></h2>
+<p>Description: Enable requirements traceability queries
+Effort: 6 hours
+Tasks:
+- Parse requirements.csv into structured format
+- Implement traceability lookups
+- Link requirements to code/tests
+- Show impact analysis
+Acceptance: Traceability queries working</p>
+<h2 id="story-518-web-interface">STORY 5.1.8: Web Interface<a class="headerlink" href="#story-518-web-interface" title="Permanent link">¶</a></h2>
+<p>Description: Create user interface for RAG system
+Effort: 12 hours
+Tasks:
+- Build Streamlit web app
+- Create chat interface
+- Add conversation history
+- Show retrieved sources
+- Display code with syntax highlighting
+- Make mobile-responsive
+Acceptance: Web UI functional and attractive</p>
+<h2 id="story-519-deployment">STORY 5.1.9: Deployment<a class="headerlink" href="#story-519-deployment" title="Permanent link">¶</a></h2>
+<p>Description: Deploy RAG system publicly
+Effort: 6 hours
+Tasks:
+- Deploy to Streamlit Cloud (free tier)
+- Configure environment variables
+- Test public access
+- Optimize load time
+- Add usage analytics
+Acceptance: RAG publicly accessible</p>
+<h2 id="story-5110-rag-documentation">STORY 5.1.10: RAG Documentation<a class="headerlink" href="#story-5110-rag-documentation" title="Permanent link">¶</a></h2>
+<p>Description: Document RAG system
+Effort: 4 hours
+Tasks:
+- Write RAG architecture doc
+- Document data sources
+- Create usage guide
+- Add to project portfolio
+- Update CV/LinkedIn
+Acceptance: RAG fully documented</p>
+<h2 id="story-5111-integration-with-portfolio">STORY 5.1.11: Integration with Portfolio<a class="headerlink" href="#story-5111-integration-with-portfolio" title="Permanent link">¶</a></h2>
+<p>Description: Integrate RAG into project showcase
+Effort: 4 hours
+Tasks:
+- Add RAG link to project README
+- Create demo video
+- Generate QR code for CV
+- Add to GitHub Pages
+Acceptance: RAG linked from all project materials</p>
+<h2 id="story-5112-testing-refinement">STORY 5.1.12: Testing &amp; Refinement<a class="headerlink" href="#story-5112-testing-refinement" title="Permanent link">¶</a></h2>
+<p>Description: Test and improve RAG responses
+Effort: 6 hours
+Tasks:
+- Create test question set
+- Evaluate answer quality
+- Improve prompts
+- Tune retrieval parameters
+- Fix edge cases
+Acceptance: &gt;90% answer accuracy on test set</p>
+<p>================================================================================
+RELEASE DEPENDENCIES
+================================================================================</p>
+<p>Release Dependency Chain:
+Release 1 (Phase 1) → Release 2 (Phase 2) → Release 3 (Phase 3) →
+Release 4 (Phase 4) → Release 5 (RAG)</p>
+<p>Feature Dependencies:
+- FEAT-002, 003, 004 depend on FEAT-001 (need captured traffic)
+- FEAT-005 depends on FEAT-002 and FEAT-003 (integration requires both working)
+- FEAT-006 depends on completion of Release 1
+- FEAT-007, 008 depend on FEAT-006 (CI/CD before cloud)
+- FEAT-009, 010, 011 can be developed in parallel
+- FEAT-012 depends on all documentation being complete</p>
+<p>Critical Path:
+FEAT-001 → FEAT-002 → FEAT-003 → FEAT-005 → FEAT-006 → FEAT-007</p>
+<p>================================================================================
+RISK REGISTER
+================================================================================</p>
+<p>HIGH RISKS:</p>
+<p>RISK-001: Hardware Delivery Delay
+Impact: High | Probability: Low
+Mitigation: Hardware ordered early, alternative suppliers identified
+Contingency: Start with software simulation while waiting</p>
+<p>RISK-002: TinyML Model Size Exceeds 100KB
+Impact: High | Probability: Medium
+Mitigation: Aggressive quantization, pruning, architecture optimization
+Contingency: Use simpler model, reduce feature set</p>
+<p>RISK-003: STM32 Ethernet Driver Issues
+Impact: High | Probability: Medium
+Mitigation: Use official ST examples, community support forums
+Contingency: Use UART communication as fallback</p>
+<p>RISK-004: ML Model Accuracy Below Target
+Impact: Medium | Probability: Medium
+Mitigation: More training data, feature engineering, ensemble methods
+Contingency: Lower threshold to 85%, focus on specific attack types</p>
+<p>MEDIUM RISKS:</p>
+<p>RISK-005: Cloud Service Costs
+Impact: Low | Probability: Low
+Mitigation: Use free tiers (AWS/Azure), minimize data uploads
+Contingency: Use local dashboard only, skip cloud</p>
+<p>RISK-006: Time Estimation Errors
+Impact: Medium | Probability: High
+Mitigation: 20% buffer included in estimates, flexible timeline
+Contingency: Descope Phase 4 features if needed</p>
+<p>RISK-007: AUTOSAR Complexity
+Impact: Low | Probability: Medium
+Mitigation: Start simple, focus on architecture demonstration
+Contingency: Implement concepts only, not full AUTOSAR compliance</p>
+<p>LOW RISKS:</p>
+<p>RISK-008: Documentation Overhead
+Impact: Low | Probability: Low
+Mitigation: Document as you build, templates prepared
+Contingency: Minimal documentation for Phase 1, complete later</p>
+<p>================================================================================
+SUCCESS METRICS
+================================================================================</p>
+<p>Technical Metrics:
+- Detection accuracy: &gt;90% for port scan and DoS, &gt;85% for exfiltration
+- False positive rate: &lt;5%
+- Inference latency: &lt;100ms (Pi), &lt;10ms (STM32)
+- TinyML model size: &lt;100KB
+- Code coverage: &gt;80%
+- Uptime: 99% (24/7 operation capability)</p>
+<p>Project Metrics:
+- All 40 requirements verified
+- 12 features delivered
+- 80+ stories completed
+- 450+ hours invested
+- 15+ certifications earned</p>
+<p>Portfolio Metrics:
+- GitHub stars: Target 50+
+- Demo video views: Target 500+
+- LinkedIn profile views: Track increase
+- Interview invitations: Track count</p>
+<p>Career Metrics:
+- Job offers received: Target 3+
+- Salary offered: Target €100k+
+- Interview-to-offer ratio: &gt;30%</p>
+<p>================================================================================
+TIMELINE SUMMARY
+================================================================================</p>
+<p>Month-by-Month Deliverables:</p>
+<p>February 2025:
+- Hardware setup complete
+- Packet capture working
+- Basic traffic analysis
+- Coursera: ML Spec (Week 1-4)</p>
+<p>March 2025:
+- Attack simulation working
+- Feature extraction complete
+- ML model trained
+- Coursera: ML Spec (Week 5-8)</p>
+<p>April 2025:
+- STM32 TinyML working
+- Model conversion complete
+- TinyML inference on device
+- Coursera: ML Spec (Week 9-12) ✓</p>
+<p>May 2025:
+- System integration complete
+- End-to-end detection working
+- Phase 1 COMPLETE ✓
+- Coursera: Deep Learning Spec starts</p>
+<p>June 2025:
+- CI/CD pipeline operational
+- Test coverage &gt;80%
+- Phase 2 COMPLETE ✓
+- Coursera: DL Spec continues</p>
+<p>July 2025:
+- WiFi connectivity stable
+- Cloud alerts working
+- Coursera: DL Spec continues</p>
+<p>August 2025:
+- Dashboard operational
+- Email alerts working
+- Phase 3 COMPLETE ✓
+- Coursera: DL Spec complete ✓</p>
+<p>September 2025:
+- AUTOSAR architecture implemented
+- Coursera: TinyML Spec starts</p>
+<p>October 2025:
+- Yocto Linux running
+- FOTA framework working
+- Coursera: TinyML Spec continues</p>
+<p>November 2025:
+- Security hardening complete
+- Phase 4 COMPLETE ✓
+- Coursera: TinyML Spec complete ✓</p>
+<p>December 2025:
+- Final testing and polish
+- Complete documentation
+- Demo video creation
+- Coursera: RAG courses start</p>
+<p>January 2026:
+- RAG data preparation
+- Vector database indexed
+- RAG query engine working
+- Coursera: RAG courses continue</p>
+<p>February 2026:
+- RAG web interface complete
+- Public deployment
+- Phase 5 COMPLETE ✓
+- PROJECT COMPLETE! 🎉</p>
+<p>================================================================================
+APPENDIX: STORY POINT ESTIMATION GUIDE
+================================================================================</p>
+<p>Story Points = Hours for this project</p>
+<p>Estimation Guidelines:
+- 1-2 hours: Simple configuration, straightforward implementation
+- 3-4 hours: Moderate complexity, some research needed
+- 5-8 hours: Complex feature, multiple components
+- 10+ hours: Very complex, significant R&amp;D</p>
+<p>Velocity Tracking:
+- Track actual hours vs. estimated
+- Adjust future estimates based on variance
+- Typical velocity: 10-12 hours/week on project</p>
+<p>Buffer Policy:
+- All estimates include 20% buffer for debugging
+- Integration tasks have 30% buffer
+- New technology (TinyML, AUTOSAR) has 40% buffer</p>
+<p>================================================================================
+END OF RELEASE PLAN
+================================================================================</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 12, 2026 01:50:14 CET">12-Feb-2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+        <script src="../../helpers/js/toc_collapse.js"></script>
+      
+        <script src="../../helpers/js/custom_glightbox_zoom.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
