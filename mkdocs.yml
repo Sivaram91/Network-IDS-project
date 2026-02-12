@@ -15,18 +15,18 @@ theme:
     - toc.follow
 
 extra_css:
-  - css/custom.css
-  - css/LessonsTable.css
+  - helpers/css/custom.css
+  - helpers/css/LessonsTable.css
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
-  - js/toc_collapse.js
-  - js/custom_glightbox_zoom.js
+  - helpers/js/toc_collapse.js
+  - helpers/js/custom_glightbox_zoom.js
 
 nav:
   - Home: index.md
-  - Getting Started: getting_started.md
-  - Tools Installation: tools_installation.md
+  - Getting Started: General/getting_started.md
+  - Tools Installation: General/tools_installation.md
   - System Engineering: 
     - System Requirements: Requirements/SystemRequirements.md
     - System Architecture: Architecture/SystemArchitecture.md
@@ -36,16 +36,16 @@ nav:
     - SWE1 - Software Requirements: Requirements/SwRequirements.md
     - SWE2 - Software Architecture: Architecture/SwArchitecture.md
     - SWE3 - Software Design:
-      - Raspberry Pi: RaspPi_Comp_Design.md
-      - STM32 Microcontroller: STM_Comp_Design.md
+      - Raspberry Pi: General/RaspPi_Comp_Design.md
+      - STM32 Microcontroller: General/STM_Comp_Design.md
     - SWE4 - Unit Verification: TestDocs/SwUnitVerificationTestSpec.md
     - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
     - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
   - Knowledge Base: KnowledgeBase/HomePage.md
   - Project Planning:
-  - How-To: HowTos.md
+  - How-To: General/HowTos.md
   - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
-  - Glossary:
+  - Glossary: General/Glossary.md
   - FAQs: 
   - Dashboards:
     - Project Progress: Dashboards/ProjectProgress.md
