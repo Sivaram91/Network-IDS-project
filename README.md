@@ -12,8 +12,7 @@ A dual-layer security system using **Machine Learning** (Raspberry Pi) and **Tin
 ## Getting Started
 
 1. **[Read the Docs](https://sivaram91.github.io/Network-IDS-project/)** - Complete project documentation
-2. **[Setup Guide](docs/getting_started.md)** - Installation and environment setup
-3. **[System Requirements](docs/Requirements/SystemRequirements.md)** - Feature list and specifications
+2. **[Setup Guide](docs/General/getting_started.md)** - Installation and environment setup
 
 ## Project Structure
 
