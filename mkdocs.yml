@@ -31,13 +31,27 @@ nav:
     - System Requirements: Requirements/SystemRequirements.md
     - System Architecture: Architecture/SystemArchitecture.md
   - Software Engineering: 
+    - Software Process: ASPICE_V_Model.md
     - Feature Tree: Architecture/FeatureTree.md
-    - Software Architecture: Architecture/SwArchitecture.md
-    - Software Requirements: Requirements/SwRequirements.md
-    - Raspberry Pi: RaspPi_Comp_Design.md
-    - STM32 Microcontroller: STM_Comp_Design.md
+    - SWE1 - Software Requirements: Requirements/SwRequirements.md
+    - SWE2 - Software Architecture: Architecture/SwArchitecture.md
+    - SWE3 - Software Design:
+      - Raspberry Pi: RaspPi_Comp_Design.md
+      - STM32 Microcontroller: STM_Comp_Design.md
+    - SWE4 - Unit Verification: TestDocs/SwUnitVerificationTestSpec.md
+    - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
+    - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
+  - Knowledge Base: KnowledgeBase/HomePage.md
+  - Project Planning:
   - How-To: HowTos.md
   - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
+  - Glossary:
+  - FAQs: 
+  - Dashboards:
+    - Project Progress: Dashboards/ProjectProgress.md
+    - Requirements Traceability: Dashboards/RequirementsTraceability.md
+    - Test Coverage: Dashboards/TestCoverage.md
+    - Code Quality: Dashboards/CodeQuality.md
 
 plugins:
   - search
