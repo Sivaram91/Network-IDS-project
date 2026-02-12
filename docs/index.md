@@ -36,8 +36,8 @@ graph LR
 
 ## 🚀 Quick Links
 
-- **[Getting Started](getting_started.md)** - Setup your environment
-- **[Tools Installation](tools_installation.md)** - Required software
+- **[Getting Started](General/getting_started.md)** - Setup your environment
+- **[Tools Installation](General/tools_installation.md)** - Required software
 - **[GitHub Repository](https://github.com/Sivaram91/Network-IDS-project)** - Source code
 - **[Project Board](https://github.com/users/Sivaram91/projects/2/views/2)** - Task tracking
 

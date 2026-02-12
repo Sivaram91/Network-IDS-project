@@ -23,11 +23,11 @@ Skills and knowledge I had before starting this project:
 
 New topics I learned while working on this project:
 
-- [Docker & Containerization](./KnowledgeBase/TopicTemplate.md)
-- [REST API Design](./KnowledgeBase/TopicTemplate.md)
-- [Database Design](./KnowledgeBase/TopicTemplate.md)
-- [Topic 4](./KnowledgeBase/TopicTemplate.md)
-- [Topic 5](./KnowledgeBase/TopicTemplate.md)
+- [Docker & Containerization](./TopicTemplate.md)
+- [REST API Design](./TopicTemplate.md)
+- [Database Design](./TopicTemplate.md)
+- [Topic 4](./TopicTemplate.md)
+- [Topic 5](./TopicTemplate.md)
 
 ---
 

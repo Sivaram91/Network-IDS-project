@@ -31,7 +31,7 @@ nav:
     - System Requirements: Requirements/SystemRequirements.md
     - System Architecture: Architecture/SystemArchitecture.md
   - Software Engineering: 
-    - Software Process: ASPICE_V_Model.md
+    - Software Process: General/ASPICE_V_Model.md
     - Feature Tree: Architecture/FeatureTree.md
     - SWE1 - Software Requirements: Requirements/SwRequirements.md
     - SWE2 - Software Architecture: Architecture/SwArchitecture.md
@@ -42,11 +42,11 @@ nav:
     - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
     - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
   - Knowledge Base: KnowledgeBase/HomePage.md
-  - Project Planning:
+  - Project Planning: General/Release_Planning.md
   - How-To: General/HowTos.md
   - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
   - Glossary: General/Glossary.md
-  - FAQs: 
+  - FAQs: General/FAQs.md
   - Dashboards:
     - Project Progress: Dashboards/ProjectProgress.md
     - Requirements Traceability: Dashboards/RequirementsTraceability.md

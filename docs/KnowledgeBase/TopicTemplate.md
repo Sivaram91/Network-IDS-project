@@ -51,4 +51,4 @@
 
 ---
 
-[← Back to Knowledge Base](../HomePage.md)
+[← Back to Knowledge Base](HomePage.md)
