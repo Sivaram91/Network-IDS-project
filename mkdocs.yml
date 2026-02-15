@@ -31,22 +31,24 @@ nav:
     - System Requirements: Requirements/SystemRequirements.md
     - System Architecture: Architecture/SystemArchitecture.md
   - Software Engineering: 
-    - Software Process: General/ASPICE_V_Model.md
+    - Software Process: General/ASPICE_V_Model.html
     - Feature Tree: Architecture/FeatureTree.md
     - SWE1 - Software Requirements: Requirements/SwRequirements.md
     - SWE2 - Software Architecture: Architecture/SwArchitecture.md
-    - SWE3 - Software Design:
-      - Raspberry Pi: General/RaspPi_Comp_Design.md
-      - STM32 Microcontroller: General/STM_Comp_Design.md
+    - SWE3 - Software Design: General/SwComp_Design.md
     - SWE4 - Unit Verification: TestDocs/SwUnitVerificationTestSpec.md
     - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
     - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
-  - Knowledge Base: KnowledgeBase/HomePage.md
-  - Project Planning: General/Release_Planning.md
-  - How-To: General/HowTos.md
-  - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
-  - Glossary: General/Glossary.md
-  - FAQs: General/FAQs.md
+  - Project Management: 
+    - Release Planning: General/Release_Planning.md
+    - Risk Management: General/Risk_Management.md
+    - Work Log: General/Work_Log.md
+  - Knowledge Base: 
+    - HomePage: KnowledgeBase/HomePage.md
+    - How-To: General/HowTos.md
+    - Lessons Learnt: LessonsLearnt/00_LessonsLearnt.md
+    - Glossary: General/Glossary.md
+    - FAQs: General/FAQs.md
   - Dashboards:
     - Project Progress: Dashboards/ProjectProgress.md
     - Requirements Traceability: Dashboards/RequirementsTraceability.md
