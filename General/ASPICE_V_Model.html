@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASPICE Software Engineering V-Model</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        #v-model {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .process-box {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .process-box rect {
+            transition: all 0.3s ease;
+        }
+        
+        .process-box:hover rect {
+            filter: brightness(0.9);
+            stroke-width: 3;
+        }
+        
+        .process-box:hover text {
+            font-weight: 600;
+        }
+        
+        .process-title {
+            font-size: 14px;
+            font-weight: 600;
+            fill: #2c3e50;
+            pointer-events: none;
+        }
+        
+        .process-name {
+            font-size: 12px;
+            fill: #34495e;
+            pointer-events: none;
+        }
+        
+        .arrow {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+        }
+        
+        .verify-line {
+            fill: none;
+            stroke: #e74c3c;
+            stroke-width: 2;
+            stroke-dasharray: 5,5;
+            marker-end: url(#arrowhead-verify);
+        }
+        
+        .legend {
+            margin-top: 30px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        .legend-item {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 14px;
+        }
+        
+        .legend-line {
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .legend-solid {
+            background: #3498db;
+        }
+        
+        .legend-dashed {
+            background: linear-gradient(to right, #e74c3c 50%, transparent 50%);
+            background-size: 8px 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASPICE Software Engineering V-Model</h1>
+    <p class="subtitle">Click on any process area to view detailed documentation</p>
+    
+    <svg id="v-model" width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Arrow marker for flow lines -->
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#3498db" />
+            </marker>
+            <!-- Arrow marker for verification lines -->
+            <marker id="arrowhead-verify" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#e74c3c" />
+            </marker>
+        </defs>
+        
+        <!-- Flow arrows (left side going down) -->
+        <path class="arrow" d="M 180 110 L 180 210" />
+        <path class="arrow" d="M 180 290 L 250 420" />
+        
+        <!-- Flow arrows (bottom) -->
+        <path class="arrow" d="M 390 480 L 560 480" />
+        
+        <!-- Flow arrows (right side going up) -->
+        <path class="arrow" d="M 750 420 L 820 290" />
+        <path class="arrow" d="M 820 210 L 820 110" />
+        
+        <!-- Verification lines (dotted, crossing the V) -->
+        <path class="verify-line" d="M 320 70 L 680 70" />
+        <path class="verify-line" d="M 310 250 L 690 250" />
+        <path class="verify-line" d="M 390 450 L 610 450" />
+        
+        <!-- SWE.1 - Top Left -->
+        <g class="process-box" onclick="window.location.href='../Requirements/SwRequirements/'">
+            <rect x="40" y="30" width="280" height="80" rx="8" 
+                  fill="#e1f5ff" stroke="#01579b" stroke-width="2"/>
+            <text x="180" y="58" text-anchor="middle" class="process-title">SWE.1</text>
+            <text x="180" y="78" text-anchor="middle" class="process-name">Software Requirements</text>
+            <text x="180" y="95" text-anchor="middle" class="process-name">Analysis</text>
+        </g>
+        
+        <!-- SWE.2 - Middle Left -->
+        <g class="process-box" onclick="window.location.href='../Architecture/SwArchitecture/'">
+            <rect x="40" y="170" width="280" height="80" rx="8" 
+                  fill="#b3e5fc" stroke="#0277bd" stroke-width="2"/>
+            <text x="180" y="198" text-anchor="middle" class="process-title">SWE.2</text>
+            <text x="180" y="218" text-anchor="middle" class="process-name">Software Architectural</text>
+            <text x="180" y="235" text-anchor="middle" class="process-name">Design</text>
+        </g>
+        
+        <!-- SWE.3 - Bottom Left -->
+        <g class="process-box" onclick="window.location.href='SwComp_Design/'">
+            <rect x="100" y="410" width="280" height="80" rx="8" 
+                  fill="#81d4fa" stroke="#0288d1" stroke-width="2"/>
+            <text x="240" y="438" text-anchor="middle" class="process-title">SWE.3</text>
+            <text x="240" y="458" text-anchor="middle" class="process-name">Software Detailed Design &</text>
+            <text x="240" y="475" text-anchor="middle" class="process-name">Unit Construction</text>
+        </g>
+        
+        <!-- SWE.4 - Bottom Right -->
+        <g class="process-box" onclick="window.location.href='../TestDocs/SwUnitVerificationTestSpec/'">
+            <rect x="620" y="410" width="280" height="80" rx="8" 
+                  fill="#ffccbc" stroke="#d84315" stroke-width="2"/>
+            <text x="760" y="438" text-anchor="middle" class="process-title">SWE.4</text>
+            <text x="760" y="458" text-anchor="middle" class="process-name">Software Unit</text>
+            <text x="760" y="475" text-anchor="middle" class="process-name">Verification</text>
+        </g>
+        
+        <!-- SWE.5 - Middle Right -->
+        <g class="process-box" onclick="window.location.href='../TestDocs/SwIntegrationTestSpec/'">
+            <rect x="680" y="170" width="280" height="80" rx="8" 
+                  fill="#ffab91" stroke="#e64a19" stroke-width="2"/>
+            <text x="820" y="198" text-anchor="middle" class="process-title">SWE.5</text>
+            <text x="820" y="218" text-anchor="middle" class="process-name">Software Integration &</text>
+            <text x="820" y="235" text-anchor="middle" class="process-name">Integration Test</text>
+        </g>
+        
+        <!-- SWE.6 - Top Right -->
+        <g class="process-box" onclick="window.location.href='../TestDocs/SwQualificationTestSpec/'">
+            <rect x="680" y="30" width="280" height="80" rx="8" 
+                  fill="#ff8a65" stroke="#f4511e" stroke-width="2"/>
+            <text x="820" y="58" text-anchor="middle" class="process-title">SWE.6</text>
+            <text x="820" y="78" text-anchor="middle" class="process-name">Software</text>
+            <text x="820" y="95" text-anchor="middle" class="process-name">Qualification Test</text>
+        </g>
+        
+        <!-- Labels for verification lines -->
+        <text x="500" y="65" text-anchor="middle" font-size="11" fill="#e74c3c">verifies</text>
+        <text x="500" y="245" text-anchor="middle" font-size="11" fill="#e74c3c">verifies</text>
+        <text x="500" y="445" text-anchor="middle" font-size="11" fill="#e74c3c">verifies</text>
+    </svg>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <span class="legend-line legend-solid"></span>
+            Process Flow
+        </div>
+        <div class="legend-item">
+            <span class="legend-line legend-dashed"></span>
+            Verification Relationship
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center; color: #7f8c8d; max-width: 800px;">
+        <h3 style="color: #2c3e50;">V-Model Overview</h3>
+        <p>
+            The V-model represents the relationship between development activities (left side) and 
+            verification/validation activities (right side). Requirements flow down through architecture 
+            to detailed design and implementation, then verification activities proceed upward through 
+            unit verification, integration testing, and qualification testing. The horizontal dotted lines 
+            show which verification level validates which development level.
+        </p>
+    </div>
+</body>
+</html>
