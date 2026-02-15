@@ -2,9 +2,9 @@
 # NETWORK INTRUSION DETECTION SYSTEM WITH TINYML
 ## RELEASE PLAN
 
-Project: Network IDS with TinyML
-Author: Sivaramasubramanian Sundararaj
-Document Version: 1.0
+**Project**: Network IDS with TinyML  
+**Author**: Sivaramasubramanian Sundararaj  
+**Document Version**: 1.0  
 
 _Last updated: {{ git_revision_date_localized }}_
 
@@ -13,35 +13,35 @@ _Last updated: {{ git_revision_date_localized }}_
 ## RELEASE OVERVIEW
 
 **Total Releases**: 5 (4 core phases + 1 RAG enhancement)  
-**Timeline**: February 2025 - February 2026 (13 months)  
+**Timeline**: February 2026 - April 2027 (15 months)  
 **Total Features**: 12  
 **Total Story Points Estimate**: 450 hours
 
 ### Release Schedule:
 - [Release 1 (CORE FUNCTIONALITY OF IDS)](#release-1-core-functionality-phase-1)  
-    - February - May 2025 (4 months)  
+    - Feb 2026 - Jun 2026 (4 months)  
 - [Release 2 (PROFESSIONAL INFRASTRUCTURE)](#release-2-professional-infrastructure-phase-2)  
-    - June 2025 (1 month)  
+    - Jul 2026 - Aug 2026 (2 month)  
 - [Release 3 (CLOUD INTEGRATION)](#release-3-cloud-integration-phase-3)  
-    - July - August 2025 (2 months)  
+    - Sep 2026 - Oct 2026 (2 months)  
 - [Release 4 (ADVANCED FEATURES)](#release-4-advanced-features-phase-4)  
-    - September - November 2025 (3 months)  
+    - Nov 2026 - Jan 2027 (3 months)  
 - [Release 5 (RAG DOCUMENTATION ASSISTANT)](#release-5-rag-documentation-assistant-phase-5)  
-    - December 2025 - February 2026 (3 months)
+    - Feb 2027 - Apr 2027 (3 months)
 
 ### RELEASE 1: CORE FUNCTIONALITY (PHASE 1)
 
-**Release Date**: May 31, 2025  
-**Duration**: 4 months (February - May 2025)  
+**Release Date**: Jun 12, 2026  
+**Duration**: 4 months (February - Jun 2026)  
 **Effort**: 150 hours  
 **Goal**: Portfolio-ready working intrusion detection system
 
 #### Features Included:
-- [FEAT-001: Network Traffic Capture](#epic-11-network-traffic-capture-feat-001)
-- [FEAT-002: ML-based Intrusion Detection](#epic-12-ml-based-intrusion-detection-feat-002)
-- [FEAT-003: TinyML Fuzzing Detection](#epic-13-tinyml-fuzzing-detection-feat-003)
-- [FEAT-004: Attack Simulation](#epic-14-attack-simulation-feat-004)
-- [FEAT-005: System Integration](#epic-15-system-integration-feat-005)
+- [FEAT-001: Network Traffic Capture (30hrs, 23 Feb 2026 - 13 Mar 2026)](#epic-11-network-traffic-capture-feat-001)
+- [FEAT-002: ML-based Intrusion Detection (40hrs, 16 Mar 2026 - 10 Apr 2026)](#epic-12-ml-based-intrusion-detection-feat-002)
+- [FEAT-003: TinyML Fuzzing Detection (40hrs, 13 Apr 2026 - 8 May 2026)](#epic-13-tinyml-fuzzing-detection-feat-003)
+- [FEAT-004: Attack Simulation (20hrs, 11 May 2026 - 22 May 2026)](#epic-14-attack-simulation-feat-004)
+- [FEAT-005: System Integration (20hrs, 25 May 2026 - 5 Jun 2026)](#epic-15-system-integration-feat-005)
 
 #### Success Criteria:
 [x] Raspberry Pi captures and analyzes network traffic  
@@ -292,67 +292,14 @@ visualize system status and attack trends.
 
 **Stories (Tasks):**
 
-##### STORY 3.2.1: Dashboard Platform Selection
-Description: Choose and setup dashboard tool
-Effort: 3 hours
-Tasks:
-- Evaluate options (Grafana, custom web app)
-- Install Grafana or setup Flask app
-- Configure data source
-- Test basic visualization
-Acceptance: Dashboard platform ready
-
-##### STORY 3.2.2: System Status Panel
-Description: Display real-time system status
-Effort: 6 hours
-Tasks:
-- Create status panel
-- Show Pi CPU/memory usage
-- Show STM32 status
-- Show network connectivity
-- Auto-refresh every 5 seconds
-Acceptance: Status updates in real-time
-
-##### STORY 3.2.3: Alert Visualization
-Description: Display alerts and statistics
-Effort: 8 hours
-Tasks:
-- Create alert timeline chart
-- Show attack type distribution (pie chart)
-- Display alert count by severity
-- Show detection accuracy metrics
-- Add time range filter
-Acceptance: All charts render correctly
-
-##### STORY 3.2.4: Email Notification System
-Description: Send email alerts for critical events
-Effort: 6 hours
-Tasks:
-- Setup SMTP configuration
-- Create email templates
-- Implement alert logic (when to email)
-- Add rate limiting (avoid spam)
-- Test email delivery
-Acceptance: Emails received within 1 minute
-
-##### STORY 3.2.5: Mobile Responsiveness
-Description: Make dashboard mobile-friendly
-Effort: 4 hours
-Tasks:
-- Responsive CSS design
-- Test on mobile devices
-- Optimize for small screens
-Acceptance: Dashboard usable on phone
-
-##### STORY 3.2.6: Dashboard Deployment
-Description: Deploy dashboard for remote access
-Effort: 3 hours
-Tasks:
-- Configure firewall rules
-- Setup HTTPS (Let's Encrypt)
-- Test remote access
-- Document access instructions
-Acceptance: Dashboard accessible remotely
+| Title | Description | Effort | Tasks | Acceptance criteria |
+|-------|-------------|--------|-------|---------------------|
+| Dashboard Platform Selection | Choose and setup dashboard tool | 3 hours | - Evaluate options (Grafana, custom web app) <br> - Install Grafana or setup Flask app <br> - Configure data source <br> - Test basic visualization | Dashboard platform ready |
+| System Status Panel | Display real-time system status | 6 hours | - Create status panel <br> - Show Pi CPU/memory usage <br> - Show STM32 status <br> - Show network connectivity <br> - Auto-refresh every 5 seconds | Status updates in real-time |
+| Alert Visualization | Display alerts and statistics | 8 hours | - Create alert timeline chart <br> - Show attack type distribution (pie chart) <br> - Display alert count by severity <br> - Show detection accuracy metrics <br> - Add time range filter | All charts render correctly |
+| Email Notification System | Send email alerts for critical events | 6 hours | - Setup SMTP configuration <br> - Create email templates <br> - Implement alert logic (when to email) <br> - Add rate limiting (avoid spam) <br> - Test email delivery | Emails received within 1 minute |
+| Mobile Responsiveness | Make dashboard mobile-friendly | 4 hours | - Responsive CSS design <br> - Test on mobile devices <br> - Optimize for small screens | Dashboard usable on phone |
+| Dashboard Deployment | Deploy dashboard for remote access | 3 hours | - Configure firewall rules <br> - Setup HTTPS (Let's Encrypt) <br> - Test remote access <br> - Document access instructions | Dashboard accessible remotely |
 
 ### RELEASE 4: ADVANCED FEATURES (PHASE 4)
 
@@ -361,12 +308,12 @@ Acceptance: Dashboard accessible remotely
 **Effort**: 100 hours  
 **Goal**: Enterprise-grade automotive features  
 
-Features Included:
-- [FEAT-009: AUTOSAR Integration](#epic-41-autosar-integration-feat-009)
-- [FEAT-010: Secure FOTA](#epic-42-secure-fota-feat-010)
-- [FEAT-011: Security Hardening](#epic-43-security-hardening-feat-011)
+Features Included:  
+- [FEAT-009: AUTOSAR Integration](#epic-41-autosar-integration-feat-009)  
+- [FEAT-010: Secure FOTA](#epic-42-secure-fota-feat-010)  
+- [FEAT-011: Security Hardening](#epic-43-security-hardening-feat-011)  
 
-Success Criteria:
+Success Criteria:  
 [x] AUTOSAR architecture implemented  
 [x] Secure firmware updates working  
 [x] Root of Trust established  
@@ -379,145 +326,48 @@ Success Criteria:
 **Effort Estimate**: 40 hours  
 **Dependencies**: Phase 3 complete  
 
-**User Story:** As an automotive software architect, I want to demonstrate AUTOSAR
-implementation so that I can showcase automotive software expertise.
+**User Story:** As an automotive software architect, I want to demonstrate AUTOSAR implementation so that I can showcase automotive software expertise.
 
-**Acceptance Criteria:**
+**Acceptance Criteria:**  
 - Classic AUTOSAR on STM32 (BSW, RTE, ASW layers)  
 - Adaptive AUTOSAR concepts on Pi  
 - Service-oriented architecture  
 
-Stories (Tasks):
+**Stories (Tasks):**  
 
-##### STORY 4.1.1: Classic AUTOSAR Architecture Design
-Description: Design Classic AUTOSAR layering for STM32
-Effort: 6 hours
-Tasks:
-- Define BSW modules (Ethernet driver, diagnostics)
-- Design RTE interfaces
-- Define ASW components
-- Document architecture
-Acceptance: Architecture diagram complete
-
-##### STORY 4.1.2: BSW Layer Implementation
-Description: Implement Basic Software layer
-Effort: 12 hours
-Tasks:
-- Refactor Ethernet driver as BSW module
-- Implement ECUM (ECU State Manager)
-- Implement COM module
-- Add diagnostic services (UDS basic)
-- Follow AUTOSAR naming conventions
-Acceptance: BSW modules functional
-
-##### STORY 4.1.3: RTE Configuration
-Description: Implement Runtime Environment
-Effort: 8 hours
-Tasks:
-- Define RTE interfaces
-- Generate RTE code (or manual implementation)
-- Connect BSW to ASW via RTE
-Acceptance: RTE connects BSW and ASW
-
-##### STORY 4.1.4: ASW Components
-Description: Implement Application Software
-Effort: 6 hours
-Tasks:
-- Create SWCs for TinyML inference
-- Create SWC for alert handling
-- Implement runnable entities
-- Follow AUTOSAR patterns
-Acceptance: ASW components functional
-
-##### STORY 4.1.5: Adaptive AUTOSAR on Pi
-Description: Implement Adaptive AUTOSAR concepts
-Effort: 8 hours
-Tasks:
-- Implement ara::com communication
-- Create service interfaces
-- Implement service discovery
-- SOME/IP protocol (basic)
-Acceptance: Services communicate via ara::com
+| Title | Description | Effort | Tasks | Acceptance criteria |
+|-------|-------------|--------|-------|---------------------|
+| Classic AUTOSAR Architecture Design | Design Classic AUTOSAR layering for STM32 | 6 hours | - Define BSW modules (Ethernet driver, diagnostics) <br> - Design RTE interfaces <br> - Define ASW components <br> - Document architecture | Architecture diagram complete | 
+| BSW Layer Implementation | Implement Basic Software layer | 12 hours | - Refactor Ethernet driver as BSW module <br> - Implement ECUM (ECU State Manager) <br> - Implement COM module <br> - Add diagnostic services (UDS basic) <br> - Follow AUTOSAR naming conventions | BSW modules functional |
+| RTE Configuration | Implement Runtime Environment | 8 hours | - Define RTE interfaces <br> - Generate RTE code (or manual implementation) <br> - Connect BSW to ASW via RTE | RTE connects BSW and ASW | 
+| ASW Components | Implement Application Software | 6 hours | - Create SWCs for TinyML inference <br> - Create SWC for alert handling <br> - Implement runnable entities <br> - Follow AUTOSAR patterns | ASW components functional |
+| Adaptive AUTOSAR on Pi | Implement Adaptive AUTOSAR concepts | 8 hours | - Implement ara::com communication <br> - Create service interfaces <br> - Implement service discovery <br> - SOME/IP protocol (basic) | Services communicate via ara::com |
 
 #### EPIC 4.2: SECURE FOTA (FEAT-010)
 
 **Epic Owner**: Sivaramasubramanian Sundararaj  
 **Priority**: Medium  
-**Effort Estimate//: 30 hours  
+**Effort Estimate**: 30 hours  
 **Dependencies**: Cloud connectivity working  
 
-**User Story:** As a system maintainer, I want to update firmware remotely so that
-I can deploy fixes and improvements without physical access.
+**User Story:** As a system maintainer, I want to update firmware remotely so that I can deploy fixes and improvements without physical access.
 
-**Acceptance Criteria:**
-- OTA updates for Pi and STM32
-- Cryptographic signature verification
-- A/B partition scheme for rollback
-- Update success rate >95%
+**Acceptance Criteria:**  
+- OTA updates for Pi and STM32  
+- Cryptographic signature verification  
+- A/B partition scheme for rollback  
+- Update success rate >95%  
 
 **Stories (Tasks):**
 
-##### STORY 4.2.1: Pi A/B Partitioning
-Description: Setup dual-partition boot on Pi
-Effort: 6 hours
-Tasks:
-- Create two root partitions
-- Configure bootloader for A/B
-- Implement partition switching
-- Test rollback mechanism
-Acceptance: Pi boots from A or B partition
-
-##### STORY 4.2.2: Update Package Format
-Description: Define update package structure
-Effort: 3 hours
-Tasks:
-- Design update manifest (version, hash, signature)
-- Package firmware binary
-- Add metadata
-- Document format
-Acceptance: Update package specification complete
-
-##### STORY 4.2.3: Signature Generation & Verification
-Description: Implement cryptographic signing
-Effort: 8 hours
-Tasks:
-- Generate RSA key pair
-- Sign update packages
-- Implement signature verification on Pi
-- Reject unsigned/tampered packages
-- Test with invalid signatures
-Acceptance: Only valid signed updates accepted
-
-##### STORY 4.2.4: Pi Update Manager
-Description: Implement OTA update on Pi
-Effort: 6 hours
-Tasks:
-- Download update from cloud
-- Verify signature
-- Install to inactive partition
-- Switch boot partition
-- Reboot and verify
-Acceptance: Pi updates successfully
-
-##### STORY 4.2.5: STM32 Bootloader
-Description: Implement secure bootloader on STM32
-Effort: 10 hours
-Tasks:
-- Create bootloader in flash sector 0
-- Implement UART/Ethernet update protocol
-- Verify application signature before boot
-- Jump to application if valid
-Acceptance: STM32 only boots signed firmware
-
-##### STORY 4.2.6: Remote STM32 Update
-Description: Update STM32 from Raspberry Pi
-Effort: 7 hours
-Tasks:
-- Pi downloads STM32 firmware
-- Pi sends firmware to STM32 bootloader
-- STM32 verifies and flashes
-- STM32 reboots with new firmware
-Acceptance: STM32 updated remotely from Pi
+| Title | Description | Effort | Tasks | Acceptance criteria |
+|-------|-------------|--------|-------|---------------------|
+| Pi A/B Partitioning | Setup dual-partition boot on Pi | 6 hours | - Create two root partitions <br> - Configure bootloader for A/B <br> - Implement partition switching <br> - Test rollback mechanism | Pi boots from A or B partition |
+| Update Package Format | Define update package structure | 3 hours | - Design update manifest (version, hash, signature) <br> - Package firmware binary <br> - Add metadata <br> - Document format | Update package specification complete | 
+| Signature Generation & Verification | Implement cryptographic signing | 8 hours | - Generate RSA key pair <br> - Sign update packages <br> - Implement signature verification on Pi <br> - Reject unsigned/tampered packages <br> - Test with invalid signatures | Only valid signed updates accepted |
+| Pi Update Manager | Implement OTA update on Pi | 6 hours | - Download update from cloud <br> - Verify signature <br> - Install to inactive partition <br> - Switch boot partition <br> - Reboot and verify | Pi updates successfully | 
+| STM32 Bootloader | Implement secure bootloader on STM32 | 10 hours | - Create bootloader in flash sector 0 <br> - Implement UART/Ethernet update protocol <br> - Verify application signature before boot <br> - Jump to application if valid | STM32 only boots signed firmware |
+| Remote STM32 Update | Update STM32 from Raspberry Pi | 7 hours | - Pi downloads STM32 firmware <br> - Pi sends firmware to STM32 bootloader <br> - STM32 verifies and flashes <br> - STM32 reboots with new firmware | STM32 updated remotely from Pi |
 
 #### EPIC 4.3: SECURITY HARDENING (FEAT-011)
 
@@ -526,10 +376,9 @@ Acceptance: STM32 updated remotely from Pi
 **Effort Estimate**: 30 hours  
 **Dependencies**: Hardware (TPM chip) available  
 
-**User Story:** As a security engineer, I want robust security mechanisms so that
-the system is protected against attacks and tampering.
+**User Story:** As a security engineer, I want robust security mechanisms so that the system is protected against attacks and tampering.
 
-**Acceptance Criteria:**
+**Acceptance Criteria:**  
 - Secure boot chain verified  
 - Cryptographic keys in HSM  
 - Encrypted communication (TLS)  
@@ -537,50 +386,12 @@ the system is protected against attacks and tampering.
 
 **Stories (Tasks):**
 
-##### STORY 4.3.1: Secure Boot on STM32
-Description: Implement secure boot chain
-Effort: 8 hours
-Tasks:
-- Configure secure boot in STM32
-- Generate root key
-- Sign bootloader
-- Sign application
-- Test boot verification
-- Test with invalid signature
-Acceptance: STM32 refuses tampered firmware
-
-##### STORY 4.3.2: HSM Integration (TPM/ATECC608)
-Description: Integrate hardware security module
-Effort: 10 hours
-Tasks:
-- Connect ATECC608 via I2C
-- Initialize TPM
-- Generate key pair in TPM
-- Store private key in TPM (never exposed)
-- Use TPM for signing operations
-- Test key security
-Acceptance: Private keys never readable from software
-
-##### STORY 4.3.3: TLS Encryption
-Description: Encrypt Pi-STM32 communication
-Effort: 8 hours
-Tasks:
-- Implement TLS 1.3 on Pi (using Python SSL)
-- Implement TLS on STM32 (mbedTLS)
-- Exchange certificates
-- Test encrypted traffic (Wireshark)
-- Verify decryption fails without keys
-Acceptance: All traffic encrypted
-
-##### STORY 4.3.4: Anti-Tampering Detection
-Description: Detect physical tampering attempts
-Effort: 4 hours
-Tasks:
-- Monitor voltage levels (detect glitching)
-- Detect debug probe attachment
-- Wipe keys on tamper detection
-- Test with simulated tampering
-Acceptance: Keys erased on tamper event
+| Title | Description | Effort | Tasks | Acceptance criteria |
+|-------|-------------|--------|-------|---------------------|
+| Secure Boot on STM32 | Implement secure boot chain | 8 hours | - Configure secure boot in STM32 <br> - Generate root key <br> - Sign bootloader <br> - Sign application <br> - Test boot verification <br> - Test with invalid signature | STM32 refuses tampered firmware |
+| HSM Integration (TPM/ATECC608) | Integrate hardware security module | 10 hours | - Connect ATECC608 via I2C <br> - Initialize TPM <br> - Generate key pair in TPM <br> - Store private key in TPM (never exposed) <br> - Use TPM for signing operations <br> - Test key security | Private keys never readable from software | 
+| TLS Encryption | Encrypt Pi-STM32 communication | 8 hours | - Implement TLS 1.3 on Pi (using Python SSL) <br> - Implement TLS on STM32 (mbedTLS) <br> - Exchange certificates <br> - Test encrypted traffic (Wireshark) <br> - Verify decryption fails without keys | All traffic encrypted | 
+| Anti-Tampering Detection | Detect physical tampering attempts | 4 hours | - Monitor voltage levels (detect glitching) <br> - Detect debug probe attachment <br> - Wipe keys on tamper detection <br> - Test with simulated tampering | Keys erased on tamper event | 
 
 ### RELEASE 5: RAG DOCUMENTATION ASSISTANT (PHASE 5)
 
@@ -589,10 +400,10 @@ Acceptance: Keys erased on tamper event
 **Effort**: 80 hours  
 **Goal**: AI-powered project documentation assistant  
 
-**Features Included:**
+**Features Included:**  
 - [FEAT-012: RAG Documentation System](#epic-51-rag-documentation-system-feat-012)
 
-**Success Criteria:**
+**Success Criteria:**  
 [x] RAG system indexes all project artifacts  
 [x] Natural language Q&A working  
 [x] Response accuracy >90%  
@@ -601,154 +412,35 @@ Acceptance: Keys erased on tamper event
 
 #### EPIC 5.1: RAG DOCUMENTATION SYSTEM (FEAT-012)
 
-**Epic Owner**: Sivaramasubramanian Sundararaj
-**Priority**: Low (Enhancement)
-**Effort Estimate**: 80 hours
-**Dependencies**: Project documentation complete
+**Epic Owner**: Sivaramasubramanian Sundararaj  
+**Priority**: Low (Enhancement)  
+**Effort Estimate**: 80 hours  
+**Dependencies**: Project documentation complete  
 
-**User Story:** As a project visitor, I want to ask questions about the project in
-natural language so that I can understand the implementation details easily.
+**User Story:** As a project visitor, I want to ask questions about the project in natural language so that I can understand the implementation details easily.
 
-**Acceptance Criteria:**
-- Answers questions about code, architecture, requirements
-- Retrieves relevant code snippets
-- References datasheets when needed
-- Deployed as public demo
+**Acceptance Criteria:**  
+- Answers questions about code, architecture, requirements  
+- Retrieves relevant code snippets  
+- References datasheets when needed  
+- Deployed as public demo  
 
 **Stories (Tasks):**
 
-##### STORY 5.1.1: RAG Architecture Design
-Description: Design RAG system architecture
-Effort: 4 hours
-Tasks:
-- Research RAG frameworks (LangChain, LlamaIndex)
-- Choose vector database (ChromaDB, Pinecone)
-- Define data sources
-- Design query flow
-- Document architecture
-Acceptance: Architecture design complete
-
-##### STORY 5.1.2: Data Collection & Preparation
-Description: Collect and prepare all project artifacts
-Effort: 8 hours
-Tasks:
-- Collect all markdown documentation
-- Extract code comments
-- Download hardware datasheets (PDFs)
-- Extract requirements from CSV
-- Clean and structure data
-- Create metadata (source, category, date)
-Acceptance: All data sources collected and organized
-
-##### STORY 5.1.3: Document Chunking
-Description: Split documents into chunks for embedding
-Effort: 6 hours
-Tasks:
-- Implement text chunking (500-1000 tokens)
-- Preserve code block integrity
-- Handle PDF extraction (PyPDF2)
-- Maintain document context
-- Generate chunk metadata
-Acceptance: All documents chunked appropriately
-
-##### STORY 5.1.4: Vector Database Setup
-Description: Setup and configure vector database
-Effort: 6 hours
-Tasks:
-- Install ChromaDB (or chosen DB)
-- Generate embeddings (OpenAI or sentence-transformers)
-- Index all document chunks
-- Test similarity search
-- Optimize retrieval performance
-Acceptance: All documents indexed and searchable
-
-##### STORY 5.1.5: RAG Query Engine
-Description: Implement query processing and retrieval
-Effort: 10 hours
-Tasks:
-- Implement LangChain RAG chain
-- Configure Claude API integration
-- Implement semantic search
-- Retrieve top-k relevant chunks
-- Format context for LLM
-- Generate responses
-Acceptance: RAG answers questions correctly
-
-##### STORY 5.1.6: Code Retrieval Enhancement
-Description: Add code-specific retrieval
-Effort: 8 hours
-Tasks:
-- Index code by function/class
-- Add syntax highlighting in responses
-- Link to GitHub source
-- Show line numbers
-- Handle code-specific queries
-Acceptance: Code snippets retrieved with context
-
-##### STORY 5.1.7: Traceability Queries
-Description: Enable requirements traceability queries
-Effort: 6 hours
-Tasks:
-- Parse requirements.csv into structured format
-- Implement traceability lookups
-- Link requirements to code/tests
-- Show impact analysis
-Acceptance: Traceability queries working
-
-##### STORY 5.1.8: Web Interface
-Description: Create user interface for RAG system
-Effort: 12 hours
-Tasks:
-- Build Streamlit web app
-- Create chat interface
-- Add conversation history
-- Show retrieved sources
-- Display code with syntax highlighting
-- Make mobile-responsive
-Acceptance: Web UI functional and attractive
-
-##### STORY 5.1.9: Deployment
-Description: Deploy RAG system publicly
-Effort: 6 hours
-Tasks:
-- Deploy to Streamlit Cloud (free tier)
-- Configure environment variables
-- Test public access
-- Optimize load time
-- Add usage analytics
-Acceptance: RAG publicly accessible
-
-##### STORY 5.1.10: RAG Documentation
-Description: Document RAG system
-Effort: 4 hours
-Tasks:
-- Write RAG architecture doc
-- Document data sources
-- Create usage guide
-- Add to project portfolio
-- Update CV/LinkedIn
-Acceptance: RAG fully documented
-
-##### STORY 5.1.11: Integration with Portfolio
-Description: Integrate RAG into project showcase
-Effort: 4 hours
-Tasks:
-- Add RAG link to project README
-- Create demo video
-- Generate QR code for CV
-- Add to GitHub Pages
-Acceptance: RAG linked from all project materials
-
-##### STORY 5.1.12: Testing & Refinement
-Description: Test and improve RAG responses
-Effort: 6 hours
-Tasks:
-- Create test question set
-- Evaluate answer quality
-- Improve prompts
-- Tune retrieval parameters
-- Fix edge cases
-Acceptance: >90% answer accuracy on test set
+| Title | Description | Effort | Tasks | Acceptance criteria |
+|-------|-------------|--------|-------|---------------------|
+| RAG Architecture Design | Design RAG system architecture | 4 hours | - Research RAG frameworks (LangChain, LlamaIndex) <br> - Choose vector database (ChromaDB, Pinecone) <br> - Define data sources <br> - Design query flow <br> - Document architecture | Architecture design complete | 
+| Data Collection & Preparation | Collect and prepare all project artifacts | 8 hours | - Collect all markdown documentation <br> - Extract code comments <br> - Download hardware datasheets (PDFs) <br> - Extract requirements from CSV <br> - Clean and structure data <br> - Create metadata (source, category, date) | All data sources collected and organized | 
+| Document Chunking | Split documents into chunks for embedding | 6 hours | - Implement text chunking (500-1000 tokens) <br> - Preserve code block integrity <br> - Handle PDF extraction (PyPDF2) <br> - Maintain document context <br> - Generate chunk metadata | All documents chunked appropriately |
+| Vector Database Setup | Setup and configure vector database | 6 hours | - Install ChromaDB (or chosen DB) <br> - Generate embeddings (OpenAI or sentence-transformers) <br> - Index all document chunks <br> - Test similarity search <br> - Optimize retrieval performance | All documents indexed and searchable | 
+| RAG Query Engine | Implement query processing and retrieval | 10 hours | - Implement LangChain RAG chain <br> - Configure Claude API integration <br> - Implement semantic search <br> - Retrieve top-k relevant chunks <br> - Format context for LLM <br> - Generate responses | RAG answers questions correctly | 
+| Code Retrieval Enhancement | Add code-specific retrieval | 8 hours | - Index code by function/class <br> - Add syntax highlighting in responses <br> - Link to GitHub source <br> - Show line numbers <br> - Handle code-specific queries | Code snippets retrieved with context | 
+| Traceability Queries | Enable requirements traceability queries | 6 hours | - Parse requirements.csv into structured format <br> - Implement traceability lookups <br> - Link requirements to code/tests <br> - Show impact analysis | Traceability queries working |
+| Web Interface | Create user interface for RAG system | 12 hours | - Build Streamlit web app <br> - Create chat interface <br> - Add conversation history <br> - Show retrieved sources <br> - Display code with syntax highlighting <br> - Make mobile-responsive | Web UI functional and attractive | 
+| Deployment | Deploy RAG system publicly | 6 hours | - Deploy to Streamlit Cloud (free tier) <br> - Configure environment variables <br> - Test public access <br> - Optimize load time <br> - Add usage analytics | RAG publicly accessible | 
+| RAG Documentation | Document RAG system | 4 hours | - Write RAG architecture doc <br> - Document data sources <br> - Create usage guide <br> - Add to project portfolio <br> - Update CV/LinkedIn | RAG fully documented |
+| Integration with Portfolio | Integrate RAG into project showcase | 4 hours | - Add RAG link to project README <br> - Create demo video <br> - Generate QR code for CV <br> - Add to GitHub Pages | RAG linked from all project materials |
+| Testing & Refinement | Test and improve RAG responses | 6 hours | - Create test question set <br> - Evaluate answer quality <br> - Improve prompts <br> - Tune retrieval parameters <br> - Fix edge cases | >90% answer accuracy on test set |
 
 ## RELEASE DEPENDENCIES
 
