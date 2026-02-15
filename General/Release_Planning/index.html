@@ -1642,51 +1642,51 @@
 
 <h1 id="network-intrusion-detection-system-with-tinyml">NETWORK INTRUSION DETECTION SYSTEM WITH TINYML<a class="headerlink" href="#network-intrusion-detection-system-with-tinyml" title="Permanent link">¶</a></h1>
 <h2 id="release-plan">RELEASE PLAN<a class="headerlink" href="#release-plan" title="Permanent link">¶</a></h2>
-<p>Project: Network IDS with TinyML
-Author: Sivaramasubramanian Sundararaj
-Document Version: 1.0</p>
-<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 15, 2026 01:47:51 CET">15-Feb-2026</span></em></p>
+<p><strong>Project</strong>: Network IDS with TinyML<br>
+<strong>Author</strong>: Sivaramasubramanian Sundararaj<br>
+<strong>Document Version</strong>: 1.0  </p>
+<p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 15, 2026 22:26:08 CET">15-Feb-2026</span></em></p>
 <hr>
 <h2 id="release-overview">RELEASE OVERVIEW<a class="headerlink" href="#release-overview" title="Permanent link">¶</a></h2>
 <p><strong>Total Releases</strong>: 5 (4 core phases + 1 RAG enhancement)<br>
-<strong>Timeline</strong>: February 2025 - February 2026 (13 months)<br>
+<strong>Timeline</strong>: February 2026 - April 2027 (15 months)<br>
 <strong>Total Features</strong>: 12<br>
 <strong>Total Story Points Estimate</strong>: 450 hours</p>
 <h3 id="release-schedule">Release Schedule:<a class="headerlink" href="#release-schedule" title="Permanent link">¶</a></h3>
 <ul>
 <li><a href="#release-1-core-functionality-phase-1">Release 1 (CORE FUNCTIONALITY OF IDS)</a>  <ul>
-<li>February - May 2025 (4 months)  </li>
+<li>Feb 2026 - Jun 2026 (4 months)  </li>
 </ul>
 </li>
 <li><a href="#release-2-professional-infrastructure-phase-2">Release 2 (PROFESSIONAL INFRASTRUCTURE)</a>  <ul>
-<li>June 2025 (1 month)  </li>
+<li>Jul 2026 - Aug 2026 (2 month)  </li>
 </ul>
 </li>
 <li><a href="#release-3-cloud-integration-phase-3">Release 3 (CLOUD INTEGRATION)</a>  <ul>
-<li>July - August 2025 (2 months)  </li>
+<li>Sep 2026 - Oct 2026 (2 months)  </li>
 </ul>
 </li>
 <li><a href="#release-4-advanced-features-phase-4">Release 4 (ADVANCED FEATURES)</a>  <ul>
-<li>September - November 2025 (3 months)  </li>
+<li>Nov 2026 - Jan 2027 (3 months)  </li>
 </ul>
 </li>
 <li><a href="#release-5-rag-documentation-assistant-phase-5">Release 5 (RAG DOCUMENTATION ASSISTANT)</a>  <ul>
-<li>December 2025 - February 2026 (3 months)</li>
+<li>Feb 2027 - Apr 2027 (3 months)</li>
 </ul>
 </li>
 </ul>
 <h3 id="release-1-core-functionality-phase-1">RELEASE 1: CORE FUNCTIONALITY (PHASE 1)<a class="headerlink" href="#release-1-core-functionality-phase-1" title="Permanent link">¶</a></h3>
-<p><strong>Release Date</strong>: May 31, 2025<br>
-<strong>Duration</strong>: 4 months (February - May 2025)<br>
+<p><strong>Release Date</strong>: Jun 12, 2026<br>
+<strong>Duration</strong>: 4 months (February - Jun 2026)<br>
 <strong>Effort</strong>: 150 hours<br>
 <strong>Goal</strong>: Portfolio-ready working intrusion detection system</p>
 <h4 id="features-included">Features Included:<a class="headerlink" href="#features-included" title="Permanent link">¶</a></h4>
 <ul>
-<li><a href="#epic-11-network-traffic-capture-feat-001">FEAT-001: Network Traffic Capture</a></li>
-<li><a href="#epic-12-ml-based-intrusion-detection-feat-002">FEAT-002: ML-based Intrusion Detection</a></li>
-<li><a href="#epic-13-tinyml-fuzzing-detection-feat-003">FEAT-003: TinyML Fuzzing Detection</a></li>
-<li><a href="#epic-14-attack-simulation-feat-004">FEAT-004: Attack Simulation</a></li>
-<li><a href="#epic-15-system-integration-feat-005">FEAT-005: System Integration</a></li>
+<li><a href="#epic-11-network-traffic-capture-feat-001">FEAT-001: Network Traffic Capture (30hrs, 23 Feb 2026 - 13 Mar 2026)</a></li>
+<li><a href="#epic-12-ml-based-intrusion-detection-feat-002">FEAT-002: ML-based Intrusion Detection (40hrs, 16 Mar 2026 - 10 Apr 2026)</a></li>
+<li><a href="#epic-13-tinyml-fuzzing-detection-feat-003">FEAT-003: TinyML Fuzzing Detection (40hrs, 13 Apr 2026 - 8 May 2026)</a></li>
+<li><a href="#epic-14-attack-simulation-feat-004">FEAT-004: Attack Simulation (20hrs, 11 May 2026 - 22 May 2026)</a></li>
+<li><a href="#epic-15-system-integration-feat-005">FEAT-005: System Integration (20hrs, 25 May 2026 - 5 Jun 2026)</a></li>
 </ul>
 <h4 id="success-criteria">Success Criteria:<a class="headerlink" href="#success-criteria" title="Permanent link">¶</a></h4>
 <p>[x] Raspberry Pi captures and analyzes network traffic<br>
@@ -2204,72 +2204,71 @@ visualize system status and attack trends.</p>
 - Email notifications for critical alerts
 - Accessible from any device</p>
 <p><strong>Stories (Tasks):</strong></p>
-<h5 id="story-321-dashboard-platform-selection">STORY 3.2.1: Dashboard Platform Selection<a class="headerlink" href="#story-321-dashboard-platform-selection" title="Permanent link">¶</a></h5>
-<p>Description: Choose and setup dashboard tool
-Effort: 3 hours
-Tasks:
-- Evaluate options (Grafana, custom web app)
-- Install Grafana or setup Flask app
-- Configure data source
-- Test basic visualization
-Acceptance: Dashboard platform ready</p>
-<h5 id="story-322-system-status-panel">STORY 3.2.2: System Status Panel<a class="headerlink" href="#story-322-system-status-panel" title="Permanent link">¶</a></h5>
-<p>Description: Display real-time system status
-Effort: 6 hours
-Tasks:
-- Create status panel
-- Show Pi CPU/memory usage
-- Show STM32 status
-- Show network connectivity
-- Auto-refresh every 5 seconds
-Acceptance: Status updates in real-time</p>
-<h5 id="story-323-alert-visualization">STORY 3.2.3: Alert Visualization<a class="headerlink" href="#story-323-alert-visualization" title="Permanent link">¶</a></h5>
-<p>Description: Display alerts and statistics
-Effort: 8 hours
-Tasks:
-- Create alert timeline chart
-- Show attack type distribution (pie chart)
-- Display alert count by severity
-- Show detection accuracy metrics
-- Add time range filter
-Acceptance: All charts render correctly</p>
-<h5 id="story-324-email-notification-system">STORY 3.2.4: Email Notification System<a class="headerlink" href="#story-324-email-notification-system" title="Permanent link">¶</a></h5>
-<p>Description: Send email alerts for critical events
-Effort: 6 hours
-Tasks:
-- Setup SMTP configuration
-- Create email templates
-- Implement alert logic (when to email)
-- Add rate limiting (avoid spam)
-- Test email delivery
-Acceptance: Emails received within 1 minute</p>
-<h5 id="story-325-mobile-responsiveness">STORY 3.2.5: Mobile Responsiveness<a class="headerlink" href="#story-325-mobile-responsiveness" title="Permanent link">¶</a></h5>
-<p>Description: Make dashboard mobile-friendly
-Effort: 4 hours
-Tasks:
-- Responsive CSS design
-- Test on mobile devices
-- Optimize for small screens
-Acceptance: Dashboard usable on phone</p>
-<h5 id="story-326-dashboard-deployment">STORY 3.2.6: Dashboard Deployment<a class="headerlink" href="#story-326-dashboard-deployment" title="Permanent link">¶</a></h5>
-<p>Description: Deploy dashboard for remote access
-Effort: 3 hours
-Tasks:
-- Configure firewall rules
-- Setup HTTPS (Let's Encrypt)
-- Test remote access
-- Document access instructions
-Acceptance: Dashboard accessible remotely</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Effort</th>
+<th>Tasks</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard Platform Selection</td>
+<td>Choose and setup dashboard tool</td>
+<td>3 hours</td>
+<td>- Evaluate options (Grafana, custom web app) <br> - Install Grafana or setup Flask app <br> - Configure data source <br> - Test basic visualization</td>
+<td>Dashboard platform ready</td>
+</tr>
+<tr>
+<td>System Status Panel</td>
+<td>Display real-time system status</td>
+<td>6 hours</td>
+<td>- Create status panel <br> - Show Pi CPU/memory usage <br> - Show STM32 status <br> - Show network connectivity <br> - Auto-refresh every 5 seconds</td>
+<td>Status updates in real-time</td>
+</tr>
+<tr>
+<td>Alert Visualization</td>
+<td>Display alerts and statistics</td>
+<td>8 hours</td>
+<td>- Create alert timeline chart <br> - Show attack type distribution (pie chart) <br> - Display alert count by severity <br> - Show detection accuracy metrics <br> - Add time range filter</td>
+<td>All charts render correctly</td>
+</tr>
+<tr>
+<td>Email Notification System</td>
+<td>Send email alerts for critical events</td>
+<td>6 hours</td>
+<td>- Setup SMTP configuration <br> - Create email templates <br> - Implement alert logic (when to email) <br> - Add rate limiting (avoid spam) <br> - Test email delivery</td>
+<td>Emails received within 1 minute</td>
+</tr>
+<tr>
+<td>Mobile Responsiveness</td>
+<td>Make dashboard mobile-friendly</td>
+<td>4 hours</td>
+<td>- Responsive CSS design <br> - Test on mobile devices <br> - Optimize for small screens</td>
+<td>Dashboard usable on phone</td>
+</tr>
+<tr>
+<td>Dashboard Deployment</td>
+<td>Deploy dashboard for remote access</td>
+<td>3 hours</td>
+<td>- Configure firewall rules <br> - Setup HTTPS (Let's Encrypt) <br> - Test remote access <br> - Document access instructions</td>
+<td>Dashboard accessible remotely</td>
+</tr>
+</tbody>
+</table>
 <h3 id="release-4-advanced-features-phase-4">RELEASE 4: ADVANCED FEATURES (PHASE 4)<a class="headerlink" href="#release-4-advanced-features-phase-4" title="Permanent link">¶</a></h3>
 <p><strong>Release Date</strong>: November 30, 2025<br>
 <strong>Duration</strong>: 3 months (September - November 2025)<br>
 <strong>Effort</strong>: 100 hours<br>
 <strong>Goal</strong>: Enterprise-grade automotive features  </p>
-<p>Features Included:
-- <a href="#epic-41-autosar-integration-feat-009">FEAT-009: AUTOSAR Integration</a>
-- <a href="#epic-42-secure-fota-feat-010">FEAT-010: Secure FOTA</a>
-- <a href="#epic-43-security-hardening-feat-011">FEAT-011: Security Hardening</a></p>
-<p>Success Criteria:
+<p>Features Included:<br>
+- <a href="#epic-41-autosar-integration-feat-009">FEAT-009: AUTOSAR Integration</a><br>
+- <a href="#epic-42-secure-fota-feat-010">FEAT-010: Secure FOTA</a><br>
+- <a href="#epic-43-security-hardening-feat-011">FEAT-011: Security Hardening</a>  </p>
+<p>Success Criteria:<br>
 [x] AUTOSAR architecture implemented<br>
 [x] Secure firmware updates working<br>
 [x] Root of Trust established<br>
@@ -2279,328 +2278,302 @@ Acceptance: Dashboard accessible remotely</p>
 <strong>Priority</strong>: Medium<br>
 <strong>Effort Estimate</strong>: 40 hours<br>
 <strong>Dependencies</strong>: Phase 3 complete  </p>
-<p><strong>User Story:</strong> As an automotive software architect, I want to demonstrate AUTOSAR
-implementation so that I can showcase automotive software expertise.</p>
-<p><strong>Acceptance Criteria:</strong>
+<p><strong>User Story:</strong> As an automotive software architect, I want to demonstrate AUTOSAR implementation so that I can showcase automotive software expertise.</p>
+<p><strong>Acceptance Criteria:</strong><br>
 - Classic AUTOSAR on STM32 (BSW, RTE, ASW layers)<br>
 - Adaptive AUTOSAR concepts on Pi<br>
 - Service-oriented architecture  </p>
-<p>Stories (Tasks):</p>
-<h5 id="story-411-classic-autosar-architecture-design">STORY 4.1.1: Classic AUTOSAR Architecture Design<a class="headerlink" href="#story-411-classic-autosar-architecture-design" title="Permanent link">¶</a></h5>
-<p>Description: Design Classic AUTOSAR layering for STM32
-Effort: 6 hours
-Tasks:
-- Define BSW modules (Ethernet driver, diagnostics)
-- Design RTE interfaces
-- Define ASW components
-- Document architecture
-Acceptance: Architecture diagram complete</p>
-<h5 id="story-412-bsw-layer-implementation">STORY 4.1.2: BSW Layer Implementation<a class="headerlink" href="#story-412-bsw-layer-implementation" title="Permanent link">¶</a></h5>
-<p>Description: Implement Basic Software layer
-Effort: 12 hours
-Tasks:
-- Refactor Ethernet driver as BSW module
-- Implement ECUM (ECU State Manager)
-- Implement COM module
-- Add diagnostic services (UDS basic)
-- Follow AUTOSAR naming conventions
-Acceptance: BSW modules functional</p>
-<h5 id="story-413-rte-configuration">STORY 4.1.3: RTE Configuration<a class="headerlink" href="#story-413-rte-configuration" title="Permanent link">¶</a></h5>
-<p>Description: Implement Runtime Environment
-Effort: 8 hours
-Tasks:
-- Define RTE interfaces
-- Generate RTE code (or manual implementation)
-- Connect BSW to ASW via RTE
-Acceptance: RTE connects BSW and ASW</p>
-<h5 id="story-414-asw-components">STORY 4.1.4: ASW Components<a class="headerlink" href="#story-414-asw-components" title="Permanent link">¶</a></h5>
-<p>Description: Implement Application Software
-Effort: 6 hours
-Tasks:
-- Create SWCs for TinyML inference
-- Create SWC for alert handling
-- Implement runnable entities
-- Follow AUTOSAR patterns
-Acceptance: ASW components functional</p>
-<h5 id="story-415-adaptive-autosar-on-pi">STORY 4.1.5: Adaptive AUTOSAR on Pi<a class="headerlink" href="#story-415-adaptive-autosar-on-pi" title="Permanent link">¶</a></h5>
-<p>Description: Implement Adaptive AUTOSAR concepts
-Effort: 8 hours
-Tasks:
-- Implement ara::com communication
-- Create service interfaces
-- Implement service discovery
-- SOME/IP protocol (basic)
-Acceptance: Services communicate via ara::com</p>
+<p><strong>Stories (Tasks):</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Effort</th>
+<th>Tasks</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classic AUTOSAR Architecture Design</td>
+<td>Design Classic AUTOSAR layering for STM32</td>
+<td>6 hours</td>
+<td>- Define BSW modules (Ethernet driver, diagnostics) <br> - Design RTE interfaces <br> - Define ASW components <br> - Document architecture</td>
+<td>Architecture diagram complete</td>
+</tr>
+<tr>
+<td>BSW Layer Implementation</td>
+<td>Implement Basic Software layer</td>
+<td>12 hours</td>
+<td>- Refactor Ethernet driver as BSW module <br> - Implement ECUM (ECU State Manager) <br> - Implement COM module <br> - Add diagnostic services (UDS basic) <br> - Follow AUTOSAR naming conventions</td>
+<td>BSW modules functional</td>
+</tr>
+<tr>
+<td>RTE Configuration</td>
+<td>Implement Runtime Environment</td>
+<td>8 hours</td>
+<td>- Define RTE interfaces <br> - Generate RTE code (or manual implementation) <br> - Connect BSW to ASW via RTE</td>
+<td>RTE connects BSW and ASW</td>
+</tr>
+<tr>
+<td>ASW Components</td>
+<td>Implement Application Software</td>
+<td>6 hours</td>
+<td>- Create SWCs for TinyML inference <br> - Create SWC for alert handling <br> - Implement runnable entities <br> - Follow AUTOSAR patterns</td>
+<td>ASW components functional</td>
+</tr>
+<tr>
+<td>Adaptive AUTOSAR on Pi</td>
+<td>Implement Adaptive AUTOSAR concepts</td>
+<td>8 hours</td>
+<td>- Implement ara::com communication <br> - Create service interfaces <br> - Implement service discovery <br> - SOME/IP protocol (basic)</td>
+<td>Services communicate via ara::com</td>
+</tr>
+</tbody>
+</table>
 <h4 id="epic-42-secure-fota-feat-010">EPIC 4.2: SECURE FOTA (FEAT-010)<a class="headerlink" href="#epic-42-secure-fota-feat-010" title="Permanent link">¶</a></h4>
 <p><strong>Epic Owner</strong>: Sivaramasubramanian Sundararaj<br>
 <strong>Priority</strong>: Medium<br>
-<strong>Effort Estimate//: 30 hours<br>
-</strong>Dependencies**: Cloud connectivity working  </p>
-<p><strong>User Story:</strong> As a system maintainer, I want to update firmware remotely so that
-I can deploy fixes and improvements without physical access.</p>
-<p><strong>Acceptance Criteria:</strong>
-- OTA updates for Pi and STM32
-- Cryptographic signature verification
-- A/B partition scheme for rollback
-- Update success rate &gt;95%</p>
+<strong>Effort Estimate</strong>: 30 hours<br>
+<strong>Dependencies</strong>: Cloud connectivity working  </p>
+<p><strong>User Story:</strong> As a system maintainer, I want to update firmware remotely so that I can deploy fixes and improvements without physical access.</p>
+<p><strong>Acceptance Criteria:</strong><br>
+- OTA updates for Pi and STM32<br>
+- Cryptographic signature verification<br>
+- A/B partition scheme for rollback<br>
+- Update success rate &gt;95%  </p>
 <p><strong>Stories (Tasks):</strong></p>
-<h5 id="story-421-pi-ab-partitioning">STORY 4.2.1: Pi A/B Partitioning<a class="headerlink" href="#story-421-pi-ab-partitioning" title="Permanent link">¶</a></h5>
-<p>Description: Setup dual-partition boot on Pi
-Effort: 6 hours
-Tasks:
-- Create two root partitions
-- Configure bootloader for A/B
-- Implement partition switching
-- Test rollback mechanism
-Acceptance: Pi boots from A or B partition</p>
-<h5 id="story-422-update-package-format">STORY 4.2.2: Update Package Format<a class="headerlink" href="#story-422-update-package-format" title="Permanent link">¶</a></h5>
-<p>Description: Define update package structure
-Effort: 3 hours
-Tasks:
-- Design update manifest (version, hash, signature)
-- Package firmware binary
-- Add metadata
-- Document format
-Acceptance: Update package specification complete</p>
-<h5 id="story-423-signature-generation-verification">STORY 4.2.3: Signature Generation &amp; Verification<a class="headerlink" href="#story-423-signature-generation-verification" title="Permanent link">¶</a></h5>
-<p>Description: Implement cryptographic signing
-Effort: 8 hours
-Tasks:
-- Generate RSA key pair
-- Sign update packages
-- Implement signature verification on Pi
-- Reject unsigned/tampered packages
-- Test with invalid signatures
-Acceptance: Only valid signed updates accepted</p>
-<h5 id="story-424-pi-update-manager">STORY 4.2.4: Pi Update Manager<a class="headerlink" href="#story-424-pi-update-manager" title="Permanent link">¶</a></h5>
-<p>Description: Implement OTA update on Pi
-Effort: 6 hours
-Tasks:
-- Download update from cloud
-- Verify signature
-- Install to inactive partition
-- Switch boot partition
-- Reboot and verify
-Acceptance: Pi updates successfully</p>
-<h5 id="story-425-stm32-bootloader">STORY 4.2.5: STM32 Bootloader<a class="headerlink" href="#story-425-stm32-bootloader" title="Permanent link">¶</a></h5>
-<p>Description: Implement secure bootloader on STM32
-Effort: 10 hours
-Tasks:
-- Create bootloader in flash sector 0
-- Implement UART/Ethernet update protocol
-- Verify application signature before boot
-- Jump to application if valid
-Acceptance: STM32 only boots signed firmware</p>
-<h5 id="story-426-remote-stm32-update">STORY 4.2.6: Remote STM32 Update<a class="headerlink" href="#story-426-remote-stm32-update" title="Permanent link">¶</a></h5>
-<p>Description: Update STM32 from Raspberry Pi
-Effort: 7 hours
-Tasks:
-- Pi downloads STM32 firmware
-- Pi sends firmware to STM32 bootloader
-- STM32 verifies and flashes
-- STM32 reboots with new firmware
-Acceptance: STM32 updated remotely from Pi</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Effort</th>
+<th>Tasks</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pi A/B Partitioning</td>
+<td>Setup dual-partition boot on Pi</td>
+<td>6 hours</td>
+<td>- Create two root partitions <br> - Configure bootloader for A/B <br> - Implement partition switching <br> - Test rollback mechanism</td>
+<td>Pi boots from A or B partition</td>
+</tr>
+<tr>
+<td>Update Package Format</td>
+<td>Define update package structure</td>
+<td>3 hours</td>
+<td>- Design update manifest (version, hash, signature) <br> - Package firmware binary <br> - Add metadata <br> - Document format</td>
+<td>Update package specification complete</td>
+</tr>
+<tr>
+<td>Signature Generation &amp; Verification</td>
+<td>Implement cryptographic signing</td>
+<td>8 hours</td>
+<td>- Generate RSA key pair <br> - Sign update packages <br> - Implement signature verification on Pi <br> - Reject unsigned/tampered packages <br> - Test with invalid signatures</td>
+<td>Only valid signed updates accepted</td>
+</tr>
+<tr>
+<td>Pi Update Manager</td>
+<td>Implement OTA update on Pi</td>
+<td>6 hours</td>
+<td>- Download update from cloud <br> - Verify signature <br> - Install to inactive partition <br> - Switch boot partition <br> - Reboot and verify</td>
+<td>Pi updates successfully</td>
+</tr>
+<tr>
+<td>STM32 Bootloader</td>
+<td>Implement secure bootloader on STM32</td>
+<td>10 hours</td>
+<td>- Create bootloader in flash sector 0 <br> - Implement UART/Ethernet update protocol <br> - Verify application signature before boot <br> - Jump to application if valid</td>
+<td>STM32 only boots signed firmware</td>
+</tr>
+<tr>
+<td>Remote STM32 Update</td>
+<td>Update STM32 from Raspberry Pi</td>
+<td>7 hours</td>
+<td>- Pi downloads STM32 firmware <br> - Pi sends firmware to STM32 bootloader <br> - STM32 verifies and flashes <br> - STM32 reboots with new firmware</td>
+<td>STM32 updated remotely from Pi</td>
+</tr>
+</tbody>
+</table>
 <h4 id="epic-43-security-hardening-feat-011">EPIC 4.3: SECURITY HARDENING (FEAT-011)<a class="headerlink" href="#epic-43-security-hardening-feat-011" title="Permanent link">¶</a></h4>
 <p><strong>Epic Owner</strong>: Sivaramasubramanian Sundararaj<br>
 <strong>Priority</strong>: High<br>
 <strong>Effort Estimate</strong>: 30 hours<br>
 <strong>Dependencies</strong>: Hardware (TPM chip) available  </p>
-<p><strong>User Story:</strong> As a security engineer, I want robust security mechanisms so that
-the system is protected against attacks and tampering.</p>
-<p><strong>Acceptance Criteria:</strong>
+<p><strong>User Story:</strong> As a security engineer, I want robust security mechanisms so that the system is protected against attacks and tampering.</p>
+<p><strong>Acceptance Criteria:</strong><br>
 - Secure boot chain verified<br>
 - Cryptographic keys in HSM<br>
 - Encrypted communication (TLS)<br>
 - Anti-tampering detection  </p>
 <p><strong>Stories (Tasks):</strong></p>
-<h5 id="story-431-secure-boot-on-stm32">STORY 4.3.1: Secure Boot on STM32<a class="headerlink" href="#story-431-secure-boot-on-stm32" title="Permanent link">¶</a></h5>
-<p>Description: Implement secure boot chain
-Effort: 8 hours
-Tasks:
-- Configure secure boot in STM32
-- Generate root key
-- Sign bootloader
-- Sign application
-- Test boot verification
-- Test with invalid signature
-Acceptance: STM32 refuses tampered firmware</p>
-<h5 id="story-432-hsm-integration-tpmatecc608">STORY 4.3.2: HSM Integration (TPM/ATECC608)<a class="headerlink" href="#story-432-hsm-integration-tpmatecc608" title="Permanent link">¶</a></h5>
-<p>Description: Integrate hardware security module
-Effort: 10 hours
-Tasks:
-- Connect ATECC608 via I2C
-- Initialize TPM
-- Generate key pair in TPM
-- Store private key in TPM (never exposed)
-- Use TPM for signing operations
-- Test key security
-Acceptance: Private keys never readable from software</p>
-<h5 id="story-433-tls-encryption">STORY 4.3.3: TLS Encryption<a class="headerlink" href="#story-433-tls-encryption" title="Permanent link">¶</a></h5>
-<p>Description: Encrypt Pi-STM32 communication
-Effort: 8 hours
-Tasks:
-- Implement TLS 1.3 on Pi (using Python SSL)
-- Implement TLS on STM32 (mbedTLS)
-- Exchange certificates
-- Test encrypted traffic (Wireshark)
-- Verify decryption fails without keys
-Acceptance: All traffic encrypted</p>
-<h5 id="story-434-anti-tampering-detection">STORY 4.3.4: Anti-Tampering Detection<a class="headerlink" href="#story-434-anti-tampering-detection" title="Permanent link">¶</a></h5>
-<p>Description: Detect physical tampering attempts
-Effort: 4 hours
-Tasks:
-- Monitor voltage levels (detect glitching)
-- Detect debug probe attachment
-- Wipe keys on tamper detection
-- Test with simulated tampering
-Acceptance: Keys erased on tamper event</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Effort</th>
+<th>Tasks</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Secure Boot on STM32</td>
+<td>Implement secure boot chain</td>
+<td>8 hours</td>
+<td>- Configure secure boot in STM32 <br> - Generate root key <br> - Sign bootloader <br> - Sign application <br> - Test boot verification <br> - Test with invalid signature</td>
+<td>STM32 refuses tampered firmware</td>
+</tr>
+<tr>
+<td>HSM Integration (TPM/ATECC608)</td>
+<td>Integrate hardware security module</td>
+<td>10 hours</td>
+<td>- Connect ATECC608 via I2C <br> - Initialize TPM <br> - Generate key pair in TPM <br> - Store private key in TPM (never exposed) <br> - Use TPM for signing operations <br> - Test key security</td>
+<td>Private keys never readable from software</td>
+</tr>
+<tr>
+<td>TLS Encryption</td>
+<td>Encrypt Pi-STM32 communication</td>
+<td>8 hours</td>
+<td>- Implement TLS 1.3 on Pi (using Python SSL) <br> - Implement TLS on STM32 (mbedTLS) <br> - Exchange certificates <br> - Test encrypted traffic (Wireshark) <br> - Verify decryption fails without keys</td>
+<td>All traffic encrypted</td>
+</tr>
+<tr>
+<td>Anti-Tampering Detection</td>
+<td>Detect physical tampering attempts</td>
+<td>4 hours</td>
+<td>- Monitor voltage levels (detect glitching) <br> - Detect debug probe attachment <br> - Wipe keys on tamper detection <br> - Test with simulated tampering</td>
+<td>Keys erased on tamper event</td>
+</tr>
+</tbody>
+</table>
 <h3 id="release-5-rag-documentation-assistant-phase-5">RELEASE 5: RAG DOCUMENTATION ASSISTANT (PHASE 5)<a class="headerlink" href="#release-5-rag-documentation-assistant-phase-5" title="Permanent link">¶</a></h3>
 <p><strong>Release Date</strong>: February 28, 2026<br>
 <strong>Duration</strong>: 3 months (December 2025 - February 2026)<br>
 <strong>Effort</strong>: 80 hours<br>
 <strong>Goal</strong>: AI-powered project documentation assistant  </p>
-<p><strong>Features Included:</strong>
+<p><strong>Features Included:</strong><br>
 - <a href="#epic-51-rag-documentation-system-feat-012">FEAT-012: RAG Documentation System</a></p>
-<p><strong>Success Criteria:</strong>
+<p><strong>Success Criteria:</strong><br>
 [x] RAG system indexes all project artifacts<br>
 [x] Natural language Q&amp;A working<br>
 [x] Response accuracy &gt;90%<br>
 [x] Public demo accessible<br>
 [x] Integrated with project portfolio  </p>
 <h4 id="epic-51-rag-documentation-system-feat-012">EPIC 5.1: RAG DOCUMENTATION SYSTEM (FEAT-012)<a class="headerlink" href="#epic-51-rag-documentation-system-feat-012" title="Permanent link">¶</a></h4>
-<p><strong>Epic Owner</strong>: Sivaramasubramanian Sundararaj
-<strong>Priority</strong>: Low (Enhancement)
-<strong>Effort Estimate</strong>: 80 hours
-<strong>Dependencies</strong>: Project documentation complete</p>
-<p><strong>User Story:</strong> As a project visitor, I want to ask questions about the project in
-natural language so that I can understand the implementation details easily.</p>
-<p><strong>Acceptance Criteria:</strong>
-- Answers questions about code, architecture, requirements
-- Retrieves relevant code snippets
-- References datasheets when needed
-- Deployed as public demo</p>
+<p><strong>Epic Owner</strong>: Sivaramasubramanian Sundararaj<br>
+<strong>Priority</strong>: Low (Enhancement)<br>
+<strong>Effort Estimate</strong>: 80 hours<br>
+<strong>Dependencies</strong>: Project documentation complete  </p>
+<p><strong>User Story:</strong> As a project visitor, I want to ask questions about the project in natural language so that I can understand the implementation details easily.</p>
+<p><strong>Acceptance Criteria:</strong><br>
+- Answers questions about code, architecture, requirements<br>
+- Retrieves relevant code snippets<br>
+- References datasheets when needed<br>
+- Deployed as public demo  </p>
 <p><strong>Stories (Tasks):</strong></p>
-<h5 id="story-511-rag-architecture-design">STORY 5.1.1: RAG Architecture Design<a class="headerlink" href="#story-511-rag-architecture-design" title="Permanent link">¶</a></h5>
-<p>Description: Design RAG system architecture
-Effort: 4 hours
-Tasks:
-- Research RAG frameworks (LangChain, LlamaIndex)
-- Choose vector database (ChromaDB, Pinecone)
-- Define data sources
-- Design query flow
-- Document architecture
-Acceptance: Architecture design complete</p>
-<h5 id="story-512-data-collection-preparation">STORY 5.1.2: Data Collection &amp; Preparation<a class="headerlink" href="#story-512-data-collection-preparation" title="Permanent link">¶</a></h5>
-<p>Description: Collect and prepare all project artifacts
-Effort: 8 hours
-Tasks:
-- Collect all markdown documentation
-- Extract code comments
-- Download hardware datasheets (PDFs)
-- Extract requirements from CSV
-- Clean and structure data
-- Create metadata (source, category, date)
-Acceptance: All data sources collected and organized</p>
-<h5 id="story-513-document-chunking">STORY 5.1.3: Document Chunking<a class="headerlink" href="#story-513-document-chunking" title="Permanent link">¶</a></h5>
-<p>Description: Split documents into chunks for embedding
-Effort: 6 hours
-Tasks:
-- Implement text chunking (500-1000 tokens)
-- Preserve code block integrity
-- Handle PDF extraction (PyPDF2)
-- Maintain document context
-- Generate chunk metadata
-Acceptance: All documents chunked appropriately</p>
-<h5 id="story-514-vector-database-setup">STORY 5.1.4: Vector Database Setup<a class="headerlink" href="#story-514-vector-database-setup" title="Permanent link">¶</a></h5>
-<p>Description: Setup and configure vector database
-Effort: 6 hours
-Tasks:
-- Install ChromaDB (or chosen DB)
-- Generate embeddings (OpenAI or sentence-transformers)
-- Index all document chunks
-- Test similarity search
-- Optimize retrieval performance
-Acceptance: All documents indexed and searchable</p>
-<h5 id="story-515-rag-query-engine">STORY 5.1.5: RAG Query Engine<a class="headerlink" href="#story-515-rag-query-engine" title="Permanent link">¶</a></h5>
-<p>Description: Implement query processing and retrieval
-Effort: 10 hours
-Tasks:
-- Implement LangChain RAG chain
-- Configure Claude API integration
-- Implement semantic search
-- Retrieve top-k relevant chunks
-- Format context for LLM
-- Generate responses
-Acceptance: RAG answers questions correctly</p>
-<h5 id="story-516-code-retrieval-enhancement">STORY 5.1.6: Code Retrieval Enhancement<a class="headerlink" href="#story-516-code-retrieval-enhancement" title="Permanent link">¶</a></h5>
-<p>Description: Add code-specific retrieval
-Effort: 8 hours
-Tasks:
-- Index code by function/class
-- Add syntax highlighting in responses
-- Link to GitHub source
-- Show line numbers
-- Handle code-specific queries
-Acceptance: Code snippets retrieved with context</p>
-<h5 id="story-517-traceability-queries">STORY 5.1.7: Traceability Queries<a class="headerlink" href="#story-517-traceability-queries" title="Permanent link">¶</a></h5>
-<p>Description: Enable requirements traceability queries
-Effort: 6 hours
-Tasks:
-- Parse requirements.csv into structured format
-- Implement traceability lookups
-- Link requirements to code/tests
-- Show impact analysis
-Acceptance: Traceability queries working</p>
-<h5 id="story-518-web-interface">STORY 5.1.8: Web Interface<a class="headerlink" href="#story-518-web-interface" title="Permanent link">¶</a></h5>
-<p>Description: Create user interface for RAG system
-Effort: 12 hours
-Tasks:
-- Build Streamlit web app
-- Create chat interface
-- Add conversation history
-- Show retrieved sources
-- Display code with syntax highlighting
-- Make mobile-responsive
-Acceptance: Web UI functional and attractive</p>
-<h5 id="story-519-deployment">STORY 5.1.9: Deployment<a class="headerlink" href="#story-519-deployment" title="Permanent link">¶</a></h5>
-<p>Description: Deploy RAG system publicly
-Effort: 6 hours
-Tasks:
-- Deploy to Streamlit Cloud (free tier)
-- Configure environment variables
-- Test public access
-- Optimize load time
-- Add usage analytics
-Acceptance: RAG publicly accessible</p>
-<h5 id="story-5110-rag-documentation">STORY 5.1.10: RAG Documentation<a class="headerlink" href="#story-5110-rag-documentation" title="Permanent link">¶</a></h5>
-<p>Description: Document RAG system
-Effort: 4 hours
-Tasks:
-- Write RAG architecture doc
-- Document data sources
-- Create usage guide
-- Add to project portfolio
-- Update CV/LinkedIn
-Acceptance: RAG fully documented</p>
-<h5 id="story-5111-integration-with-portfolio">STORY 5.1.11: Integration with Portfolio<a class="headerlink" href="#story-5111-integration-with-portfolio" title="Permanent link">¶</a></h5>
-<p>Description: Integrate RAG into project showcase
-Effort: 4 hours
-Tasks:
-- Add RAG link to project README
-- Create demo video
-- Generate QR code for CV
-- Add to GitHub Pages
-Acceptance: RAG linked from all project materials</p>
-<h5 id="story-5112-testing-refinement">STORY 5.1.12: Testing &amp; Refinement<a class="headerlink" href="#story-5112-testing-refinement" title="Permanent link">¶</a></h5>
-<p>Description: Test and improve RAG responses
-Effort: 6 hours
-Tasks:
-- Create test question set
-- Evaluate answer quality
-- Improve prompts
-- Tune retrieval parameters
-- Fix edge cases
-Acceptance: &gt;90% answer accuracy on test set</p>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Effort</th>
+<th>Tasks</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAG Architecture Design</td>
+<td>Design RAG system architecture</td>
+<td>4 hours</td>
+<td>- Research RAG frameworks (LangChain, LlamaIndex) <br> - Choose vector database (ChromaDB, Pinecone) <br> - Define data sources <br> - Design query flow <br> - Document architecture</td>
+<td>Architecture design complete</td>
+</tr>
+<tr>
+<td>Data Collection &amp; Preparation</td>
+<td>Collect and prepare all project artifacts</td>
+<td>8 hours</td>
+<td>- Collect all markdown documentation <br> - Extract code comments <br> - Download hardware datasheets (PDFs) <br> - Extract requirements from CSV <br> - Clean and structure data <br> - Create metadata (source, category, date)</td>
+<td>All data sources collected and organized</td>
+</tr>
+<tr>
+<td>Document Chunking</td>
+<td>Split documents into chunks for embedding</td>
+<td>6 hours</td>
+<td>- Implement text chunking (500-1000 tokens) <br> - Preserve code block integrity <br> - Handle PDF extraction (PyPDF2) <br> - Maintain document context <br> - Generate chunk metadata</td>
+<td>All documents chunked appropriately</td>
+</tr>
+<tr>
+<td>Vector Database Setup</td>
+<td>Setup and configure vector database</td>
+<td>6 hours</td>
+<td>- Install ChromaDB (or chosen DB) <br> - Generate embeddings (OpenAI or sentence-transformers) <br> - Index all document chunks <br> - Test similarity search <br> - Optimize retrieval performance</td>
+<td>All documents indexed and searchable</td>
+</tr>
+<tr>
+<td>RAG Query Engine</td>
+<td>Implement query processing and retrieval</td>
+<td>10 hours</td>
+<td>- Implement LangChain RAG chain <br> - Configure Claude API integration <br> - Implement semantic search <br> - Retrieve top-k relevant chunks <br> - Format context for LLM <br> - Generate responses</td>
+<td>RAG answers questions correctly</td>
+</tr>
+<tr>
+<td>Code Retrieval Enhancement</td>
+<td>Add code-specific retrieval</td>
+<td>8 hours</td>
+<td>- Index code by function/class <br> - Add syntax highlighting in responses <br> - Link to GitHub source <br> - Show line numbers <br> - Handle code-specific queries</td>
+<td>Code snippets retrieved with context</td>
+</tr>
+<tr>
+<td>Traceability Queries</td>
+<td>Enable requirements traceability queries</td>
+<td>6 hours</td>
+<td>- Parse requirements.csv into structured format <br> - Implement traceability lookups <br> - Link requirements to code/tests <br> - Show impact analysis</td>
+<td>Traceability queries working</td>
+</tr>
+<tr>
+<td>Web Interface</td>
+<td>Create user interface for RAG system</td>
+<td>12 hours</td>
+<td>- Build Streamlit web app <br> - Create chat interface <br> - Add conversation history <br> - Show retrieved sources <br> - Display code with syntax highlighting <br> - Make mobile-responsive</td>
+<td>Web UI functional and attractive</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Deploy RAG system publicly</td>
+<td>6 hours</td>
+<td>- Deploy to Streamlit Cloud (free tier) <br> - Configure environment variables <br> - Test public access <br> - Optimize load time <br> - Add usage analytics</td>
+<td>RAG publicly accessible</td>
+</tr>
+<tr>
+<td>RAG Documentation</td>
+<td>Document RAG system</td>
+<td>4 hours</td>
+<td>- Write RAG architecture doc <br> - Document data sources <br> - Create usage guide <br> - Add to project portfolio <br> - Update CV/LinkedIn</td>
+<td>RAG fully documented</td>
+</tr>
+<tr>
+<td>Integration with Portfolio</td>
+<td>Integrate RAG into project showcase</td>
+<td>4 hours</td>
+<td>- Add RAG link to project README <br> - Create demo video <br> - Generate QR code for CV <br> - Add to GitHub Pages</td>
+<td>RAG linked from all project materials</td>
+</tr>
+<tr>
+<td>Testing &amp; Refinement</td>
+<td>Test and improve RAG responses</td>
+<td>6 hours</td>
+<td>- Create test question set <br> - Evaluate answer quality <br> - Improve prompts <br> - Tune retrieval parameters <br> - Fix edge cases</td>
+<td>&gt;90% answer accuracy on test set</td>
+</tr>
+</tbody>
+</table>
 <h2 id="release-dependencies">RELEASE DEPENDENCIES<a class="headerlink" href="#release-dependencies" title="Permanent link">¶</a></h2>
 <p>Release Dependency Chain:<br>
 Release 1 (Phase 1) → Release 2 (Phase 2) → Release 3 (Phase 3) →
@@ -2740,7 +2713,7 @@ FEAT-001 → FEAT-002 → FEAT-003 → FEAT-005 → FEAT-006 → FEAT-007  </p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 15, 2026 01:47:51 CET">15-Feb-2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-custom" title="February 15, 2026 22:26:08 CET">15-Feb-2026</span>
   </span>
 
     
