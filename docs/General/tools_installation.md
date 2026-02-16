@@ -24,13 +24,17 @@ _Last updated: {{ git_revision_date_localized }}_
 **Download & Install:**
 
 1. Download [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
-1. Install on your computer (Windows/Mac/Linux)
-1. Run the imager
-1. Select OS: “Raspberry Pi OS (64-bit)”
-1. Select your SD card
-1. Write image
-
-**Link:** https://www.raspberrypi.com/software/
+2. Insert SD card into computer
+3. Open Raspberry Pi Imager
+4. Choose OS: “Raspberry Pi OS (64-bit)”
+5. Choose Storage: Your SD card
+6. Click gear icon ⚙️ for advanced options:
+    - Enable SSH
+    - Set username: `pi`
+    - Set password: (your choice)
+    - Configure WiFi (optional)
+7. Click “Write”
+8. Wait for completion (~5 minutes)
 
 -----
 
@@ -119,6 +123,10 @@ sudo apt install -y git vim build-essential
 **Optional (for advanced features):**
 
 ```bash
+# Set timezone
+sudo raspi-config
+# Navigate to: Localisation Options → Timezone → Europe → Berlin
+
 # Docker (for containerization - Phase 3+)
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh

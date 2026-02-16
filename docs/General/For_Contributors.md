@@ -4,20 +4,18 @@ _Last updated: {{ git_revision_date_localized }}_
 
 -----
 
-This guide helps you set up your development environment to work on or replicate this project.
+## **For Contributors**
 
------
+### Prerequisites
 
-## Prerequisites
-
-### Knowledge Requirements
+#### Knowledge Requirements
 
 - Basic Python programming
 - Understanding of networking concepts (TCP/IP, packets)
 - Familiarity with Linux command line
 - (Optional) Embedded C for STM32 development
 
-### Hardware Requirements
+#### Hardware Requirements
 
 **Minimum Setup (Raspberry Pi only):**
 
@@ -35,7 +33,7 @@ This guide helps you set up your development environment to work on or replicate
 
 **Budget:** ~€125 total
 
-### Software Requirements
+#### Software Requirements
 
 - Computer with Windows/Mac/Linux
 - Internet connection (for downloads and cloud features)
@@ -43,16 +41,16 @@ This guide helps you set up your development environment to work on or replicate
 
 -----
 
-## Quick Start (20 Minutes)
+### Quick Start (20 Minutes)
 
-### Step 1: Clone Repository
+#### Step 1: Clone Repository
 
 ```bash
 git clone https://github.com/Sivaram91/Network-IDS-project.git
 cd network-ids-project
 ```
 
-### Step 2: Hardware Setup
+#### Step 2: Hardware Setup
 
 **Raspberry Pi:**
 
@@ -67,35 +65,21 @@ cd network-ids-project
 1. Install STM32CubeIDE
 1. Follow STM32 setup guide (coming soon)
 
-### Step 3: Software Installation
+#### Step 3: Software Installation
 
 See detailed instructions: **[Tools Installation Guide](tools_installation.md)**
 
 -----
 
-## Raspberry Pi Setup (Detailed)
+### Raspberry Pi Setup (Detailed)
 
-### 1. Prepare SD Card
+#### 1. Prepare SD Card
 
-**Download Raspberry Pi Imager:**
+**Download Raspberry Pi Imager and Flash OS:**
 
-- [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+See "Download & Install" in **[Raspberry Pi Tools Section](tools_installation.md)**
 
-**Flash OS:**
-
-1. Insert SD card into computer
-1. Open Raspberry Pi Imager
-1. Choose OS: “Raspberry Pi OS (64-bit)”
-1. Choose Storage: Your SD card
-1. Click gear icon ⚙️ for advanced options:
-- Enable SSH
-- Set username: `pi`
-- Set password: (your choice)
-- Configure WiFi (optional)
-1. Click “Write”
-1. Wait for completion (~5 minutes)
-
-### 2. First Boot
+#### 2. First Boot
 
 **Option A: With Monitor & Keyboard**
 
@@ -119,39 +103,11 @@ ssh pi@raspberrypi.local
 ssh pi@<IP_ADDRESS>
 ```
 
-### 3. Initial Configuration
+#### 3. Initial Configuration & Project dependencies
 
-```bash
-# Update system
-sudo apt update
-sudo apt upgrade -y
+See "Python Environment, Python Packages and System Tools" sections in **[Tools Installation](tools_installation.md)** Page
 
-# Install essential tools
-sudo apt install -y git python3-pip vim
-
-# Verify Python version
-python3 --version # Should be 3.9+
-
-# Set timezone
-sudo raspi-config
-# Navigate to: Localisation Options → Timezone → Europe → Berlin
-```
-
-### 4. Install Project Dependencies
-
-```bash
-# Install Python packages
-pip3 install --upgrade pip
-pip3 install scapy pandas numpy scikit-learn matplotlib seaborn
-
-# Install system packages for packet capture
-sudo apt install -y tcpdump wireshark
-
-# Verify installation
-python3 -c "import scapy; print('Scapy version:', scapy.__version__)"
-```
-
-### 5. Clone Project Repository
+#### 5. Clone Project Repository
 
 ```bash
 cd ~
@@ -159,7 +115,7 @@ git clone https://github.com/Sivaram91/Network-IDS-project.git
 cd network-ids-project
 ```
 
-### 6. Test Setup
+#### 6. Test Setup
 
 ```bash
 # Run setup verification script (when available)
@@ -171,7 +127,7 @@ python3 -c "import scapy, sklearn, pandas; print('All imports successful!')"
 
 -----
 
-## STM32 Setup (Coming Soon)
+### STM32 Setup (Coming Soon)
 
 Detailed STM32 development environment setup will be added in Phase 1.
 
@@ -184,9 +140,9 @@ Detailed STM32 development environment setup will be added in Phase 1.
 
 -----
 
-## Network Configuration
+### Network Configuration
 
-### Connect Pi and STM32
+#### Connect Pi and STM32
 
 **Direct Connection (Simplest):**
 
@@ -215,22 +171,22 @@ NETMASK = 255.255.255.0
 
 -----
 
-## Troubleshooting
+### Troubleshooting
 
-### Raspberry Pi Won’t Boot
+#### Raspberry Pi Won’t Boot
 
 - **Check:** Power supply (needs 5V/3A minimum)
 - **Check:** SD card properly inserted
 - **Check:** Green LED blinks? OS might be corrupted, reflash SD card
 
-### Cannot SSH to Pi
+#### Cannot SSH to Pi
 
 - **Check:** Pi and computer on same network
 - **Try:** `ping raspberrypi.local`
 - **Try:** Use IP address instead of hostname
 - **Check:** SSH enabled during imaging
 
-### Permission Denied for Packet Capture
+#### Permission Denied for Packet Capture
 
 ```bash
 # Add user to wireshark group
@@ -240,7 +196,7 @@ sudo usermod -aG wireshark $USER
 sudo python3 your_script.py
 ```
 
-### Import Errors
+#### Import Errors
 
 ```bash
 # Reinstall dependencies
@@ -249,7 +205,7 @@ pip3 install --upgrade scapy pandas numpy scikit-learn
 
 -----
 
-## Next Steps
+### Next Steps
 
 After completing setup:
 
@@ -260,7 +216,7 @@ After completing setup:
 
 -----
 
-## Getting Help
+### Getting Help
 
 - **Issues:** [GitHub Issues](https://github.com/Sivaram91/Network-IDS-project/issues)
 - **Email:** sivaram.07@gmail.com
@@ -269,4 +225,6 @@ After completing setup:
 -----
 
 **Ready to start?** Head to [Tools Installation](tools_installation.md) next!
+
+-----
 

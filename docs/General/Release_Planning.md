@@ -438,17 +438,17 @@ Success Criteria:
 | Traceability Queries | Enable requirements traceability queries | 6 hours | - Parse requirements.csv into structured format <br> - Implement traceability lookups <br> - Link requirements to code/tests <br> - Show impact analysis | Traceability queries working |
 | Web Interface | Create user interface for RAG system | 12 hours | - Build Streamlit web app <br> - Create chat interface <br> - Add conversation history <br> - Show retrieved sources <br> - Display code with syntax highlighting <br> - Make mobile-responsive | Web UI functional and attractive | 
 | Deployment | Deploy RAG system publicly | 6 hours | - Deploy to Streamlit Cloud (free tier) <br> - Configure environment variables <br> - Test public access <br> - Optimize load time <br> - Add usage analytics | RAG publicly accessible | 
-| RAG Documentation | Document RAG system | 4 hours | - Write RAG architecture doc <br> - Document data sources <br> - Create usage guide <br> - Add to project portfolio <br> - Update CV/LinkedIn | RAG fully documented |
+| RAG Documentation | Document RAG system | 4 hours | - Write RAG architecture doc <br> - Document data sources <br> - Create usage guide <br> - Add to project portfolio | RAG fully documented |
 | Integration with Portfolio | Integrate RAG into project showcase | 4 hours | - Add RAG link to project README <br> - Create demo video <br> - Generate QR code for CV <br> - Add to GitHub Pages | RAG linked from all project materials |
 | Testing & Refinement | Test and improve RAG responses | 6 hours | - Create test question set <br> - Evaluate answer quality <br> - Improve prompts <br> - Tune retrieval parameters <br> - Fix edge cases | >90% answer accuracy on test set |
 
 ## RELEASE DEPENDENCIES
 
-Release Dependency Chain:  
+**Release Dependency Chain:**  
 Release 1 (Phase 1) → Release 2 (Phase 2) → Release 3 (Phase 3) →
 Release 4 (Phase 4) → Release 5 (RAG)
 
-Feature Dependencies:  
+**Feature Dependencies:**  
 - FEAT-002, 003, 004 depend on FEAT-001 (need captured traffic)  
 - FEAT-005 depends on FEAT-002 and FEAT-003 (integration requires both working)  
 - FEAT-006 depends on completion of Release 1  
@@ -456,36 +456,18 @@ Feature Dependencies:
 - FEAT-009, 010, 011 can be developed in parallel  
 - FEAT-012 depends on all documentation being complete  
 
-Critical Path:  
+**Critical Path:**  
 FEAT-001 → FEAT-002 → FEAT-003 → FEAT-005 → FEAT-006 → FEAT-007  
 
 ## SUCCESS METRICS
 
-Technical Metrics:  
-- Detection accuracy: >90% for port scan and DoS, >85% for exfiltration  
-- False positive rate: <5%  
-- Inference latency: <100ms (Pi), <10ms (STM32)  
-- TinyML model size: <100KB  
-- Code coverage: >80%  
-- Uptime: 99% (24/7 operation capability)  
-
-Project Metrics:  
-- All 40 requirements verified  
-- 12 features delivered  
-- 80+ stories completed  
-- 450+ hours invested  
-- 15+ certifications earned  
-
-Portfolio Metrics:  
-- GitHub stars: Target 50+  
-- Demo video views: Target 500+  
-- LinkedIn profile views: Track increase  
-- Interview invitations: Track count  
-
-Career Metrics:  
-- Job offers received: Target 3+  
-- Salary offered: Target €100k+  
-- Interview-to-offer ratio: >30%  
+**Technical Metrics:**  
+- [ ] Detection accuracy: >90% for port scan and DoS, >85% for exfiltration  
+- [ ] False positive rate: <5%  
+- [ ] Inference latency: <100ms (Pi), <10ms (STM32)  
+- [ ] TinyML model size: <100KB  
+- [ ] Code coverage: >80%  
+- [ ] Uptime: 99% (24/7 operation capability)  
 
 ## TIMELINE SUMMARY
 
@@ -495,68 +477,56 @@ February 2025:
 - Hardware setup complete  
 - Packet capture working  
 - Basic traffic analysis  
-- Coursera: ML Spec (Week 1-4)  
 
 March 2025:  
 - Attack simulation working  
 - Feature extraction complete  
 - ML model trained  
-- Coursera: ML Spec (Week 5-8)  
 
 April 2025:
 - STM32 TinyML working  
 - Model conversion complete  
 - TinyML inference on device  
-- Coursera: ML Spec (Week 9-12) ✓  
 
 May 2025:
 - System integration complete  
 - End-to-end detection working  
 - Phase 1 COMPLETE ✓  
-- Coursera: Deep Learning Spec starts  
 
 June 2025:
 - CI/CD pipeline operational  
 - Test coverage >80%  
 - Phase 2 COMPLETE ✓  
-- Coursera: DL Spec continues  
 
 July 2025:
 - WiFi connectivity stable  
 - Cloud alerts working  
-- Coursera: DL Spec continues  
 
 August 2025:
 - Dashboard operational  
 - Email alerts working  
 - Phase 3 COMPLETE ✓  
-- Coursera: DL Spec complete ✓  
 
 September 2025:
 - AUTOSAR architecture implemented  
-- Coursera: TinyML Spec starts  
 
 October 2025:
 - Yocto Linux running  
 - FOTA framework working  
-- Coursera: TinyML Spec continues  
 
 November 2025:
 - Security hardening complete  
 - Phase 4 COMPLETE ✓  
-- Coursera: TinyML Spec complete ✓  
 
 December 2025:
 - Final testing and polish  
 - Complete documentation  
 - Demo video creation  
-- Coursera: RAG courses start  
 
 January 2026:  
 - RAG data preparation  
 - Vector database indexed  
 - RAG query engine working  
-- Coursera: RAG courses continue  
 
 February 2026:
 - RAG web interface complete  
@@ -564,7 +534,7 @@ February 2026:
 - Phase 5 COMPLETE ✓  
 - PROJECT COMPLETE! 🎉  
 
-### APPENDIX: STORY POINT ESTIMATION GUIDE
+## APPENDIX: STORY POINT ESTIMATION GUIDE
 
 Story Points = Hours for this project
 

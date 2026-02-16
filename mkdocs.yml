@@ -12,6 +12,7 @@ theme:
     - navigation.sections
     - navigation.indexes
     - navigation.top
+    - navigation.tabs
     - toc.follow
 
 extra_css:
@@ -24,21 +25,24 @@ extra_javascript:
   - helpers/js/custom_glightbox_zoom.js
 
 nav:
-  - Home: index.md
-  - Getting Started: General/getting_started.md
-  - Tools Installation: General/tools_installation.md
-  - System Engineering: 
-    - System Requirements: Requirements/SystemRequirements.md
-    - System Architecture: Architecture/SystemArchitecture.md
-  - Software Engineering: 
-    - Software Process: General/ASPICE_V_Model.html
-    - Feature Tree: Architecture/FeatureTree.md
-    - SWE1 - Software Requirements: Requirements/SwRequirements.md
-    - SWE2 - Software Architecture: Architecture/SwArchitecture.md
-    - SWE3 - Software Design: General/SwComp_Design.md
-    - SWE4 - Unit Verification: TestDocs/SwUnitVerificationTestSpec.md
-    - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
-    - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
+  - Getting Started:
+    - Home: index.md
+    - For Contributors: General/For_Contributors.md
+    - For Replicators: General/For_Replicators.md
+    - Tools Installation: General/tools_installation.md
+  - Technical Documentation:
+    - Home: General/ASPICE_V_Model.html
+    - "System Engineering": 
+      - System Requirements: Requirements/SystemRequirements.md
+      - System Architecture: Architecture/SystemArchitecture.md
+    - "Software Engineering": 
+      - Feature Tree: Architecture/FeatureTree.md
+      - SWE1 - Software Requirements: Requirements/SwRequirements.md
+      - SWE2 - Software Architecture: Architecture/SwArchitecture.md
+      - SWE3 - Software Design: General/SwComp_Design.md
+      - SWE4 - Unit Verification: TestDocs/SwUnitVerificationTestSpec.md
+      - SWE5 - Software Integration Tests: TestDocs/SwIntegrationTestSpec.md
+      - SWE6 - Software Validation Tests: TestDocs/SwQualificationTestSpec.md
   - Project Management: 
     - Release Planning: General/Release_Planning.md
     - Risk Management: General/Risk_Management.md
@@ -89,6 +93,8 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
